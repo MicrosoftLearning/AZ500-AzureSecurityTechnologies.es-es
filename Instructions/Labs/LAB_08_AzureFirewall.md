@@ -1,14 +1,9 @@
 ---
 lab:
-  title: 08 - Azure Firewall
+  title: "08 - Azure\_Firewall"
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: c87f9c52f6d113e150ef6dfff7ce40092e08dbf3
-ms.sourcegitcommit: 2eb153f2856445e5afaa218a012cb92e3d48f24b
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "132625709"
 ---
+
 # <a name="lab-08-azure-firewall"></a>Laboratorio 08: Azure Firewall
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -60,17 +55,17 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Implementar una plantilla personalizada** y presione la tecla **Entrar**.
+2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Implementar una plantilla personalizada** y presione la tecla **Entrar**.
 
-1. En la hoja **Implementación personalizada**, haga clic en la opción **Cree su propia plantilla en el editor**.
+3. En la hoja **Implementación personalizada**, haga clic en la opción **Cree su propia plantilla en el editor**.
 
-1. En la hoja **Editar plantilla**, haga clic en **Cargar archivo**, busque el archivo **\\Allfiles\\Labs\\08\\template.json** y haga clic en **Abrir**.
+4. En la hoja **Editar plantilla**, haga clic en **Cargar archivo**, busque el archivo **\\Allfiles\\Labs\\08\\template.json** y haga clic en **Abrir**.
 
     >**Nota**: Revise el contenido de la plantilla y observe que implementa una VM de Azure que hospeda Windows Server 2019 Datacenter.
 
-1. En la hoja **Editar plantilla**, haga clic en **Guardar**.
+5. En la hoja **Editar plantilla**, haga clic en **Guardar**.
 
-1. En el panel **Implementación personalizada**, asegúrese de que las siguientes opciones están configuradas (deje las demás con los valores predeterminados):
+6. En el panel **Implementación personalizada**, asegúrese de que las siguientes opciones están configuradas (deje las demás con los valores predeterminados):
 
    |Configuración|Value|
    |---|---|
@@ -78,9 +73,9 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB08**.|
    |Location|**(EE. UU.) Este de EE. UU.**|
 
-    >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar VM de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar VM de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
-1. Haga clic en **Revisar y crear** y después en **Crear**.
+7. Haga clic en **Revisar y crear** y después en **Crear**.
 
     >**Nota**: Espere a que la implementación se complete. Este proceso tardará alrededor de 2 minutos. 
 
@@ -90,32 +85,33 @@ En esta tarea, implementará Azure Firewall en la red virtual.
 
 1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Firewalls** y presione la tecla **Entrar**.
 
-1. En la hoja **Firewalls**, haga clic en **+ Crear**.
+2. En la hoja **Firewalls**, haga clic en **+ Crear**.
 
-1. En la pestaña **Aspectos básicos** del panel **Crear un firewall**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+3. En la pestaña **Aspectos básicos** del panel **Crear un firewall**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
    |Configuración|Value|
    |---|---|
    |Resource group|**AZ500LAB08**|
    |Nombre|**Test-FW01**|
    |Region|**(EE. UU.) Este de EE. UU.**|
+   |Nivel de firewall|**Estándar**|
    |Administración del firewall|**Use reglas de firewall (clásicas) para administrar este firewall**.|
    |Elegir una red virtual|Haga clic en la opción **Usar existente** y, en la lista desplegable, seleccione **Test-FW-VN**.|
    |Dirección IP pública|Haga clic en **Agregar nuevo**, escriba el nombre **TEST-FW-PIP** y haga clic en **Aceptar**.|
 
-1. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. 
+4. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. 
 
     >**Nota**: Espere a que la implementación se complete. Este proceso tardará alrededor de 5 minutos. 
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
+5. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
 
-1. En el panel **Grupos de recursos**, en la lista de grupos de recursos, haga clic en la entrada **AZ500LAB08**.
+6. En el panel **Grupos de recursos**, en la lista de grupos de recursos, haga clic en la entrada **AZ500LAB08**.
 
     >**Nota**: En la hoja del grupo de recursos **AZ500LAB08**, revise la lista de recursos. Se pueden ordenar por **Tipo**.
 
-1. En la lista de recursos, haga clic en la entrada que representa el firewall **Test-FW01**.
+7. En la lista de recursos, haga clic en la entrada que representa el firewall **Test-FW01**.
 
-1. En la hoja **Test-FW01**, identifique la dirección **IP privada** que se asignó al firewall. 
+8. En la hoja **Test-FW01**, identifique la dirección **IP privada** que se asignó al firewall. 
 
     >**Nota**: Necesitará esta información en la siguiente tarea.
 
@@ -126,9 +122,9 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
 
 1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Tablas de rutas** y presione la tecla **Entrar**.
 
-1. En la hoja **Tablas de rutas**, haga clic en **+ Crear**.
+2. En la hoja **Tablas de rutas**, haga clic en **+ Crear**.
 
-1. En la hoja **Crear tabla de rutas**,especifique la siguiente configuración:
+3. En la hoja **Crear tabla de rutas**,especifique la siguiente configuración:
 
    |Configuración|Value|
    |---|---|
@@ -136,13 +132,13 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
    |Region| **Este de EE. UU.**|
    |NOMBRE|**Firewall-route**|
 
-1. Haga clic en **Revisar y crear** y, a continuación, haga clic en **Crear** y espere a que se complete el aprovisionamiento. 
+4. Haga clic en **Revisar y crear** y, a continuación, haga clic en **Crear** y espere a que se complete el aprovisionamiento. 
 
-1. En la hoja **Tablas de rutas**, haga clic en **Actualizar** y, en la lista de tablas de rutas, haga clic en la entrada **Firewall-route**.
+5. En la hoja **Tablas de rutas**, haga clic en **Actualizar** y, en la lista de tablas de rutas, haga clic en la entrada **Firewall-route**.
 
-1. En la hoja **Firewall-route**, en la sección **Configuración**, haga clic en **Subredes** y, a continuación, en la hoja **Firewall-route \| Subredes**, haga clic en **+ Asociar**.
+6. En la hoja **Firewall-route**, en la sección **Configuración**, haga clic en **Subredes** y, a continuación, en la hoja **Firewall-route \| Subredes**, haga clic en **+ Asociar**.
 
-1. En la hoja **Asociar subred**, especifique la siguiente configuración:
+7. En la hoja **Asociar subred**, especifique la siguiente configuración:
 
    |Configuración|Value|
    |---|---|
@@ -151,11 +147,11 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
 
     >**Nota**: Asegúrese de que la subred **Workload-SN** está seleccionada para esta ruta; de lo contrario, el firewall no funcionará correctamente.
 
-1. Haga clic en **Aceptar** para asociar el firewall a la subred de la red virtual. 
+8. Haga clic en **Aceptar** para asociar el firewall a la subred de la red virtual. 
 
-1. De nuevo en la hoja **Firewall-route**, en la sección **Configuración**, haga clic en **Rutas** y luego en **+ Agregar**. 
+9. De nuevo en la hoja **Firewall-route**, en la sección **Configuración**, haga clic en **Rutas** y luego en **+ Agregar**. 
 
-1. En la hoja **Agregar ruta**, especifique la siguiente configuración:  
+10. En la hoja **Agregar ruta**, especifique la siguiente configuración:  
 
    |Configuración|Value|
    |---|---|
@@ -166,7 +162,7 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
 
     >**Nota**: Azure Firewall es en realidad un servicio administrado, pero la aplicación virtual funciona en esta situación.
     
-1.  Haga clic en **Aceptar** para agregar la ruta. 
+11.  Haga clic en **Aceptar** para agregar la ruta. 
 
 
 #### <a name="task-4-configure-an-application-rule"></a>Tarea 4: Configurar una regla de aplicación
@@ -175,11 +171,11 @@ En esta tarea, creará una regla de aplicación que permita el acceso saliente a
 
 1. En Azure Portal, vuelva al firewall **Test-FW01**.
 
-1. En la hoja **Test-FW01**, en la sección **Configuración**, haga clic en **Reglas (clásicas)** .
+2. En la hoja **Test-FW01**, en la sección **Configuración**, haga clic en **Reglas (clásicas)** .
 
-1. En la hoja **Test-FW01 \| Reglas (clásico)** , haga clic en la pestaña **Colección de reglas de aplicación** y, a continuación, haga clic en **+ Agregar una colección de reglas de aplicación**.
+3. En la hoja **Test-FW01 \| Reglas (clásico)** , haga clic en la pestaña **Colección de reglas de aplicación** y, a continuación, haga clic en **+ Agregar una colección de reglas de aplicación**.
 
-1. En el panel **Agregar una colección de reglas de aplicación**, especifique la siguiente configuración (deje todas las demás opciones con los valores predeterminados):
+4. En el panel **Agregar una colección de reglas de aplicación**, especifique la siguiente configuración (deje todas las demás opciones con los valores predeterminados):
 
    |Configuración|Value|
    |---|---|
@@ -187,7 +183,7 @@ En esta tarea, creará una regla de aplicación que permita el acceso saliente a
    |Prioridad|**200**|
    |Acción|**Permitir**|
 
-1. En la hoja **Agregar una colección de reglas de aplicación**, cree una nueva entrada en la sección **FQDN de destino** con la siguiente configuración (deje todas las demás opciones con los valores predeterminados):
+5. En la hoja **Agregar una colección de reglas de aplicación**, cree una nueva entrada en la sección **FQDN de destino** con la siguiente configuración (deje todas las demás opciones con los valores predeterminados):
 
    |Configuración|Value|
    |---|---|
@@ -197,7 +193,7 @@ En esta tarea, creará una regla de aplicación que permita el acceso saliente a
    |Protocolo y puerto|**http:80, https:443**|
    |FQDN de destino|**www.bing.com**|
 
-1. Haga clic en **Agregar** para agregar la regla de aplicación basada en los FQDN de destino.
+6. Haga clic en **Agregar** para agregar la regla de aplicación basada en los FQDN de destino.
 
     >**Nota**: Azure Firewall incluye una colección de reglas integradas para los FQDN de infraestructura que están permitidos de forma predeterminada. Estos FQDN son específicos para la plataforma y no se pueden usar para otros fines. 
 
@@ -207,9 +203,9 @@ En esta tarea, agregará una regla de red que permita el acceso saliente a dos d
 
 1. En Azure Portal, vuelva a la hoja **Test-FW01 \| Reglas (clásicas)** .
 
-1. En la hoja **Test-FW01 \| Reglas (clásicas)** , haga clic en la pestaña **Recopilación de reglas de red** y, a continuación, haga clic en **+ Agregar una colección de reglas de red**.
+2. En la hoja **Test-FW01 \| Reglas (clásicas)** , haga clic en la pestaña **Recopilación de reglas de red** y, a continuación, haga clic en **+ Agregar una colección de reglas de red**.
 
-1. En el panel **Agregar una colección de reglas de red**, especifique la siguiente configuración (deje las demás con los valores predeterminados):
+3. En el panel **Agregar una colección de reglas de red**, especifique la siguiente configuración (deje las demás con los valores predeterminados):
 
    |Configuración|Value|
    |---|---|
@@ -217,7 +213,7 @@ En esta tarea, agregará una regla de red que permita el acceso saliente a dos d
    |Prioridad|**200**|
    |Acción|**Permitir**|
 
-1. En la hoja **Agregar una colección de reglas de red**, cree una nueva entrada en la sección **Direcciones IP** con la siguiente configuración (deje las demás opciones con sus valores predeterminados):
+4. En la hoja **Agregar una colección de reglas de red**, cree una nueva entrada en la sección **Direcciones IP** con la siguiente configuración (deje las demás opciones con sus valores predeterminados):
 
    |Configuración|Value|
    |---|---|
@@ -229,7 +225,7 @@ En esta tarea, agregará una regla de red que permita el acceso saliente a dos d
    |Dirección de destino|**209.244.0.3,209.244.0.4**|
    |Puertos de destino|**53**|
 
-1. Haga clic en **Agregar** para agregar la regla de red.
+5. Haga clic en **Agregar** para agregar la regla de red.
 
     >**Nota**: Las direcciones de destino usadas en este caso son servidores DNS públicos conocidos. 
 
@@ -239,15 +235,15 @@ En esta tarea, configurará las direcciones DNS principal y secundaria para la m
 
 1. En Azure Portal, vuelva al grupo de recursos **AZ500LAB08**.
 
-1. En la hoja **AZ500LAB08**, en la lista de recursos, haga clic en la máquina virtual **Srv-Work**.
+2. En la hoja **AZ500LAB08**, en la lista de recursos, haga clic en la máquina virtual **Srv-Work**.
 
-1. En la hoja **Srv-Work**, en la sección **Configuración**, haga clic en **Redes**.
+3. En la hoja **Srv-Work**, en la sección **Configuración**, haga clic en **Redes**.
 
-1. En la hoja **Srv-Work \| Redes** haga clic en el vínculo situado junto a la entrada **Interfaz de red**.
+4. En la hoja **Srv-Work \| Redes** haga clic en el vínculo situado junto a la entrada **Interfaz de red**.
 
-1. En la hoja Interfaz de red, en la sección **Configuración**, haga clic en **Servidores DNS**, seleccione la opción **Personalizado**, agregue los dos servidores DNS a los que se hace referencia en la regla de red: **209.244.0.3** y **209.244.0.4**, y haga clic en **Guardar** para guardar el cambio.
+5. En la hoja Interfaz de red, en la sección **Configuración**, haga clic en **Servidores DNS**, seleccione la opción **Personalizado**, agregue los dos servidores DNS a los que se hace referencia en la regla de red: **209.244.0.3** y **209.244.0.4**, y haga clic en **Guardar** para guardar el cambio.
 
-1. Vuelva a la página de la máquina virtual **Srv-Work**.
+6. Vuelva a la página de la máquina virtual **Srv-Work**.
 
     >**Nota**: Espere a que se complete la actualización.
 
@@ -259,11 +255,11 @@ En esta tarea, probará el firewall para confirmar que funciona según lo previs
 
 1. En Azure Portal, vuelva al grupo de recursos **AZ500LAB08**.
 
-1. En la hoja **AZ500LAB08**, en la lista de recursos, haga clic en la máquina virtual **Srv-Jump**.
+2. En la hoja **AZ500LAB08**, en la lista de recursos, haga clic en la máquina virtual **Srv-Jump**.
 
-1. En la hoja **Srv-Jump**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
+3. En la hoja **Srv-Jump**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
 
-1. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la VM de Azure **Srv-Jump** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
+4. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la VM de Azure **Srv-Jump** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
 
    |Configuración|Valor|
    |---|---|
@@ -274,13 +270,13 @@ En esta tarea, probará el firewall para confirmar que funciona según lo previs
 
     >**Nota**: Se conectará a la máquina virtual **Srv-Work**. Esto se hace para que podamos probar la capacidad de acceder al sitio web bing.com.  
 
-1. En la sesión de Escritorio remoto para **Srv-Jump**, haga clic con el botón derecho en **Iniciar**; en el menú contextual, haga clic en **Ejecutar** y, en el cuadro de diálogo **Ejecutar**, ejecute lo siguiente para conectarse a **Srv-Work**. 
+5. En la sesión de Escritorio remoto para **Srv-Jump**, haga clic con el botón derecho en **Iniciar**; en el menú contextual, haga clic en **Ejecutar** y, en el cuadro de diálogo **Ejecutar**, ejecute lo siguiente para conectarse a **Srv-Work**. 
 
     ```
     mstsc /v:Srv-Work
     ```
 
-1. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
+6. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
 
    |Configuración|Valor|
    |---|---|
@@ -289,19 +285,19 @@ En esta tarea, probará el firewall para confirmar que funciona según lo previs
 
     >**Nota**: Espere a que se establezca la sesión de Escritorio remoto y se cargue la interfaz del Administrador del servidor.
 
-1. En la sesión de Escritorio remoto sesión para **Srv-Work**, en **Administrador del servidor**, haga clic en **Servidor local** y, a continuación, en **Configuración de seguridad mejorada de IE**.
+7. En la sesión de Escritorio remoto sesión para **Srv-Work**, en **Administrador del servidor**, haga clic en **Servidor local** y, a continuación, en **Configuración de seguridad mejorada de IE**.
 
-1. En el cuadro de diálogo **Configuración de seguridad mejorada de Internet Explorer**, establezca ambas opciones en **Desactivado** y haga clic en **Aceptar**.
+8. En el cuadro de diálogo **Configuración de seguridad mejorada de Internet Explorer**, establezca ambas opciones en **Desactivado** y haga clic en **Aceptar**.
 
-1. En la sesión de Escritorio remoto para **Srv-Work**, inicie Internet Explorer y vaya a **`https://www.bing.com`** . 
+9. En la sesión de Escritorio remoto para **Srv-Work**, inicie Internet Explorer y vaya a **`https://www.bing.com`** . 
 
     >**Nota**: El sitio web debería mostrarse correctamente. El firewall le permite el acceso.
 
-1. Vaya a **`http://www.microsoft.com/`**.
+10. Vaya a **`http://www.microsoft.com/`**.
 
     >**Nota**: En la página del explorador, debería recibir un mensaje con texto similar al siguiente: `HTTP request from 10.0.2.4:xxxxx to microsoft.com:80. Action: Deny. No rule matched. Proceeding with default action.` Se espera porque el firewall bloquea el acceso a este sitio web. 
 
-1. Finalice ambas sesiones de Escritorio remoto.
+11. Finalice ambas sesiones de Escritorio remoto.
 
 > Resultado: ha configurado y probado correctamente Azure Firewall.
 
@@ -311,11 +307,11 @@ En esta tarea, probará el firewall para confirmar que funciona según lo previs
 
 1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, haga clic en **PowerShell** y en **Crear almacenamiento**.
 
-1. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
+2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
-1. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para quitar el grupo de recursos que creó en este laboratorio:
+3. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para quitar el grupo de recursos que creó en este laboratorio:
   
     ```powershell
     Remove-AzResourceGroup -Name "AZ500LAB08" -Force -AsJob
     ```
-1. Cierre el panel de **Cloud Shell**. 
+4. Cierre el panel de **Cloud Shell**. 
