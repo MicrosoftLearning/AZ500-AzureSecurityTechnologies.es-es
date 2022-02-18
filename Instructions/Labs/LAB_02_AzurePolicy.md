@@ -2,12 +2,12 @@
 lab:
   title: '02: Azure Policy'
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: cde2b0c001dedef2b29c2da320e2952f9766b069
-ms.sourcegitcommit: 2eb153f2856445e5afaa218a012cb92e3d48f24b
+ms.openlocfilehash: d530ee043d5cf56d6f805e597d7a35eee47b3d5e
+ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "132625715"
+ms.lasthandoff: 01/27/2022
+ms.locfileid: "137818160"
 ---
 # <a name="lab-02-azure-policy"></a>Laboratorio 02: Azure Policy
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -45,7 +45,7 @@ En esta tarea, creará un grupo de recursos para el laboratorio.
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 1. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
@@ -136,9 +136,9 @@ En esta tarea, probará la asignación de directiva de ubicaciones permitidas.
 
     > **Nota**: Si no aparece la advertencia **Error de validación**, haga clic en **Anterior** y espere unos minutos más.
 
-1. Haga clic en el mensaje de error para abrir el panel **Errores**. Verá el mensaje de error detallado que indica que la directiva no ha permitido la implementación del recurso **myVnet**.
+1. En la pestaña **Aspectos básicos**, haga clic en el vínculo del mensaje de error para abrir el panel **Asignación de directivas**. Verá la asignación de directivas que restringe la ubicación.
 
-1. Cierre el panel **Errores**, en el panel **Crear red virtual** haga clic en la pestaña **Aspectos básicos** y, en la lista desplegable **Región**, seleccione **(Europa) Sur de Reino Unido**.
+1. Cierre el panel **Asignación de directivas**. En el panel **Crear red virtual** haga clic en la pestaña **Aspectos básicos** y, en la lista desplegable **Región**, seleccione **(Europa) Sur de Reino Unido**.
 
 1. Haga clic en **Revisar y crear**,compruebe que se ha superado la validación, haga clic en **Crear** y compruebe que la red virtual se creó correctamente. 
 
