@@ -2,12 +2,12 @@
 lab:
   title: 13 - Azure Monitor
   module: Module 04 - Manage security operations
-ms.openlocfilehash: 225c12f6239dfc1cbdc18727c4b21c2d03fb7bbf
-ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
+ms.openlocfilehash: aaffb30146595c6f0576efc74a832f9031ed3e3e
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/27/2022
-ms.locfileid: "137818177"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703489"
 ---
 # <a name="lab-13-azure-monitor"></a>Laboratorio 13: Azure Monitor
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -27,6 +27,12 @@ Se le ha pedido que cree una prueba de concepto de supervisión del rendimiento 
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Recopilar datos de una máquina virtual de Azure con Azure Monitor
+
+## <a name="azure-monitor"></a>Azure Monitor
+
+![imagen](https://user-images.githubusercontent.com/91347931/157536648-0a286514-a7e2-4058-9dea-e42da21eef76.png)
+
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1-collect-data-from-an-azure-virtual-machine-with-azure-monitor"></a>Ejercicio 1: Recopilar datos de una máquina virtual de Azure con Azure Monitor
 
