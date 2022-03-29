@@ -1,9 +1,14 @@
 ---
 lab:
-  title: "08 - Azure\_Firewall"
+  title: 08 - Azure Firewall
   module: Module 02 - Implement Platform Protection
+ms.openlocfilehash: cb13c319b70c994bed74b1079bc4ad8fe6209361
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.translationtype: HT
+ms.contentlocale: es-ES
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703513"
 ---
-
 # <a name="lab-08-azure-firewall"></a>Laboratorio 08: Azure Firewall
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -24,6 +29,12 @@ Se le ha pedido que instale Azure Firewall. Esto ayudará a su organización a c
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Implementar y probar una instancia de Azure Firewall
+
+## <a name="azure-firewall-diagram"></a>Diagrama de Azure Firewall
+
+![imagen](https://user-images.githubusercontent.com/91347931/157529954-a1bc434b-2eca-41c1-b875-1f0c977d5e20.png)
+
+## <a name="instructions"></a>Instrucciones
 
 ## <a name="lab-files"></a>Archivos de laboratorio:
 

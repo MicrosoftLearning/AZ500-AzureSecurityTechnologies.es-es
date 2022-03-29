@@ -2,12 +2,12 @@
 lab:
   title: '01: Control de acceso basado en roles'
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: de375fd6fc9dbc8fb612e4110420924b70ec1c71
-ms.sourcegitcommit: 5247ed01fe1b7396f54b04e46891a5d412f69943
+ms.openlocfilehash: da0086efa92f860f38d3bade2b18dfbcca84884c
+ms.sourcegitcommit: ff9f02863c270d4261acd5a77e8e29cf241679c5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "135528558"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "139714077"
 ---
 # <a name="lab-01-role-based-access-control"></a>Laboratorio 01: Control de acceso basado en roles
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -31,6 +31,12 @@ En este laboratorio completará los ejercicios siguientes
 - Ejercicio 2: Creación del grupo Administradores junior con la cuenta de usuario de Isabel García como miembro (PowerShell).
 - Ejercicio 3: Creación del grupo Consola de servicio con el usuario Dylan Williams como miembro (CLI de Azure). 
 - Ejercicio 4: Asignación del rol de colaborador de la máquina virtual al grupo Consola de servicio.
+
+## <a name="role-based-access-control-architecture-diagram"></a>Diagrama de arquitectura de control de acceso basado en rol
+
+![imagen](https://user-images.githubusercontent.com/91347931/157751243-5aa6e521-9bc1-40af-839b-4fd9927479d7.png)
+
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1-create-the-senior-admins-group-with-the-user-account-joseph-price-as-its-member"></a>Ejercicio 1: Creación del grupo Administradores sénior con la cuenta de usuario de Joseph Price como miembro. 
 

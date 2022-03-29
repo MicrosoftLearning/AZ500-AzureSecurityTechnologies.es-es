@@ -2,12 +2,12 @@
 lab:
   title: 15 - Microsoft Sentinel
   module: Module 04 - Manage Security Operations
-ms.openlocfilehash: dab51412936208c1c4f092ba931ca06c76f7bf40
-ms.sourcegitcommit: cf250c5d85d2189156f6ea2ec2a25768d564d8c1
+ms.openlocfilehash: 63a24bbc17b846d3587cf3fb83ab46b7235d5fcd
+ms.sourcegitcommit: 18aa464705a8f1e78ccbbb82d5d8f57a830b6cea
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "136957525"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "140666116"
 ---
 # <a name="lab-15-microsoft-sentinel"></a>Laboratorio 15: Microsoft Sentinel
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -29,6 +29,12 @@ Se le ha pedido que cree una prueba de concepto de detección y respuesta de ame
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Implementación de Microsoft Sentinel
+
+## <a name="microsoft-sentinel-diagram"></a>Diagrama de Microsoft Sentinel
+
+![imagen](https://user-images.githubusercontent.com/91347931/157538440-4953be73-90be-4edd-bd23-b678326ba637.png)
+
+## <a name="instructions"></a>Instrucciones
 
 ## <a name="lab-files"></a>Archivos de laboratorio:
 
@@ -57,6 +63,8 @@ En esta tarea, incorporará Microsoft Sentinel y conectará el área de trabajo
 
 2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos**, que encontrará en la parte superior de la página, escriba **Microsoft Sentinel** y presione la tecla **Entrar**.
 
+    >**Nota**: Si este es su primer intento de accionar Microsoft Sentinel en el panel de control de Azure, complete los siguientes pasos: En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos**, que encontrará en la parte superior de la página, escriba **Microsoft Sentinel** y presione la tecla **Entrar**. Seleccione **Microsoft Sentinel** en la vista **Servicios**.
+  
 3. En el panel **Microsoft Sentinel**, haga clic en **+ Crear**.
 
 4. En el panel **Agregar Microsoft Sentinel a un área de trabajo**, seleccione el área de trabajo de Log Analytics que creó en el laboratorio de Azure Monitor y haga clic en **Agregar**.
@@ -137,7 +145,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 5. En el panel **Implementación personalizada**, asegúrese de que las siguientes opciones están configuradas (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
     |Resource group|**AZ500LAB131415**|
@@ -183,7 +191,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 4. En la pestaña **General** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Nombre|**Demostración del cuaderno de estrategias**|
     |Tácticas|**Acceso inicial**|

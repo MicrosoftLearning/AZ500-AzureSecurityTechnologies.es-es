@@ -2,12 +2,12 @@
 lab:
   title: 03 - Bloqueos de Resource Manager
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 437cd9da8b6782f2b6fe4be81cc0fb1994fbee79
-ms.sourcegitcommit: 2eb153f2856445e5afaa218a012cb92e3d48f24b
+ms.openlocfilehash: 54375454646bdcf0586b249f65349691c3a3b9c3
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "132625713"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703537"
 ---
 # <a name="lab-03-resource-manager-locks"></a>Laboratorio 03: Bloqueos de Resource Manager
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -27,6 +27,12 @@ Se le ha pedido que cree una prueba de concepto que muestre cómo se pueden usar
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Bloqueos de Resource Manager
+
+## <a name="resource-manager-locks-diagram"></a>Diagrama de bloqueos de Resource Manager
+
+![imagen](https://user-images.githubusercontent.com/91347931/157514986-1bf6a9ea-4c7f-4487-bcd7-542648f8dc95.png)
+
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1-resource-manager-locks"></a>Ejercicio 1: Bloqueos de Resource Manager
 

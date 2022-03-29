@@ -2,12 +2,12 @@
 lab:
   title: 13 - Azure Monitor
   module: Module 04 - Manage security operations
-ms.openlocfilehash: aaffb30146595c6f0576efc74a832f9031ed3e3e
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 060e7731cb8ec5d523afd62ae973aab3556dba3e
+ms.sourcegitcommit: 472a3c306cfa4b6a6c966e7eae253382135ed501
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703489"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "140804487"
 ---
 # <a name="lab-13-azure-monitor"></a>Laboratorio 13: Azure Monitor
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -66,6 +66,19 @@ En este ejercicio completará las tareas siguientes:
 
 5. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para crear una máquina virtual de Azure. 
 
+    >**Atención**: El comando New-AzVm no funciona en la versión 4.24 de la CLI de Azure y Microsoft está investigando actualmente para su resolución.  El trabajo de este laboratorio es instalar la versión 4.23.0 de Az.Compute, que no se ve afectadas por este problema, y revertir a ella.
+   
+    >**Instrucciones**: Reversión a la versión 4.23.0 de Az.Compute 
+  
+   #### <a name="step-1-download-the-working-version-of-the-module-4230-into-your-cloud-shell-session"></a>Paso 1: Descargar la versión de trabajo del módulo (4.23.0) en la sesión de Cloud Shell 
+   **Tipo**: Install-Module -Name Az.Compute -Force -RequiredVersion 4.23.0
+
+   #### <a name="step-2-start-a-new-powershell-session-that-will-allow-the-azcompute-assembly-version-to-be-loaded"></a>Paso 2: Iniciar una nueva sesión de PowerShell que permitirá cargar la versión del ensamblado Az.Compute 
+   **Tipo**: pwsh
+
+   #### <a name="step-3-verify-that-version-4230-is-loaded"></a>Paso 3: Comprobar que está cargada la versión 4.23.0
+   **Tipo**: Get-Module -Name Az.Compute
+   
     ```powershell
     New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389
     ```
@@ -97,7 +110,7 @@ En esta tarea, creará un área de trabajo de Log Analytics.
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear un área de trabajo de Log Analytics**, especifique las siguientes opciones (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
     |Resource group|**AZ500LAB131415**|

@@ -2,12 +2,12 @@
 lab:
   title: 07 - Grupos de seguridad de red y grupos de seguridad de aplicaciones
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: 965d8fe60718425711af3fd963a8cb8cd56f6967
-ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
+ms.openlocfilehash: e33f0a1f5c30a86d2b2a47069c6f4d759d60e782
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/27/2022
-ms.locfileid: "137818179"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703495"
 ---
 # <a name="lab-07-network-security-groups-and-application-security-groups"></a>Laboratorio 07: Grupos de seguridad de red y grupos de seguridad de aplicaciones
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -30,6 +30,12 @@ En este laboratorio completará los ejercicios siguientes:
 
 - Ejercicio 1: Crear la infraestructura de red virtual
 - Ejercicio 2: Implementar máquinas virtuales y probar filtros de red
+
+## <a name="network-and-application-security-groups-diagram"></a>Diagrama de grupos de seguridad de red y de aplicación
+
+![imagen](https://user-images.githubusercontent.com/91347931/157526438-6da4f68b-db88-4931-a041-8474e66d3fe5.png)
+
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1-create-the-virtual-networking-infrastructure"></a>Ejercicio 1: Crear la infraestructura de red virtual
 

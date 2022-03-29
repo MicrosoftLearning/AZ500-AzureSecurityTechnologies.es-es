@@ -2,12 +2,12 @@
 lab:
   title: " 12: Puntos de conexión de servicio y protección del almacenamiento"
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: fddd3eaa1b6c161e172daa2ab94c539edaae4465
-ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
+ms.openlocfilehash: 197d13a2da3097d8a2b2568a0628bd74bbd7914e
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/27/2022
-ms.locfileid: "137818193"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703507"
 ---
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -27,6 +27,12 @@ Se le ha pedido que cree una prueba de concepto para demostrar la protección de
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Puntos de conexión de servicio y almacenamiento de seguridad
+
+## <a name="service-endpoints-and-securing-storage-diagram"></a>Diagrama de puntos de conexión de servicio y protección del almacenamiento
+
+![imagen](https://user-images.githubusercontent.com/91347931/157534883-29664a05-85d1-4c70-99a7-f16d2360755d.png)
+
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1-service-endpoints-and-security-storage"></a>Ejercicio 1: Puntos de conexión de servicio y almacenamiento de seguridad
 

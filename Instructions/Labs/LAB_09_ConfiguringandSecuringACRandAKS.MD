@@ -2,12 +2,12 @@
 lab:
   title: 09 - Configuración y protección de ACR y AKS
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: 1bc1e0c7430d50681f6008e619f77c7412e420a7
-ms.sourcegitcommit: 4a94ae2382fc99dda007add73148dd4108227ab1
+ms.openlocfilehash: f3e03b483065cad12a6206b3ce2106441d05efe0
+ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/27/2022
-ms.locfileid: "137818187"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "139703501"
 ---
 # <a name="lab-09-configuring-and-securing-acr-and-aks"></a>Laboratorio 09: Configuración y protección de ACR y AKS
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -28,6 +28,12 @@ Se le ha pedido que implemente una prueba de concepto con Azure Container Regist
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Configuración y protección de ACR y AKS
+
+## <a name="configuring-and-securing-acr-and-aks-diagram"></a>Configuración y protección de ACR y AKS
+
+![imagen](https://user-images.githubusercontent.com/91347931/157532250-1104a829-792a-4b6d-beff-fe976e2d5d4b.png)
+
+## <a name="intructions"></a>Instrucciones
 
 ## <a name="lab-files"></a>Archivos de laboratorio:
 
