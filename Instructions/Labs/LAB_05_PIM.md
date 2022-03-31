@@ -2,12 +2,12 @@
 lab:
   title: 05 - Azure AD Privileged Identity Management
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: f0fc7615d2e2e3a26782366d7a630ed9984bd3f0
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 6ef7c51d334587e5e4e7116194fa46f2eb5d1df0
+ms.sourcegitcommit: 1da29a6d959a7f91dbbcbabf5ec06869c98fc1f1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703531"
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "141267273"
 ---
 # <a name="lab-05-azure-ad-privileged-identity-management"></a>Laboratorio 05: Azure AD Privileged Identity Management
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -37,7 +37,7 @@ En este laboratorio completará los ejercicios siguientes:
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157522920-264ce57e-5c55-4a9d-8f35-e046e1a1e219.png)
 
-## <a name="instructions"></a>Instrucciones
+## <a name="instructions"></a>Instructions
 
 ### <a name="exercise-1---configure-pim-users-and-roles"></a>Ejercicio 1: Configurar usuarios y roles de PIM
 
@@ -372,7 +372,7 @@ En esta tarea, revisará las alertas de PIM, la información de resumen y la inf
 
 9. En el panel **Azure Active Directory Premium P2 : usuarios con licencia**, active las casillas de las cuentas de usuario a las que asignó licencias de **Azure Active Directory Premium P2**. Haga clic en **Quitar licencia** en el panel superior y, cuando se le pida confirmación, seleccione **Sí**.
 
-10. En Azure Portal, vaya al panel **Usuarios - Todos los usuarios (versión preliminar)** , y haga clic en la entrada que representa la cuenta de usuario **aaduser1**.En el panel **aaduser1: Perfil**, haga clic en **Eliminar** y, cuando se le pida confirmación, haga clic en **Sí**.
+10. En Azure Portal, vaya a la hoja **Usuarios - Todos los usuarios**, haga clic en la entrada que representa la cuenta de usuario **aaduser1**. A continuación, en la hoja **aaduser1: Perfil**, haga clic en **Eliminar** y, cuando se le pida confirmación, haga clic en **Sí**.
 
 11. Repita la misma secuencia de pasos para eliminar las cuentas de usuario restantes que creó.
 
