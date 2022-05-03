@@ -2,12 +2,12 @@
 lab:
   title: " 12: Puntos de conexión de servicio y protección del almacenamiento"
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 197d13a2da3097d8a2b2568a0628bd74bbd7914e
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 1bb9722fadd7d5323e8485a073f828c40bd7784b
+ms.sourcegitcommit: 7a85045fa5b0e6450a346aed7e75cd2e1cb6412a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703507"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "144018076"
 ---
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -135,9 +135,11 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
 
     |Configuración|Value|
     |---|---|
-    |Source|**VirtualNetwork**|
+    |Source|**Etiqueta de servicio**|
+    |Etiqueta de servicio de origen|**VirtualNetwork**|
     |Source port ranges|**\***|
-    |Destination|en la lista desplegable, seleccione **Etiqueta de servicio** y, a continuación, haga clic en **Almacenamiento**|
+    |Destination|**Etiqueta de servicio**|
+    |Etiqueta de servicio de destino|**Storage**|
     |Intervalos de puertos de destino|**\***|
     |Protocolo|**Cualquiera**|
     |Acción|**Permitir**|
@@ -152,9 +154,11 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
 
     |Configuración|Value|
     |---|---|
-    |Source|**VirtualNetwork**|
+    |Source|**Etiqueta de servicio**|
+    |Etiqueta de servicio de origen|**VirtualNetwork**|
     |Source port ranges|**\***|
-    |Destination|en la lista desplegable, seleccione **Etiqueta de servicio** y, a continuación, haga clic en **Internet**|
+    |Destination|**Etiqueta de servicio**|
+    |Etiqueta de servicio de destino|**Internet**|
     |Intervalos de puertos de destino|**\***|
     |Protocolo|**Cualquiera**|
     |Acción|**Deny**|
@@ -173,7 +177,8 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
     |---|---|
     |Source|**Cualquiera**|
     |Source port ranges|**\***|
-    |Destination|**VirtualNetwork**|
+    |Destination|**Etiqueta de servicio**|
+    |Etiqueta de servicio de destino|**VirtualNetwork**|
     |Intervalos de puertos de destino|**3389**|
     |Protocolo|**TCP**|
     |Acción|**Permitir**|
@@ -266,7 +271,7 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Máquinas virtuales** y presione la tecla **Entrar**.
 
-2. En el panel **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual**.
+2. En el panel **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
@@ -276,9 +281,9 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Resource group|**AZ500LAB12**|
     |Nombre de la máquina virtual|**myVmPrivate**|
     |Region|**(EE. UU.) Este de EE. UU.**|
-    |Imagen|**Windows Server 2022 Datacenter - Gen 2**|
+    |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Vuelva a usar la contraseña que creó en el laboratorio del módulo 6 (ejercicio 1, tarea 2).**|
+    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
     |Ya tiene una licencia de Windows Server.|**No**|
 
@@ -301,9 +306,9 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
 
     >**Nota**: La segunda máquina virtual se conectará a la subred Pública.
 
-8. En el panel **Máquinas virtuales**, haga clic en **+ Agregar** y, en la lista desplegable, haga clic en **+ Máquina virtual**.
+8. En el panel **Máquinas virtuales**, haga clic en **+ Agregar** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**.
 
-9. En la pestaña **Aspectos básicos** del panel **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+9. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
     |Configuración|Value|
     |---|---|
@@ -311,9 +316,9 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Resource group|**AZ500LAB12**|
     |Nombre de la máquina virtual|**myVmPublic**|
     |Region|**(EE. UU.) Este de EE. UU.**|
-    |Imagen|**Windows Server 2022 Datacenter - Gen 2**|
+    |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Vuelva a usar la contraseña que creó en el laboratorio del módulo 6 (ejercicio 1, tarea 2).**|
+    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
     |Ya tiene una licencia de Windows Server.|**No**|
 
@@ -351,7 +356,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
     |Configuración|Valor|
     |---|---|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Vuelva a usar la contraseña que creó en el laboratorio del módulo 6 (ejercicio 1, tarea 2).**|
+    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que se abra la sesión de Escritorio remoto y a que se cargue el Administrador del servidor.
 
@@ -401,7 +406,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
     |Configuración|Valor|
     |---|---|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Vuelva a usar la contraseña que creó en el laboratorio del módulo 6 (ejercicio 1, tarea 2).**|
+    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que se abra la sesión de Escritorio remoto y a que se cargue el Administrador del servidor.
 
@@ -432,7 +437,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
 > No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no se generarán costes inesperados. 
 
-1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 

@@ -2,12 +2,12 @@
 lab:
   title: 13 - Azure Monitor
   module: Module 04 - Manage security operations
-ms.openlocfilehash: 060e7731cb8ec5d523afd62ae973aab3556dba3e
-ms.sourcegitcommit: 472a3c306cfa4b6a6c966e7eae253382135ed501
+ms.openlocfilehash: df6fbcf475fe0a5cefec130ab713f92997dcf206
+ms.sourcegitcommit: 022221e69467f2fdccf2e02bb54e6ec395570668
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "140804487"
+ms.lasthandoff: 04/21/2022
+ms.locfileid: "143988961"
 ---
 # <a name="lab-13-azure-monitor"></a>Laboratorio 13: Azure Monitor
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -52,7 +52,7 @@ En este ejercicio completará las tareas siguientes:
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-2. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+2. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 3. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
@@ -88,7 +88,7 @@ En este ejercicio completará las tareas siguientes:
     |Configuración|Value|
     |---|---|
     |Usuario |**localadmin**|
-    |Contraseña|**Vuelva a usar la contraseña que creó en el laboratorio del módulo 6 (ejercicio 1, tarea 2).**|
+    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que la implementación se complete. 
 
@@ -110,7 +110,7 @@ En esta tarea, creará un área de trabajo de Log Analytics.
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear un área de trabajo de Log Analytics**, especifique las siguientes opciones (deje las demás con los valores predeterminados):
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
     |Resource group|**AZ500LAB131415**|
@@ -157,6 +157,7 @@ En esta tarea, configurará la recopilación del registro del sistema Windows y 
 
 6. Haga clic en **Contadores de rendimiento de Windows**, haga clic en **+ Add performance counter** (+ Agregar contador de rendimiento), revise la lista de contadores de rendimiento disponibles y agregue los siguientes:
 
+    - Memoria (\*)\Mbytes de memoria disponibles
     - Procesador (\*)\% Tiempo del procesador
     - Seguimiento de eventos para Windows\Uso de memoria total --- Bloque no paginado
     - Seguimiento de eventos para Windows\Uso de memoria total --- Bloque paginado
