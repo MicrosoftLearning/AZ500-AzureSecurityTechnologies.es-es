@@ -2,12 +2,12 @@
 lab:
   title: 09 - Configuración y protección de ACR y AKS
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: f3e03b483065cad12a6206b3ce2106441d05efe0
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 062531406ffcfac6e4c8e279c24cbb1959eebc43
+ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703501"
+ms.lasthandoff: 04/04/2022
+ms.locfileid: "141368695"
 ---
 # <a name="lab-09-configuring-and-securing-acr-and-aks"></a>Laboratorio 09: Configuración y protección de ACR y AKS
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -139,9 +139,9 @@ En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos 
 
 2. En el panel **Servicios de Kubernetes**, haga clic en **+ Crear** y, en el menú desplegable, haga clic en **+ Crear clúster de Kubernetes**.
 
-3. En la pestaña **Aspectos básicos** del panel **Crear clúster de Kubernetes**, haga clic en **Cambiar configuraciones preestablecidas**, seleccione **Desarrollo/pruebas ($)** y haga clic en **Aplicar**. Ahora, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+3. En la pestaña **Aspectos básicos** de la hoja **Crear clúster de Kubernetes**, seleccione **Configuración preestablecida del clúster** y seleccione **Desarrollo/pruebas ($)** . Ahora, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |----|----|
     |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
     |Resource group|**AZ500LAB09**|
@@ -155,9 +155,8 @@ En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos 
     |Configuración|Value|
     |----|----|
     |Habilitar nodos virtuales|Casilla desactivada|
-    |VM Scale Sets|Casilla desactivada|
     
-5. Haga clic en **Siguiente: Autenticación >** , en la pestaña **Autenticación** de la hoja **Crear un clúster de Kubernetes**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >** . 
+5. Haga clic en **Siguiente: Acceso >** , en la pestaña **Acceso** de la hoja **Crear un clúster de Kubernetes**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >** . 
 
 6. En la pestaña **Redes** de la hoja **Crear un clúster de Kubernetes**, especifique las siguientes opciones (deje las demás con los valores predeterminados):
 

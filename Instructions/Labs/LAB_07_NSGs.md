@@ -2,12 +2,12 @@
 lab:
   title: 07 - Grupos de seguridad de red y grupos de seguridad de aplicaciones
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: e33f0a1f5c30a86d2b2a47069c6f4d759d60e782
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: d7cfed1e861215cf32c3b51c4a07aa6886575000
+ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703495"
+ms.lasthandoff: 04/04/2022
+ms.locfileid: "141368716"
 ---
 # <a name="lab-07-network-security-groups-and-application-security-groups"></a>Laboratorio 07: Grupos de seguridad de red y grupos de seguridad de aplicaciones
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -197,7 +197,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Máquinas virtuales** y presione la tecla **Entrar**.
 
-2. En el panel **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual**.
+2. En el panel **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**.
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
@@ -207,10 +207,10 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
    |Resource group|**AZ500LAB07**|
    |Nombre de la máquina virtual|**myVmWeb**|
    |Region|**(EE. UU.) Este de EE. UU.**|
-   |Imagen|**Windows Server 2022 Datacenter - Gen2**|
+   |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
    |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
-   |Contraseña|**Vuelva a usar la contraseña que creó en el laboratorio del módulo 6 (ejercicio 1, tarea 2).**|
+   |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    |Confirmar contraseña|**Vuelva a escribir la contraseña**.|
    |Puertos de entrada públicos|**None**|
    |¿Quiere usar una licencia de Windows Server existente? |**No**|
@@ -235,7 +235,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
 
 En esta tarea, creará una máquina virtual para usarla como servidor de administración.
 
-1. En Azure Portal, vuelva a la hoja **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual**.
+1. En Azure Portal, vuelva a la hoja **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**.
 
 2. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
@@ -245,10 +245,10 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
    |Resource group|**AZ500LAB07**|
    |Nombre de la máquina virtual|**myVMMgmt**|
    |Region|(EE. UU.) Este de EE. UU.|
-   |Imagen|**Windows Server 2022 Datacenter - Gen 2**|
+   |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
    |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
-   |Contraseña|**Vuelva a usar la contraseña que creó en el laboratorio del módulo 6 (ejercicio 1, tarea 2).**|
+   |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    |Puertos de entrada públicos|**None**|
    |Ya tiene una licencia de Windows Server.|**No**|
 
@@ -301,7 +301,7 @@ En esta tarea, probará los filtros de tráfico de red. Debería poder usar RDP 
    |Configuración|Valor|
    |---|---|
    |Nombre de usuario|**Estudiante**|
-   |Contraseña|**Vuelva a usar la contraseña que creó en el laboratorio del módulo 6 (ejercicio 1, tarea 2).**|
+   |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Compruebe que la conexión de Escritorio remoto se ha realizado correctamente. En este momento ha confirmado que puede conectarse a través de Escritorio remoto a myVMMgmt.
 
@@ -331,7 +331,7 @@ En esta tarea, probará los filtros de tráfico de red. Debería poder usar RDP 
 
 > No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no se generarán costes inesperados. 
 
-1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
