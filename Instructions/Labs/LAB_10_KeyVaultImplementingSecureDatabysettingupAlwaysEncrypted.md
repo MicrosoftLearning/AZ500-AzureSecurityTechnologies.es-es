@@ -2,12 +2,12 @@
 lab:
   title: '10: Key Vault (implementación de datos seguros mediante la configuración de Always Encrypted)'
   module: Module 03 - Secure Data and Applications
-ms.openlocfilehash: aa30698684cad8837b95fe823ce16a4043b63e5c
-ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
+ms.openlocfilehash: c31dd6e930e0f1d1b82e7c6ea502bb6fa51a7dd7
+ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141368719"
+ms.lasthandoff: 05/31/2022
+ms.locfileid: "145955394"
 ---
 # <a name="lab-10-key-vault-implementing-secure-data-by-setting-up-always-encrypted"></a>Laboratorio 10: Key Vault (implementación de datos seguros mediante la configuración de Always Encrypted)
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -133,7 +133,7 @@ En esta tarea, creará un recurso de Azure Key Vault. También configurará los 
     |Configuración|Value|
     |----|----|
     |Configurar a partir de una plantilla (opcional)|**Administración de claves, secretos y certificados**|
-    |Permisos de claves|Clic en **Seleccionar todo** que genera **16 permisos seleccionados** (compruebe que los permisos de **Operaciones de directiva de rotación** estén **desmarcadas**). |
+    |Permisos de claves|Haga clic en **Seleccionar todo** que genera **17 permisos seleccionados** (compruebe que los permisos de **Operaciones de directiva de rotación** estén **desmarcados**). |
     |Permisos de secretos|haga clic en **Seleccionar todo**, lo que da como resultado un total de **8 permisos seleccionados**|
     |Permisos de certificación|haga clic en **Seleccionar todo**, lo que da como resultado un total de **16 permisos seleccionados**|
     |Selección de la entidad de seguridad|haga clic en **Ninguno seleccionado** en el panel **Entidad de seguridad**, seleccione la cuenta de usuario y haga clic en **Seleccionar**|
@@ -315,7 +315,7 @@ La implementación de la plantilla de ARM del ejercicio 1 aprovisionó una inst
    
 4. Copie la **cadena de conexión para ADO.NET**. Lo necesitará más adelante.
 
-    >**Nota**: Cuando use la cadena de conexión, asegúrese de reemplazar el marcador de posición `{your_password}` por **Pa55w.rd1234**.
+    >**Nota**: Al usar la cadena de conexión, asegúrese de reemplazar el marcador de posición `{your_password}` por la contraseña que configuró con la implementación en el ejercicio 1.
 
 #### <a name="task-4-log-on-to-the-azure-vm-running-visual-studio-2019-and-sql-management-studio-2018"></a>Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 2018
 
@@ -402,7 +402,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
 
 14. En la página **Selección de columna**, seleccione las columnas **SSN** y **Fecha de nacimiento**, establezca el **Tipo de cifrado** de la columna **SSN** en **Determinista** y el de la columna **Fecha de nacimiento** en **Aleatorio** y haga clic en **Siguiente**.
 
-    >**Nota**: Al realizar el cifrado, si se genera cualquier error como **Excepción generada por el destino de la invocación** relacionado con **Rotary(Microsoft.SQLServer.Management.ServiceManagement)** , compruebe que los valores de **Permisos clave** de **Operaciones de directiva de rotación** estén **desmarcados**. Si no está en Azure Portal, vaya a **Key Vault** >> **Directivas de acceso** >> **Permisos clave** y desmarque todos los valores que figuren en **Operaciones de directiva de rotación**. 
+    >**Nota**: Al realizar el cifrado, si se genera cualquier error como **Excepción generada por el destino de la invocación** relacionado con **Rotary(Microsoft.SQLServer.Management.ServiceManagement)** , compruebe que los valores de **Permisos clave** de **Operaciones de directiva de rotación** estén **desmarcados**. Si no está en Azure Portal, vaya a **Key Vault** >> **Directivas de acceso** >> **Permisos clave** y desmarque todos los valores que figuren en **Operaciones de directiva de rotación** >> En **Operaciones de clave con privilegios** >> Desmarque **Publicar**.
 
 15. En la página **Configuración de clave maestra**, seleccione **Azure Key Vault**, haga clic en **Iniciar sesión**, cuando se le solicite, autentíquese con la misma cuenta de usuario que usó para aprovisionar la instancia de Azure Key Vault anteriormente en este laboratorio, asegúrese de que Key Vault aparezca en la lista desplegable **Seleccionar un Azure Key Vault** y haga clic en **Siguiente**.
 
@@ -469,7 +469,7 @@ Creará una aplicación de consola mediante Visual Studio para cargar datos en l
 
 14. En la consola de Visual Studio, haga clic en el botón **Iniciar** para iniciar la compilación de la aplicación de consola e iniciarla.
 
-15. La aplicación iniciará una ventana del símbolo del sistema. Cuando se le solicite la contraseña, escriba **Pa55w.rd1234** para conectarse a Azure SQL Database. 
+15. La aplicación iniciará una ventana del símbolo del sistema. Cuando se le solicite una contraseña, escriba la contraseña que especificó en la implementación del ejercicio 1 para conectarse a Azure SQL Database. 
 
 16. Deje la aplicación de consola en ejecución y cambie a la consola de **SQL Management Studio**. 
 

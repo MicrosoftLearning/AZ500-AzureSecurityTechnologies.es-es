@@ -2,12 +2,12 @@
 lab:
   title: " 12: Puntos de conexión de servicio y protección del almacenamiento"
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 1bb9722fadd7d5323e8485a073f828c40bd7784b
-ms.sourcegitcommit: 7a85045fa5b0e6450a346aed7e75cd2e1cb6412a
+ms.openlocfilehash: d47890d94d7f1a008024ebedf5154d487cb35792
+ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "144018076"
+ms.lasthandoff: 05/31/2022
+ms.locfileid: "145955413"
 ---
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -64,7 +64,7 @@ En esta tarea, creará una red virtual.
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB12**|
     |Name|**myVirtualNetwork**|
     |Region|**(EE. UU.) Este de EE. UU.**|
@@ -116,7 +116,7 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB12**|
     |Name|**myNsgPrivate**|
     |Region|**Este de EE. UU.**|
@@ -208,7 +208,7 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB12**|
     |Nombre de la cuenta de almacenamiento|Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos|
     |Location|**(EE. UU.) EastUS**|
@@ -247,7 +247,7 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
 
 14. Vuelva al panel de la cuenta de almacenamiento y, a continuación, en la sección **Seguridad y redes**, haga clic en **Redes**.
 
-15. En el panel **Firewalls y redes virtuales**, seleccione la opción **Redes seleccionadas** y haga clic en el vínculo **+ Agregar red virtual existente**. 
+15. En la hoja **Firewalls y redes virtuales**, seleccione la opción **Habilitado desde redes virtuales y direcciones IP seleccionadas** y haga clic en el vínculo **+ Agregar red virtual existente**. 
 
 16. En el panel **Agregar redes**, configure las opciones siguientes:
 
@@ -283,7 +283,7 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Region|**(EE. UU.) Este de EE. UU.**|
     |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
+    |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
     |Ya tiene una licencia de Windows Server.|**No**|
 
@@ -318,7 +318,7 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Region|**(EE. UU.) Este de EE. UU.**|
     |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
+    |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
     |Ya tiene una licencia de Windows Server.|**No**|
 
