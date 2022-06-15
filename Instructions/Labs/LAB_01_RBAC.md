@@ -2,12 +2,12 @@
 lab:
   title: '01: Control de acceso basado en roles'
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: da0086efa92f860f38d3bade2b18dfbcca84884c
-ms.sourcegitcommit: ff9f02863c270d4261acd5a77e8e29cf241679c5
+ms.openlocfilehash: 156b27cdbdd97656e8ccd85c4ed3656c0db91937
+ms.sourcegitcommit: 46495f1eba96da4be553aff5b7521e7ab62f50b8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/11/2022
-ms.locfileid: "139714077"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "146032713"
 ---
 # <a name="lab-01-role-based-access-control"></a>Laboratorio 01: Control de acceso basado en roles
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -247,7 +247,7 @@ En esta tarea, creará el grupo Consola de servicio y asignará a Dylan al grupo
 4. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para obtener la propiedad objectId de la cuenta de usuario de Dylan Williams: 
 
     ```cli
-    OBJECTID=$(echo $USER | jq '.[].objectId' | tr -d '"')
+    OBJECTID=$(echo $USER | jq '.[].id' | tr -d '"')
     ```
 
 5. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para agregar la cuenta de usuario de Dylan al grupo Consola de servicio: 
@@ -311,7 +311,7 @@ En este ejercicio completará las tareas siguientes:
    |Asignar acceso a (en el panel Miembros)|**Usuario, grupo o entidad de servicio**|
    |Seleccionar (+ Seleccionar miembros)|**Departamento de servicios**|
 
-5. Haga clic en **Revisar y asignar** para crear la asignación de roles.
+5. Haga clic en **Revisar y asignar** dos veces para crear la asignación de roles.
 
 6. En el panel **Control de acceso (IAM)** , seleccione **Asignaciones de roles**.
 

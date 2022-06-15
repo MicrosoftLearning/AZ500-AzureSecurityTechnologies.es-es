@@ -167,6 +167,6 @@ En esta tarea, probará la asignación de directiva de ubicaciones permitidas.
 
 1. Seleccione Asignaciones en la sección **Creación**.
 
-1. En la lista de asignaciones, seleccione el nombre de la directiva **Ubicaciones permitidas** que creó en este laboratorio.
+1. En la lista de asignaciones, seleccione el nombre de la directiva **Ubicaciones permitidas** que ha creado en este laboratorio.
 
 1. En la asignación de directiva, seleccione **Eliminar asignación** y, a continuación, seleccione **Sí**.
