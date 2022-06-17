@@ -2,12 +2,12 @@
 lab:
   title: " 12: Puntos de conexión de servicio y protección del almacenamiento"
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 92e1472274c10c26edad584907cc5e3e6613bf7e
-ms.sourcegitcommit: 2eb153f2856445e5afaa218a012cb92e3d48f24b
+ms.openlocfilehash: ef6f31230914c8c122015334e629dad5c54dfe8d
+ms.sourcegitcommit: 47a471392d8e979c08213fe7de3fcc296adc35da
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "132625736"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "146453865"
 ---
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -27,6 +27,12 @@ Se le ha pedido que cree una prueba de concepto para demostrar la protección de
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Puntos de conexión de servicio y almacenamiento de seguridad
+
+## <a name="service-endpoints-and-securing-storage-diagram"></a>Diagrama de puntos de conexión de servicio y protección del almacenamiento
+
+![imagen](https://user-images.githubusercontent.com/91347931/157534883-29664a05-85d1-4c70-99a7-f16d2360755d.png)
+
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1-service-endpoints-and-security-storage"></a>Ejercicio 1: Puntos de conexión de servicio y almacenamiento de seguridad
 
@@ -50,11 +56,11 @@ En esta tarea, creará una red virtual.
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Redes virtuales** y presione la tecla **Entrar**.
+2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Redes virtuales** y presione la tecla **Entrar**.
 
-1. En el panel **Redes virtuales**, haga clic en **+ Crear**.
+3. En el panel **Redes virtuales**, haga clic en **+ Crear**.
 
-1. En la pestaña **Aspectos básicos** del panel **Crear red virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Direcciones IP**:
+4. En la pestaña **Aspectos básicos** del panel **Crear red virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Direcciones IP**:
 
     |Configuración|Value|
     |---|---|
@@ -63,16 +69,16 @@ En esta tarea, creará una red virtual.
     |Name|**myVirtualNetwork**|
     |Region|**(EE. UU.) Este de EE. UU.**|
 
-1. En la pestaña **Direcciones IP** del panel **Crear red virtual**, establezca el **espacio de direcciones IPv4** en **10.0.0.0/16**, en la columna **Nombre de subred**, haga clic en **predeterminado** y, en el panel **Editar subred**, especifique la siguiente configuración y haga clic en **Guardar**:
+5. En la pestaña **Direcciones IP** del panel **Crear red virtual**, establezca el **espacio de direcciones IPv4** en **10.0.0.0/16**, en la columna **Nombre de subred**, haga clic en **predeterminado** y, en el panel **Editar subred**, especifique la siguiente configuración y haga clic en **Guardar**:
 
     |Configuración|Value|
     |---|---|
     |Nombre de subred|**Public**|
     |Intervalo de direcciones de subred|**10.0.0.0/24**|
 
-1. De vuelta en la pestaña **Direcciones IP** del panel **Crear red virtual**, haga clic en **Revisar y crear**.
+6. De vuelta en la pestaña **Direcciones IP** del panel **Crear red virtual**, haga clic en **Revisar y crear**.
 
-1. En la pestaña **Revisar y crear** del panel **Crear red virtual**, haga clic en **Crear**.
+7. En la pestaña **Revisar y crear** del panel **Crear red virtual**, haga clic en **Crear**.
 
 #### <a name="task-2-add-a-subnet-to-the-virtual-network-and-configure-a-storage-endpoint"></a>Tarea 2: Adición de una subred a la red virtual y configuración de un punto de conexión de almacenamiento
 
@@ -80,13 +86,13 @@ En esta tarea, creará otra subred y habilitará un punto de conexión de servic
 
 1. En Azure Portal, vuelva al panel **Redes virtuales**.
 
-1. En el panel **Redes virtuales**, haga clic en la entrada **myVirtualNetwork**.
+2. En el panel **Redes virtuales**, haga clic en la entrada **myVirtualNetwork**.
 
-1. En el panel **myVirtualNetwork**, en la sección **Configuración**, haga clic en **Subredes**.
+3. En el panel **myVirtualNetwork**, en la sección **Configuración**, haga clic en **Subredes**.
 
-1. En el panel **myVirtualNetwork \| Subredes**, haga clic en **+ Subred**. 
+4. En el panel **myVirtualNetwork \| Subredes**, haga clic en **+ Subred**. 
 
-1. En el panel **Agregar subred**, configure las opciones siguientes (deje las demás con los valores predeterminados):
+5. En el panel **Agregar subred**, configure las opciones siguientes (deje las demás con los valores predeterminados):
 
     |Configuración|Value|
     |---|---|
@@ -94,7 +100,7 @@ En esta tarea, creará otra subred y habilitará un punto de conexión de servic
     |Intervalo de direcciones de subred|**10.0.1.0/24**|
     |Puntos de conexión del servicio|**Microsoft.Storage**|
 
-1. En el panel **Agregar subred**, haga clic en **Guardar** para agregar la nueva subred.
+6. En el panel **Agregar subred**, haga clic en **Guardar** para agregar la nueva subred.
 
     >**Nota**: La red virtual ahora tiene dos subredes: pública y privada. 
     
@@ -104,9 +110,9 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de seguridad de red** y presione la tecla **Entrar**.
 
-1. En el panel **Grupos de seguridad de red**, haga clic en **+ Crear**.
+2. En el panel **Grupos de seguridad de red**, haga clic en **+ Crear**.
 
-1. En la pestaña **Aspectos básicos** del panel **Crear grupo de seguridad de red**, especifique la siguiente configuración: 
+3. En la pestaña **Aspectos básicos** del panel **Crear grupo de seguridad de red**, especifique la siguiente configuración: 
 
     |Configuración|Value|
     |---|---|
@@ -115,40 +121,44 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
     |Name|**myNsgPrivate**|
     |Region|**Este de EE. UU.**|
 
-1. Haga clic en **Revisar y crear** y, a continuación, en **Crear**.
+4. Haga clic en **Revisar y crear** y, a continuación, en **Crear**.
 
     >**Nota**: En los pasos siguientes, creará una regla de seguridad de salida que permita la comunicación con el servicio de Azure Storage. 
 
-1. En Azure Portal, vuelva al panel **Grupos de seguridad de red** y haga clic en la entrada **myNsgPrivate**.
+5. En Azure Portal, vuelva al panel **Grupos de seguridad de red** y haga clic en la entrada **myNsgPrivate**.
 
-1. En el panel **myNsgPrivate**, en la sección **Configuración**, haga clic en **Reglas de seguridad de salida**.
+6. En el panel **myNsgPrivate**, en la sección **Configuración**, haga clic en **Reglas de seguridad de salida**.
 
-1. En el panel **myNsgPrivate \| Reglas de seguridad de salida**, haga clic en **+ Agregar**.
+7. En el panel **myNsgPrivate \| Reglas de seguridad de salida**, haga clic en **+ Agregar**.
 
-1. En el panel **Agregar regla de seguridad de salida**, especifique la siguiente configuración para permitir explícitamente el tráfico saliente a Azure Storage (deje todos los demás valores con su configuración predeterminada): 
+8. En el panel **Agregar regla de seguridad de salida**, especifique la siguiente configuración para permitir explícitamente el tráfico saliente a Azure Storage (deje todos los demás valores con su configuración predeterminada): 
 
     |Configuración|Value|
     |---|---|
-    |Source|**VirtualNetwork**|
+    |Source|**Etiqueta de servicio**|
+    |Etiqueta de servicio de origen|**VirtualNetwork**|
     |Source port ranges|**\***|
-    |Destination|en la lista desplegable, seleccione **Etiqueta de servicio** y, a continuación, haga clic en **Almacenamiento**|
+    |Destination|**Etiqueta de servicio**|
+    |Etiqueta de servicio de destino|**Storage**|
     |Intervalos de puertos de destino|**\***|
     |Protocolo|**Cualquiera**|
     |Acción|**Permitir**|
     |Priority|**1000**|
     |Name|**Allow-Storage-All (Permitir-almacenar-todo)**|
 
-1. En el panel **Agregar regla de seguridad de salida**, haga clic en **Agregar** para crear la nueva regla de salida. 
+9. En el panel **Agregar regla de seguridad de salida**, haga clic en **Agregar** para crear la nueva regla de salida. 
 
-1. En el panel **myNsgPrivate**, en la sección **Configuración**, haga clic en **Reglas de seguridad de salida** y, a continuación, haga clic en **+ Agregar**.
+10. En el panel **myNsgPrivate**, en la sección **Configuración**, haga clic en **Reglas de seguridad de salida** y, a continuación, haga clic en **+ Agregar**.
 
-1. En el panel **Agregar regla de seguridad de salida**, especifique la siguiente configuración para denegar explícitamente el tráfico saliente a Internet (deje todos los demás valores con su configuración predeterminada): 
+11. En el panel **Agregar regla de seguridad de salida**, especifique la siguiente configuración para denegar explícitamente el tráfico saliente a Internet (deje todos los demás valores con su configuración predeterminada): 
 
     |Configuración|Value|
     |---|---|
-    |Source|**VirtualNetwork**|
+    |Source|**Etiqueta de servicio**|
+    |Etiqueta de servicio de origen|**VirtualNetwork**|
     |Source port ranges|**\***|
-    |Destination|en la lista desplegable, seleccione **Etiqueta de servicio** y, a continuación, haga clic en **Internet**|
+    |Destination|**Etiqueta de servicio**|
+    |Etiqueta de servicio de destino|**Internet**|
     |Intervalos de puertos de destino|**\***|
     |Protocolo|**Cualquiera**|
     |Acción|**Deny**|
@@ -159,41 +169,49 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
 
     >**Nota**: En los siguientes pasos, creará una regla de seguridad de entrada que permita que el tráfico de Protocolo de escritorio remoto (RDP) a la subred. La regla invalidará cualquier regla de seguridad predeterminada que deniegue todo el tráfico de entrada procedente de Internet. Las conexiones entre Escritorio remoto y la subred están permitidas, por lo que dicha conectividad podrá probarse en un paso posterior.
 
-1. En el panel **myNsgPrivate \| Reglas de seguridad de salid**, en la sección **Configuración**, haga clic en **Reglas de seguridad de salida** y, a continuación, haga clic en **+ Agregar**.
+12. En el panel **myNsgPrivate**, en la sección **Configuración**, haga clic en **Reglas de seguridad de entrada** y, a continuación, en **+ Agregar**.
 
-1. En el panel **Agregar regla de seguridad de entrada**, configure las opciones siguientes (deje todas las demás con los valores predeterminados): 
+13. En el panel **Agregar regla de seguridad de entrada**, configure las opciones siguientes (deje todas las demás con los valores predeterminados): 
 
     |Configuración|Value|
     |---|---|
     |Source|**Cualquiera**|
     |Source port ranges|**\***|
-    |Destination|**VirtualNetwork**|
+    |Destination|**Etiqueta de servicio**|
+    |Etiqueta de servicio de destino|**VirtualNetwork**|
     |Intervalos de puertos de destino|**3389**|
     |Protocolo|**TCP**|
     |Acción|**Permitir**|
     |Priority|**1200**|                                                    
     |Name|**Allow-RDP-All (Permitir-RDP-Todo)**|
 
-1. En el panel **Agregar regla de seguridad de entrada**, haga clic en **Agregar** para crear la nueva regla de entrada. 
+14. En el panel **Agregar regla de seguridad de entrada**, haga clic en **Agregar** para crear la nueva regla de entrada. 
 
     >**Nota**: Ahora asociará el grupo de seguridad de red a la subred Privada.
 
-1. En el panel **Subredes**, seleccione **+ Asociar**, especifique la siguiente configuración en la sección **Asociar subred** y, a continuación, haga clic en **Aceptar**:
+15. En el panel **Subredes**, seleccione **+ Asociar**, especifique la siguiente configuración en la sección **Asociar subred** y, a continuación, haga clic en **Aceptar**:
 
     |Configuración|Value|
     |---|---|
     |Virtual network|**myVirtualNetwork**|
     |Subnet|**Privado**|
 
+16. En el panel **Subredes**, seleccione **+ Asociar**, especifique la siguiente configuración en la sección **Asociar subred** y, a continuación, haga clic en **Aceptar**:
+
+    |Configuración|Value|
+    |---|---|
+    |Virtual network|**myVirtualNetwork**|
+    |Subnet|**Public**|
+    
 #### <a name="task-4-create-a-storage-account-with-a-file-share"></a>Tarea 4: Creación de una cuenta de almacenamiento con un recurso compartido de archivos
 
 En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de archivos y obtendrá la clave de la cuenta de almacenamiento.  
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Cuentas de almacenamiento** y presione la tecla **Entrar**.
 
-1. En el panel **Cuentas de almacenamiento**, haga clic en **+ Crear**.
+2. En el panel **Cuentas de almacenamiento**, haga clic en **+ Crear**.
 
-1. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
+3. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
     |Configuración|Value|
     |---|---|
@@ -201,45 +219,44 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
     |Resource group|**AZ500LAB12**|
     |Nombre de la cuenta de almacenamiento|Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos|
     |Location|**(EE. UU.) EastUS**|
-    |Rendimiento|**Estándar**|
-    |Tipo de cuenta|**StorageV2 (uso general v2)**|
+    |Rendimiento|**Estándar (cuenta general-purpose v2)**|
     |Redundancia|**Almacenamiento con redundancia local (LRS)**|
 
-1. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, haga clic en **Revisar y crear**, espere a que se complete el proceso de validación y, luego, haga clic en **Crear**.
+4. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, haga clic en **Revisar y crear**, espere a que se complete el proceso de validación y, luego, haga clic en **Crear**.
 
     >**Nota**: Espere a que se cree la cuenta de almacenamiento. Este proceso tardará alrededor de 2 minutos.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
+5. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
 
-1. En el panel **Grupos de recursos**, en la lista de grupos de recursos, haga clic en la entrada **AZ500LAB12**.
+6. En el panel **Grupos de recursos**, en la lista de grupos de recursos, haga clic en la entrada **AZ500LAB12**.
 
-1. En el panel del grupo de recursos **AZ500LAB12**, en la lista de recursos, haga clic en la entrada que representa la cuenta de almacenamiento recién creada.
+7. En el panel del grupo de recursos **AZ500LAB12**, en la lista de recursos, haga clic en la entrada que representa la cuenta de almacenamiento recién creada.
 
-1. En el panel de la cuenta de almacenamiento **Introducción**, haga clic en **Servicio de archivos** en la pestaña **Propiedades** y, a continuación, haga clic en **+ Recurso compartido de archivos**.
+8. En el panel **Información general** de la cuenta de almacenamiento, haga clic en **Recursos compartidos de archivos** en la pestaña **Almacenamiento de datos** y, a continuación, haga clic en **+ Recurso compartido de archivos**.
 
-1. En el panel **Nuevo recurso compartido de archivos**, configure las opciones siguientes:
+9. En el panel **Nuevo recurso compartido de archivos**, configure las opciones siguientes:
 
     |Configuración|Value|
     |---|---|
     |Nombre|**my-file-share**|
 
-1. En el panel **Nuevo recurso compartido de archivos**, haga clic en **Crear**.
+10. En el panel **Nuevo recurso compartido de archivos**, haga clic en **Crear**.
 
     >**Nota**: Ahora, recupere y registre el script de PowerShell que crea una asignación de unidad al recurso compartido de archivos de Azure. 
 
-1. En el panel de la cuenta de almacenamiento, en la lista de recursos compartidos de archivos, haga clic en **my-file-share**.
+11. En el panel de la cuenta de almacenamiento, en la lista de recursos compartidos de archivos, haga clic en **my-file-share**.
 
-1. En el panel **my-file-share**, haga clic en **Conectar**.
+12. En el panel **my-file-share**, haga clic en **Conectar**.
 
-1. En el panel **Conectar** en la pestaña **Windows**, copie el script de PowerShell que crea una asignación de unidad Z al recurso compartido de archivos. 
+13. En el panel **Conectar** en la pestaña **Windows**, copie el script de PowerShell que crea una asignación de unidad Z al recurso compartido de archivos. 
 
     >**Nota**: Registre este script. Lo necesitará más adelante en este laboratorio para asignar el recurso compartido de archivos de la máquina virtual de Azure en la subred **Privada**.
 
-1. Vuelva al panel de la cuenta de almacenamiento y, a continuación, en la sección **Seguridad y redes**, haga clic en **Redes**.
+14. Vuelva al panel de la cuenta de almacenamiento y, a continuación, en la sección **Seguridad y redes**, haga clic en **Redes**.
 
-1. En el panel **Firewalls y redes virtuales**, seleccione la opción **Redes seleccionadas** y haga clic en el vínculo **+ Agregar red virtual existente**. 
+15. En la hoja **Firewalls y redes virtuales**, seleccione la opción **Habilitado desde redes virtuales y direcciones IP seleccionadas** y haga clic en el vínculo **+ Agregar red virtual existente**. 
 
-1. En el panel **Agregar redes**, configure las opciones siguientes:
+16. En el panel **Agregar redes**, configure las opciones siguientes:
 
     |Configuración|Value|
     |---|---|
@@ -247,9 +264,9 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
     |Redes virtuales|**myVirtualNetwork**|
     |Subredes|**Privado**|
 
-1. En el panel **Agregar redes**, haga clic en **Agregar**. 
+17. En el panel **Agregar redes**, haga clic en **Agregar**. 
 
-1. De nuevo en el panel de la cuenta de almacenamiento, haga clic en **Guardar**.
+18. De nuevo en el panel de la cuenta de almacenamiento, haga clic en **Guardar**.
 
     >**Nota**: En este punto del laboratorio ha configurado una red virtual, un grupo de seguridad de red y una cuenta de almacenamiento con un recurso compartido de archivos. 
 
@@ -261,27 +278,27 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Máquinas virtuales** y presione la tecla **Entrar**.
 
-1. En el panel **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual**.
+2. En el panel **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**
 
-1. En la pestaña **Aspectos básicos** del panel **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+3. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
     |Configuración|Value|
     |---|---|
     |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
     |Resource group|**AZ500LAB12**|
     |Nombre de la máquina virtual|**myVmPrivate**|
-    |Region|**(EE. UU.)Este de EE. UU.**|
-    |Imagen|**Windows Server 2019 Datacenter - Gen 2**|
+    |Region|**(EE. UU.) Este de EE. UU.**|
+    |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Pa55w.rd1234**|
+    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
-    |Ya tiene una licencia de Windows Server|**No**|
+    |Ya tiene una licencia de Windows Server.|**No**|
 
     >**Nota**: Para los puertos de entrada públicos, nos basaremos en el grupo de seguridad de red creado previamente. 
 
-1. Haga clic en **Siguiente: Discos >** y, en la pestaña **Discos** del panel **Crear una máquina virtual**, establezca el **tipo de disco del sistema operativo** en **HDD estándar** y haga clic en **Siguiente: Redes >** .
+4. Haga clic en **Siguiente: Discos >** y, en la pestaña **Discos** del panel **Crear una máquina virtual**, establezca el **tipo de disco del sistema operativo** en **HDD estándar** y haga clic en **Siguiente: Redes >** .
 
-1. Haga clic en **Siguiente: Redes >** , en la pestaña **Redes** del panel **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+5. Haga clic en **Siguiente: Redes >** , en la pestaña **Redes** del panel **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
     |Configuración|Value|
     |---|---|
@@ -290,33 +307,33 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Dirección IP pública|**(new)myVmPrivate-ip**|
     |Grupo de seguridad de red de NIC|**None**|
 
-1. Haga clic en **Siguiente: Administración >** , en la pestaña **Administración** del panel **Crear una máquina virtual**, acepte la configuración predeterminada y haga clic en **Revisar y crear**.
+6. Haga clic en **Siguiente: Administración >** , en la pestaña **Administración** del panel **Crear una máquina virtual**, acepte la configuración predeterminada y haga clic en **Revisar y crear**.
 
-1. En el panel **Revisar y crear**, asegúrese de que la validación se ha realizado correctamente y haga clic en **Crear**.
+7. En el panel **Revisar y crear**, asegúrese de que la validación se ha realizado correctamente y haga clic en **Crear**.
 
     >**Nota**: La segunda máquina virtual se conectará a la subred Pública.
 
-1. En el panel **Máquinas virtuales**, haga clic en **+ Agregar** y, en la lista desplegable, haga clic en **+ Máquina virtual**.
+8. En el panel **Máquinas virtuales**, haga clic en **+ Agregar** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**.
 
-1. En la pestaña **Aspectos básicos** del panel **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+9. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
     |Configuración|Value|
     |---|---|
     |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
     |Resource group|**AZ500LAB12**|
     |Nombre de la máquina virtual|**myVmPublic**|
-    |Region|**(EE. UU.)Este de EE. UU.**|
-    |Imagen|**Windows Server 2019 Datacenter - Gen 2**|
+    |Region|**(EE. UU.) Este de EE. UU.**|
+    |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Pa55w.rd1234**|
+    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
-    |Ya tiene una licencia de Windows Server|**No**|
+    |Ya tiene una licencia de Windows Server.|**No**|
 
     >**Nota**: Para los puertos de entrada públicos, nos basaremos en el grupo de seguridad de red creado previamente. 
 
-1. Haga clic en **Siguiente: Discos >** y, en la pestaña **Discos** del panel **Crear una máquina virtual**, establezca el **tipo de disco del sistema operativo** en **HDD estándar** y haga clic en **Siguiente: Redes >** .
+10. Haga clic en **Siguiente: Discos >** y, en la pestaña **Discos** del panel **Crear una máquina virtual**, establezca el **tipo de disco del sistema operativo** en **HDD estándar** y haga clic en **Siguiente: Redes >** .
 
-1. Haga clic en **Siguiente: Redes >** , en la pestaña **Redes** del panel **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+11. Haga clic en **Siguiente: Redes >** , en la pestaña **Redes** del panel **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
     |Configuración|Value|
     |---|---|
@@ -325,9 +342,9 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Dirección IP pública|**(new)myVmPublic-ip**|
     |Grupo de seguridad de red de NIC|**None**|
 
-1. Haga clic en **Siguiente: Administración >** , en la pestaña **Administración** del panel **Crear una máquina virtual**, acepte la configuración predeterminada y haga clic en **Revisar y crear**.
+12. Haga clic en **Siguiente: Administración >** , en la pestaña **Administración** del panel **Crear una máquina virtual**, acepte la configuración predeterminada y haga clic en **Revisar y crear**.
 
-1. En el panel **Revisar y crear**, asegúrese de que la validación se ha realizado correctamente y haga clic en **Crear**.
+13. En el panel **Revisar y crear**, asegúrese de que la validación se ha realizado correctamente y haga clic en **Crear**.
 
     >**Nota**: Puede continuar con la siguiente tarea una vez completada la implementación de la máquina virtual de Azure **myVMPrivate**.
 
@@ -337,30 +354,30 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
 1. Vuelva al panel **Máquinas virtuales**. 
 
-1. En el panel **Máquinas virtuales**, haga clic en la entrada **myVMPrivate**.
+2. En el panel **Máquinas virtuales**, haga clic en la entrada **myVMPrivate**.
 
-1. En el panel **myVMPrivate**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
+3. En el panel **myVMPrivate**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
 
-1. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la máquina virtual de Azure **myVMPrivate** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
+4. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la máquina virtual de Azure **myVMPrivate** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
 
     |Configuración|Valor|
     |---|---|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Pa55w.rd1234**|
+    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que se abra la sesión de Escritorio remoto y a que se cargue el Administrador del servidor.
 
-    >**Nota**: Ahora asignará la unidad Z a un recurso compartido de archivos de Azure dentro de la sesión de Escritorio remoto a un equipo con Windows Server 2019
+    >**Nota**: Ahora asignará la unidad Z a un recurso compartido de archivos de Azure dentro de la sesión de Escritorio remoto a un equipo con Windows Server 2022.
 
-1. En la sesión de Escritorio remoto a **myVMPrivate**, haga clic en **Iniciar** y, a continuación, haga clic en **Windows PowerShell ISE**.
+5. En la sesión de Escritorio remoto a **myVMPrivate**, haga clic en **Iniciar** y, a continuación, haga clic en **Windows PowerShell ISE**.
 
-1. En la ventana **Windows PowerShell ISE**, abra el panel **Script** y pegue y ejecute el script de PowerShell que registró anteriormente en este laboratorio. El script tiene el siguiente formato:
+6. En la ventana **Windows PowerShell ISE**, abra el panel **Script** y pegue y ejecute el script de PowerShell que registró anteriormente en este laboratorio. El script tiene el siguiente formato:
 
     ```powershell
     $connectTestResult = Test-NetConnection -ComputerName <storage_account_name>.file.core.windows.net -Port 445
     if ($connectTestResult.TcpTestSucceeded) {
        # Save the password so the drive will persist on reboot
-       cmd.exe /C "cmdkey /add:`"<storage_account_name>.file.core.windows.net`" /user:`"Azure\<storage_account_name>`"  /pass:`"<storage_account_key>`""
+       cmd.exe /C "cmdkey /add:`"<storage_account_name>.file.core.windows.net`" /user:`"localhost\<storage_account_name>`"  /pass:`"<storage_account_key>`""
        # Mount the drive
        New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage_account_name>.file.core.windows.net\my-file-share" -Persist
     } else {
@@ -369,9 +386,9 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
     ```
     >**Nota**: El marcador de posición `<storage-account-name>` representa el nombre de la cuenta de almacenamiento que hospeda el recurso compartido de archivos y `<storage_account_name>` uno su clave principal
 
-1. Inicie el Explorador de archivos y compruebe que la asignación de la unidad Z: se ha creado correctamente.
+7. Inicie el Explorador de archivos y compruebe que la asignación de la unidad Z: se ha creado correctamente.
 
-1. A continuación, en el panel de la consola de **Windows PowerShell ISE**, ejecute lo siguiente para comprobar que la máquina virtual no tiene conectividad saliente a Internet:
+8. A continuación, en el panel de la consola de **Windows PowerShell ISE**, ejecute lo siguiente para comprobar que la máquina virtual no tiene conectividad saliente a Internet:
 
     ```powershell
     Test-NetConnection -ComputerName www.bing.com -Port 80
@@ -379,7 +396,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
     >**Nota**: La prueba devolverá un error, dado que el grupo de seguridad de red asociado a la subred Private no permite el acceso de salida a Internet.
 
-1. Finalice la sesión de Escritorio remoto a la máquina virtual de Azure **myVMPrivate**.
+9. Finalice la sesión de Escritorio remoto a la máquina virtual de Azure **myVMPrivate**.
 
     >**Nota**: En este momento, ha confirmado que la máquina virtual de la subred Privada puede acceder a la cuenta de almacenamiento. 
 
@@ -387,30 +404,30 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
 1. Vuelva al panel **Máquinas virtuales**. 
 
-1. En el panel **Máquinas virtuales**, haga clic en la entrada **myVMPublic**.
+2. En el panel **Máquinas virtuales**, haga clic en la entrada **myVMPublic**.
 
-1. En el panel **myVMPublic**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
+3. En el panel **myVMPublic**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
 
-1. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la máquina virtual de Azure **myVMPublic** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
+4. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la máquina virtual de Azure **myVMPublic** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
 
     |Configuración|Valor|
     |---|---|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Pa55w.rd1234**|
+    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que se abra la sesión de Escritorio remoto y a que se cargue el Administrador del servidor.
 
-    >**Nota**: Ahora asignará la unidad Z a un recurso compartido de archivos de Azure dentro de la sesión de Escritorio remoto a un equipo con Windows Server 2019
+    >**Nota**: Ahora asignará la unidad Z a un recurso compartido de archivos de Azure dentro de la sesión de Escritorio remoto a un equipo con Windows Server 2022.
 
-1. En la sesión de Escritorio remoto a **myVMPublic**, haga clic en **Iniciar** y, a continuación, haga clic en **Windows PowerShell ISE**.
+5. En la sesión de Escritorio remoto a **myVMPublic**, haga clic en **Iniciar** y, a continuación, haga clic en **Windows PowerShell ISE**.
 
-1. En la ventana de **Windows PowerShell ISE**, abra el panel **Script** y pegue y ejecute el mismo script de PowerShell que ejecutó en la sesión de Escritorio remoto en la máquina virtual de Azure **myVMPrivate**.
+6. En la ventana de **Windows PowerShell ISE**, abra el panel **Script** y pegue y ejecute el mismo script de PowerShell que ejecutó en la sesión de Escritorio remoto en la máquina virtual de Azure **myVMPrivate**.
 
     >**Nota**: Esta vez, recibirá el error **New-PSDrive : Acceso denegado**. 
 
     >**Nota**: El acceso se deniega porque la máquina virtual *myVmPublic* está implementada en la subred Pública. La subred Pública no tiene un punto de conexión de servicio habilitado para Azure Storage. La cuenta de almacenamiento solo permite el acceso a la red desde la subred Privada.
 
-1. A continuación, en el panel de la consola de **Windows PowerShell ISE**, ejecute lo siguiente para comprobar que la máquina virtual tenga conectividad saliente a Internet: 
+7. A continuación, en el panel de la consola de **Windows PowerShell ISE**, ejecute lo siguiente para comprobar que la máquina virtual tenga conectividad saliente a Internet: 
 
     ```powershell
     Test-NetConnection -ComputerName www.bing.com -Port 80
@@ -418,7 +435,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
     >**Nota**: La prueba se realizará correctamente porque no hay ningún grupo de seguridad de red asociado a la subred Pública.
 
-1. Finalice la sesión de Escritorio remoto a la máquina virtual de Azure **myVMPublic**.
+8. Finalice la sesión de Escritorio remoto a la máquina virtual de Azure **myVMPublic**.
 
     >**Nota**: En este momento, ha confirmado que la máquina virtual de la subred Pública no puede acceder a la cuenta de almacenamiento, pero tiene acceso a Internet.
 
@@ -429,13 +446,13 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
 1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
-1. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
+2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
-1. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para quitar el grupo de recursos que creó en este laboratorio:
+3. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para quitar el grupo de recursos que creó en este laboratorio:
   
     ```powershell
     Remove-AzResourceGroup -Name "AZ500LAB12" -Force -AsJob
     ```
 
-1.  Cierre el panel de **Cloud Shell**. 
+4.  Cierre el panel de **Cloud Shell**. 
  
