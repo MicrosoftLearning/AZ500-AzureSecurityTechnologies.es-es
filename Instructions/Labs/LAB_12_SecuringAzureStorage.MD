@@ -2,12 +2,12 @@
 lab:
   title: " 12: Puntos de conexión de servicio y protección del almacenamiento"
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: ef6f31230914c8c122015334e629dad5c54dfe8d
-ms.sourcegitcommit: 47a471392d8e979c08213fe7de3fcc296adc35da
+ms.openlocfilehash: 094c35e70258656693d64a816b9ed9382eade199
+ms.sourcegitcommit: 7c5e8e9a86553c6bd9b9a6651b60c6cb9676f0ff
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "146453865"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "147168511"
 ---
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -195,13 +195,6 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
     |---|---|
     |Virtual network|**myVirtualNetwork**|
     |Subnet|**Privado**|
-
-16. En el panel **Subredes**, seleccione **+ Asociar**, especifique la siguiente configuración en la sección **Asociar subred** y, a continuación, haga clic en **Aceptar**:
-
-    |Configuración|Value|
-    |---|---|
-    |Virtual network|**myVirtualNetwork**|
-    |Subnet|**Public**|
     
 #### <a name="task-4-create-a-storage-account-with-a-file-share"></a>Tarea 4: Creación de una cuenta de almacenamiento con un recurso compartido de archivos
 
