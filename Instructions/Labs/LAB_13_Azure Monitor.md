@@ -2,12 +2,12 @@
 lab:
   title: 13 - Azure Monitor
   module: Module 04 - Manage security operations
-ms.openlocfilehash: df6fbcf475fe0a5cefec130ab713f92997dcf206
-ms.sourcegitcommit: 022221e69467f2fdccf2e02bb54e6ec395570668
+ms.openlocfilehash: d7418287b895ccb5af66f01b499181b321e2bc36
+ms.sourcegitcommit: 3c178de473f4f986a3a7ea1d03c9f5ce699a05a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2022
-ms.locfileid: "143988961"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "147871977"
 ---
 # <a name="lab-13-azure-monitor"></a>Laboratorio 13: Azure Monitor
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -112,7 +112,7 @@ En esta tarea, creará un área de trabajo de Log Analytics.
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB131415**|
     |Name|Cualquier nombre válido y único globalmente|
     |Region|**(EE. UU.) Este de EE. UU.**|
@@ -145,7 +145,7 @@ En esta tarea, configurará la recopilación del registro del sistema Windows y 
 
 1. En Azure Portal, vuelva al área de trabajo de Log Analytics que creó anteriormente en este ejercicio.
 
-2. En la hoja Área de trabajo de Log Analytics, en la sección **Configuración**, haga clic en **Configuración de agentes**.
+2. En la hoja Área de trabajo de Log Analytics, en la sección **Configuración**, haga clic en **Administración de agentes heredados**.
 
 3. En la hoja **Configuración de agentes**, revise las opciones configurables, incluidas Registros de eventos de Windows, Contadores de rendimiento de Windows, Contadores de rendimiento de Linux, Registros de IIS y Syslog. 
 
@@ -158,7 +158,7 @@ En esta tarea, configurará la recopilación del registro del sistema Windows y 
 6. Haga clic en **Contadores de rendimiento de Windows**, haga clic en **+ Add performance counter** (+ Agregar contador de rendimiento), revise la lista de contadores de rendimiento disponibles y agregue los siguientes:
 
     - Memoria (\*)\Mbytes de memoria disponibles
-    - Procesador (\*)\% Tiempo del procesador
+    - Proceso(\*)\\% de tiempo de procesador
     - Seguimiento de eventos para Windows\Uso de memoria total --- Bloque no paginado
     - Seguimiento de eventos para Windows\Uso de memoria total --- Bloque paginado
 
