@@ -2,12 +2,12 @@
 lab:
   title: '02: Azure Policy'
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: a28872fa69650b18226d3da63cac7d5a0632fb43
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: d49ce05e4620310d45317fe582bddb3aa511430b
+ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703573"
+ms.lasthandoff: 05/31/2022
+ms.locfileid: "145955403"
 ---
 # <a name="lab-02-azure-policy"></a>Laboratorio 02: Azure Policy
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -51,7 +51,7 @@ En esta tarea, creará un grupo de recursos para el laboratorio.
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 1. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
@@ -161,5 +161,12 @@ En esta tarea, probará la asignación de directiva de ubicaciones permitidas.
     ```powershell
     Remove-AzResourceGroup -Name "AZ500LAB02" -Force -AsJob
     ```
-
 1.  Cierre el panel de **Cloud Shell**. 
+  
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Directiva** y presione la tecla **Entrar**.
+
+1. Seleccione Asignaciones en la sección **Creación**.
+
+1. En la lista de asignaciones, seleccione el nombre de la directiva **Ubicaciones permitidas** que ha creado en este laboratorio.
+
+1. En la asignación de directiva, seleccione **Eliminar asignación** y, a continuación, seleccione **Sí**.

@@ -2,12 +2,12 @@
 lab:
   title: " 12: Puntos de conexión de servicio y protección del almacenamiento"
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 1bb9722fadd7d5323e8485a073f828c40bd7784b
-ms.sourcegitcommit: 7a85045fa5b0e6450a346aed7e75cd2e1cb6412a
+ms.openlocfilehash: 96c1073571e40558a102d2fd661b6b4e3b4f48d7
+ms.sourcegitcommit: 5eaa012a52e6f14e499393257855d314a720a668
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "144018076"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "147717272"
 ---
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -43,10 +43,11 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 1: Creación de una red virtual
 - Tarea 2: Adición de una subred a la red virtual y configuración de un punto de conexión de almacenamiento
 - Tarea 3: Configuración de un grupo de seguridad de red para restringir el acceso a la subred
-- Tarea 4: Creación de una cuenta de almacenamiento con un recurso compartido de archivos
-- Tarea 5: Implementación de máquinas virtuales en las subredes designadas
-- Tarea 6: Prueba de la conexión del almacenamiento desde la subred privada para confirmar que se permite el acceso
-- Tarea 7: Prueba de la conexión del almacenamiento desde la subred pública para confirmar que se denega el acceso 
+- Tarea 4: Configuración de un grupo de seguridad de red para permitir una RDP en la subred pública
+- Tarea 5: Creación de una cuenta de almacenamiento con un recurso compartido de archivos
+- Tarea 6: Implementación de máquinas virtuales en las subredes designadas
+- Tarea 7: Prueba de la conexión del almacenamiento desde la subred privada para confirmar que se permite el acceso
+- Tarea 8: Prueba de la conexión del almacenamiento desde la subred pública para confirmar que se deniega el acceso 
 
 #### <a name="task-1-create-a-virtual-network"></a>Tarea 1: Creación de una red virtual
 
@@ -64,7 +65,7 @@ En esta tarea, creará una red virtual.
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB12**|
     |Name|**myVirtualNetwork**|
     |Region|**(EE. UU.) Este de EE. UU.**|
@@ -116,7 +117,7 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB12**|
     |Name|**myNsgPrivate**|
     |Region|**Este de EE. UU.**|
@@ -196,7 +197,57 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
     |Virtual network|**myVirtualNetwork**|
     |Subnet|**Privado**|
 
-#### <a name="task-4-create-a-storage-account-with-a-file-share"></a>Tarea 4: Creación de una cuenta de almacenamiento con un recurso compartido de archivos
+#### <a name="task-4-configure-a-network-security-group-to-allow-rdp-on-the-public-subnet"></a>Tarea 4: Configuración de un grupo de seguridad de red para permitir una RDP en la subred pública
+
+En esta tarea, creará un grupo de seguridad de red con una regla de seguridad de entrada (RDP). También asociará el grupo de seguridad de red a la subred pública. Esto permitirá el acceso de la RDP a la máquina virtual pública.
+
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de seguridad de red** y presione la tecla **Entrar**.
+
+2. En el panel **Grupos de seguridad de red**, haga clic en **+ Crear**.
+
+3. En la pestaña **Aspectos básicos** del panel **Crear grupo de seguridad de red**, especifique la siguiente configuración: 
+
+    |Configuración|Value|
+    |---|---|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
+    |Resource group|**AZ500LAB12**|
+    |Name|**myNsgPublic**|
+    |Region|**Este de EE. UU.**|
+
+4. Haga clic en **Revisar y crear** y, a continuación, en **Crear**.
+
+    >**Nota**: En los pasos siguientes, creará una regla de seguridad de salida que permita la comunicación con el servicio de Azure Storage. 
+
+5. En Azure Portal, vuelva al panel **Grupos de seguridad de red** y haga clic en la entrada **myNsgPublic**.
+
+6. En el panel **myNsgPublic**, en la sección **Configuración**, haga clic en **Reglas de seguridad de entrada** y, a continuación, en **+ Agregar**.
+
+7. En el panel **Agregar regla de seguridad de entrada**, configure las opciones siguientes (deje todas las demás con los valores predeterminados): 
+
+    |Configuración|Value|
+    |---|---|
+    |Source|**Cualquiera**|
+    |Source port ranges|**\***|
+    |Destination|**Etiqueta de servicio**|
+    |Etiqueta de servicio de destino|**VirtualNetwork**|
+    |Intervalos de puertos de destino|**3389**|
+    |Protocolo|**TCP**|
+    |Acción|**Permitir**|
+    |Priority|**1200**|                                                    
+    |Name|**Allow-RDP-All (Permitir-RDP-Todo)**|
+
+8. En el panel **Agregar regla de seguridad de entrada**, haga clic en **Agregar** para crear la nueva regla de entrada. 
+
+    >**Nota**: Ahora asociará el grupo de seguridad de red a la subred pública.
+
+9. En el panel **Subredes**, seleccione **+ Asociar**, especifique la siguiente configuración en la sección **Asociar subred** y, a continuación, haga clic en **Aceptar**:
+
+    |Configuración|Value|
+    |---|---|
+    |Virtual network|**myVirtualNetwork**|
+    |Subnet|**Public**|
+    
+#### <a name="task-5-create-a-storage-account-with-a-file-share"></a>Tarea 5: Creación de una cuenta de almacenamiento con un recurso compartido de archivos
 
 En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de archivos y obtendrá la clave de la cuenta de almacenamiento.  
 
@@ -208,7 +259,7 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB12**|
     |Nombre de la cuenta de almacenamiento|Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos|
     |Location|**(EE. UU.) EastUS**|
@@ -247,7 +298,7 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
 
 14. Vuelva al panel de la cuenta de almacenamiento y, a continuación, en la sección **Seguridad y redes**, haga clic en **Redes**.
 
-15. En el panel **Firewalls y redes virtuales**, seleccione la opción **Redes seleccionadas** y haga clic en el vínculo **+ Agregar red virtual existente**. 
+15. En la hoja **Firewalls y redes virtuales**, seleccione la opción **Habilitado desde redes virtuales y direcciones IP seleccionadas** y haga clic en el vínculo **+ Agregar red virtual existente**. 
 
 16. En el panel **Agregar redes**, configure las opciones siguientes:
 
@@ -263,7 +314,7 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
 
     >**Nota**: En este punto del laboratorio ha configurado una red virtual, un grupo de seguridad de red y una cuenta de almacenamiento con un recurso compartido de archivos. 
 
-#### <a name="task-5-deploy-virtual-machines-into-the-designated-subnets"></a>Tarea 5: Implementación de máquinas virtuales en las subredes designadas
+#### <a name="task-6-deploy-virtual-machines-into-the-designated-subnets"></a>Tarea 6: Implementación de máquinas virtuales en las subredes designadas
 
 En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la otra en la subred Pública. 
 
@@ -341,7 +392,7 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
 
     >**Nota**: Puede continuar con la siguiente tarea una vez completada la implementación de la máquina virtual de Azure **myVMPrivate**.
 
-#### <a name="task-6-test-the-storage-connection-from-the-private-subnet-to-confirm-that-access-is-allowed"></a>Tarea 6: Prueba de la conexión del almacenamiento desde la subred privada para confirmar que se permite el acceso
+#### <a name="task-7-test-the-storage-connection-from-the-private-subnet-to-confirm-that-access-is-allowed"></a>Tarea 7: Prueba de la conexión del almacenamiento desde la subred privada para confirmar que se permite el acceso
 
 En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escritorio remoto y asignará una unidad al recurso compartido de archivos. 
 
@@ -393,7 +444,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
     >**Nota**: En este momento, ha confirmado que la máquina virtual de la subred Privada puede acceder a la cuenta de almacenamiento. 
 
-####  <a name="task-7-test-the-storage-connection-from-the-public-subnet-to-confirm-that-access-is-denied"></a>Tarea 7: Prueba de la conexión del almacenamiento desde la subred pública para confirmar que se denega el acceso 
+####  <a name="task-8-test-the-storage-connection-from-the-public-subnet-to-confirm-that-access-is-denied"></a>Tarea 8: Prueba de la conexión del almacenamiento desde la subred pública para confirmar que se deniega el acceso 
 
 1. Vuelva al panel **Máquinas virtuales**. 
 
@@ -426,7 +477,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
     Test-NetConnection -ComputerName www.bing.com -Port 80
     ```
 
-    >**Nota**: La prueba se realizará correctamente porque no hay ningún grupo de seguridad de red asociado a la subred Pública.
+    >**Nota**: La prueba tendrá éxito porque no hay una regla de seguridad de salida para denegar el acceso a Internet en la subred pública.
 
 8. Finalice la sesión de Escritorio remoto a la máquina virtual de Azure **myVMPublic**.
 
@@ -448,4 +499,4 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
     ```
 
 4.  Cierre el panel de **Cloud Shell**. 
- 
+

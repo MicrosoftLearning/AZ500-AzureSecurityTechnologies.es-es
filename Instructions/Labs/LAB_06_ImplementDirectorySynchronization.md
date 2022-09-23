@@ -2,12 +2,12 @@
 lab:
   title: 06 - Implementación de la sincronización de directorios
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 96871a9f1e59adde1489533ecbab8a1e85a89fbc
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 00c359e1875ab915ab697d8ed33e36d956540529
+ms.sourcegitcommit: 1da29a6d959a7f91dbbcbabf5ec06869c98fc1f1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703519"
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "141267261"
 ---
 # <a name="lab-06-implement-directory-synchronization"></a>Laboratorio 06: Implementación de la sincronización de directorios
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -77,8 +77,6 @@ En esta tarea, identificará un nombre DNS para la implementación de la VM de A
 
 En esta tarea, implementará una VM de Azure que hospedará un controlador de dominio de Active Directory.
 
->**Nota**: Deberá crear una contraseña única que se usará para crear máquinas virtuales durante el resto del curso. La contraseña debe tener al menos 12 caracteres y cumplir los requisitos de complejidad definidos (tres de los siguientes: una minúscula, una mayúscula, un número y un carácter especial). [Requisitos de contraseña de máquinas virtuales](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-) Anote la contraseña.
-
 1. Abra otra pestaña del explorador en la misma ventana del explorador y vaya a **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain**.
 
 2. En la página **Create a new Windows VM and create a new AD Forest, Domain and DC** (Crear una VM Windows y un bosque, un dominio y un controlador de dominio de AD), haga clic en **Implementar en Azure**. Se redirigirá automáticamente el explorador a la hoja **Create an Azure VM with a new AD Forest** (Crear una VM de Azure con un nuevo bosque de AD) en Azure Portal.
@@ -89,13 +87,13 @@ En esta tarea, implementará una VM de Azure que hospedará un controlador de do
 
 5. En la hoja **Create an Azure VM with a new AD Forest** (Crear una VM de Azure con un nuevo bosque de AD), especifique la configuración siguiente (deje las demás opciones con los valores existentes):
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Subscription|nombre de la suscripción de Azure|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB06**.|
    |Region|Región de Azure que identificó en la tarea anterior|
    |Nombre de usuario administrador|**Estudiante**|
-   |Contraseña de administrador|**Use la contraseña que creó en la nota anterior.**|
+   |Contraseña de administrador|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    |Nombre de dominio|**adatum.com**|
    |Prefijo de DNS|Nombre de host DNS que identificó en la tarea anterior|
    |Tamaño de VM|**Standard_D2s_v3**|
@@ -169,7 +167,7 @@ En esta tarea, agregará un nuevo usuario de Azure AD y lo asignará al rol Admi
 
 1. En la hoja **AdatumSync** del inquilino de Azure AD, en la sección **Administrar**, haga clic en **Usuarios**.
 
-2. En el panel **Usuarios\| Todos los usuarios (versión preliminar)** , haga clic en **+ Nuevo usuario**. 
+2. En la hoja **Usuarios \| Todos los usuarios**, haga clic en **+ Nuevo usuario**. 
 
 3. En la hoja **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada, especifique la siguiente configuración (deje la otra configuración con sus valores predeterminados) y haga clic en **Crear**:
 
@@ -228,7 +226,7 @@ En esta tarea, se conectará a la VM de Azure que ejecuta el controlador de domi
    |Configuración|Valor|
    |---|---|
    |Nombre de usuario|**Estudiante**|
-   |Contraseña|**Contraseña única que creó en el ejercicio 1, tarea 2**|
+   |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que se carguen la sesión de Escritorio remoto y **Administrador del servidor**.  
 
@@ -257,7 +255,7 @@ En esta tarea, se conectará a la VM de Azure que ejecuta el controlador de domi
    |Nombre completo|**aduser1**|
    |Inicio de sesión UPN de usuario|**aduser1**|
    |Inicio de sesión SamAccountName de usuario|**aduser1**|
-   |Contraseña y Confirmar contraseña|**Pa55w.rd1234**|
+   |Contraseña y Confirmar contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    |Otras opciones de contraseña|**La contraseña nunca expira**|
 
 #### <a name="task-2-install-azure-ad-connect"></a>Parte 2: Instalar Azure AD Connect
@@ -293,7 +291,7 @@ En esta tarea, instalará AD Conectar en la máquina virtual.
    |Configuración|Value|
    |---|---|
    |Nombre de usuario|**ADATUM\\Student**|
-   |Contraseña|**Pa55w.rd1234**|
+   |Contraseña|**Use su contraseña personal creada en Laboratorio 06 > Ejercicio 1 > Tarea 2.**|
 
 14. De nuevo en la página **Conectar sus directorios**, asegúrese de que la entrada **adatum.com** aparece como un directorio configurado y haga clic en **Siguiente**.
 

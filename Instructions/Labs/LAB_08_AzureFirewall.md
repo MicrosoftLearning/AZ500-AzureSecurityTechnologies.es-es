@@ -2,12 +2,12 @@
 lab:
   title: 08 - Azure Firewall
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: cb13c319b70c994bed74b1079bc4ad8fe6209361
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: 1657a251f1355150d6386f8793825369be955705
+ms.sourcegitcommit: e9389f8de66fec6d456a3f303bd350e380df7ff2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703513"
+ms.lasthandoff: 04/04/2022
+ms.locfileid: "141371919"
 ---
 # <a name="lab-08-azure-firewall"></a>Laboratorio 08: Azure Firewall
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -167,13 +167,14 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
    |Configuración|Value|
    |---|---|
    |Nombre de ruta|**FW-DG**|
-   |Prefijo de dirección|**0.0.0.0/0**
+   |Origen de prefijo de la dirección|**Direcciones IP**|
+   |Intervalos de direcciones IP de origen y CIDR|**0.0.0.0/0**
    |Tipo de próximo salto|**Aplicación virtual**|
    |Siguiente dirección de salto|Dirección IP privada del firewall que identificó en la tarea anterior|
 
     >**Nota**: Azure Firewall es en realidad un servicio administrado, pero la aplicación virtual funciona en esta situación.
     
-11.  Haga clic en **Aceptar** para agregar la ruta. 
+11.  Haga clic en **Agregar** para agregar la ruta. 
 
 
 #### <a name="task-4-configure-an-application-rule"></a>Tarea 4: Configurar una regla de aplicación

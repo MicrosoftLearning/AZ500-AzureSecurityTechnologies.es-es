@@ -2,12 +2,12 @@
 lab:
   title: 04 - MFA, acceso condicional y AAD Identity Protection
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: c4b21d80083316c681f5916c5fe75973220695d1
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
+ms.openlocfilehash: f63f8a24c0d9b7c870967ee8c83292bd80b617f9
+ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703525"
+ms.lasthandoff: 04/04/2022
+ms.locfileid: "141368718"
 ---
 # <a name="lab-04-mfa-conditional-access-and-aad-identity-protection"></a>Laboratorio 04: MFA, acceso condicional y AAD Identity Protection
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -80,6 +80,8 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
 
 9. En el panel **Implementación personalizada**, asegúrese de que las siguientes opciones están configuradas (deje las demás con los valores predeterminados):
 
+>**Nota**: Deberá crear una contraseña única que se usará para crear máquinas virtuales durante el resto del curso. La contraseña debe tener al menos 12 caracteres y cumplir los requisitos de complejidad definidos (tres de los siguientes: una minúscula, una mayúscula, un número y un carácter especial). [Requisitos de contraseña de máquinas virtuales](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-) Anote la contraseña.
+
    |Configuración|Value|
    |---|---|
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
@@ -88,10 +90,10 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
    |Tamaño de máquina virtual:|**Standard_D2s_v3**|
    |Nombre de la máquina virtual|**az500-04-vm1**|
    |Nombre de usuario administrador|**Estudiante**|
-   |Contraseña de administrador|**Pa55w.rd1234**|
+   |Contraseña de administrador|**Cree una contraseña y guárdela para poder consultarla más adelante. Se le pedirá que introduzca esta contraseña para acceder al laboratorio.**|
    |El nombre de la red virtual|**az500-04-vnet1**|
 
-    >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar VM de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
 
 10. Haga clic en **Revisar y crear** y después en **Crear**.
 
@@ -162,7 +164,7 @@ En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 
 
 1. Vuelva a la hoja **AdatumLab500-04**  Azure Active Directory y, en la sección **Administrar**, haga clic en **Usuarios**.
 
-2. En el panel **Usuarios\| Todos los usuarios (versión preliminar)** , haga clic en **+ Nuevo usuario**. 
+2. En la hoja **Usuarios \| Todos los usuarios**, haga clic en **+ Nuevo usuario**. 
 
 3. En la hoja **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada y, a continuación, especifique la siguiente configuración (deje la otra configuración con sus valores predeterminados) y haga clic en **Crear**:
 
@@ -179,7 +181,7 @@ En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 
 
     >**Nota**: Registre la contraseña del usuario. La necesitará más adelante en este laboratorio. 
 
-4. De nuevo en el panel **Usuarios \| Todos los usuarios (versión preliminar)** , haga clic en **+ Nuevo usuario**. 
+4. De nuevo en la hoja **Usuarios \| Todos los usuarios**, haga clic en **+ Nuevo usuario**. 
 
 5. En la hoja **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada y, a continuación, especifique la siguiente configuración (deje la otra configuración con sus valores predeterminados):
 
@@ -194,7 +196,7 @@ En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 
 
     >**Nota**: Registre el nombre de usuario completo y la contraseña.
 
-6. De nuevo en el panel **Usuarios \| Todos los usuarios (versión preliminar)** , haga clic en **+ Nuevo usuario**. 
+6. De nuevo en la hoja **Usuarios \| Todos los usuarios**, haga clic en **+ Nuevo usuario**. 
 
 7. Haga clic en **Nuevo usuario**, complete las nuevas opciones de configuración de usuario y, a continuación, haga clic en **Crear**.
 
@@ -215,7 +217,7 @@ En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 
 
 En esta tarea, asignará cada usuario a la licencia de Azure Active Directory Premium P2.
 
-1. En el panel **Usuarios \| Todos los usuarios (versión preliminar)** , haga clic en la entrada que represente su cuenta de usuario. 
+1. En la hoja **Usuarios \| Todos los usuarios**, haga clic en la entrada que representa su cuenta de usuario. 
 
 2. En la hoja que muestra las propiedades de la cuenta de usuario, haga clic en **Editar**.  Compruebe que Ubicación de uso esté establecido en **Estados Unidos** si no establece la ubicación de uso y haga clic en **Guardar**.
 
@@ -431,7 +433,7 @@ En esta tarea, verá las opciones de Azure AD Identity Protection en Azure Porta
 
 3. En la hoja **Seguridad \| Introducción**, en la sección **Proteger**, haga clic en **Identity Protection**.
 
-4. En la hoja **Identity Protection \| Información general**, revise las opciones **Proteger**, **Informar** y **Notificar**. 
+4. En la hoja **Identity Protection \| Información general**, revise los gráficos **Se detectaron nuevos usuarios de riesgo** y **Se detectaron nuevos inicio de sesión de riesgo** y otra información sobre los usuarios de riesgo. 
 
 #### <a name="task-2-configure-a-user-risk-policy"></a>Tarea 2: Configurar una directiva de riesgo de usuario
 
@@ -484,7 +486,7 @@ En esta tarea, configurará una directiva de riesgo de inicio de sesión.
    |Configuración|Valor|
    |---|---|
    |Nombre de usuario|**Estudiante**|
-   |Contraseña|**Pa55w.rd1234**|
+   |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que se carguen la sesión de Escritorio remoto y **Administrador del servidor**.  
 

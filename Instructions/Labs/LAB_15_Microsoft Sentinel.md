@@ -2,12 +2,12 @@
 lab:
   title: 15 - Microsoft Sentinel
   module: Module 04 - Manage Security Operations
-ms.openlocfilehash: 63a24bbc17b846d3587cf3fb83ab46b7235d5fcd
-ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
+ms.openlocfilehash: 147bb0c8f6637393087c5a913f5c9bd8ca380866
+ms.sourcegitcommit: 3c178de473f4f986a3a7ea1d03c9f5ce699a05a4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141368795"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "147871968"
 ---
 # <a name="lab-15-microsoft-sentinel"></a>Laboratorio 15: Microsoft Sentinel
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
@@ -147,7 +147,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB131415**|
     |Location|**(EE. UU.) Este de EE. UU.**|
     |Nombre del cuaderno de estrategias|**Change-Incident-Severity**|
@@ -217,7 +217,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 9. En la pestaña **Configuración del incidente** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , acepte la configuración predeterminada y haga clic en **Siguiente: Respuesta automatizada >** . 
 
-10. En la pestaña **Respuesta automatizada** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , en la lista desplegable **Automatización de alertas**, active la casilla situada junto a la entrada **Change-Incident-Severity** y haga clic en **Siguiente: Revisar >** . 
+10. En la pestaña **Respuesta automatizada** del panel **Asistente para reglas de análisis - Crear nueva regla**, en la lista desplegable **Automatización de alertas (clásica)** , active la casilla situada junto a la entrada **Cambiar-Incidente-Gravedad** y haga clic en **Siguiente: Revisar >** . 
 
 11. En la pestaña **Revisar y crear** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , haga clic en **Crear**.
 
