@@ -1,14 +1,9 @@
 ---
 lab:
-  title: 08 - Azure Firewall
+  title: "08 - Azure\_Firewall"
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: 1657a251f1355150d6386f8793825369be955705
-ms.sourcegitcommit: e9389f8de66fec6d456a3f303bd350e380df7ff2
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141371919"
 ---
+
 # <a name="lab-08-azure-firewall"></a>Laboratorio 08: Azure Firewall
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -84,7 +79,7 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB08**.|
    |Location|**(EE. UU.) Este de EE. UU.**|
 
-    >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar VM de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar VM de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
 
 7. Haga clic en **Revisar y crear** y después en **Crear**.
 
@@ -167,8 +162,8 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
    |Configuración|Value|
    |---|---|
    |Nombre de ruta|**FW-DG**|
-   |Origen de prefijo de la dirección|**Direcciones IP**|
-   |Intervalos de direcciones IP de origen y CIDR|**0.0.0.0/0**
+   |Destino del prefijo de dirección|**Dirección IP**|
+   |Intervalos de direcciones IP de destino y CIDR|**0.0.0.0/0**
    |Tipo de próximo salto|**Aplicación virtual**|
    |Siguiente dirección de salto|Dirección IP privada del firewall que identificó en la tarea anterior|
 

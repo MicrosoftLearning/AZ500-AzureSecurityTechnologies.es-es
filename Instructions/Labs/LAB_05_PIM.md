@@ -2,13 +2,8 @@
 lab:
   title: 05 - Azure AD Privileged Identity Management
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 6ef7c51d334587e5e4e7116194fa46f2eb5d1df0
-ms.sourcegitcommit: 1da29a6d959a7f91dbbcbabf5ec06869c98fc1f1
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 03/30/2022
-ms.locfileid: "141267273"
 ---
+
 # <a name="lab-05-azure-ad-privileged-identity-management"></a>Laboratorio 05: Azure AD Privileged Identity Management
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -37,7 +32,7 @@ En este laboratorio completará los ejercicios siguientes:
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157522920-264ce57e-5c55-4a9d-8f35-e046e1a1e219.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Instrucciones
 
 ### <a name="exercise-1---configure-pim-users-and-roles"></a>Ejercicio 1: Configurar usuarios y roles de PIM
 
@@ -97,7 +92,7 @@ En esta tarea, hará que un usuario sea apto para un rol de directorio de Azure 
 
 6. En la pestaña **Activación**, active la casilla **Se requiere aprobación para activar.**
 
-7. Haga clic en **Seleccionar aprobadores** y, en la hoja **Seleccionar un miembro**, haga clic en **aaduser3** y, a continuación, en **Seleccionar**.
+7. Haga clic en **Seleccionar aprobadores** y, en la hoja **Seleccionar un miembro**, haga clic en **aaduser3**y, a continuación, en **Seleccionar**.
 
 8. Haga clic en **Siguiente: asignación**.
 
