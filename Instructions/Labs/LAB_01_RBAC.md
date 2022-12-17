@@ -2,13 +2,8 @@
 lab:
   title: '01: Control de acceso basado en roles'
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 156b27cdbdd97656e8ccd85c4ed3656c0db91937
-ms.sourcegitcommit: 46495f1eba96da4be553aff5b7521e7ab62f50b8
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "146032713"
 ---
+
 # <a name="lab-01-role-based-access-control"></a>Laboratorio 01: Control de acceso basado en roles
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -25,7 +20,7 @@ Se le ha pedido que cree una prueba de concepto que muestre cómo se crean los u
 
 ## <a name="lab-objectives"></a>Objetivos del laboratorio
 
-En este laboratorio completará los ejercicios siguientes
+En este laboratorio completará los ejercicios siguientes:
 
 - Ejercicio 1: Creación del grupo Administradores sénior con la cuenta de usuario de Joseph Price como miembro (Azure Portal). 
 - Ejercicio 2: Creación del grupo Administradores junior con la cuenta de usuario de Isabel García como miembro (PowerShell).

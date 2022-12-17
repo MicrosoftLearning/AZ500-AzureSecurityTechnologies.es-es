@@ -2,13 +2,8 @@
 lab:
   title: 09 - Configuración y protección de ACR y AKS
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: 167dca080d65d97997b3a884015bfa2228c17a23
-ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2022
-ms.locfileid: "145955422"
 ---
+
 # <a name="lab-09-configuring-and-securing-acr-and-aks"></a>Laboratorio 09: Configuración y protección de ACR y AKS
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -112,7 +107,7 @@ En esta tarea, creará un Dockerfile, compilará una imagen a partir del Dockerf
     ```sh
     ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
 
-    az acr build --image sample/nginx:v1 --registry $ACRNAME --file Dockerfile .
+    az acr build --resource-group AZ500LAB09 --image sample/nginx:v1 --registry $ACRNAME --file Dockerfile .
     ```
 
     >**Nota**: Espere a que el comando se complete correctamente. Esto puede tardar unos 2 minutos.
