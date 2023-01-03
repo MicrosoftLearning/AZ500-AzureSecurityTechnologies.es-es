@@ -1,14 +1,9 @@
 ---
 lab:
-  title: " 12: Puntos de conexión de servicio y protección del almacenamiento"
+  title: ' 12: Puntos de conexión de servicio y protección del almacenamiento'
   module: Module 03 - Secure data and applications
-ms.openlocfilehash: 96c1073571e40558a102d2fd661b6b4e3b4f48d7
-ms.sourcegitcommit: 5eaa012a52e6f14e499393257855d314a720a668
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "147717272"
 ---
+
 # <a name="lab-12-service-endpoints-and-securing-storage"></a>Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -59,7 +54,7 @@ En esta tarea, creará una red virtual.
 
 2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Redes virtuales** y presione la tecla **Entrar**.
 
-3. En el panel **Redes virtuales**, haga clic en **+ Crear**.
+3. En el panel **Redes virtuales**, haga clic en  **+ Crear**.
 
 4. En la pestaña **Aspectos básicos** del panel **Crear red virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Direcciones IP**:
 
@@ -253,9 +248,9 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Cuentas de almacenamiento** y presione la tecla **Entrar**.
 
-2. En el panel **Cuentas de almacenamiento**, haga clic en **+ Crear**.
+2. En el panel **Cuentas de almacenamiento**, haga clic en  **+ Crear**.
 
-3. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
+3. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
     |Configuración|Value|
     |---|---|
@@ -336,7 +331,7 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Nombre de usuario|**localadmin**|
     |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
-    |Ya tiene una licencia de Windows Server.|**No**|
+    |Ya tiene una licencia de Windows Server.|**No seleccionado**|
 
     >**Nota**: Para los puertos de entrada públicos, nos basaremos en el grupo de seguridad de red creado previamente. 
 
@@ -371,7 +366,7 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Nombre de usuario|**localadmin**|
     |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
-    |Ya tiene una licencia de Windows Server.|**No**|
+    |Ya tiene una licencia de Windows Server.|**No seleccionado**|
 
     >**Nota**: Para los puertos de entrada públicos, nos basaremos en el grupo de seguridad de red creado previamente. 
 
@@ -428,7 +423,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
        Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
     }
     ```
-    >**Nota**: El marcador de posición `<storage-account-name>` representa el nombre de la cuenta de almacenamiento que hospeda el recurso compartido de archivos y `<storage_account_name>` uno su clave principal
+    >**Nota**: El marcador de posición `<storage_account_name>` representa el nombre de la cuenta de almacenamiento que hospeda el recurso compartido de archivos y `<storage_account_key>` uno su clave principal
 
 7. Inicie el Explorador de archivos y compruebe que la asignación de la unidad Z: se ha creado correctamente.
 

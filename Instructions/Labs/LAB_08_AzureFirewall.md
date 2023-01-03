@@ -67,9 +67,9 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
 
 4. En la hoja **Editar plantilla**, haga clic en **Cargar archivo**, busque el archivo **\\Allfiles\\Labs\\08\\template.json** y haga clic en **Abrir**.
 
-    >**Nota**: Revise el contenido de la plantilla y observe que implementa una VM de Azure que hospeda Windows Server 2019 Datacenter.
+    >**Nota**: Revise el contenido de la plantilla y observe que implementa una VM de Azure que hospeda Windows Server 2016 Datacenter.
 
-5. En la hoja **Editar plantilla**, haga clic en **Guardar**.
+5. En el panel **Editar plantilla**, haga clic en **Guardar**.
 
 6. En el panel **Implementación personalizada**, asegúrese de que las siguientes opciones están configuradas (deje las demás con los valores predeterminados):
 

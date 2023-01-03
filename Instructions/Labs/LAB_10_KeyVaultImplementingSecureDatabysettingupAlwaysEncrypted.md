@@ -2,13 +2,8 @@
 lab:
   title: '10: Key Vault (implementación de datos seguros mediante la configuración de Always Encrypted)'
   module: Module 03 - Secure Data and Applications
-ms.openlocfilehash: c31dd6e930e0f1d1b82e7c6ea502bb6fa51a7dd7
-ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2022
-ms.locfileid: "145955394"
 ---
+
 # <a name="lab-10-key-vault-implementing-secure-data-by-setting-up-always-encrypted"></a>Laboratorio 10: Key Vault (implementación de datos seguros mediante la configuración de Always Encrypted)
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -74,13 +69,13 @@ En esta tarea, implementará una máquina virtual de Azure, que instalará autom
    |---|---|
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB10**|
-   |Location|**(EE. UU.) Este de EE. UU.**|
+   |Location|**Este de EE. UU.**|
    |Nombre de usuario administrador|**Estudiante**|
    |Contraseña de administrador|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    
     >**Nota**: Aunque puede cambiar las credenciales administrativas usadas para iniciar sesión en la máquina virtual, no es obligatorio.
 
-    >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar máquinas virtuales de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar máquinas virtuales de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
 
 7. Haga clic en el botón **Revisar y crear** y confirme la implementación haciendo clic en el botón **Crear**. 
 
@@ -126,20 +121,22 @@ En esta tarea, creará un recurso de Azure Key Vault. También configurará los 
 
 7. En el panel Grupo de recursos, haga clic en la entrada que representa el Key Vault recién creado. 
 
-8. En el panel Key Vault, en la sección **Configuración**, haga clic en **Directivas de acceso** y, a continuación, haga clic en **+ Agregar directiva de acceso**.
+8. En la hoja Key Vault, en la sección **Información general**, haga clic en **Directivas de acceso** y, a continuación, haga clic en **+ Crear**.
 
-9. En el panel **Agregar directiva de acceso**, configure las opciones siguientes (deje todas las demás con los valores predeterminados): 
+9. En el panel **Crear una directiva de acceso**, configure las opciones siguientes (deje todas las demás con los valores predeterminados): 
 
     |Configuración|Value|
     |----|----|
     |Configurar a partir de una plantilla (opcional)|**Administración de claves, secretos y certificados**|
-    |Permisos de claves|Haga clic en **Seleccionar todo** que genera **17 permisos seleccionados** (compruebe que los permisos de **Operaciones de directiva de rotación** estén **desmarcados**). |
-    |Permisos de secretos|haga clic en **Seleccionar todo**, lo que da como resultado un total de **8 permisos seleccionados**|
-    |Permisos de certificación|haga clic en **Seleccionar todo**, lo que da como resultado un total de **16 permisos seleccionados**|
-    |Selección de la entidad de seguridad|haga clic en **Ninguno seleccionado** en el panel **Entidad de seguridad**, seleccione la cuenta de usuario y haga clic en **Seleccionar**|
-
-10. De nuevo en el panel **Agregar directiva de acceso**, haga clic en **Agregar** para agregar la directiva de acceso y, de nuevo en el panel directivas de acceso del Key Vault, haga clic en **Guardar** en los cambios. 
-
+    |Permisos de claves|Haga clic en **Seleccionar todo**, lo que da como resultado **12 permisos seleccionados** (compruebe que los permisos de **Operaciones de directiva de rotación** estén **desmarcados**). |
+    |Permisos de secretos|haga clic en **Seleccionar todo**, lo que da como resultado un total de **7 permisos seleccionados**|
+    |Permisos de certificación|haga clic en **Seleccionar todo**, lo que da como resultado un total de **15 permisos seleccionados**|
+    |Selección de la entidad de seguridad|haga clic en **Ninguno seleccionado** en la hoja **Entidad de seguridad**, seleccione la cuenta de usuario y haga clic en **Siguiente**.|
+    |Aplicación (opcional)|Haga clic en **Siguiente**|
+    |Revisar y crear|haga clic en **Crear**.|
+    
+    >**Nota**: La operación anterior Revisar y crear vuelve a la página Directivas de acceso que enumera Aplicación, Correo electrónico, Permisos de clave, Permisos de secreto y Permisos de certificado.
+      
 #### <a name="task-2-add-a-key-to-key-vault"></a>Tarea 2: Adición de una clave a Key Vault
 
 En esta tarea, agregará una clave al Key Vault y verá información sobre la clave. 
@@ -172,7 +169,7 @@ En esta tarea, agregará una clave al Key Vault y verá información sobre la cl
 
 6. Minimice el panel de Cloud Shell. 
 
-7. De nuevo en Azure Portal, en el panel de Key Vault, en la sección **Configuración**, haga clic en **Claves**.
+7. De nuevo en Azure Portal, en la hoja de Key Vault, en la sección **Objetos**, haga clic en **Claves**.
 
 8. En la lista de claves, haga clic en la entrada **MyLabKey** y, a continuación, en el panel **MyLabKey**, haga clic en la entrada que representa la versión actual de la clave.
 
@@ -207,7 +204,7 @@ En esta tarea, agregará una clave al Key Vault y verá información sobre la cl
 
 5. Minimice el panel de Cloud Shell. 
 
-6. En Azure Portal, vaya al panel de Key Vault y, en la sección **Configuración**, haga clic en **Secretos**.
+6. En Azure Portal, vaya la hoja de Key Vault y, en la sección **Objetos**, haga clic en **Secretos**.
 
 7. En la lista de secretos, haga clic en la entrada **SQLPassword** y, a continuación, en el panel **SQLPassword**, haga clic en la entrada que representa la versión actual del secreto.
 
@@ -229,7 +226,7 @@ En este ejercicio completará las tareas siguientes:
 
 #### <a name="task-1-enable-a-client-application-to-access-the-azure-sql-database-service"></a>Tarea 1: Habilitación de una aplicación cliente para obtener acceso al servicio de Azure SQL Database. 
 
-En esta tarea, habilitará una aplicación cliente para obtener acceso al servicio de Azure SQL Database. Para ello, debe configurar la autenticación necesaria y adquirir el identificador y el secreto de aplicación necesarios para autenticar la aplicación. T
+En esta tarea, habilitará una aplicación cliente para obtener acceso al servicio de Azure SQL Database. Para ello, debe configurar la autenticación necesaria y adquirir el identificador y el secreto de aplicación necesarios para autenticar la aplicación.
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Registros de la aplicación** y presione la tecla **Entrar**.
 

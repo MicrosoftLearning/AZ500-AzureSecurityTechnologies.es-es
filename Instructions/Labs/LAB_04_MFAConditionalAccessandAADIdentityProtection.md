@@ -1,14 +1,9 @@
 ---
 lab:
-  title: 04 - MFA, acceso condicional y AAD Identity Protection
+  title: '04 - MFA, acceso condicional y AAD Identity Protection'
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: f63f8a24c0d9b7c870967ee8c83292bd80b617f9
-ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141368718"
 ---
+
 # <a name="lab-04-mfa-conditional-access-and-aad-identity-protection"></a>Laboratorio 04: MFA, acceso condicional y AAD Identity Protection
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -86,7 +81,7 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
    |---|---|
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB04**.|
-   |Location|**(EE. UU.) Este de EE. UU.**|
+   |Location|**Este de EE. UU.**|
    |Tamaño de máquina virtual:|**Standard_D2s_v3**|
    |Nombre de la máquina virtual|**az500-04-vm1**|
    |Nombre de usuario administrador|**Estudiante**|
@@ -219,7 +214,7 @@ En esta tarea, asignará cada usuario a la licencia de Azure Active Directory Pr
 
 1. En la hoja **Usuarios \| Todos los usuarios**, haga clic en la entrada que representa su cuenta de usuario. 
 
-2. En la hoja que muestra las propiedades de la cuenta de usuario, haga clic en **Editar**.  Compruebe que Ubicación de uso esté establecido en **Estados Unidos** si no establece la ubicación de uso y haga clic en **Guardar**.
+2. En la hoja que muestra las propiedades de la cuenta de usuario, haga clic en **Editar propiedades**.  Compruebe que Ubicación de uso esté establecido en **Estados Unidos** si no establece la ubicación de uso y haga clic en **Guardar**.
 
 3. Vuelva a la hoja **AdatumLab500-04**  Azure Active Directory y, en la sección **Administrar**, haga clic en **Licencias**.
 
@@ -229,7 +224,7 @@ En esta tarea, asignará cada usuario a la licencia de Azure Active Directory Pr
 
 6. En la hoja **Usuarios**, seleccione **aaduser1**, **aaduser2**, **aaduser3** y su cuenta de usuario, y haga clic en **Seleccionar**.
 
-7. De nuevo en hoja **Asignar licencias**, haga clic en **Opciones de asignación**, asegúrese de que todas las opciones están habilitadas, haga clic en **Review + assign** (Revisar y asignar) y luego en **Asignar**.
+7. De nuevo en hoja **Asignar licencias**, haga clic en **Opciones de asignación**, asegúrese de que todas las opciones están habilitadas, haga clic en **Revisar y asignar** y luego en **Asignar**.
 
 8. Cierre la sesión de Azure Portal y vuelva a iniciarla con la misma cuenta. Este paso es necesario para que la asignación de licencias surta efecto.
 
@@ -245,13 +240,13 @@ En esta tarea, configurará MFA y habilitará MFA para aaduser1.
 
 2. En la hoja **AdatumLab500-04** del inquilino de Azure Active Directory, en la sección **Administrar**, haga clic en **Seguridad**.
 
-3. En la hoja **Seguridad \| Introducción**, en la sección **Administrar**, haga clic en **MFA**.
+3. En la hoja **Seguridad \| Introducción**, en la sección **Administrar**, haga clic en **Autenticación multifactor**.
 
-4. En la hoja **Multi-Factor Authentication \| Introducción**, haga clic en el vínculo **Configuración adicional de MFA basado en la nube**. 
+4. En la hoja **Autenticación multifactor \| Introducción**, haga clic en el vínculo **Configuración adicional de la autenticación multifactor basada en la nube**. 
 
-    >**Nota**: Se abrirá una nueva pestaña del explorador, que muestra la página **Multi-Factor Authentication**.
+    >**Nota**: Se abrirá una nueva pestaña del explorador, que muestra la página **Autenticación multifactor**.
 
-5. En la página **Multi-Factor Authentication**, haga clic en la **Configuración del servicio**. Revise las **opciones de comprobación**. Observe que las opciones **Mensaje de texto a teléfono**, **Notificación a través de aplicación móvil** y **de hardware** están habilitadas. Haga clic en **Guardar** y, a continuación, en **Cerrar**.
+5. En la página **Autenticación multifactor**, haga clic en la **Configuración del servicio**. Revise las **opciones de comprobación**. Observe que las opciones **Mensaje de texto a teléfono**, **Notificación a través de aplicación móvil** y **de hardware** están habilitadas. Haga clic en **Guardar** y, a continuación, en **Cerrar**.
 
 6. Cambie a la pestaña **usuarios**, haga clic en la entrada **aaduser1**, en el vínculo **Habilitar** y, cuando se le solicite, en **Habilitar Multi-Factor Auth**.
 
