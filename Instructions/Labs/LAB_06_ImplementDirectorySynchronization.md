@@ -2,13 +2,8 @@
 lab:
   title: 06 - Implementación de la sincronización de directorios
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 00c359e1875ab915ab697d8ed33e36d956540529
-ms.sourcegitcommit: 1da29a6d959a7f91dbbcbabf5ec06869c98fc1f1
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 03/30/2022
-ms.locfileid: "141267261"
 ---
+
 # <a name="lab-06-implement-directory-synchronization"></a>Laboratorio 06: Implementación de la sincronización de directorios
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -65,7 +60,7 @@ En esta tarea, identificará un nombre DNS para la implementación de la VM de A
 
     >**Nota**: Reemplace el marcador de posición `<custom-label>` por un nombre DNS válido que es probable que sea único globalmente. Reemplace el marcador de posición `<location>` por el nombre de la región en la que desea implementar la VM de Azure que hospedará el controlador de dominio de Active Directory que usará en este laboratorio.
 
-    >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar VM de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
+    >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar VM de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
 
 5. Compruebe que el comando devolvió **True**. Si no es así, vuelva a ejecutar el mismo comando con un valor diferente de `<custom-label>` hasta que el comando devuelva **True**.
 
@@ -87,7 +82,7 @@ En esta tarea, implementará una VM de Azure que hospedará un controlador de do
 
 5. En la hoja **Create an Azure VM with a new AD Forest** (Crear una VM de Azure con un nuevo bosque de AD), especifique la configuración siguiente (deje las demás opciones con los valores existentes):
 
-   |Configuración|Valor|
+   |Configuración|Value|
    |---|---|
    |Subscription|nombre de la suscripción de Azure|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB06**.|
@@ -123,7 +118,7 @@ En esta tarea, creará un nuevo inquilino de Azure AD para usarlo en este labor
 
 2. En el panel **Información general** del inquilino de Azure AD actual, haga clic en **Administrar inquilinos** y, a continuación, en la siguiente pantalla, haga clic en **+ Crear**.
 
-3. En la pestaña **Aspectos básicos** de la hoja **Creación de un directorio**, asegúrese de que la opción **Azure Active Directory** está seleccionada y haga clic en **Siguiente: Configuración >** .
+3. En la pestaña **Aspectos básicos** de la hoja **Creación de un inquilino**, asegúrese de que la opción **Azure Active Directory** está seleccionada y haga clic en **Siguiente: Configuración >** .
 
 4. En la pestaña **Configuración** de la hoja **Creación de un directorio**, especifique la siguiente configuración:
 
@@ -194,7 +189,7 @@ En esta tarea, agregará un nuevo usuario de Azure AD y lo asignará al rol Admi
 
 6. Cierre la sesión de **syncadmin** y cierre la ventana del explorador InPrivate.
 
-> **Resultado**: después de completar este ejercicio, ha creado un inquilino de Azure AD, agregado un nombre DNS personalizado al nuevo inquilino de Azure AD y creado un usuario de Azure AD con el rol Administrador global.
+> **Resultado**: después de completar este ejercicio, ha creado un inquilino de Azure AD, ha visto cómo agregar un nombre DNS personalizado al nuevo inquilino de Azure AD y ha creado un usuario de Azure AD con el rol Administrador global.
 
 
 ### <a name="exercise-3-synchronize-active-directory-forest-with-an-azure-active-directory-tenant"></a>Ejercicio 3: Sincronizar un bosque de Active Directory con un inquilino de Azure Active Directory

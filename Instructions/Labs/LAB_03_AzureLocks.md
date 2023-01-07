@@ -2,13 +2,8 @@
 lab:
   title: 03 - Bloqueos de Resource Manager
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: 54375454646bdcf0586b249f65349691c3a3b9c3
-ms.sourcegitcommit: a8470295248a6363987bd5ea47154fe39f8535c3
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "139703537"
 ---
+
 # <a name="lab-03-resource-manager-locks"></a>Laboratorio 03: Bloqueos de Resource Manager
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -54,7 +49,7 @@ En esta tarea, creará un grupo de recursos y una cuenta de almacenamiento para 
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 1. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
@@ -62,7 +57,12 @@ En esta tarea, creará un grupo de recursos y una cuenta de almacenamiento para 
 
     ```powershell
     New-AzResourceGroup -Name AZ500LAB03 -Location 'EastUS'
+    
+    Confirm
+    Provided resource group already exists. Are you sure you want to update it?
+    [Y] Yes [N] No [S] Suspend [?] Help (default is "Y"): Y
     ```
+1. En la sesión de PowerShell del panel Cloud Shell, escriba **Y** y presione la tecla Entrar.
 
 1. En la sesión de PowerShell del panel Cloud Shell, ejecute lo siguiente para crear una cuenta de almacenamiento en el grupo de recursos recién creado:
     

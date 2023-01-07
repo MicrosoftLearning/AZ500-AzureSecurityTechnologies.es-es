@@ -2,13 +2,8 @@
 lab:
   title: 07 - Grupos de seguridad de red y grupos de seguridad de aplicaciones
   module: Module 02 - Implement Platform Protection
-ms.openlocfilehash: d7cfed1e861215cf32c3b51c4a07aa6886575000
-ms.sourcegitcommit: 2f08105eaaf0413d3ec3c12a3b078678151fd211
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2022
-ms.locfileid: "141368716"
 ---
+
 # <a name="lab-07-network-security-groups-and-application-security-groups"></a>Laboratorio 07: Grupos de seguridad de red y grupos de seguridad de aplicaciones
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -66,7 +61,7 @@ En esta tarea, creará una red virtual para usarla con los grupos de seguridad d
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB07**.|
     |Name|**myVirtualNetwork**|
     |Region|**Este de EE. UU.**|
@@ -128,7 +123,7 @@ En esta tarea, creará un grupo de seguridad de red.
 
     |Configuración|Value|
     |---|---|
-    |Subscription|Nombre de la suscripción de Azure que está usando en este laboratorio|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB07**|
     |Name|**myNsg**|
     |Region|**Este de EE. UU.**|
@@ -146,7 +141,7 @@ En esta tarea, creará un grupo de seguridad de red.
     |Virtual network|**myVirtualNetwork**|
     |Subnet|**default**|
 
-#### <a name="task-4-create-inbound-nsg-security-rules-to-all-traffic-to-web-servers-and-rdp-to-the-management-servers"></a>Tarea 4: Crear reglas de seguridad de NSG de entrada para todo el tráfico a los servidores web y RDP para los servidores de administración. 
+#### <a name="task-4-create-inbound-nsg-security-rules-to-all-traffic-to-web-servers-and-rdp-to-the-servers"></a>Tarea 4: Crear reglas de seguridad de NSG de entrada para todo el tráfico a los servidores web y RDP para los servidores. 
 
 1. En la hoja **myNsg**, en la sección **Configuración**, haga clic en **Reglas de seguridad de entrada**.
 
@@ -223,7 +218,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
 
 6. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
 
-7. Haga clic en **Siguiente: Administración >** y, en la pestaña **Administración** de la hoja **Crear una máquina virtual**, compruebe la configuración siguiente:
+7. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión >** . En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la siguiente configuración:
 
    |Configuración|Value|
    |---|---|
@@ -248,7 +243,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
    |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
    |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
-   |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
+   |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    |Puertos de entrada públicos|**None**|
    |Ya tiene una licencia de Windows Server.|**No**|
 
@@ -260,7 +255,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
 
 5. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
 
-6. Haga clic en **Siguiente: Administración >** y, en la pestaña **Administración** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración:
+6. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión >** . En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la siguiente configuración:
 
    |Configuración|Value|
    |---|---|
@@ -286,7 +281,7 @@ En esta tarea, asociará cada interfaz de red de máquinas virtuales con el grup
 
 6. En la hoja **myVMMgmt**, en la sección **Configuración**, haga clic en **Redes** y, a continuación, en la hoja **myVMMgmt \| Redes**, haga clic en la pestaña **Grupos de seguridad de aplicaciones**.
 
-7. Haga clic en **Configurar los grupos de seguridad de aplicaciones** y, en la lista desplegable **Grupo de seguridad de aplicaciones**, seleccione **myAsgMgmtServers** y haga clic en **Guardar**.
+7. Haga clic en **Configurar los grupos de seguridad de aplicaciones** y, en la lista desplegable **Grupo de seguridad de aplicaciones**, seleccione **myAsgMgmtServers**y haga clic en **Guardar**.
 
 #### <a name="task-4-test-the-network-traffic-filtering"></a>Tarea 4: Probar el filtrado del tráfico de red
 

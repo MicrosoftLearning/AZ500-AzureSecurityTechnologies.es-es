@@ -2,13 +2,8 @@
 lab:
   title: '02: Azure Policy'
   module: Module 01 - Manage Identity and Access
-ms.openlocfilehash: d49ce05e4620310d45317fe582bddb3aa511430b
-ms.sourcegitcommit: 967cb50981ef07d731dd7548845a38385b3fb7fb
-ms.translationtype: HT
-ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2022
-ms.locfileid: "145955403"
 ---
+
 # <a name="lab-02-azure-policy"></a>Laboratorio 02: Azure Policy
 # <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
 
@@ -59,7 +54,12 @@ En esta tarea, creará un grupo de recursos para el laboratorio.
 
     ```powershell
     New-AzResourceGroup -Name AZ500LAB02 -Location 'East US'
+    
+    Confirm
+    Provided resource group already exists. Are you sure you want to update it?
+    [Y] Yes [N] No [S] Suspend [?] Help (default is "Y"): Y
     ```
+1. En la sesión de PowerShell del panel Cloud Shell, escriba **Y** y presione la tecla Entrar.
 
 1. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para enumerar los grupos de recursos para comprobar que se ha creado el nuevo grupo de recursos:
 
@@ -75,7 +75,7 @@ En esta tarea, creará una asignación de directiva de ubicaciones permitidas y 
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Directiva** y presione la tecla **Entrar**.
 
-1. En el panel **Directiva**, seleccione **Definiciones** en la sección **Creación**.
+1. En la hoja **Directiva**, seleccione  **Definiciones** en la sección **Creación**.
 
 1. Tómese un minuto para examinar las definiciones integradas. Use la lista desplegable **Categoría** para filtrar la lista de directivas.
 
@@ -83,7 +83,7 @@ En esta tarea, creará una asignación de directiva de ubicaciones permitidas y 
 
    >**Nota**: La directiva **Ubicaciones permitidas** permite restringir la ubicación de los recursos, no los grupos de recursos. Para restringir las ubicaciones de los grupos de recursos, puede usar la directiva **Ubicaciones permitidas para grupos de recursos**.
 
-1. Haga clic en la definición de la directiva **Ubicaciones permitidas** para mostrar sus detalles. 
+1. Haga clic en la definición de directiva  **Ubicaciones permitidas**  para mostrar sus detalles. 
 
    >**Nota**: Esta definición de directiva toma una matriz de ubicaciones como parámetros. Una regla de directiva es una instrucción "if-then". La cláusula "if" comprueba si la ubicación del recurso está incluida en la lista de parámetros y, si no es así, la cláusula "then" deniega la creación de los recursos o, en el caso de los recursos existentes, los marca como no compatibles.
 
@@ -106,13 +106,13 @@ En esta tarea, creará una asignación de directiva de ubicaciones permitidas y 
    |Descripción|**Permitir la creación de recursos en Sur de Reino Unido solo para AZ500LAB02**|
    |Aplicación de directivas|**Enabled**|
 
-1. Haga clic en **Siguiente**.
+1. Haga clic en  **Siguiente**.
 
-1. En la pestaña **Parámetros** del panel **Ubicaciones permitidas**, en la lista desplegable **Ubicaciones permitidas**, seleccione **Sur de Reino Unido** como la única ubicación permitida. 
+1. En la pestaña **Parámetros** de la hoja **Ubicaciones permitidas**, en la lista desplegable **Ubicaciones permitidas**, seleccione **Sur de Reino Unido**  como la única ubicación permitida. 
 
    >**Nota**: Puede seleccionar más de una ubicación. Si la directiva requiere un conjunto diferente de parámetros, esta pestaña proporcionaría esas selecciones. 
 
-1. Haga clic en **Revisar y crear** y, a continuación, en **Crear** para crear la asignación de directiva. 
+1. Haga clic en **Revisar y crear**, seguido de **Crear**  para crear la asignación de directiva. 
 
    >**Nota**: Verá una notificación de que la asignación se ha realizado correctamente y que la asignación puede tardar unos 30 minutos en completarse.
 
@@ -124,29 +124,29 @@ En esta tarea, probará la asignación de directiva de ubicaciones permitidas.
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Redes virtuales** y presione la tecla **Entrar**.
 
-1. En el panel **Redes virtuales**, haga clic en **+ Crear**.
+1. En el panel **Redes virtuales**, haga clic en  **+ Crear**.
 
    >**Nota**: En primer lugar, intentará crear una red virtual en el Este de EE. UU. Puesto que no se trata de una ubicación permitida, la solicitud debería bloquearse. 
 
-1. En la pestaña **Aspectos básicos** del panel **Crear red virtual**, especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
+1. En la pestaña **Aspectos básicos** de la hoja **Crear red virtual** , especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
     |Configuración|Value|
     |---|---|
     |Resource group|**AZ500LAB02**|
     |Name|**myVnet**|
-    |Region|**(EE. UU.) Este de EE. UU.**|
+    |Region|**Este de EE. UU.**|
 
-1. Haga clic en **Revisar y crear**. 
+1. Haga clic en  **Revisar y crear**. 
 
-1. En la pestaña **Revisar y crear** del panel **Crear red virtual**, fíjese en el mensaje **Error de validación**. 
+1. En la pestaña **Revisar y crear** del panel **Crear red virtual** , fíjese en el mensaje **Error de validación**. 
 
     > **Nota**: Si no aparece la advertencia **Error de validación**, haga clic en **Anterior** y espere unos minutos más.
 
 1. En la pestaña **Aspectos básicos**, haga clic en el vínculo del mensaje de error para abrir el panel **Asignación de directivas**. Verá la asignación de directivas que restringe la ubicación.
 
-1. Cierre el panel **Asignación de directivas**. En el panel **Crear red virtual** haga clic en la pestaña **Aspectos básicos** y, en la lista desplegable **Región**, seleccione **(Europa) Sur de Reino Unido**.
+1. Cierre el panel **Asignación de directivas**. En el panel **Crear red virtual** haga clic en la pestaña **Aspectos básicos** y, en la lista desplegable **Región**, seleccione **Sur de Reino Unido**.
 
-1. Haga clic en **Revisar y crear**,compruebe que se ha superado la validación, haga clic en **Crear** y compruebe que la red virtual se creó correctamente. 
+1. Haga clic en  **Revisar y crear**,compruebe que se ha superado la validación, haga clic en **Crear** y compruebe que la red virtual se creó correctamente. 
 
 > Resultados del ejercicio: en este ejercicio, ha aprendido a aplicar una directiva de Azure seleccionando definiciones de directivas integradas y a asignarla a un grupo de recursos.
 
