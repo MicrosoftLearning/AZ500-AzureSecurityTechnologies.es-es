@@ -77,7 +77,7 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
 
 >**Nota**: Deberá crear una contraseña única que se usará para crear máquinas virtuales durante el resto del curso. La contraseña debe tener al menos 12 caracteres y cumplir los requisitos de complejidad definidos (tres de los siguientes: una minúscula, una mayúscula, un número y un carácter especial). [Requisitos de contraseña de máquinas virtuales](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-) Anote la contraseña.
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB04**.|
@@ -424,45 +424,89 @@ En esta tarea, verá las opciones de Azure AD Identity Protection en Azure Porta
 
     >**Nota:** Asegúrese de que ha iniciado sesión en el inquilino **AdatumLab500-04** de Azure AD. Puede usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Azure AD. Asegúrese de que ha iniciado sesión como usuario con el rol Administrador global en el inquilino de Azure AD.
 
-2. En la hoja **AdatumLab500-04**, en la sección **Administrar**, haga clic en **Seguridad**.
-
-3. En la hoja **Seguridad \| Introducción**, en la sección **Proteger**, haga clic en **Identity Protection**.
-
-4. En la hoja **Identity Protection \| Información general**, revise los gráficos **Se detectaron nuevos usuarios de riesgo** y **Se detectaron nuevos inicio de sesión de riesgo** y otra información sobre los usuarios de riesgo. 
-
 #### <a name="task-2-configure-a-user-risk-policy"></a>Tarea 2: Configurar una directiva de riesgo de usuario
 
 En esta tarea, creará una directiva de riesgo de usuario. 
 
-1. En la hoja **Identity Protection \| Información general**, en la sección **Proteger**, haga clic en **directiva de riesgo de usuario**.
+2. Vaya al inquilino **AdatumLab500-04** de Azure AD >**Seguridad** > **Acceso condicional**.
 
-2. Configure la **Directiva de corrección de riesgos de usuario** con las siguientes opciones: 
+3. Haga clic en **Nueva directiva**.
 
-   - Haga clic en **Usuarios**; en la pestaña **Incluir** de la hoja **Usuarios**, asegúrese de que está seleccionada la opción **Todos los usuarios**.
+4. Escriba el siguiente nombre de directiva en el cuadro de texto **Nombre**: **AZ500Policy2**.
 
-   - En la hoja **Usuarios**, cambie a la pestaña **Excluir**, haga clic en **Seleccionar usuarios excluidos**, seleccione su cuenta de usuario y, a continuación, haga clic en **Seleccionar**. 
+5. En **Asignaciones**, seleccione **Usuarios**.
 
-   - Haga clic en **Riesgo de usuario**; en la hoja **Riesgo de usuario**, seleccione **Bajo y superior** y, a continuación, haga clic en **Listo**. 
+6. En **Incluir**, haga clic en **Seleccionar usuarios y grupos**, y seleccione **aaduser2** y **aaduser3**.
 
-   - Haga clic en **Acceso**; en la hoja **Acceso**, asegúrese de que las casillas **Permitir acceso** y **Requerir cambio de contraseña** están activadas y haga clic en **Listo**.
+7. En **Excluir**, haga clic en **Usuarios y grupos** y seleccione **aaduser1**. 
 
-   - Establezca **Aplicar directiva** en **Activado** y haga clic en **Guardar**.
+8. En **Aplicaciones en la nube o acciones** > **Incluir**, seleccione **Todas las aplicaciones en la nube**.
 
-#### <a name="task-3-configure-sign-in-risk-policy"></a>Tarea 3: Configurar directiva de riesgo de inicio de sesión
+9. En **Condiciones** > **Riesgo de usuario**, establezca **Configurar** en **Sí**.
 
-En esta tarea, configurará una directiva de riesgo de inicio de sesión. 
+10. En **Configure los niveles de riesgo de usuario necesarios para aplicar la directiva**, seleccione **Alto**.
 
-1. En la hoja **Identity Protection \| Directiva de riesgo de usuario**, en la sección **Proteger**, haga clic en **Directiva de riesgo de inicio de sesión**.
+11. Haga clic en **Done**(Listo).
 
-2. Configure la **Directiva de corrección de riesgos de inicio de sesión** con las siguientes opciones: 
+12. En **Controles de acceso** > asegúrese de que **Conceder** está habilitado.    
 
-   - Haga clic en **Usuarios**; en la pestaña **Incluir** de la hoja **Usuarios**, asegúrese de que está seleccionada la opción **Todos los usuarios**.
+13. Seleccione **Requerir autenticación multifactor** y **Requerir cambio de contraseña**.
 
-   - Haga clic en **Riesgo de inicio de sesión**; en la hoja **Riesgo de inicio de sesión**, seleccione **Medio y superior** y, a continuación, haga clic en **Listo**. 
+14. Haga clic en **Seleccionar**.
 
-   - Haga clic en **Acceso**; en la hoja **Acceso**, asegúrese de que la opción **Permitir acceso** y la casilla **Requerir autenticación multifactor** están activadas y haga clic en **Listo**.
+15. En **Sesión**, haga clic en **Frecuencia de inicio de sesión** y asegúrese de que **Cada vez** está habilitado.
 
-   - Establezca **Aplicar directiva** en **Activado** y haga clic en **Guardar**.
+16. Haga clic en **Seleccionar**.
+
+17. Confirme la configuración y establezca **Habilitar directiva** en **Solo informe**.
+
+    >**Nota**: Se mostrará el siguiente mensaje en la parte inferior de la página: **"Parece que va a administrar las opciones de configuración de seguridad de su organización. Primero tiene que deshabilitar los valores predeterminados de seguridad antes de habilitar una directiva de acceso condicional"** .
+
+18. Haga clic en la parte del mensaje: **deshabilitar los valores predeterminados de seguridad**.
+
+19. Cambie **Habilitar valores predeterminados de seguridad** de Sí a **No**.
+
+20. Haga clic en **Otro** y escriba lo siguiente en el campo: **AZ500 lab use**.
+
+21. Haga clic en **Save**(Guardar).
+
+22. Haga clic en **Crear** para habilitar la directiva.
+
+#### <a name="task-3-configure-a-sign-in-risk-policy"></a>Tarea 3: Configurar una directiva de riesgo de inicio de sesión
+
+1. Vaya al inquilino **AdatumLab500-04** de Azure AD >**Seguridad** > **Acceso condicional**.
+
+2. Seleccione **Nueva directiva**.
+
+3. Escriba el siguiente nombre de directiva en el cuadro de texto **Nombre**: **AZ500Policy3**.
+
+4. En **Asignaciones**, seleccione **Usuarios**.
+
+5. En **Incluir**, haga clic en **Seleccionar usuarios y grupos**, y seleccione **aaduser2** y **aaduser3**.
+
+6. En **Excluir**, haga clic en **Usuarios y grupos** y seleccione **aaduser1**. 
+
+7. En **Aplicaciones en la nube o acciones** > **Incluir**, seleccione **Todas las aplicaciones en la nube**.
+
+8. En **Condiciones** > **Riesgo de inicio de sesión**, establezca **Configurar** en **Sí**.
+
+9. En **Seleccionar el nivel de riesgo de inicio de sesión al que se aplicará la directiva**, seleccione **Alto** y **Medio**.
+
+10. Haga clic en **Done**(Listo).
+
+11. En **Controles de acceso** > **Conceder**.  
+
+12. Seleccione **Conceder acceso**, **Requerir autenticación multifactor**.
+
+13. Haga clic en **Seleccionar**.
+
+13. En **Sesión**, seleccione **Frecuencia de inicio de sesión** y asegúrese de que **Cada vez** está habilitado.
+
+14. Haga clic en **Seleccionar**.
+
+15. Confirme la configuración y establezca **Habilitar directiva** en **Solo informe**.
+
+16. Haga clic en **Crear** para habilitar la directiva.
 
 #### <a name="task-4-simulate-risk-events-against-the-azure-ad-identity-protection-policies"></a>Tarea 4: Simular eventos de riesgo en las directivas de Azure AD Identity Protection 
 
