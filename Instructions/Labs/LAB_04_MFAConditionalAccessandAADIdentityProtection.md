@@ -4,10 +4,10 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-04-mfa-conditional-access-and-aad-identity-protection"></a>Laboratorio 04: MFA, acceso condicional y AAD Identity Protection
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 04: MFA, acceso condicional y AAD Identity Protection
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que cree una prueba de concepto de características que mejoren la autenticación Azure Active Directory (Azure AD). En concreto, quiere evaluar lo siguiente:
 
@@ -17,7 +17,7 @@ Se le ha pedido que cree una prueba de concepto de características que mejoren 
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará los ejercicios siguientes:
 
@@ -26,26 +26,26 @@ En este laboratorio completará los ejercicios siguientes:
 - Ejercicio 3: Implementar directivas de acceso condicional de Azure AD 
 - Ejercicio 4: Implementar Azure AD Identity Protection
 
-## <a name="mfa---conditional-access---identity-protection-diagram"></a>MFA - Acceso condicional - Identity Protection
+## MFA - Acceso condicional - Identity Protection
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157518628-8b4a9efe-0086-4ec0-825e-3d062748fa63.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-## <a name="lab-files"></a>Archivos de laboratorio:
+## Archivos de laboratorio:
 
 - **\\Allfiles\\Labs\\04\\az-500-04_azuredeploy.json**
 - **\\Allfiles\\Labs\\04\\az-500-04_azuredeploy.parameters.json** 
 
-### <a name="exercise-1-deploy-an-azure-vm-by-using-an-azure-resource-manager-template"></a>Ejercicio 1: Implementar VM de Azure mediante una plantilla de Azure Resource Manager
+### Ejercicio 1: Implementar VM de Azure mediante una plantilla de Azure Resource Manager
 
-### <a name="estimated-timing-10-minutes"></a>Tiempo estimado: 10 minutos
+### Tiempo estimado: 10 minutos
 
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Implementar una VM de Azure mediante una plantilla de Azure Resource Manager
 
-#### <a name="task-1-deploy-an-azure-vm-by-using-an-azure-resource-manager-template"></a>Tarea 1: Implementar una VM de Azure mediante una plantilla de Azure Resource Manager
+#### Tarea 1: Implementar una VM de Azure mediante una plantilla de Azure Resource Manager
 
 En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta máquina virtual se usará en el último ejercicio de este laboratorio. 
 
@@ -77,14 +77,14 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
 
 >**Nota**: Deberá crear una contraseña única que se usará para crear máquinas virtuales durante el resto del curso. La contraseña debe tener al menos 12 caracteres y cumplir los requisitos de complejidad definidos (tres de los siguientes: una minúscula, una mayúscula, un número y un carácter especial). [Requisitos de contraseña de máquinas virtuales](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-) Anote la contraseña.
 
-   |Configuración|Valor|
+   |Configuración|Value|
    |---|---|
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB04**.|
    |Location|**Este de EE. UU.**|
    |Tamaño de máquina virtual:|**Standard_D2s_v3**|
    |Nombre de la máquina virtual|**az500-04-vm1**|
-   |Nombre de usuario administrador|**Estudiante**|
+   |Nombre de usuario administrador|**Student**|
    |Contraseña de administrador|**Cree una contraseña y guárdela para poder consultarla más adelante. Se le pedirá que introduzca esta contraseña para acceder al laboratorio.**|
    |El nombre de la red virtual|**az500-04-vnet1**|
 
@@ -97,9 +97,9 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
 > Resultado: ha iniciado una implementación de plantilla de una VM de Azure **az500-04-vm1** que usará en el último ejercicio de este laboratorio.
 
 
-### <a name="exercise-2-implement-azure-mfa"></a>Ejercicio 2: Implementar Azure MFA
+### Ejercicio 2: Implementar Azure MFA
 
-### <a name="estimated-timing-30-minutes"></a>Tiempo estimado: 30 minutos
+### Tiempo estimado: 30 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -110,7 +110,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 5: Configurar Azure MFA.
 - Tarea 6: Validar la configuración de MFA.
 
-#### <a name="task-1-create-a-new-azure-ad-tenant"></a>Tarea 1: Crear un nuevo inquilino de Azure AD
+#### Tarea 1: Crear un nuevo inquilino de Azure AD
 
 En esta tarea, creará un nuevo inquilino de Azure AD. 
 
@@ -136,7 +136,7 @@ En esta tarea, creará un nuevo inquilino de Azure AD.
     >**Nota**: Espere a que se cree el inquilino. Utilice el icono **Notificación** para supervisar el estado de la implementación. 
 
 
-#### <a name="task-2-activate-azure-ad-premium-p2-trial"></a>Tarea 2: Activar la prueba de Azure AD Premium P2
+#### Tarea 2: Activar la prueba de Azure AD Premium P2
 
 En esta tarea, se registrará para la prueba gratuita de Azure AD Premium P2. 
 
@@ -153,7 +153,7 @@ En esta tarea, se registrará para la prueba gratuita de Azure AD Premium P2.
 5. En la hoja **Activar**, en la sección Azure AD Premium P2, haga clic en **Evaluación gratuita** y, a continuación, en **Activar**.
 
 
-#### <a name="task-3-create-azure-ad-users-and-groups"></a>Tarea 3: Crear usuarios y grupos de Azure AD.
+#### Tarea 3: Crear usuarios y grupos de Azure AD.
 
 En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 (usuario) y aaduser3 (usuario). Necesitará el nombre principal y la contraseña de cada usuario para tareas posteriores. 
 
@@ -208,7 +208,7 @@ En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 
 
     >**Nota**: En este momento, debería tener tres nuevos usuarios en la página **Usuarios**. 
     
-#### <a name="task-4-assign-azure-ad-premium-p2-licenses-to-azure-ad-users"></a>Tarea 4: Asignar licencias de Azure AD Premium P2 a usuarios de Azure AD
+#### Tarea 4: Asignar licencias de Azure AD Premium P2 a usuarios de Azure AD
 
 En esta tarea, asignará cada usuario a la licencia de Azure Active Directory Premium P2.
 
@@ -230,7 +230,7 @@ En esta tarea, asignará cada usuario a la licencia de Azure Active Directory Pr
 
     >**Nota**: En este momento, ha asignado licencias de Azure Active Directory Premium P2 a todas las cuentas de usuario que va a usar en este laboratorio. Asegúrese de cerrar la sesión y, a continuación, de volver a iniciarla. 
 
-#### <a name="task-5-configure-azure-mfa-settings"></a>Tarea 5: Configurar Azure MFA.
+#### Tarea 5: Configurar Azure MFA.
 
 En esta tarea, configurará MFA y habilitará MFA para aaduser1. 
 
@@ -284,7 +284,7 @@ En esta tarea, configurará MFA y habilitará MFA para aaduser1.
 
     >**Nota:** Asegúrese de que ha iniciado sesión en el inquilino **AdatumLab500-04** de Azure AD. Puede usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Azure AD. Asegúrese de que ha iniciado sesión como usuario con el rol Administrador global en el inquilino de Azure AD.
 
-#### <a name="task-6-validate-mfa-configuration"></a>Tarea 6: Validar la configuración de MFA.
+#### Tarea 6: Validar la configuración de MFA.
 
 En esta tarea, validará la configuración de MFA. Para ello, probará el inicio de sesión de la cuenta de usuario aaduser1. 
 
@@ -317,16 +317,16 @@ En esta tarea, validará la configuración de MFA. Para ello, probará el inicio
 > Resultado: ha creado un nuevo inquilino de AD, configurado usuarios de AD, configurado MFA y probado la experiencia de MFA para un usuario. 
 
 
-### <a name="exercise-3-implement-azure-ad-conditional-access-policies"></a>Ejercicio 3: Implementar directivas de acceso condicional de Azure AD 
+### Ejercicio 3: Implementar directivas de acceso condicional de Azure AD 
 
-### <a name="estimated-timing-15-minutes"></a>Tiempo estimado: 15 minutos
+### Tiempo estimado: 15 minutos
 
 En este ejercicio completará las tareas siguientes: 
 
 - Tarea 1: Configurar un directiva de acceso condicional.
 - Tarea 2: Probar la directiva de acceso condicional.
 
-#### <a name="task-1---configure-a-conditional-access-policy"></a>Tarea 1: Configurar una directiva de acceso condicional 
+#### Tarea 1: Configurar una directiva de acceso condicional 
 
 En esta tarea, revisará la configuración de la directiva de acceso condicional y creará una directiva que requiera MFA al iniciar sesión en el portal. 
 
@@ -362,7 +362,7 @@ En esta tarea, revisará la configuración de la directiva de acceso condicional
 
     >**Nota**: En este momento, tiene una directiva de acceso condicional que requiere que MFA inicie sesión en Azure Portal. 
 
-#### <a name="task-2---test-the-conditional-access-policy"></a>Tarea 2: Probar la directiva de acceso condicional
+#### Tarea 2: Probar la directiva de acceso condicional
 
 En esta tarea, iniciará sesión en Azure Portal como **aaduser2** y comprobará que se requiere MFA. También eliminará la directiva antes de continuar con el ejercicio siguiente. 
 
@@ -404,9 +404,9 @@ En esta tarea, iniciará sesión en Azure Portal como **aaduser2** y comprobará
 
 >Resultado: ha configurado y probado el acceso condicional de Azure AD.
 
-### <a name="exercise-4-implement-azure-ad-identity-protection"></a>Ejercicio 4: Implementar Azure AD Identity Protection
+### Ejercicio 4: Implementar Azure AD Identity Protection
 
-### <a name="estimated-timing-30-minutes"></a>Tiempo estimado: 30 minutos
+### Tiempo estimado: 30 minutos
 
 En este ejercicio completará las tareas siguientes: 
 
@@ -416,7 +416,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 4: Simular eventos de riesgo en las directivas de Azure AD Identity Protection 
 - Tarea 5: Revisar informes de Azure AD Identity Protection
 
-#### <a name="task-1-enable-azure-ad-identity-protection"></a>Tarea 1: Habilitar Azure AD Identity Protection
+#### Tarea 1: Habilitar Azure AD Identity Protection
 
 En esta tarea, verá las opciones de Azure AD Identity Protection en Azure Portal. 
 
@@ -424,91 +424,47 @@ En esta tarea, verá las opciones de Azure AD Identity Protection en Azure Porta
 
     >**Nota:** Asegúrese de que ha iniciado sesión en el inquilino **AdatumLab500-04** de Azure AD. Puede usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Azure AD. Asegúrese de que ha iniciado sesión como usuario con el rol Administrador global en el inquilino de Azure AD.
 
-#### <a name="task-2-configure-a-user-risk-policy"></a>Tarea 2: Configurar una directiva de riesgo de usuario
+2. En la hoja **AdatumLab500-04**, en la sección **Administrar**, haga clic en **Seguridad**.
+
+3. En la hoja **Seguridad \| Introducción**, en la sección **Proteger**, haga clic en **Identity Protection**.
+
+4. En la hoja **Identity Protection \| Información general**, revise los gráficos **Se detectaron nuevos usuarios de riesgo** y **Se detectaron nuevos inicio de sesión de riesgo** y otra información sobre los usuarios de riesgo. 
+
+#### Tarea 2: Configurar una directiva de riesgo de usuario
 
 En esta tarea, creará una directiva de riesgo de usuario. 
 
-2. Vaya al inquilino **AdatumLab500-04** de Azure AD >**Seguridad** > **Acceso condicional**.
+1. En la hoja **Identity Protection \| Información general**, en la sección **Proteger**, haga clic en **directiva de riesgo de usuario**.
 
-3. Haga clic en **Nueva directiva**.
+2. Configure la **Directiva de corrección de riesgos de usuario** con las siguientes opciones: 
 
-4. Escriba el siguiente nombre de directiva en el cuadro de texto **Nombre**: **AZ500Policy2**.
+   - Haga clic en **Usuarios**; en la pestaña **Incluir** de la hoja **Usuarios**, asegúrese de que está seleccionada la opción **Todos los usuarios**.
 
-5. En **Asignaciones**, seleccione **Usuarios**.
+   - En la hoja **Usuarios**, cambie a la pestaña **Excluir**, haga clic en **Seleccionar usuarios excluidos**, seleccione su cuenta de usuario y, a continuación, haga clic en **Seleccionar**. 
 
-6. En **Incluir**, haga clic en **Seleccionar usuarios y grupos**, y seleccione **aaduser2** y **aaduser3**.
+   - Haga clic en **Riesgo de usuario**; en la hoja **Riesgo de usuario**, seleccione **Bajo y superior** y, a continuación, haga clic en **Listo**. 
 
-7. En **Excluir**, haga clic en **Usuarios y grupos** y seleccione **aaduser1**. 
+   - Haga clic en **Acceso**; en la hoja **Acceso**, asegúrese de que las casillas **Permitir acceso** y **Requerir cambio de contraseña** están activadas y haga clic en **Listo**.
 
-8. En **Aplicaciones en la nube o acciones** > **Incluir**, seleccione **Todas las aplicaciones en la nube**.
+   - Establezca **Aplicar directiva** en **Activado** y haga clic en **Guardar**.
 
-9. En **Condiciones** > **Riesgo de usuario**, establezca **Configurar** en **Sí**.
+#### Tarea 3: Configurar directiva de riesgo de inicio de sesión
 
-10. En **Configure los niveles de riesgo de usuario necesarios para aplicar la directiva**, seleccione **Alto**.
+En esta tarea, configurará una directiva de riesgo de inicio de sesión. 
 
-11. Haga clic en **Done**(Listo).
+1. En la hoja **Identity Protection \| Directiva de riesgo de usuario**, en la sección **Proteger**, haga clic en **Directiva de riesgo de inicio de sesión**.
 
-12. En **Controles de acceso** > asegúrese de que **Conceder** está habilitado.    
+2. Configure la **Directiva de corrección de riesgos de inicio de sesión** con las siguientes opciones: 
 
-13. Seleccione **Requerir autenticación multifactor** y **Requerir cambio de contraseña**.
+   - Haga clic en **Usuarios**; en la pestaña **Incluir** de la hoja **Usuarios**, asegúrese de que está seleccionada la opción **Todos los usuarios**.
 
-14. Haga clic en **Seleccionar**.
+   - Haga clic en **Riesgo de inicio de sesión**; en la hoja **Riesgo de inicio de sesión**, seleccione **Medio y superior** y, a continuación, haga clic en **Listo**. 
 
-15. En **Sesión**, haga clic en **Frecuencia de inicio de sesión** y asegúrese de que **Cada vez** está habilitado.
+   - Haga clic en **Acceso**; en la hoja **Acceso**, asegúrese de que la opción **Permitir acceso** y la casilla **Requerir autenticación multifactor** están activadas y haga clic en **Listo**.
 
-16. Haga clic en **Seleccionar**.
+   - Establezca **Aplicar directiva** en **Activado** y haga clic en **Guardar**.
 
-17. Confirme la configuración y establezca **Habilitar directiva** en **Solo informe**.
-
-    >**Nota**: Se mostrará el siguiente mensaje en la parte inferior de la página: **"Parece que va a administrar las opciones de configuración de seguridad de su organización. Primero tiene que deshabilitar los valores predeterminados de seguridad antes de habilitar una directiva de acceso condicional"** .
-
-18. Haga clic en la parte del mensaje: **deshabilitar los valores predeterminados de seguridad**.
-
-19. Cambie **Habilitar valores predeterminados de seguridad** de Sí a **No**.
-
-20. Haga clic en **Otro** y escriba lo siguiente en el campo: **AZ500 lab use**.
-
-21. Haga clic en **Save**(Guardar).
-
-22. Haga clic en **Crear** para habilitar la directiva.
-
-#### <a name="task-3-configure-a-sign-in-risk-policy"></a>Tarea 3: Configurar una directiva de riesgo de inicio de sesión
-
-1. Vaya al inquilino **AdatumLab500-04** de Azure AD >**Seguridad** > **Acceso condicional**.
-
-2. Seleccione **Nueva directiva**.
-
-3. Escriba el siguiente nombre de directiva en el cuadro de texto **Nombre**: **AZ500Policy3**.
-
-4. En **Asignaciones**, seleccione **Usuarios**.
-
-5. En **Incluir**, haga clic en **Seleccionar usuarios y grupos**, y seleccione **aaduser2** y **aaduser3**.
-
-6. En **Excluir**, haga clic en **Usuarios y grupos** y seleccione **aaduser1**. 
-
-7. En **Aplicaciones en la nube o acciones** > **Incluir**, seleccione **Todas las aplicaciones en la nube**.
-
-8. En **Condiciones** > **Riesgo de inicio de sesión**, establezca **Configurar** en **Sí**.
-
-9. En **Seleccionar el nivel de riesgo de inicio de sesión al que se aplicará la directiva**, seleccione **Alto** y **Medio**.
-
-10. Haga clic en **Done**(Listo).
-
-11. En **Controles de acceso** > **Conceder**.  
-
-12. Seleccione **Conceder acceso**, **Requerir autenticación multifactor**.
-
-13. Haga clic en **Seleccionar**.
-
-13. En **Sesión**, seleccione **Frecuencia de inicio de sesión** y asegúrese de que **Cada vez** está habilitado.
-
-14. Haga clic en **Seleccionar**.
-
-15. Confirme la configuración y establezca **Habilitar directiva** en **Solo informe**.
-
-16. Haga clic en **Crear** para habilitar la directiva.
-
-#### <a name="task-4-simulate-risk-events-against-the-azure-ad-identity-protection-policies"></a>Tarea 4: Simular eventos de riesgo en las directivas de Azure AD Identity Protection 
+#### Tarea 4: Simular eventos de riesgo en las directivas de Azure AD Identity Protection 
 
 > Antes de iniciar esta tarea, asegúrese de que se ha completado la implementación de plantillas que inició en el ejercicio 1. La implementación incluye una VM de Azure denominada **az500-04-vm1**. 
 
@@ -524,7 +480,7 @@ En esta tarea, creará una directiva de riesgo de usuario.
 
    |Configuración|Valor|
    |---|---|
-   |Nombre de usuario|**Estudiante**|
+   |Nombre de usuario|**Student**|
    |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que se carguen la sesión de Escritorio remoto y **Administrador del servidor**.  
@@ -559,7 +515,7 @@ En esta tarea, creará una directiva de riesgo de usuario.
 
     >**Nota**: En este momento, ha probado dos inicios de sesión diferentes. A continuación, revisará los informes de Azure Identity Protection.
 
-#### <a name="task-5-review-the-azure-ad-identity-protection-reports"></a>Tarea 5: Revisar informes de Azure AD Identity Protection
+#### Tarea 5: Revisar informes de Azure AD Identity Protection
 
 En esta tarea, revisará los informes Azure AD Identity Protection generados a partir de los inicios de sesión del Navegador Tor.
 

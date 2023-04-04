@@ -4,10 +4,10 @@ lab:
   module: Module 03 - Secure Data and Applications
 ---
 
-# <a name="lab-10-key-vault-implementing-secure-data-by-setting-up-always-encrypted"></a>Laboratorio 10: Key Vault (implementación de datos seguros mediante la configuración de Always Encrypted)
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 10: Key Vault (implementación de datos seguros mediante la configuración de Always Encrypted)
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que cree una aplicación de prueba de concepto que use la compatibilidad de Azure SQL Database con la funcionalidad Always Encrypted. Todos los secretos y claves usados en este escenario deben almacenarse en Key Vault. La aplicación debe estar registrada en Azure Active Directory (Azure AD) para mejorar su posición de seguridad. Para lograr estos objetivos, la prueba de concepto debe incluir:
 
@@ -18,7 +18,7 @@ Se le ha pedido que cree una aplicación de prueba de concepto que use la compat
 
 Para mantener el centro de atención en los aspectos de seguridad de Azure relacionados con la creación de esta prueba de concepto, comenzará desde una implementación automatizada de plantillas de ARM, configurará una máquina virtual con Visual Studio 2019 y SQL Server Management Studio 2018.
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará los ejercicios siguientes:
 
@@ -27,27 +27,27 @@ En este laboratorio completará los ejercicios siguientes:
 - Ejercicio 3: Configuración de una base de datos de Azure SQL y una aplicación controlada por datos
 - Ejercicio 4: Demostración del uso de Azure Key Vault para cifrar la base de datos de Azure SQL
 
-## <a name="key-vault-diagram"></a>Diagrama de Key Vault
+## Diagrama de Key Vault
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157532938-c724cc40-f64f-4d69-9e91-d75344c5e0a2.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-## <a name="lab-files"></a>Archivos de laboratorio:
+## Archivos de laboratorio:
 
 - **\\Allfiles\\Labs\\10\\az-500-10_azuredeploy.json**
 
 - **\\Allfiles\\Labs\\10\\program.cs**
 
-### <a name="total-lab-time-estimate-60-minutes"></a>Estimación del tiempo total de laboratorio: 60 minutos
+### Estimación del tiempo total de laboratorio: 60 minutos
 
-### <a name="exercise-1-deploy-the-base-infrastructure-from-an-arm-template"></a>Ejercicio 1: Implementación de la infraestructura base desde una plantilla de ARM
+### Ejercicio 1: Implementación de la infraestructura base desde una plantilla de ARM
 
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Implementación de una máquina virtual de Azure y una base de datos de Azure SQL
 
-#### <a name="task-1-deploy-an-azure-vm-and-an-azure-sql-database"></a>Tarea 1: Implementación de una máquina virtual de Azure y una base de datos de Azure SQL
+#### Tarea 1: Implementación de una máquina virtual de Azure y una base de datos de Azure SQL
 
 En esta tarea, implementará una máquina virtual de Azure, que instalará automáticamente Visual Studio 2019 y SQL Server Management Studio 2018 como parte de la implementación. 
 
@@ -70,7 +70,7 @@ En esta tarea, implementará una máquina virtual de Azure, que instalará autom
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB10**|
    |Location|**Este de EE. UU.**|
-   |Nombre de usuario administrador|**Estudiante**|
+   |Nombre de usuario administrador|**Student**|
    |Contraseña de administrador|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    
     >**Nota**: Aunque puede cambiar las credenciales administrativas usadas para iniciar sesión en la máquina virtual, no es obligatorio.
@@ -83,7 +83,7 @@ En esta tarea, implementará una máquina virtual de Azure, que instalará autom
 
     >**Nota**: No espere a que se complete la implementación de la plantilla de ARM; continúe con el ejercicio siguiente. La implementación puede tardar entre **20 y 25 minutos**. 
 
-### <a name="exercise-2-configure-the-key-vault-resource-with-a-key-and-a-secret"></a>Ejercicio 2: Configuración del recurso de Key Vault con una clave y un secreto
+### Ejercicio 2: Configuración del recurso de Key Vault con una clave y un secreto
 
 >**Nota**: Para todos los recursos de este laboratorio, se usa la región **Este (EE. UU.)** . Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
@@ -93,7 +93,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 2: Agregar una clave al almacén de claves
 - Tarea 3: Agregar un secreto al almacén de claves
 
-#### <a name="task-1-create-and-configure-a-key-vault"></a>Tarea 1: Crear y configurar un almacén de claves
+#### Tarea 1: Crear y configurar un almacén de claves
 
 En esta tarea, creará un recurso de Azure Key Vault. También configurará los permisos para Azure Key Vault.
 
@@ -137,7 +137,7 @@ En esta tarea, creará un recurso de Azure Key Vault. También configurará los 
     
     >**Nota**: La operación anterior Revisar y crear vuelve a la página Directivas de acceso que enumera Aplicación, Correo electrónico, Permisos de clave, Permisos de secreto y Permisos de certificado.
       
-#### <a name="task-2-add-a-key-to-key-vault"></a>Tarea 2: Adición de una clave a Key Vault
+#### Tarea 2: Adición de una clave a Key Vault
 
 En esta tarea, agregará una clave al Key Vault y verá información sobre la clave. 
 
@@ -178,7 +178,7 @@ En esta tarea, agregará una clave al Key Vault y verá información sobre la cl
     >**Nota**: Puede hacer referencia a cualquier clave mediante el identificador de la clave. Para obtener la versión más reciente, haga referencia a `https://<key_vault_name>.vault.azure.net/keys/MyLabKey` u obtenga la versión específica con `https://<key_vault_name>.vault.azure.net/keys/MyLabKey/<key_version>`
 
 
-#### <a name="task-3-add-a-secret-to-key-vault"></a>Tarea 3: Adición de un secreto a Key Vault
+#### Tarea 3: Adición de un secreto a Key Vault
 
 1. Vuelva al panel de Cloud Shell.
 
@@ -213,7 +213,7 @@ En esta tarea, agregará una clave al Key Vault y verá información sobre la cl
     >**Nota**: Para obtener la versión más reciente de un secreto, haga referencia a `https://<key_vault_name>.vault.azure.net/secrets/<secret_name>` u obtenga una versión específica haciendo referencia a `https://<key_vault_name>.vault.azure.net/secrets/<secret_name>/<secret_version>`
 
 
-### <a name="exercise-3-configure-an-azure-sql-database-and-a-data-driven-application"></a>Ejercicio 3: Configuración de una base de datos de Azure SQL y una aplicación controlada por datos
+### Ejercicio 3: Configuración de una base de datos de Azure SQL y una aplicación controlada por datos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -224,7 +224,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 5: Creación de una tabla en SQL Database y selección de columnas de datos para el cifrado
 
 
-#### <a name="task-1-enable-a-client-application-to-access-the-azure-sql-database-service"></a>Tarea 1: Habilitación de una aplicación cliente para obtener acceso al servicio de Azure SQL Database. 
+#### Tarea 1: Habilitación de una aplicación cliente para obtener acceso al servicio de Azure SQL Database. 
 
 En esta tarea, habilitará una aplicación cliente para obtener acceso al servicio de Azure SQL Database. Para ello, debe configurar la autenticación necesaria y adquirir el identificador y el secreto de aplicación necesarios para autenticar la aplicación.
 
@@ -267,7 +267,7 @@ En esta tarea, habilitará una aplicación cliente para obtener acceso al servic
     >**Nota**: Copie el valor *antes* de salir del panel. Una vez hecho esto, ya no es posible recuperar su valor de texto sin formato.
 
 
-#### <a name="task-2-create-a-policy-allowing-the-application-access-to-the-key-vault"></a>Tarea 2: Creación de una directiva que permita a la aplicación acceder al Key Vault.
+#### Tarea 2: Creación de una directiva que permita a la aplicación acceder al Key Vault.
 
 En esta tarea, concederá a la aplicación recién registrada permisos para acceder a los secretos almacenados en Key Vault.
 
@@ -296,7 +296,7 @@ En esta tarea, concederá a la aplicación recién registrada permisos para acce
 6. Cierre el panel de Cloud Shell. 
 
 
-#### <a name="task-3-retrieve-sql-azure-database-adonet-connection-string"></a>Tarea 3: Recuperación de la cadena de conexión ADO.NET de Azure SQL Database 
+#### Tarea 3: Recuperación de la cadena de conexión ADO.NET de Azure SQL Database 
 
 La implementación de la plantilla de ARM del ejercicio 1 aprovisionó una instancia de Azure SQL Server y una base de datos de Azure SQL llamada **medicina**. Actualizará el recurso de base de datos vacío con una nueva estructura de tabla y seleccionará columnas de datos para el cifrado
 
@@ -314,7 +314,7 @@ La implementación de la plantilla de ARM del ejercicio 1 aprovisionó una inst
 
     >**Nota**: Al usar la cadena de conexión, asegúrese de reemplazar el marcador de posición `{your_password}` por la contraseña que configuró con la implementación en el ejercicio 1.
 
-#### <a name="task-4-log-on-to-the-azure-vm-running-visual-studio-2019-and-sql-management-studio-2018"></a>Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 2018
+#### Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 2018
 
 En esta tarea, iniciará sesión en la máquina virtual de Azure cuya implementación inició en el ejercicio 1. Esta máquina virtual de Azure hospeda Visual Studio 2019 y SQL Server Management Studio 2018.
 
@@ -324,7 +324,7 @@ En esta tarea, iniciará sesión en la máquina virtual de Azure cuya implementa
 
 2. En la lista de máquinas virtuales que se muestra, seleccione la entrada **az500-10-vm1**. En el panel **az500-10-vm1**, en el panel **Essentials**, tome nota de la **dirección IP pública**. Utilizará esta dirección más adelante. 
 
-#### <a name="task-5-create-a-table-in-the-sql-database-and-select-data-columns-for-encryption"></a>Tarea 5: Creación de una tabla en SQL Database y selección de columnas de datos para el cifrado
+#### Tarea 5: Creación de una tabla en SQL Database y selección de columnas de datos para el cifrado
 
 En esta tarea, se conectará a la base de datos SQL con SQL Server Management Studio y creará una tabla. A continuación, cifrará dos columnas de datos mediante una clave autogenerada de Azure Key Vault. 
 
@@ -365,8 +365,8 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     |---|---|
     |Tipo de servidor|**Motor de base de datos**|
     |Nombre del servidor|nombre de servidor que identificó anteriormente en esta tarea|
-    |Autenticación|**Autenticación de SQL Server**|
-    |Iniciar sesión|**Estudiante**|
+    |Autenticación|**SQL Server Authentication**|
+    |Iniciar sesión|**Student**|
     |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
 8. En el cuadro de diálogo **Conectar con el servidor**, haga clic en **Conectar**.
@@ -414,13 +414,13 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     >**Nota**: El subnodo **Claves de Always Encrypted** contiene las subcarpetas **Claves maestras de columna** y **Claves de cifrado de columna**.
 
 
-### <a name="exercise-4-demonstrate-the-use-of-azure-key-vault-in-encrypting-the-azure-sql-database"></a>Ejercicio 4: Demostración del uso de Azure Key Vault para cifrar la base de datos de Azure SQL
+### Ejercicio 4: Demostración del uso de Azure Key Vault para cifrar la base de datos de Azure SQL
 
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Ejecución de una aplicación controlada por datos para demostrar el uso de Azure Key Vault para cifrar la base de datos de Azure SQL
 
-#### <a name="task-1-run-a-data-driven-application-to-demonstrate-the-use-of-azure-key-vault-in-encrypting-the-azure-sql-database"></a>Tarea 1: Ejecución de una aplicación controlada por datos para demostrar el uso de Azure Key Vault para cifrar la base de datos de Azure SQL
+#### Tarea 1: Ejecución de una aplicación controlada por datos para demostrar el uso de Azure Key Vault para cifrar la base de datos de Azure SQL
 
 Creará una aplicación de consola mediante Visual Studio para cargar datos en las columnas cifradas y, a continuación, acceder a los datos de forma segura mediante una cadena de conexión que accede a la clave en el Key Vault.
 
