@@ -4,10 +4,10 @@ lab:
   module: Module 02 - Implement Platform Protection
 ---
 
-# <a name="lab-09-configuring-and-securing-acr-and-aks"></a>Laboratorio 09: Configuración y protección de ACR y AKS
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 09: Configuración y protección de ACR y AKS
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que implemente una prueba de concepto con Azure Container Registry y Azure Kubernetes Service. En concreto, la prueba de concepto debe demostrar lo siguiente:
 
@@ -18,26 +18,26 @@ Se le ha pedido que implemente una prueba de concepto con Azure Container Regist
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Configuración y protección de ACR y AKS
 
-## <a name="configuring-and-securing-acr-and-aks-diagram"></a>Configuración y protección de ACR y AKS
+## Configuración y protección de ACR y AKS
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157532250-1104a829-792a-4b6d-beff-fe976e2d5d4b.png)
 
-## <a name="intructions"></a>Instrucciones
+## Instrucciones
 
-## <a name="lab-files"></a>Archivos de laboratorio:
+## Archivos de laboratorio:
 
 - **\\Allfiles\\Labs\\09\\nginxexternal.yaml**
 - **\\Allfiles\\Labs\\09\\nginxinternal.yaml**
 
-### <a name="exercise-1-configuring-and-securing-acr-and-aks"></a>Ejercicio 1: Configuración y protección de ACR y AKS
+### Ejercicio 1: Configuración y protección de ACR y AKS
 
-### <a name="estimated-timing-45-minutes"></a>Tiempo estimado: 45 minutos
+### Tiempo estimado: 45 minutos
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
@@ -52,7 +52,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 7: Implementar un servicio interno en AKS
 - Tarea 8: Comprobar que puede acceder a un servicio hospedado en AKS interno
 
-#### <a name="task-1-create-an-azure-container-registry"></a>Tarea 1: Crear una instancia de Azure Container Registry
+#### Tarea 1: Crear una instancia de Azure Container Registry
 
 En esta tarea, creará un grupo de recursos para el laboratorio en Azure Container Registry.
 
@@ -90,7 +90,7 @@ En esta tarea, creará un grupo de recursos para el laboratorio en Azure Contain
 
     >**Nota**: Registre el nombre del ACR. Lo necesitará en la próxima tarea.
 
-#### <a name="task-2-create-a-dockerfile-build-a-container-and-push-it-to-azure-container-registry"></a>Tarea 2: Crear un Dockerfile, compilar un contenedor e insertarlo en Azure Container Registry
+#### Tarea 2: Crear un Dockerfile, compilar un contenedor e insertarlo en Azure Container Registry
 
 En esta tarea, creará un Dockerfile, compilará una imagen a partir del Dockerfile e implementará la imagen en la instancia de ACR. 
 
@@ -126,7 +126,7 @@ En esta tarea, creará un Dockerfile, compilará una imagen a partir del Dockerf
 
     >**Nota**: El manifiesto incluye la síntesis del mensaje sha256, la fecha de creación del manifiesto y las entradas de la plataforma. 
 
-#### <a name="task-3-create-an-azure-kubernetes-service-cluster"></a>Tarea 3: Crear un clúster de Azure Kubernetes Service
+#### Tarea 3: Crear un clúster de Azure Kubernetes Service
 
 En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos implementados. 
 
@@ -136,7 +136,7 @@ En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos 
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear clúster de Kubernetes**, seleccione **Configuración preestablecida del clúster** y seleccione **Desarrollo/pruebas ($)** . Ahora, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |----|----|
     |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB09**|
@@ -197,7 +197,7 @@ En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos 
 
     >**Nota**: Compruebe que el **Estado** del nodo del clúster aparece como **Listo**.
 
-#### <a name="task-4-grant-the-aks-cluster-permissions-to-access-the-acr-and-manage-its-virtual-network"></a>Tarea 4: Conceder permisos al clúster de AKS para acceder a ACR y administrar su red virtual
+#### Tarea 4: Conceder permisos al clúster de AKS para acceder a ACR y administrar su red virtual
 
 En esta tarea, concederá al clúster de AKS permiso para acceder a ACR y administrar su red virtual. 
 
@@ -229,7 +229,7 @@ En esta tarea, concederá al clúster de AKS permiso para acceder a ACR y admini
     az role assignment create --assignee $AKS_MANAGED_ID --role "Contributor" --scope $AKS_VNET_ID
     ```
 
-#### <a name="task-5-deploy-an-external-service-to-aks"></a>Tarea 5: Implementar un servicio externo en AKS
+#### Tarea 5: Implementar un servicio externo en AKS
 
 En esta tarea, descargará los archivos de manifiesto, editará el archivo YAML y aplicará los cambios al clúster. 
 
@@ -268,7 +268,7 @@ En esta tarea, descargará los archivos de manifiesto, editará el archivo YAML 
     service/nginxexternal created
     ```
 
-#### <a name="task-6-verify-the-you-can-access-an-external-aks-hosted-service"></a>Tarea 6: Comprobar que puede acceder a un servicio hospedado en AKS externo
+#### Tarea 6: Comprobar que puede acceder a un servicio hospedado en AKS externo
 
 En esta tarea, compruebe que se puede acceder externamente al contenedor mediante la dirección IP pública.
 
@@ -284,7 +284,7 @@ En esta tarea, compruebe que se puede acceder externamente al contenedor mediant
 
 4. Asegúrese de la página **Bienvenido a nginx** se muestra. 
 
-#### <a name="task-7-deploy-an-internal-service-to-aks"></a>Tarea 7: Implementar un servicio interno en AKS
+#### Tarea 7: Implementar un servicio interno en AKS
 
 En esta tarea, implementará el servicio de acceso interno en AKS. 
 
@@ -327,7 +327,7 @@ En esta tarea, implementará el servicio de acceso interno en AKS.
 
     >**Nota**: También puede usar la dirección de CLUSTER-IP.
 
-#### <a name="task-8-verify-the-you-can-access-an-internal-aks-hosted-service"></a>Tarea 8: Comprobar que puede acceder a un servicio hospedado en AKS interno
+#### Tarea 8: Comprobar que puede acceder a un servicio hospedado en AKS interno
 
 En esta tarea, usará uno de los pods que se ejecutan en el clúster de AKS para acceder al servicio interno. 
 

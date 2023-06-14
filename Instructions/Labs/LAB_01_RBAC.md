@@ -4,10 +4,10 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-01-role-based-access-control"></a>Laboratorio 01: Control de acceso basado en roles
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 01: Control de acceso basado en roles
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que cree una prueba de concepto que muestre cómo se crean los usuarios y grupos de Azure. Además, cómo se usa el control de acceso basado en roles para asignar roles a grupos. En concreto, debe:
 
@@ -18,7 +18,7 @@ Se le ha pedido que cree una prueba de concepto que muestre cómo se crean los u
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará los ejercicios siguientes:
 
@@ -27,22 +27,22 @@ En este laboratorio completará los ejercicios siguientes:
 - Ejercicio 3: Creación del grupo Consola de servicio con el usuario Dylan Williams como miembro (CLI de Azure). 
 - Ejercicio 4: Asignación del rol de colaborador de la máquina virtual al grupo Consola de servicio.
 
-## <a name="role-based-access-control-architecture-diagram"></a>Diagrama de arquitectura de control de acceso basado en rol
+## Diagrama de arquitectura de control de acceso basado en rol
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157751243-5aa6e521-9bc1-40af-839b-4fd9927479d7.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-### <a name="exercise-1-create-the-senior-admins-group-with-the-user-account-joseph-price-as-its-member"></a>Ejercicio 1: Creación del grupo Administradores sénior con la cuenta de usuario de Joseph Price como miembro. 
+### Ejercicio 1: Creación del grupo Administradores sénior con la cuenta de usuario de Joseph Price como miembro. 
 
-#### <a name="estimated-timing-10-minutes"></a>Tiempo estimado: 10 minutos
+#### Tiempo estimado: 10 minutos
 
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Uso de Azure Portal para crear una cuenta de usuario para Joseph Price.
 - Tarea 2: Uso de Azure Portal para crear un grupo de administradores sénior y agregar la cuenta de usuario de Joseph Price al grupo.
 
-#### <a name="task-1-use-the-azure-portal-to-create-a-user-account-for-joseph-price"></a>Tarea 1: Uso de Azure Portal para crear una cuenta de usuario para Joseph Price 
+#### Tarea 1: Uso de Azure Portal para crear una cuenta de usuario para Joseph Price 
 
 En esta tarea, creará una cuenta de usuario para Joseph Price. 
 
@@ -69,7 +69,7 @@ En esta tarea, creará una cuenta de usuario para Joseph Price.
 
 8. Actualice el panel **Usuarios \| Todos los usuarios** para comprobar que el nuevo usuario se creó en el inquilino de Azure AD.
 
-#### <a name="task2-use-the-azure-portal-to-create-a-senior-admins-group-and-add-the-user-account-of-joseph-price-to-the-group"></a>Tarea 2: Uso de Azure Portal para crear un grupo de administradores sénior y agregar la cuenta de usuario de Joseph Price al grupo.
+#### Tarea 2: Uso de Azure Portal para crear un grupo de administradores sénior y agregar la cuenta de usuario de Joseph Price al grupo.
 
 En esta tarea, creará el grupo *Administradores sénior*, agregará la cuenta de usuario de Joseph Price al grupo y lo configurará como propietario del grupo.
 
@@ -93,16 +93,16 @@ En esta tarea, creará el grupo *Administradores sénior*, agregará la cuenta d
 
 > Resultado: ha usado Azure Portal para crear un usuario y un grupo, y ha asignado el usuario al grupo. 
 
-### <a name="exercise-2-create-a-junior-admins-group-containing-the-user-account-of-isabel-garcia-as-its-member"></a>Ejercicio 2: Creación de un grupo de administradores junior que contenga la cuenta de usuario de Isabel García como miembro.
+### Ejercicio 2: Creación de un grupo de administradores junior que contenga la cuenta de usuario de Isabel García como miembro.
 
-#### <a name="estimated-timing-10-minutes"></a>Tiempo estimado: 10 minutos
+#### Tiempo estimado: 10 minutos
 
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Uso de PowerShell para crear una cuenta de usuario para Isabel García.
 - Tarea 2: Uso de PowerShell para crear el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo. 
 
-#### <a name="task-1-use-powershell-to-create-a-user-account-for-isabel-garcia"></a>Tarea 1: Uso de PowerShell para crear una cuenta de usuario para Isabel García.
+#### Tarea 1: Uso de PowerShell para crear una cuenta de usuario para Isabel García.
 
 En esta tarea, creará una cuenta de usuario para Isabel García mediante PowerShell.
 
@@ -147,7 +147,7 @@ En esta tarea, creará una cuenta de usuario para Isabel García mediante PowerS
     Get-AzureADUser 
     ```
 
-#### <a name="task2-use-powershell-to-create-the-junior-admins-group-and-add-the-user-account-of-isabel-garcia-to-the-group"></a>Tarea 2: Uso de PowerShell para crear el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo.
+#### Tarea 2: Uso de PowerShell para crear el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo.
 
 En esta tarea, creará el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo mediante PowerShell.
 
@@ -184,16 +184,16 @@ En esta tarea, creará el grupo Administradores junior y agregar la cuenta de us
 > Resultado: ha usado PowerShell para crear un usuario y una cuenta de grupo, y ha agregado la cuenta de usuario a la cuenta de grupo. 
 
 
-### <a name="exercise-3-create-a-service-desk-group-containing-the-user-account-of-dylan-williams-as-its-member"></a>Ejercicio 3: Creación de un grupo de consola de servicio que contenga la cuenta de usuario de Dylan Williams como miembro.
+### Ejercicio 3: Creación de un grupo de consola de servicio que contenga la cuenta de usuario de Dylan Williams como miembro.
 
-#### <a name="estimated-timing-10-minutes"></a>Tiempo estimado: 10 minutos
+#### Tiempo estimado: 10 minutos
 
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Uso del CLI de Azure para crear una cuenta de usuario para Dylan Williams.
 - Tarea 2: Uso del CLI de Azure para crear el grupo Consola de servicio y agregar la cuenta de usuario de Dylan al grupo. 
 
-#### <a name="task-1-use-azure-cli-to-create-a-user-account-for-dylan-williams"></a>Tarea 1: Uso del CLI de Azure para crear una cuenta de usuario para Dylan Williams.
+#### Tarea 1: Uso del CLI de Azure para crear una cuenta de usuario para Dylan Williams.
 
 En esta tarea, creará una cuenta de usuario para Dylan Williams.
 
@@ -217,7 +217,7 @@ En esta tarea, creará una cuenta de usuario para Dylan Williams.
     az ad user list --output table
     ```
 
-#### <a name="task-2-use-azure-cli-to-create-the-service-desk-group-and-add-the-user-account-of-dylan-to-the-group"></a>Tarea 2: Uso del CLI de Azure para crear el grupo Consola de servicio y agregar la cuenta de usuario de Dylan al grupo. 
+#### Tarea 2: Uso del CLI de Azure para crear el grupo Consola de servicio y agregar la cuenta de usuario de Dylan al grupo. 
 
 En esta tarea, creará el grupo Consola de servicio y asignará a Dylan al grupo. 
 
@@ -262,16 +262,16 @@ En esta tarea, creará el grupo Consola de servicio y asignará a Dylan al grupo
 > Resultado: con el CLI de Azure, ha creado un usuario y una cuenta de grupo, y ha agregado la cuenta de usuario al grupo. 
 
 
-### <a name="exercise-4-assign-the-virtual-machine-contributor-role-to-the-service-desk-group"></a>Ejercicio 4: Asignación del rol de colaborador de la máquina virtual al grupo Consola de servicio.
+### Ejercicio 4: Asignación del rol de colaborador de la máquina virtual al grupo Consola de servicio.
 
-#### <a name="estimated-timing-10-minutes"></a>Tiempo estimado: 10 minutos
+#### Tiempo estimado: 10 minutos
 
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Creación de un grupo de recursos. 
 - Tarea 2: Asignación de permisos de colaborador de la máquina virtual de la consola de servicio al grupo de recursos.  
 
-#### <a name="task-1-create-a-resource-group"></a>Tarea 1: Creación de un grupo de recursos
+#### Tarea 1: Creación de un grupo de recursos
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
 
@@ -290,7 +290,7 @@ En este ejercicio completará las tareas siguientes:
 4. De nuevo en el panel **Grupos de recursos**, actualice la página y compruebe que el nuevo grupo de recursos aparece en la lista de grupos de recursos.
 
 
-#### <a name="task-2-assign-the-service-desk-virtual-machine-contributor-permissions"></a>Tarea 2: Asignación a la Consola de servicio de los permisos de colaborador de máquina virtual. 
+#### Tarea 2: Asignación a la Consola de servicio de los permisos de colaborador de máquina virtual. 
 
 1. En el panel **Grupos de recursos**, haga clic en la entrada del grupo de recursos **AZ500LAB01**.
 

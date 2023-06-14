@@ -4,10 +4,10 @@ lab:
   module: Module 03 - Secure data and applications
 ---
 
-# <a name="lab-12-service-endpoints-and-securing-storage"></a>Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que cree una prueba de concepto para demostrar la protección de recursos compartidos de archivos de Azure. En concreto, quiere:
     
@@ -17,21 +17,21 @@ Se le ha pedido que cree una prueba de concepto para demostrar la protección de
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Puntos de conexión de servicio y almacenamiento de seguridad
 
-## <a name="service-endpoints-and-securing-storage-diagram"></a>Diagrama de puntos de conexión de servicio y protección del almacenamiento
+## Diagrama de puntos de conexión de servicio y protección del almacenamiento
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157534883-29664a05-85d1-4c70-99a7-f16d2360755d.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-### <a name="exercise-1-service-endpoints-and-security-storage"></a>Ejercicio 1: Puntos de conexión de servicio y almacenamiento de seguridad
+### Ejercicio 1: Puntos de conexión de servicio y almacenamiento de seguridad
 
-### <a name="estimated-timing-45-minutes"></a>Tiempo estimado: 45 minutos
+### Tiempo estimado: 45 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -44,7 +44,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 7: Prueba de la conexión del almacenamiento desde la subred privada para confirmar que se permite el acceso
 - Tarea 8: Prueba de la conexión del almacenamiento desde la subred pública para confirmar que se deniega el acceso 
 
-#### <a name="task-1-create-a-virtual-network"></a>Tarea 1: Creación de una red virtual
+#### Tarea 1: Creación de una red virtual
 
 En esta tarea, creará una red virtual.
 
@@ -76,7 +76,7 @@ En esta tarea, creará una red virtual.
 
 7. En la pestaña **Revisar y crear** del panel **Crear red virtual**, haga clic en **Crear**.
 
-#### <a name="task-2-add-a-subnet-to-the-virtual-network-and-configure-a-storage-endpoint"></a>Tarea 2: Adición de una subred a la red virtual y configuración de un punto de conexión de almacenamiento
+#### Tarea 2: Adición de una subred a la red virtual y configuración de un punto de conexión de almacenamiento
 
 En esta tarea, creará otra subred y habilitará un punto de conexión de servicio en esa subred. Los punto de conexión de servicio están habilitados por servicio, por subred. 
 
@@ -100,7 +100,7 @@ En esta tarea, creará otra subred y habilitará un punto de conexión de servic
 
     >**Nota**: La red virtual ahora tiene dos subredes: pública y privada. 
     
-#### <a name="task-3-configure-a-network-security-group-to-restrict-access-to-the-subnet"></a>Tarea 3: Configuración de un grupo de seguridad de red para restringir el acceso a la subred
+#### Tarea 3: Configuración de un grupo de seguridad de red para restringir el acceso a la subred
 
 En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad de salida (almacenamiento e Internet) y una regla de seguridad de entrada (RDP). También asociará el grupo de seguridad de red a la subred Privada. Esto restringirá el tráfico saliente desde máquinas virtuales de Azure conectadas a esa subred.
 
@@ -192,7 +192,7 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
     |Virtual network|**myVirtualNetwork**|
     |Subnet|**Privado**|
 
-#### <a name="task-4-configure-a-network-security-group-to-allow-rdp-on-the-public-subnet"></a>Tarea 4: Configuración de un grupo de seguridad de red para permitir una RDP en la subred pública
+#### Tarea 4: Configuración de un grupo de seguridad de red para permitir una RDP en la subred pública
 
 En esta tarea, creará un grupo de seguridad de red con una regla de seguridad de entrada (RDP). También asociará el grupo de seguridad de red a la subred pública. Esto permitirá el acceso de la RDP a la máquina virtual pública.
 
@@ -242,7 +242,7 @@ En esta tarea, creará un grupo de seguridad de red con una regla de seguridad d
     |Virtual network|**myVirtualNetwork**|
     |Subnet|**Public**|
     
-#### <a name="task-5-create-a-storage-account-with-a-file-share"></a>Tarea 5: Creación de una cuenta de almacenamiento con un recurso compartido de archivos
+#### Tarea 5: Creación de una cuenta de almacenamiento con un recurso compartido de archivos
 
 En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de archivos y obtendrá la clave de la cuenta de almacenamiento.  
 
@@ -309,7 +309,7 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
 
     >**Nota**: En este punto del laboratorio ha configurado una red virtual, un grupo de seguridad de red y una cuenta de almacenamiento con un recurso compartido de archivos. 
 
-#### <a name="task-6-deploy-virtual-machines-into-the-designated-subnets"></a>Tarea 6: Implementación de máquinas virtuales en las subredes designadas
+#### Tarea 6: Implementación de máquinas virtuales en las subredes designadas
 
 En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la otra en la subred Pública. 
 
@@ -329,7 +329,7 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Region|**(EE. UU.) Este de EE. UU.**|
     |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
+    |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
     |Ya tiene una licencia de Windows Server.|**No seleccionado**|
 
@@ -364,7 +364,7 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
     |Region|**(EE. UU.) Este de EE. UU.**|
     |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
     |Nombre de usuario|**localadmin**|
-    |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
+    |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     |Puertos de entrada públicos|**None**|
     |Ya tiene una licencia de Windows Server.|**No seleccionado**|
 
@@ -387,7 +387,7 @@ En esta tarea, creará dos máquinas virtuales: una en la subred Privada y la ot
 
     >**Nota**: Puede continuar con la siguiente tarea una vez completada la implementación de la máquina virtual de Azure **myVMPrivate**.
 
-#### <a name="task-7-test-the-storage-connection-from-the-private-subnet-to-confirm-that-access-is-allowed"></a>Tarea 7: Prueba de la conexión del almacenamiento desde la subred privada para confirmar que se permite el acceso
+#### Tarea 7: Prueba de la conexión del almacenamiento desde la subred privada para confirmar que se permite el acceso
 
 En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escritorio remoto y asignará una unidad al recurso compartido de archivos. 
 
@@ -439,7 +439,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
     >**Nota**: En este momento, ha confirmado que la máquina virtual de la subred Privada puede acceder a la cuenta de almacenamiento. 
 
-####  <a name="task-8-test-the-storage-connection-from-the-public-subnet-to-confirm-that-access-is-denied"></a>Tarea 8: Prueba de la conexión del almacenamiento desde la subred pública para confirmar que se deniega el acceso 
+####  Tarea 8: Prueba de la conexión del almacenamiento desde la subred pública para confirmar que se deniega el acceso 
 
 1. Vuelva al panel **Máquinas virtuales**. 
 
@@ -483,7 +483,7 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
 > No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no se generarán costes inesperados. 
 
-1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
