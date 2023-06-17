@@ -4,10 +4,10 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-02-azure-policy"></a>Laboratorio 02: Azure Policy
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 02: Azure Policy
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que cree una prueba de concepto que muestre cómo se puede usar Azure Policy. En concreto, debe:
 
@@ -16,21 +16,21 @@ Se le ha pedido que cree una prueba de concepto que muestre cómo se puede usar 
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará las tareas siguientes:
 
 - Ejercicio 1: Implementación de Azure Policy. 
 
-## <a name="azure-policy-diagram"></a>Diagrama de Azure Policy
+## Diagrama de Azure Policy
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157511920-19c1f06c-86bd-440d-80ac-d96aa27aefff.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-### <a name="exercise-1-implement-azure-policy"></a>Ejercicio 1: Implementación de Azure Policy
+### Ejercicio 1: Implementación de Azure Policy
 
-#### <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+#### Tiempo estimado: 20 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -38,7 +38,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 2: Creación de una asignación de directiva de ubicaciones permitidas.
 - Tarea 3: Comprobación de que la asignación de directiva de ubicaciones permitidas funciona. 
 
-#### <a name="task-1-create-a-resource-group-for-the-lab"></a>Tarea 1: Creación de un grupo de recursos para el laboratorio. 
+#### Tarea 1: Creación de un grupo de recursos para el laboratorio. 
 
 En esta tarea, creará un grupo de recursos para el laboratorio. 
 
@@ -46,7 +46,7 @@ En esta tarea, creará un grupo de recursos para el laboratorio.
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 1. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
@@ -69,7 +69,7 @@ En esta tarea, creará un grupo de recursos para el laboratorio.
 
 1. Cierre **Cloud Shell**.
 
-#### <a name="task-2-create-an-allowed-locations-policy-assignment"></a>Tarea 2: Creación de una asignación de directiva de ubicaciones permitidas.
+#### Tarea 2: Creación de una asignación de directiva de ubicaciones permitidas.
 
 En esta tarea, creará una asignación de directiva de ubicaciones permitidas y especificará qué regiones de Azure puede usar la directiva. 
 
@@ -91,7 +91,7 @@ En esta tarea, creará una asignación de directiva de ubicaciones permitidas y 
 
 1. En la pestaña **Aspectos básicos** del panel **Ubicaciones permitidas**, haga clic en el botón Puntos suspensivos (...) situado junto al cuadro de texto **Ámbito** y, en el panel **Ámbito**, especifique la siguiente configuración:
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Subscription|nombre de la suscripción de Azure|
    |Resource group|**AZ500LAB02**|
@@ -118,7 +118,7 @@ En esta tarea, creará una asignación de directiva de ubicaciones permitidas y 
 
    >**Nota**: La razón por la que la asignación de la directiva de Azure puede tardar hasta 30 minutos en tener efecto es que tiene que replicarse globalmente. Normalmente, esto solo tarda unos minutos.  Si se produce un error en la siguiente tarea, espere unos minutos e intente sus pasos de nuevo.
 
-#### <a name="task-3-test-the-allowed-locations-policy-assignment"></a>Tarea 3: Prueba de la asignación de directiva de ubicaciones permitidas
+#### Tarea 3: Prueba de la asignación de directiva de ubicaciones permitidas
 
 En esta tarea, probará la asignación de directiva de ubicaciones permitidas. 
 
@@ -130,7 +130,7 @@ En esta tarea, probará la asignación de directiva de ubicaciones permitidas.
 
 1. En la pestaña **Aspectos básicos** de la hoja **Crear red virtual** , especifique las opciones de configuración siguientes (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Resource group|**AZ500LAB02**|
     |Name|**myVnet**|

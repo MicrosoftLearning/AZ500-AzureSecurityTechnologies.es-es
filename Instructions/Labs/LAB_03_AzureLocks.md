@@ -4,10 +4,10 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-03-resource-manager-locks"></a>Laboratorio 03: Bloqueos de Resource Manager
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 03: Bloqueos de Resource Manager
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio 
+## Escenario del laboratorio 
 
 Se le ha pedido que cree una prueba de concepto que muestre cómo se pueden usar los bloqueos de recursos para evitar la eliminación o cambios accidentales. En concreto, debe:
 
@@ -17,21 +17,21 @@ Se le ha pedido que cree una prueba de concepto que muestre cómo se pueden usar
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
  
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Bloqueos de Resource Manager
 
-## <a name="resource-manager-locks-diagram"></a>Diagrama de bloqueos de Resource Manager
+## Diagrama de bloqueos de Resource Manager
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157514986-1bf6a9ea-4c7f-4487-bcd7-542648f8dc95.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-### <a name="exercise-1-resource-manager-locks"></a>Ejercicio 1: Bloqueos de Resource Manager
+### Ejercicio 1: Bloqueos de Resource Manager
 
-#### <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+#### Tiempo estimado: 20 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -41,7 +41,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 4: Quitar el bloqueo de solo lectura y crear un bloqueo de eliminación.
 - Tarea 5: Probar el bloqueo de eliminación.
 
-#### <a name="task-1-create-a-resource-group-with-a-storage-account"></a>Tarea 1: Crear un grupo de recursos con una cuenta de almacenamiento
+#### Tarea 1: Crear un grupo de recursos con una cuenta de almacenamiento
 
 En esta tarea, creará un grupo de recursos y una cuenta de almacenamiento para el laboratorio. 
 
@@ -49,7 +49,7 @@ En esta tarea, creará un grupo de recursos y una cuenta de almacenamiento para 
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 1. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
@@ -74,7 +74,7 @@ En esta tarea, creará un grupo de recursos y una cuenta de almacenamiento para 
 
 1. Cierre el panel de Cloud Shell.
 
-#### <a name="task-2-add-a-readonly-lock-on-the-storage-account"></a>Tarea 2: Agregar un bloqueo de solo lectura en la cuenta de almacenamiento. 
+#### Tarea 2: Agregar un bloqueo de solo lectura en la cuenta de almacenamiento. 
 
 En esta tarea, agregará un bloqueo de solo lectura a la cuenta de almacenamiento. Este protegerá el recurso frente a eliminaciones o modificaciones accidentales. 
 
@@ -88,7 +88,7 @@ En esta tarea, agregará un bloqueo de solo lectura a la cuenta de almacenamient
 
 1. Haga clic en **+ Agregar** y especifique la siguiente configuración:
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Nombre del bloqueo|**Bloqueo de solo lectura**|
    |Tipo de bloqueo|**Solo lectura**|
@@ -97,7 +97,7 @@ En esta tarea, agregará un bloqueo de solo lectura a la cuenta de almacenamient
 
    >**Nota**: La cuenta de almacenamiento ahora está protegida frente a eliminaciones y modificaciones accidentales.
 
-#### <a name="task-3-test-the-readonly-lock"></a>Tarea 3: Probar el bloqueo de solo lectura 
+#### Tarea 3: Probar el bloqueo de solo lectura 
 
 1. En la sección **Configuración** de la hoja de la cuenta de almacenamiento, haga clic en **Configuración**.
 
@@ -121,7 +121,7 @@ En esta tarea, agregará un bloqueo de solo lectura a la cuenta de almacenamient
 
    >**Nota**: Ahora ha comprobado que un bloqueo de solo lectura detendrá la eliminación y modificación accidentales de un recurso.
 
-#### <a name="task-4-remove-the-readonly-lock-and-create-a-delete-lock"></a>Tarea 4: Quitar el bloqueo de solo lectura y crear un bloqueo de eliminación.
+#### Tarea 4: Quitar el bloqueo de solo lectura y crear un bloqueo de eliminación.
 
 En esta tarea, quitará el bloqueo de solo lectura de la cuenta de almacenamiento y creará un bloqueo de eliminación. 
 
@@ -133,14 +133,14 @@ En esta tarea, quitará el bloqueo de solo lectura de la cuenta de almacenamient
 
 1. Haga clic en **+ Agregar** y especifique la siguiente configuración:
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Nombre del bloqueo|**Bloqueo de eliminación**|
    |Tipo de bloqueo|**Eliminar**|
 
 1. Haga clic en **Aceptar**. 
 
-#### <a name="task-5-test-the-delete-lock"></a>Tarea 5: Probar el bloqueo de eliminación.
+#### Tarea 5: Probar el bloqueo de eliminación.
 
 En esta tarea, probará el bloqueo de eliminación. Debería poder modificar la cuenta de almacenamiento, pero no eliminarla. 
 
@@ -151,8 +151,6 @@ En esta tarea, probará el bloqueo de eliminación. Debería poder modificar la 
    >**Nota**: Esta vez, el cambio debería ser correcto.
 
 1. En la hoja de la cuenta de almacenamiento, seleccione **Información general** y, en la hoja **Información general**, haga clic en **Eliminar**.
-
-1. En la hoja **Eliminar cuenta de almacenamiento**, escriba el nombre de la cuenta de almacenamiento para confirmar que tiene previsto continuar y, a continuación, haga clic en **Eliminar**.
 
 1. Revise la notificación similar al texto siguiente: 
 

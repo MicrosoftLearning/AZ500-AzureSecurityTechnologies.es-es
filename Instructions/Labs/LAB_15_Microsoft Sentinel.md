@@ -4,10 +4,10 @@ lab:
   module: Module 04 - Manage Security Operations
 ---
 
-# <a name="lab-15-microsoft-sentinel"></a>Laboratorio 15: Microsoft Sentinel
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 15: Microsoft Sentinel
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 **Nota:** **Azure Sentinel** ahora se llama **Microsoft Sentinel**. 
 
@@ -19,25 +19,25 @@ Se le ha pedido que cree una prueba de concepto de detección y respuesta de ame
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Implementación de Microsoft Sentinel
 
-## <a name="microsoft-sentinel-diagram"></a>Diagrama de Microsoft Sentinel
+## Diagrama de Microsoft Sentinel
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157538440-4953be73-90be-4edd-bd23-b678326ba637.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-## <a name="lab-files"></a>Archivos de laboratorio:
+## Archivos de laboratorio:
 
 - **\\Allfiles\\Labs\\15\\changeincidentseverity.json**
 
-### <a name="exercise-1-implement-microsoft-sentinel"></a>Ejercicio 1: Implementación de Microsoft Sentinel
+### Ejercicio 1: Implementación de Microsoft Sentinel
 
-### <a name="estimated-timing-30-minutes"></a>Tiempo estimado: 30 minutos
+### Tiempo estimado: 30 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -48,7 +48,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 5: Creación de una alerta personalizada y configuración del cuaderno de estrategias como una respuesta automatizada.
 - Tarea 6: Invocación de un incidente y revisión de las acciones asociadas.
 
-#### <a name="task-1-on-board-azure-sentinel"></a>Tarea 1: Incorporación de Azure Sentinel
+#### Tarea 1: Incorporación de Azure Sentinel
 
 En esta tarea, incorporará Microsoft Sentinel y conectará el área de trabajo de Log Analytics. 
 
@@ -66,7 +66,7 @@ En esta tarea, incorporará Microsoft Sentinel y conectará el área de trabajo
 
     >**Nota**: Microsoft Sentinel tiene unos requisitos muy específicos para las áreas de trabajo. Por ejemplo, no se pueden usar áreas de trabajo creadas por Microsoft Defender for Cloud. Obtenga más información en [Inicio rápido: Incorporación de Azure Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/quickstart-onboard)
     
-#### <a name="task-2-configure-microsoft-sentinel-to-use-the-azure-activity-data-connector"></a>Tarea 2: Configuración de Microsoft Sentinel para usar el conector de datos de actividad de Azure. 
+#### Tarea 2: Configuración de Microsoft Sentinel para usar el conector de datos de actividad de Azure. 
 
 En esta tarea, configurará Sentinel para usar el conector de datos de actividad de Azure.  
 
@@ -96,7 +96,7 @@ En esta tarea, configurará Sentinel para usar el conector de datos de actividad
 
     >**Nota**: El estado puede tardar más de 15 minutos en mostrarse como "Conectado" y el gráfico también en mostrar Datos recibidos.
 
-#### <a name="task-3-create-a-rule-that-uses-the-azure-activity-data-connector"></a>Tarea 3: Creación de una regla que use el conector de datos de actividad de Azure. 
+#### Tarea 3: Creación de una regla que use el conector de datos de actividad de Azure. 
 
 En esta tarea, revisará y creará una regla que usa el conector de datos de actividad de Azure. 
 
@@ -124,7 +124,7 @@ En esta tarea, revisará y creará una regla que usa el conector de datos de act
 
     >**Nota**: Ahora tiene una regla activa.
 
-#### <a name="task-4-create-a-playbook"></a>Tarea 4: Creación de un cuaderno de estrategias
+#### Tarea 4: Creación de un cuaderno de estrategias
 
 En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de seguridad es una colección de tareas que se pueden Microsoft Sentinel puede invocar en respuesta a una alerta. 
 
@@ -140,7 +140,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 5. En el panel **Implementación personalizada**, asegúrese de que las siguientes opciones están configuradas (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB131415**|
@@ -176,7 +176,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 16. En el panel **Diseñador de Logic Apps**, haga clic en **Guardar** para guardar los cambios.
 
-#### <a name="task-5-create-a-custom-alert-and-configure-a-playbook-as-an-automated-response"></a>Tarea 5: Creación de una alerta personalizada y configuración de un cuaderno de estrategias como una respuesta automatizada
+#### Tarea 5: Creación de una alerta personalizada y configuración de un cuaderno de estrategias como una respuesta automatizada
 
 1. En Azure Portal, vuelva al panel **Microsoft Sentinel \| Información general**.
 
@@ -186,7 +186,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 4. En la pestaña **General** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Nombre|**Demostración del cuaderno de estrategias**|
     |Tácticas|**Acceso inicial**|
@@ -218,7 +218,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
     >**Nota**: Ahora tiene una nueva regla activa denominada **Demostración del cuaderno de estrategias**. Si se produce un evento identificado por la lógica de la regla, se producirá una alerta de gravedad media, lo que generará un incidente correspondiente.
 
-#### <a name="task-6-invoke-an-incident-and-review-the-associated-actions"></a>Tarea 6: Invocación de un incidente y revisión de las acciones asociadas.
+#### Tarea 6: Invocación de un incidente y revisión de las acciones asociadas.
 
 1. En Azure Portal, vaya al panel **Microsoft Defender for Cloud \| Información general**.
 
