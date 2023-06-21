@@ -4,10 +4,10 @@ lab:
   module: Module 02 - Implement Platform Protection
 ---
 
-# <a name="lab-07-network-security-groups-and-application-security-groups"></a>Laboratorio 07: Grupos de seguridad de red y grupos de seguridad de aplicaciones
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 07: Grupos de seguridad de red y grupos de seguridad de aplicaciones
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que implemente la infraestructura de red virtual de su organización y realizar pruebas para asegurarse de que funciona correctamente. En concreto:
 
@@ -19,22 +19,22 @@ Se le ha pedido que implemente la infraestructura de red virtual de su organizac
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará los ejercicios siguientes:
 
 - Ejercicio 1: Crear la infraestructura de red virtual
 - Ejercicio 2: Implementar máquinas virtuales y probar filtros de red
 
-## <a name="network-and-application-security-groups-diagram"></a>Diagrama de grupos de seguridad de red y de aplicación
+## Diagrama de grupos de seguridad de red y de aplicación
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157526438-6da4f68b-db88-4931-a041-8474e66d3fe5.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-### <a name="exercise-1-create-the-virtual-networking-infrastructure"></a>Ejercicio 1: Crear la infraestructura de red virtual
+### Ejercicio 1: Crear la infraestructura de red virtual
 
-### <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+### Tiempo estimado: 20 minutos
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
@@ -45,7 +45,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 3: Crear un grupo de seguridad de red y asociarlo a la subred de red virtual.
 - Tarea 4: Crear reglas de seguridad de NSG de entrada para todo el tráfico a los servidores web y RDP para los servidores de administración.
 
-#### <a name="task-1--create-a-virtual-network"></a>Tarea 1: Crear una red virtual
+#### Tarea 1: Crear una red virtual
 
 En esta tarea, creará una red virtual para usarla con los grupos de seguridad de red y de aplicaciones. 
 
@@ -77,7 +77,7 @@ En esta tarea, creará una red virtual para usarla con los grupos de seguridad d
 
 7. En la pestaña **Revisar y crear** del panel **Crear red virtual**, haga clic en **Crear**.
 
-#### <a name="task-2--create-application-security-groups"></a>Tarea 2: Crear grupos de seguridad de aplicaciones
+#### Tarea 2: Crear grupos de seguridad de aplicaciones
 
 En esta tarea, creará un grupo de seguridad de aplicaciones.
 
@@ -111,7 +111,7 @@ En esta tarea, creará un grupo de seguridad de aplicaciones.
 
 7. Haga clic en **Revisar y crear** y, a continuación, en **Crear**.
 
-#### <a name="task-3--create-a-network-security-group-and-associate-the-nsg-to-the-subnet"></a>Tarea 3: Crear un grupo de seguridad de red y asociarlo a la subred
+#### Tarea 3: Crear un grupo de seguridad de red y asociarlo a la subred
 
 En esta tarea, creará un grupo de seguridad de red. 
 
@@ -141,7 +141,7 @@ En esta tarea, creará un grupo de seguridad de red.
     |Virtual network|**myVirtualNetwork**|
     |Subnet|**default**|
 
-#### <a name="task-4-create-inbound-nsg-security-rules-to-all-traffic-to-web-servers-and-rdp-to-the-servers"></a>Tarea 4: Crear reglas de seguridad de NSG de entrada para todo el tráfico a los servidores web y RDP para los servidores. 
+#### Tarea 4: Crear reglas de seguridad de NSG de entrada para todo el tráfico a los servidores web y RDP para los servidores. 
 
 1. En la hoja **myNsg**, en la sección **Configuración**, haga clic en **Reglas de seguridad de entrada**.
 
@@ -175,9 +175,9 @@ En esta tarea, creará un grupo de seguridad de red.
 
 > Resultado: ha implementado una red virtual, seguridad de red con reglas de seguridad de entrada y dos grupos de seguridad de aplicaciones. 
 
-### <a name="exercise-2-deploy-virtual-machines-and-test-network-filters"></a>Ejercicio 2: Implementar máquinas virtuales y probar filtros de red
+### Ejercicio 2: Implementar máquinas virtuales y probar filtros de red
 
-### <a name="estimated-timing-25-minutes"></a>Tiempo estimado: 25 minutos
+### Tiempo estimado: 25 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -186,7 +186,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 3: Asociar cada interfaz de red de máquinas virtuales a su grupo de seguridad de aplicaciones.
 - Tarea 4: Probar el filtrado del tráfico de red.
 
-#### <a name="task-1-create-a-virtual-machine-to-use-as-a-web-server"></a>Tarea 1: Crear una máquina virtual para usarla como servidor web.
+#### Tarea 1: Crear una máquina virtual para usarla como servidor web.
 
 En esta tarea, creará una máquina virtual para usarla como servidor web.
 
@@ -202,7 +202,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
    |Resource group|**AZ500LAB07**|
    |Nombre de la máquina virtual|**myVmWeb**|
    |Region|**(EE. UU.) Este de EE. UU.**|
-   |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
+   |Imagen|**Windows Server 2022 Datacenter: Azure Edition, x64 Gen2**|
    |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
    |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
@@ -218,7 +218,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
 
 6. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
 
-7. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión >** . En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la siguiente configuración:
+7. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión > en la pestaña **Supervisión** del panel **Crear una máquina virtual**, compruebe la siguiente configuración:
 
    |Configuración|Value|
    |---|---|
@@ -226,7 +226,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
 
 8. Haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, compruebe que la validación se ha realizado correctamente y haga clic en **Crear**.
 
-#### <a name="task-2-create-a-virtual-machine-to-use-as-a-management-server"></a>Tarea 2: Crear una máquina virtual para usarla como servidor de administración. 
+#### Tarea 2: Crear una máquina virtual para usarla como servidor de administración. 
 
 En esta tarea, creará una máquina virtual para usarla como servidor de administración.
 
@@ -240,10 +240,10 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
    |Resource group|**AZ500LAB07**|
    |Nombre de la máquina virtual|**myVMMgmt**|
    |Region|(EE. UU.) Este de EE. UU.|
-   |Imagen|**Windows Server 2022 Datacenter: Azure Edition - Gen. 2**|
+   |Imagen|**Windows Server 2022 Datacenter: Azure Edition, x64 Gen2**|
    |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
-   |Contraseña|**Use su contraseña personal creada en: Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
+   |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    |Puertos de entrada públicos|**None**|
    |Ya tiene una licencia de Windows Server.|**No**|
 
@@ -255,7 +255,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
 
 5. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
 
-6. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión >** . En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la siguiente configuración:
+6. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión > en la pestaña **Supervisión** del panel **Crear una máquina virtual**, compruebe la siguiente configuración:
 
    |Configuración|Value|
    |---|---|
@@ -265,7 +265,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
 
     >**Nota**: Espere a que se aprovisionen ambas máquinas virtuales antes de continuar. 
 
-#### <a name="task-3-associate-each-virtual-machines-network-interface-to-its-application-security-group"></a>Tarea 3: Asocie cada interfaz de red de máquinas virtuales a su grupo de seguridad de aplicaciones.
+#### Tarea 3: Asocie cada interfaz de red de máquinas virtuales a su grupo de seguridad de aplicaciones.
 
 En esta tarea, asociará cada interfaz de red de máquinas virtuales con el grupo de seguridad de aplicaciones correspondiente. La interfaz de máquina virtual myVMWeb se asociará al grupo ASG myAsgWebServers. La interfaz de máquina virtual myVMMgmt se asociará al grupo ASG myAsgMgmtServers. 
 
@@ -283,7 +283,7 @@ En esta tarea, asociará cada interfaz de red de máquinas virtuales con el grup
 
 7. Haga clic en **Configurar los grupos de seguridad de aplicaciones** y, en la lista desplegable **Grupo de seguridad de aplicaciones**, seleccione **myAsgMgmtServers**y haga clic en **Guardar**.
 
-#### <a name="task-4-test-the-network-traffic-filtering"></a>Tarea 4: Probar el filtrado del tráfico de red
+#### Tarea 4: Probar el filtrado del tráfico de red
 
 En esta tarea, probará los filtros de tráfico de red. Debería poder usar RDP en la máquina virtual myVMMgmnt. Debería poder conectarse desde Internet a la máquina virtual myVMWeb y ver la página web predeterminada de IIS.  
 
@@ -326,7 +326,7 @@ En esta tarea, probará los filtros de tráfico de red. Debería poder usar RDP 
 
 > No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no se generarán costes inesperados. 
 
-1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 

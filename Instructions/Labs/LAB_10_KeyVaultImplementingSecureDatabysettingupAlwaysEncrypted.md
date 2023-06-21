@@ -70,7 +70,7 @@ En esta tarea, implementará una máquina virtual de Azure, que instalará autom
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB10**|
    |Location|**Este de EE. UU.**|
-   |Nombre de usuario administrador|**Student**|
+   |Nombre de usuario administrador|**Estudiante**|
    |Contraseña de administrador|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    
     >**Nota**: Aunque puede cambiar las credenciales administrativas usadas para iniciar sesión en la máquina virtual, no es obligatorio.
@@ -128,7 +128,8 @@ En esta tarea, creará un recurso de Azure Key Vault. También configurará los 
     |Configuración|Value|
     |----|----|
     |Configurar a partir de una plantilla (opcional)|**Administración de claves, secretos y certificados**|
-    |Permisos de claves|Haga clic en **Seleccionar todo**, lo que da como resultado **12 permisos seleccionados** (compruebe que los permisos de **Operaciones de directiva de rotación** estén **desmarcados**). |
+    |Permisos de claves|haga clic en **Seleccionar todo**, lo que da como resultado un total de **9 permisos seleccionados**|
+    |Permisos de clave y operaciones criptográficas|haga clic en **Firmar**, lo que da como resultado un total de **1 permiso seleccionado**|
     |Permisos de secretos|haga clic en **Seleccionar todo**, lo que da como resultado un total de **7 permisos seleccionados**|
     |Permisos de certificación|haga clic en **Seleccionar todo**, lo que da como resultado un total de **15 permisos seleccionados**|
     |Selección de la entidad de seguridad|haga clic en **Ninguno seleccionado** en la hoja **Entidad de seguridad**, seleccione la cuenta de usuario y haga clic en **Siguiente**.|
@@ -310,7 +311,7 @@ La implementación de la plantilla de ARM del ejercicio 1 aprovisionó una inst
 
     >**Nota**: La interfaz incluye cadenas de conexión para ADO.NET, JDBC, ODBC, PHP y Go. 
    
-4. Copie la **cadena de conexión para ADO.NET**. Lo necesitará más adelante.
+4. Registre la cadena de conexión **ADO.NET (autenticación de SQL**). Lo necesitará más adelante.
 
     >**Nota**: Al usar la cadena de conexión, asegúrese de reemplazar el marcador de posición `{your_password}` por la contraseña que configuró con la implementación en el ejercicio 1.
 
@@ -332,7 +333,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
 
     >**Nota**: Registre el nombre del servidor. Necesitará el nombre del servidor más adelante en esta tarea.
 
-2. En el panel **Configuración del firewall**. desplácese hacia abajo hasta **Nombre de regla** y especifique la siguiente configuración: 
+2. En el panel **Configuración del firewall**, desplácese hacia abajo hasta Nombre de regla, haga clic en **+Agregar regla de firewall** y especifique la siguiente configuración: 
 
     |Configuración|Value|
     |---|---|
@@ -340,7 +341,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     |Dirección IP inicial|la dirección IP pública de az500-10-vm1|
     |Dirección IP final|la dirección IP pública de az500-10-vm1|
 
-3. Haga clic en **Guardar** y **Aceptar** para guardar el cambio y cerrar el panel de confirmación. 
+3. Haga clic en **Guardar** para guardar el cambio y cerrar el panel de confirmación. 
 
     >**Nota**: Esto modifica la configuración del firewall del servidor, lo que permite conexiones a la base de datos de medicina desde la dirección IP pública de la máquina virtual de Azure que implementó en este laboratorio.
 
@@ -366,7 +367,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     |Tipo de servidor|**Motor de base de datos**|
     |Nombre del servidor|nombre de servidor que identificó anteriormente en esta tarea|
     |Autenticación|**SQL Server Authentication**|
-    |Iniciar sesión|**Student**|
+    |Iniciar sesión|**Estudiante**|
     |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
 8. En el cuadro de diálogo **Conectar con el servidor**, haga clic en **Conectar**.
@@ -458,7 +459,7 @@ Creará una aplicación de consola mediante Visual Studio para cargar datos en l
 
 10. Vuelva a la sesión de RDP y, en la consola de Visual Studio, en la ventana **Explorador de soluciones**, haga clic en **Program.cs** y reemplace su contenido por el código que copió en el Portapapeles.
 
-11. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 15, reemplace el marcador de posición `<connection string noted earlier>` por la cadena de conexión **ADO.NET** de la base de datos de Azure SQL que registró anteriormente en el laboratorio. En la cadena de conexión, reemplace el marcador de posición `{your_password}` por `Pa55w.rd1234`. Si guardó la cadena en el equipo del laboratorio, es posible que tenga que salir de la sesión de RDP para copiar la cadena de ADO y, a continuación, volver a la máquina virtual de Azure para pegarla.
+11. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 15, reemplace el marcador de posición `<connection string noted earlier>` por la cadena de conexión **ADO.NET** de la base de datos de Azure SQL que registró anteriormente en el laboratorio. En la cadena de conexión, reemplace el marcador de posición `{your_password}` por la contraseña que especificó en la implementación en el ejercicio 1. Si guardó la cadena en el equipo del laboratorio, es posible que tenga que salir de la sesión de RDP para copiar la cadena de ADO y, a continuación, volver a la máquina virtual de Azure para pegarla.
 
 12. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 16, reemplace el marcador de posición `<client id noted earlier>` por el valor del **id. de aplicación (cliente)** de la aplicación registrada que registró anteriormente en el laboratorio. 
 
@@ -494,7 +495,7 @@ Creará una aplicación de consola mediante Visual Studio para cargar datos en l
 
 1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. 
 
-2. En el menú desplegable superior izquierdo del panel de Cloud Shell, seleccione **PowerShell** y, cuando se le solicite, haga clic en **Confirmar**.
+2. En el menú desplegable superior izquierdo del panel de Cloud Shell, si es necesario, seleccione **PowerShell** y, cuando se le solicite, haga clic en **Confirmar**.
 
 3. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para quitar los grupos de recursos que creó en este laboratorio:
   
