@@ -4,10 +4,10 @@ lab:
   module: Module 03 - Secure data and applications
 ---
 
-# <a name="lab-11-securing-azure-sql-database"></a>Laboratorio 11: Protección de Azure SQL Database
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 11: Protección de Azure SQL Database
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que revise las características de seguridad de una base de datos de Azure SQL. En concreto, le interesa lo siguiente:
 
@@ -17,25 +17,25 @@ Se le ha pedido que revise las características de seguridad de una base de dato
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Implementación de características de seguridad en SQL Database
 
-## <a name="securing-azure-sql-database-diagram"></a>Diagrama de protección de Azure SQL Database
+## Diagrama de protección de Azure SQL Database
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157533836-7250fa58-a109-4882-a55b-d3fa3baf34ab.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-## <a name="lab-files"></a>Archivos de laboratorio:
+## Archivos de laboratorio:
 
 - **\\Allfiles\\Labs\\11\\azuredeploy.json**
 
-### <a name="exercise-1-implement-sql-database-security-features"></a>Ejercicio 1: Implementación de características de seguridad en SQL Database
+### Ejercicio 1: Implementación de características de seguridad en SQL Database
 
-### <a name="estimated-timing-30-minutes"></a>Tiempo estimado: 30 minutos
+### Tiempo estimado: 30 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -44,7 +44,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 3: Configuración de la clasificación de datos
 - Tarea 4: Configuración de la auditoría
 
-#### <a name="task-1-deploy-an-azure-sql-database"></a>Tarea 1: Implementación de Azure SQL Database
+#### Tarea 1: Implementación de Azure SQL Database
 
 En esta tarea, usará una plantilla para implementar la infraestructura de laboratorio. 
 
@@ -74,7 +74,7 @@ En esta tarea, usará una plantilla para implementar la infraestructura de labor
 
     >**Nota**: Espere a que la implementación se complete. 
 
-#### <a name="task-2-configure-advanced-data-protection"></a>Tarea 2: Configuración de la protección de datos avanzada
+#### Tarea 2: Configuración de la protección de datos avanzada
 
 1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
 
@@ -82,24 +82,22 @@ En esta tarea, usará una plantilla para implementar la infraestructura de labor
 
 3. En el panel **AZ500LAB11**, haga clic en la entrada que representa el SQL Server recién creado.
 
-4. En el panel Servidor SQL, en la sección **Seguridad**, haga clic en **Microsoft Defender for Cloud**. Desplácese hasta la parte inferior de la página **Introducción** y seleccione **Actualizar**. En la pestaña **Instalar agentes**, seleccione **Instalar agentes**.
-
-5. En el panel Servidor SQL, en la sección **Seguridad**, haga clic en **Microsoft Defender for Cloud** y seleccione **Habilitar Microsoft Defender for SQL**.
+4. En el panel Servidor SQL, en la sección **Seguridad**, haga clic en **Microsoft Defender for Cloud** y seleccione **Habilitar Microsoft Defender for SQL**.
 
       >**Nota**: Espere a que la notificación indique que Microsoft Defender for SQL se ha habilitado correctamente.
 
-6. En el panel Servidor SQL, la sección **Seguridad** de la página **Microsoft Defender for Cloud** y el parámetro **Microsoft Defender for SQL: habilitado en el servidor**, haga clic en **Configurar**.   
+5. En el panel SQL Server, en la sección **Seguridad** de la página **Microsoft Defender for Cloud**, en el parámetro **Microsoft Defender for SQL: habilitado en el nivel de suscripción (configurar)** , haga clic en **(configurar)** .  
 
       >**Nota**: Actualice el explorador si no se muestra **Configurar**.
     
-7. En el panel **Configuración del servidor**, revise la información sobre los precios y el período de prueba, **CONFIGURACIÓN DE LA EVALUACIÓN DE VULNERABILIDADES** y **CONFIGURACIÓN DE ADVANCED THREAT PROTECTION**.
+6. En el panel **Configuración del servidor**, revise la información sobre los precios y el período de prueba, **CONFIGURACIÓN DE LA EVALUACIÓN DE VULNERABILIDADES** y **CONFIGURACIÓN DE ADVANCED THREAT PROTECTION**.
 
-8. Vuelva al panel **Microsoft Defender for Cloud** y revise **Recomendaciones** y **Alertas de seguridad**.
+7. Vuelva al panel **Microsoft Defender for Cloud** y revise **Recomendaciones** y **Alertas de seguridad**.
 
       >**Nota**: Las recomendaciones pueden tardar entre 10 y 15 minutos en aparecer en el panel **Microsoft Defender for Cloud**. En lugar de esperar, continúe con la siguiente tarea, pero considere la posibilidad de volver a este panel una vez completadas todas las tareas restantes.
 
 
-#### <a name="task-3-configure-data-classification"></a>Tarea 3: Configuración de la clasificación de datos
+#### Tarea 3: Configuración de la clasificación de datos
 
 En esta tarea, detectará y clasificará información en la base de datos SQL para el cumplimiento de la protección de datos y el RGPD.
 
@@ -129,7 +127,7 @@ En esta tarea, detectará y clasificará información en la base de datos SQL pa
 
 9. De nuevo en el panel **Clasificación y detección de datos**, en la pestaña **Información general**, fíjese en que se ha actualizado con la información de clasificación más reciente. 
 
-#### <a name="task-4--configure-auditing"></a>Tarea 4: Configuración de la auditoría 
+#### Tarea 4: Configuración de la auditoría 
 
 En esta tarea, primero configurará la auditoría de nivel de servidor y, a continuación, configurará la auditoría de nivel de base de datos. 
 
