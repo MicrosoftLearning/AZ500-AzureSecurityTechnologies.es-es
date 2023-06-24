@@ -4,10 +4,10 @@ lab:
   module: Module 04 - Manage security operations
 ---
 
-# <a name="lab-13-azure-monitor"></a>Laboratorio 13: Azure Monitor
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 13: Azure Monitor
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que cree una prueba de concepto de supervisión del rendimiento de la máquina virtual. En concreto, quiere:
 
@@ -17,21 +17,21 @@ Se le ha pedido que cree una prueba de concepto de supervisión del rendimiento 
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará el ejercicio siguiente:
 
 - Ejercicio 1: Recopilar datos de una máquina virtual de Azure con Azure Monitor
 
-## <a name="azure-monitor"></a>Azure Monitor
+## Azure Monitor
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157536648-0a286514-a7e2-4058-9dea-e42da21eef76.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-### <a name="exercise-1-collect-data-from-an-azure-virtual-machine-with-azure-monitor"></a>Ejercicio 1: Recopilar datos de una máquina virtual de Azure con Azure Monitor
+### Ejercicio 1: Recopilar datos de una máquina virtual de Azure con Azure Monitor
 
-### <a name="exercise-timing-20-minutes"></a>Tiempo del ejercicio: 20 minutos
+### Tiempo del ejercicio: 20 minutos
 
 En este ejercicio completará las tareas siguientes: 
 
@@ -41,13 +41,13 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 4: Recopilar datos de rendimiento y eventos de máquina virtual
 - Tarea 5: Ver y consultar los datos recopilados 
 
-#### <a name="task-1-deploy-an-azure-virtual-machine"></a>Tarea 1: Implementar una máquina virtual de Azure
+#### Tarea 1: Implementar una máquina virtual de Azure
 
 1. Inicie sesión en Azure Portal **`https://portal.azure.com/`** .
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-2. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+2. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
 
 3. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
@@ -82,7 +82,7 @@ En este ejercicio completará las tareas siguientes:
 
 8. Cierre el panel de Cloud Shell. 
 
-#### <a name="task-2-create-a-log-analytics-workspace"></a>Tarea 2: Crear un área de trabajo de Log Analytics
+#### Tarea 2: Crear un área de trabajo de Log Analytics
 
 En esta tarea, creará un área de trabajo de Log Analytics. 
 
@@ -92,7 +92,7 @@ En esta tarea, creará un área de trabajo de Log Analytics.
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear un área de trabajo de Log Analytics**, especifique las siguientes opciones (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB131415**|
@@ -103,7 +103,7 @@ En esta tarea, creará un área de trabajo de Log Analytics.
 
 5. En la pestaña **Revisar y crear** del panel **Crear área de trabajo de Log Analytics**, seleccione **Crear**.
 
-#### <a name="task-3-enable-the-log-analytics-virtual-machine-extension"></a>Tarea 3: Habilitar la extensión de máquina virtual de Log Analytics
+#### Tarea 3: Habilitar la extensión de máquina virtual de Log Analytics
 
 En esta tarea, habilitará la extensión de máquina virtual de Log Analytics. Esta extensión instala el agente de Log Analytics en máquinas virtuales Windows y Linux. Este agente recopila datos de la máquina virtual y los transfiere al área de trabajo de Log Analytics que designe. Una vez instalado el agente, se actualizará automáticamente para garantizar que siempre tenga las características y correcciones más recientes. 
 
@@ -121,7 +121,7 @@ En esta tarea, habilitará la extensión de máquina virtual de Log Analytics. E
 
     >**Nota**: Esta operación puede tardar unos minutos. El **Estado** que se muestra en la hoja **myVM** cambiará de **Conectando** a **Esta área de trabajo**. 
 
-#### <a name="task-4-collect-virtual-machine-event-and-performance-data"></a>Tarea 4: Recopilar datos de rendimiento y eventos de máquina virtual
+#### Tarea 4: Recopilar datos de rendimiento y eventos de máquina virtual
 
 En esta tarea, configurará la recopilación del registro del sistema Windows y varios contadores de rendimiento comunes. También revisará otros orígenes que están disponibles.
 
@@ -148,7 +148,7 @@ En esta tarea, configurará la recopilación del registro del sistema Windows y 
   
 7. En la hoja **Agents configuration** (Configuración de agentes), haga clic en **Aplicar**.
 
-#### <a name="task-5-view-and-query-collected-data"></a>Tarea 5: Ver y consultar los datos recopilados
+#### Tarea 5: Ver y consultar los datos recopilados
 
 En esta tarea, ejecutará una búsqueda de registros en la recopilación de datos. 
 
@@ -192,5 +192,5 @@ En esta tarea, ejecutará una búsqueda de registros en la recopilación de dato
 
 **Limpieza de recursos**
 
->**Nota**: No quite los recursos de este laboratorio, ya que son necesarios para los laboratorios de Azure Security Center y Azure Sentinel.
+>**Nota**: No quite los recursos de este laboratorio, ya que son necesarios para los laboratorios de Microsoft Defender for Cloud y Microsoft Sentinel.
  

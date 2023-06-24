@@ -1,10 +1,10 @@
 ---
 lab:
-  title: '04 - MFA, acceso condicional y AAD Identity Protection'
+  title: '04: MFA y acceso condicional'
   module: Module 01 - Manage Identity and Access
 ---
 
-# Laboratorio 04: MFA, acceso condicional y AAD Identity Protection
+# Lab 04: MFA y acceso condicional
 # Manual de laboratorio para alumnos
 
 ## Escenario del laboratorio
@@ -13,7 +13,7 @@ Se le ha pedido que cree una prueba de concepto de características que mejoren 
 
 - Azure AD Multi-Factor Authentication
 - Acceso condicional de Azure AD
-- Azure AD Identity Protection
+- Directivas basadas en riesgos de acceso condicional de Azure AD
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
@@ -159,13 +159,13 @@ En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 
 
 1. Vuelva a la hoja **AdatumLab500-04**  Azure Active Directory y, en la sección **Administrar**, haga clic en **Usuarios**.
 
-2. En la hoja **Usuarios \| Todos los usuarios**, haga clic en **+ Nuevo usuario**. 
+2. En el panel **Usuarios | Todos los usuarios**, haga clic en **+ Nuevo usuario** y, a continuación, en **Crear nuevo usuario**. 
 
 3. En la hoja **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada y, a continuación, especifique la siguiente configuración (deje la otra configuración con sus valores predeterminados) y haga clic en **Crear**:
 
-   |Configuración|Valor|
+   |Configuración|Value|
    |---|---|
-   |Nombre de usuario|**aaduser1**|
+   |Nombre principal de usuario|**aaduser1**|
    |Name|**aaduser1**|
    |Contraseña|Asegúrese de que la opción **Generar contraseña automáticamente** está seleccionada y haga clic en **Mostrar contraseña**.|
    |Grupos|**0 grupos seleccionados**|
@@ -178,30 +178,26 @@ En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 
 
 4. De nuevo en la hoja **Usuarios \| Todos los usuarios**, haga clic en **+ Nuevo usuario**. 
 
-5. En la hoja **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada y, a continuación, especifique la siguiente configuración (deje la otra configuración con sus valores predeterminados):
+5. En la hoja **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada y, a continuación, especifique la siguiente configuración (deje la otra configuración con sus valores predeterminados) y haga clic en **Crear**.
 
-   |Configuración|Valor|
+   |Configuración|Value|
    |---|---|
-   |Nombre de usuario|**aaduser2**|
+   |Nombre principal de usuario|**aaduser2**|
    |Name|**aaduser2**|
    |Contraseña|Asegúrese de que la opción **Generar contraseña automáticamente** está seleccionada y haga clic en **Mostrar contraseña**.|
-   |Grupos|**0 grupos seleccionados**|
-   |Roles|**User**|
    |Ubicación de uso|**Estados Unidos**|  
 
     >**Nota**: Registre el nombre de usuario completo y la contraseña.
 
 6. De nuevo en la hoja **Usuarios \| Todos los usuarios**, haga clic en **+ Nuevo usuario**. 
 
-7. Haga clic en **Nuevo usuario**, complete las nuevas opciones de configuración de usuario y, a continuación, haga clic en **Crear**.
+7. En la hoja **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada y, a continuación, especifique la siguiente configuración (deje la otra configuración con sus valores predeterminados) y haga clic en **Crear**. 
 
-   |Configuración|Valor|
+   |Configuración|Value|
    |---|---|
-   |Nombre de usuario|**aaduser3**|
+   |Nombre principal de usuario|**aaduser3**|
    |Name|**aaduser3**|
    |Contraseña|Asegúrese de que la opción **Generar contraseña automáticamente** está seleccionada y haga clic en **Mostrar contraseña**.|
-   |Grupos|**0 grupos seleccionados**|
-   |Roles|**User**|
    |Ubicación de uso|**Estados Unidos**|  
 
     >**Nota**: Registre el nombre de usuario completo y la contraseña.
@@ -404,7 +400,7 @@ En esta tarea, iniciará sesión en Azure Portal como **aaduser2** y comprobará
 
 >Resultado: ha configurado y probado el acceso condicional de Azure AD.
 
-### Ejercicio 4: Implementar Azure AD Identity Protection
+### Ejercicio 4: Implementación de directivas basadas en riesgos en el acceso condicional
 
 ### Tiempo estimado: 30 minutos
 
@@ -424,45 +420,89 @@ En esta tarea, verá las opciones de Azure AD Identity Protection en Azure Porta
 
     >**Nota:** Asegúrese de que ha iniciado sesión en el inquilino **AdatumLab500-04** de Azure AD. Puede usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Azure AD. Asegúrese de que ha iniciado sesión como usuario con el rol Administrador global en el inquilino de Azure AD.
 
-2. En la hoja **AdatumLab500-04**, en la sección **Administrar**, haga clic en **Seguridad**.
-
-3. En la hoja **Seguridad \| Introducción**, en la sección **Proteger**, haga clic en **Identity Protection**.
-
-4. En la hoja **Identity Protection \| Información general**, revise los gráficos **Se detectaron nuevos usuarios de riesgo** y **Se detectaron nuevos inicio de sesión de riesgo** y otra información sobre los usuarios de riesgo. 
-
 #### Tarea 2: Configurar una directiva de riesgo de usuario
 
 En esta tarea, creará una directiva de riesgo de usuario. 
 
-1. En la hoja **Identity Protection \| Información general**, en la sección **Proteger**, haga clic en **directiva de riesgo de usuario**.
+2. Vaya al inquilino **AdatumLab500-04** de Azure AD >**Seguridad** > **Acceso condicional**.
 
-2. Configure la **Directiva de corrección de riesgos de usuario** con las siguientes opciones: 
+3. Haga clic en **Nueva directiva**.
 
-   - Haga clic en **Usuarios**; en la pestaña **Incluir** de la hoja **Usuarios**, asegúrese de que está seleccionada la opción **Todos los usuarios**.
+4. Escriba el siguiente nombre de directiva en el cuadro de texto **Nombre**: **AZ500Policy2**.
 
-   - En la hoja **Usuarios**, cambie a la pestaña **Excluir**, haga clic en **Seleccionar usuarios excluidos**, seleccione su cuenta de usuario y, a continuación, haga clic en **Seleccionar**. 
+5. En **Asignaciones**, seleccione **Usuarios**.
 
-   - Haga clic en **Riesgo de usuario**; en la hoja **Riesgo de usuario**, seleccione **Bajo y superior** y, a continuación, haga clic en **Listo**. 
+6. En **Incluir**, haga clic en **Seleccionar usuarios y grupos**, y seleccione **aaduser2** y **aaduser3**.
 
-   - Haga clic en **Acceso**; en la hoja **Acceso**, asegúrese de que las casillas **Permitir acceso** y **Requerir cambio de contraseña** están activadas y haga clic en **Listo**.
+7. En **Excluir**, haga clic en **Usuarios y grupos** y seleccione **aaduser1**. 
 
-   - Establezca **Aplicar directiva** en **Activado** y haga clic en **Guardar**.
+8. En **Aplicaciones en la nube o acciones** > **Incluir**, seleccione **Todas las aplicaciones en la nube**.
 
-#### Tarea 3: Configurar directiva de riesgo de inicio de sesión
+9. En **Condiciones** > **Riesgo de usuario**, establezca **Configurar** en **Sí**.
 
-En esta tarea, configurará una directiva de riesgo de inicio de sesión. 
+10. En **Configure los niveles de riesgo de usuario necesarios para aplicar la directiva**, seleccione **Alto**.
 
-1. En la hoja **Identity Protection \| Directiva de riesgo de usuario**, en la sección **Proteger**, haga clic en **Directiva de riesgo de inicio de sesión**.
+11. Haga clic en **Done**(Listo).
 
-2. Configure la **Directiva de corrección de riesgos de inicio de sesión** con las siguientes opciones: 
+12. En **Controles de acceso** > asegúrese de que **Conceder** está habilitado.    
 
-   - Haga clic en **Usuarios**; en la pestaña **Incluir** de la hoja **Usuarios**, asegúrese de que está seleccionada la opción **Todos los usuarios**.
+13. Seleccione **Requerir autenticación multifactor** y **Requerir cambio de contraseña**.
 
-   - Haga clic en **Riesgo de inicio de sesión**; en la hoja **Riesgo de inicio de sesión**, seleccione **Medio y superior** y, a continuación, haga clic en **Listo**. 
+14. Haga clic en **Seleccionar**.
 
-   - Haga clic en **Acceso**; en la hoja **Acceso**, asegúrese de que la opción **Permitir acceso** y la casilla **Requerir autenticación multifactor** están activadas y haga clic en **Listo**.
+15. En **Sesión**, haga clic en **Frecuencia de inicio de sesión** y asegúrese de que **Cada vez** está habilitado.
 
-   - Establezca **Aplicar directiva** en **Activado** y haga clic en **Guardar**.
+16. Haga clic en **Seleccionar**.
+
+17. Confirme la configuración y establezca **Habilitar directiva** en **Solo informe**.
+
+    >**Nota**: Se mostrará el siguiente mensaje en la parte inferior de la página: **"Parece que va a administrar las opciones de configuración de seguridad de su organización. Primero tiene que deshabilitar los valores predeterminados de seguridad antes de habilitar una directiva de acceso condicional"** .
+
+18. Haga clic en la parte del mensaje: **deshabilitar los valores predeterminados de seguridad**.
+
+19. Cambie **Habilitar valores predeterminados de seguridad** de Sí a **No**.
+
+20. Haga clic en **Otro** y escriba lo siguiente en el campo: **AZ500 lab use**.
+
+21. Haga clic en **Save**(Guardar).
+
+22. Haga clic en **Crear** para habilitar la directiva.
+
+#### Tarea 3: Configurar una directiva de riesgo de inicio de sesión
+
+1. Vaya al inquilino **AdatumLab500-04** de Azure AD >**Seguridad** > **Acceso condicional**.
+
+2. Seleccione **Nueva directiva**.
+
+3. Escriba el siguiente nombre de directiva en el cuadro de texto **Nombre**: **AZ500Policy3**.
+
+4. En **Asignaciones**, seleccione **Usuarios**.
+
+5. En **Incluir**, haga clic en **Seleccionar usuarios y grupos**, y seleccione **aaduser2** y **aaduser3**.
+
+6. En **Excluir**, haga clic en **Usuarios y grupos** y seleccione **aaduser1**. 
+
+7. En **Aplicaciones en la nube o acciones** > **Incluir**, seleccione **Todas las aplicaciones en la nube**.
+
+8. En **Condiciones** > **Riesgo de inicio de sesión**, establezca **Configurar** en **Sí**.
+
+9. En **Seleccionar el nivel de riesgo de inicio de sesión al que se aplicará la directiva**, seleccione **Alto** y **Medio**.
+
+10. Haga clic en **Done**(Listo).
+
+11. En **Controles de acceso** > **Conceder**.  
+
+12. Seleccione **Conceder acceso**, **Requerir autenticación multifactor**.
+
+13. Haga clic en **Seleccionar**.
+
+13. En **Sesión**, seleccione **Frecuencia de inicio de sesión** y asegúrese de que **Cada vez** está habilitado.
+
+14. Haga clic en **Seleccionar**.
+
+15. Confirme la configuración y establezca **Habilitar directiva** en **Solo informe**.
+
+16. Haga clic en **Crear** para habilitar la directiva.
 
 #### Tarea 4: Simular eventos de riesgo en las directivas de Azure AD Identity Protection 
 
@@ -480,7 +520,7 @@ En esta tarea, configurará una directiva de riesgo de inicio de sesión.
 
    |Configuración|Valor|
    |---|---|
-   |Nombre de usuario|**Student**|
+   |Nombre de usuario|**Estudiante**|
    |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que se carguen la sesión de Escritorio remoto y **Administrador del servidor**.  
@@ -553,11 +593,11 @@ Siga estos pasos para deshabilitar las directivas de protección de identidades 
 
 4. En la hoja **Identity Protection \| Información general**, haga clic en **Directiva de riesgo de usuario**.
 
-5. En la hoja **Identity Protection \| Directiva de riesgo de usuario**, establezca **Aplicar directiva** en **Desactivado** y, a continuación, haga clic en **Guardar**.
+5. En el panel **Identity Protection \| Directiva de riesgo de usuario**, establezca **Cumplimiento de directivas** en **Deshabilitar** y, a continuación, haga clic en **Guardar**.
 
 6. En la hoja **Identity Protection \| Directiva de riesgo de usuario**, haga clic en **Directiva de riesgo de inicio de sesión**.
 
-7. En la hoja **Identity Protection \| Directiva de riesgo de inicio de sesión**, establezca **Aplicar directiva** en **Desactivado** y, a continuación, haga clic en **Guardar**.
+7. En el panel **Identity Protection \| Directiva de riesgo de inicio de sesión**, establezca **Cumplimiento de directivas** en **Deshabilitar** y, a continuación, haga clic en **Guardar**.
 
 Siga estos pasos para detener la VM de Azure que aprovisionó anteriormente en el laboratorio.
 

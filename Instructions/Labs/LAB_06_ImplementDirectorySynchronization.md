@@ -4,10 +4,10 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# <a name="lab-06-implement-directory-synchronization"></a>Laboratorio 06: Implementación de la sincronización de directorios
-# <a name="student-lab-manual"></a>Manual de laboratorio para alumnos
+# Laboratorio 06: Implementación de la sincronización de directorios
+# Manual de laboratorio para alumnos
 
-## <a name="lab-scenario"></a>Escenario del laboratorio
+## Escenario del laboratorio
 
 Se le ha pedido que cree una prueba de concepto que demuestre cómo integrar un entorno local de Active Directory Domain Services (AD DS) con un inquilino de Azure Active Directory (Azure AD). En concreto, quiere:
 
@@ -17,7 +17,7 @@ Se le ha pedido que cree una prueba de concepto que demuestre cómo integrar un 
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-## <a name="lab-objectives"></a>Objetivos del laboratorio
+## Objetivos del laboratorio
 
 En este laboratorio completará los ejercicios siguientes:
 
@@ -25,22 +25,22 @@ En este laboratorio completará los ejercicios siguientes:
 - Ejercicio 2: Crear y configurar un inquilino de Azure Active Directory
 - Ejercicio 3: Sincronizar un bosque de Active Directory con un inquilino de Azure Active Directory
 
-## <a name="implement-directory-synchronization"></a>Implementación de la sincronización de directorios
+## Implementación de la sincronización de directorios
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157525374-8f740f14-c2db-47b3-98f8-7feb9bc122b5.png)
 
-## <a name="instructions"></a>Instrucciones
+## Instrucciones
 
-### <a name="exercise-1-deploy-an-azure-vm-hosting-an-active-directory-domain-controller"></a>Ejercicio 1: Implementar una VM de Azure que hospeda un controlador de dominio de Active Directory
+### Ejercicio 1: Implementar una VM de Azure que hospeda un controlador de dominio de Active Directory
 
-### <a name="estimated-timing-10-minutes"></a>Tiempo estimado: 10 minutos
+### Tiempo estimado: 10 minutos
 
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Identificar un nombre DNS disponible para una implementación de VM de Azure
 - Tarea 2: Usar una plantilla de ARM para implementar una VM de Azure que hospeda un controlador de dominio de Active Directory
 
-#### <a name="task-1-identify-an-available-dns-name-for-an-azure-vm-deployment"></a>Tarea 1: Identificar un nombre DNS disponible para una implementación de VM de Azure
+#### Tarea 1: Identificar un nombre DNS disponible para una implementación de VM de Azure
 
 En esta tarea, identificará un nombre DNS para la implementación de la VM de Azure. 
 
@@ -68,13 +68,13 @@ En esta tarea, identificará un nombre DNS para la implementación de la VM de A
 
 7. Cierre Cloud Shell.
 
-#### <a name="task-2-use-an-arm-template-to-deploy-an-azure-vm-hosting-an-active-directory-domain-controller"></a>Tarea 2: Usar una plantilla de ARM para implementar una VM de Azure que hospeda un controlador de dominio de Active Directory
+#### Tarea 2: Usar una plantilla de ARM para implementar una VM de Azure que hospeda un controlador de dominio de Active Directory
 
 En esta tarea, implementará una VM de Azure que hospedará un controlador de dominio de Active Directory.
 
 1. Abra otra pestaña del explorador en la misma ventana del explorador y vaya a **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain**.
 
-2. En la página **Create a new Windows VM and create a new AD Forest, Domain and DC** (Crear una VM Windows y un bosque, un dominio y un controlador de dominio de AD), haga clic en **Implementar en Azure**. Se redirigirá automáticamente el explorador a la hoja **Create an Azure VM with a new AD Forest** (Crear una VM de Azure con un nuevo bosque de AD) en Azure Portal.
+2. En la página **Crear una VM de Azure con un nuevo bosque de AD**, haga clic en **Implementar en Azure**. Se redirigirá automáticamente el explorador a la hoja **Create an Azure VM with a new AD Forest** (Crear una VM de Azure con un nuevo bosque de AD) en Azure Portal. 
 
 3. En la hoja **Create an Azure VM with a new AD Forest** (Crear una VM de Azure con un nuevo bosque de AD), haga clic en **Editar parámetros**.
 
@@ -100,9 +100,9 @@ En esta tarea, implementará una VM de Azure que hospedará un controlador de do
 > Resultado: después de completar este ejercicio, ha iniciado la implementación de una VM de Azure que hospedará un controlador de dominio de Active Directory mediante una plantilla de Azure Resource Manager.
 
 
-### <a name="exercise-2-create-and-configure-an-azure-active-directory-tenant"></a>Ejercicio 2: Crear y configurar un inquilino de Azure Active Directory 
+### Ejercicio 2: Crear y configurar un inquilino de Azure Active Directory 
 
-### <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+### Tiempo estimado: 20 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -110,7 +110,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 2: Agregar un nombre DNS personalizado al nuevo inquilino de Azure AD
 - Tarea 3: Crear un usuario de Azure AD con el rol Administrador global
 
-#### <a name="task-1-create-an-azure-active-directory-ad-tenant"></a>Tarea 1: Crear un inquilino de Azure Active Directory (AD)
+#### Tarea 1: Crear un inquilino de Azure Active Directory (AD)
 
 En esta tarea, creará un nuevo inquilino de Azure AD para usarlo en este laboratorio. 
 
@@ -136,7 +136,7 @@ En esta tarea, creará un nuevo inquilino de Azure AD para usarlo en este labor
 
     >**Nota**: Espere a que se cree el inquilino. Utilice el icono **Notificación** para supervisar el estado de la implementación. 
 
-#### <a name="task-2-add-a-custom-dns-name-to-the-new-azure-ad-tenant"></a>Tarea 2: Agregar un nombre DNS personalizado al nuevo inquilino de Azure AD
+#### Tarea 2: Agregar un nombre DNS personalizado al nuevo inquilino de Azure AD
 
 En esta tarea, agregará el nombre DNS personalizado al nuevo inquilino de Azure AD. 
 
@@ -156,13 +156,13 @@ En esta tarea, agregará el nombre DNS personalizado al nuevo inquilino de Azure
 
     >**Nota**: No podrá completar el proceso de validación porque no posee el nombre de dominio DNS **adatum.com**. Esto no le impedirá sincronizar el dominio de AD DS **adatum.com** con el inquilino de Azure AD. Para ello, usará el nombre DNS inicial del inquilino de Azure AD (el nombre que termina con el sufijo **onmicrosoft.com),** que identificó en la tarea anterior. Sin embargo, tenga en cuenta que, como resultado, el nombre de dominio DNS del dominio de AD DS y el nombre DNS del inquilino de Azure AD serán diferentes. Esto significa que los usuarios de Adatum tendrán que usar nombres diferentes al iniciar sesión en el dominio de AD DS y al iniciar sesión en el inquilino de Azure AD.
 
-#### <a name="task-3-create-an-azure-ad-user-with-the-global-administrator-role"></a>Tarea 3: Crear un usuario de Azure AD con el rol Administrador global
+#### Tarea 3: Crear un usuario de Azure AD con el rol Administrador global
 
 En esta tarea, agregará un nuevo usuario de Azure AD y lo asignará al rol Administrador global. 
 
 1. En la hoja **AdatumSync** del inquilino de Azure AD, en la sección **Administrar**, haga clic en **Usuarios**.
 
-2. En la hoja **Usuarios \| Todos los usuarios**, haga clic en **+ Nuevo usuario**. 
+2. En el panel **Usuarios | Todos los usuarios**, haga clic en **+ Nuevo usuario** y, a continuación, en **Crear nuevo usuario**.
 
 3. En la hoja **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada, especifique la siguiente configuración (deje la otra configuración con sus valores predeterminados) y haga clic en **Crear**:
 
@@ -192,9 +192,9 @@ En esta tarea, agregará un nuevo usuario de Azure AD y lo asignará al rol Admi
 > **Resultado**: después de completar este ejercicio, ha creado un inquilino de Azure AD, ha visto cómo agregar un nombre DNS personalizado al nuevo inquilino de Azure AD y ha creado un usuario de Azure AD con el rol Administrador global.
 
 
-### <a name="exercise-3-synchronize-active-directory-forest-with-an-azure-active-directory-tenant"></a>Ejercicio 3: Sincronizar un bosque de Active Directory con un inquilino de Azure Active Directory
+### Ejercicio 3: Sincronizar un bosque de Active Directory con un inquilino de Azure Active Directory
 
-### <a name="estimated-timing-20-minutes"></a>Tiempo estimado: 20 minutos
+### Tiempo estimado: 20 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -202,7 +202,7 @@ En este ejercicio completará las tareas siguientes:
 - Parte 2: Instalar Azure AD Connect
 - Tarea 3: Comprobar la sincronización de directorios
 
-#### <a name="task-1-prepare-ad-ds-for-directory-synchronization"></a>Tarea 1: Preparar AD DS para la sincronización de directorios
+#### Tarea 1: Preparar AD DS para la sincronización de directorios
 
 En esta tarea, se conectará a la VM de Azure que ejecuta el controlador de dominio de AD DS y creará una cuenta de sincronización de directorios. 
 
@@ -253,7 +253,7 @@ En esta tarea, se conectará a la VM de Azure que ejecuta el controlador de domi
    |Contraseña y Confirmar contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    |Otras opciones de contraseña|**La contraseña nunca expira**|
 
-#### <a name="task-2-install-azure-ad-connect"></a>Parte 2: Instalar Azure AD Connect
+#### Parte 2: Instalar Azure AD Connect
 
 En esta tarea, instalará AD Conectar en la máquina virtual. 
 
@@ -309,7 +309,7 @@ En esta tarea, instalará AD Conectar en la máquina virtual.
 21. Revise la información de la página **Configuración completada** y haga clic en **Salir** para cerrar la ventana **Microsoft Azure Active Directory Connect**.
 
 
-#### <a name="task-3-verify-directory-synchronization"></a>Tarea 3: Comprobar la sincronización de directorios
+#### Tarea 3: Comprobar la sincronización de directorios
 
 En esta tarea, comprobará que la sincronización de directorios funciona. 
 
@@ -317,7 +317,7 @@ En esta tarea, comprobará que la sincronización de directorios funciona.
 
 2. En la hoja **Usuarios \| Todos los usuarios**, observe que la lista de objetos de usuario incluye la cuenta **aduser1**. 
 
->**Nota**: Es posible que tenga que esperar unos minutos y seleccionar **Actualizar** para que aparezca la cuenta de usuario **aduser1**.
+   >**Nota**: Es posible que tenga que esperar unos minutos y seleccionar **Actualizar** para que aparezca la cuenta de usuario **aduser1**.
 
 3. Seleccione la cuenta **aduser1** y, en la sección **Perfil > Identidad**, observe que el atributo **Origen** está establecido en **Windows Server AD**.
 
@@ -337,7 +337,7 @@ En esta tarea, comprobará que la sincronización de directorios funciona.
     Start-ADSyncSyncCycle -PolicyType Delta
     ```
 
-9. Cambie a la ventana de Microsoft Edge que muestra la hoja **aduser1 \| Perfil**, actualice la página y observe que la propiedad **Departamento** está establecida en **Ventas**.
+9. Cambie a la ventana de Microsoft Edge que muestra el panel **aduser1**, actualice la página y observe que la propiedad Departamento está establecida en Ventas.
 
     >**Nota**: Es posible que tenga que esperar otro minuto y volver a actualizar la página si el atributo **Departamento** sigue sin establecerse.
 
