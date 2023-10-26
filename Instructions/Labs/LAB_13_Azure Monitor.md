@@ -5,41 +5,33 @@ lab:
 ---
 
 # Laboratorio 13: Azure Monitor
+
 # Manual de laboratorio para alumnos
 
 ## Escenario del laboratorio
 
-Se le ha pedido que cree una prueba de concepto de supervisión del rendimiento de la máquina virtual. En concreto, quiere:
-
-- Configurar una máquina virtual para que se puedan recopilar datos de telemetría y registros.
-- Mostrar la telemetría y los registros que se pueden recopilar.
-- Mostrar cómo se pueden utilizar y consultar los datos. 
+Se le ha pedido que recopile eventos y contadores de rendimiento de máquinas virtuales con el agente de Azure Monitor.
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 ## Objetivos del laboratorio
 
-En este laboratorio completará el ejercicio siguiente:
+En este laboratorio completará los ejercicios siguientes:
 
-- Ejercicio 1: Recopilar datos de una máquina virtual de Azure con Azure Monitor
-
-## Azure Monitor
-
-![imagen](https://user-images.githubusercontent.com/91347931/157536648-0a286514-a7e2-4058-9dea-e42da21eef76.png)
-
+- Ejercicio 1: Implementación de una máquina virtual de Azure
+- Ejercicio 2: Creación de un área de trabajo de Log Analytics
+- Ejercicio 3: Creación de una cuenta de almacenamiento de Azure
+- Ejercicio 4: Creación de una regla de recopilación de datos.
+  
 ## Instrucciones
 
-### Ejercicio 1: Recopilar datos de una máquina virtual de Azure con Azure Monitor
+### Ejercicio 1: Implementación de una máquina virtual de Azure
 
-### Tiempo del ejercicio: 20 minutos
+### Tiempo del ejercicio: 10 minutos
 
 En este ejercicio completará las tareas siguientes: 
 
-- Tarea 1: Implementar una máquina virtual de Azure 
-- Tarea 2: Crear un área de trabajo de Log Analytics
-- Tarea 3: Habilitar la extensión de máquina virtual de Log Analytics
-- Tarea 4: Recopilar datos de rendimiento y eventos de máquina virtual
-- Tarea 5: Ver y consultar los datos recopilados 
+- Tarea 1: Implementación de una máquina virtual de Azure. 
 
 #### Tarea 1: Implementar una máquina virtual de Azure
 
@@ -82,7 +74,15 @@ En este ejercicio completará las tareas siguientes:
 
 8. Cierre el panel de Cloud Shell. 
 
-#### Tarea 2: Crear un área de trabajo de Log Analytics
+### Ejercicio 2: Creación de un área de trabajo de Log Analytics
+
+### Tiempo del ejercicio: 10 minutos
+
+En este ejercicio completará las tareas siguientes: 
+
+- Tarea 1: Creación de un área de trabajo de Log Analytics.
+
+#### Tarea 1: Creación de un área de trabajo de Log Analytics
 
 En esta tarea, creará un área de trabajo de Log Analytics. 
 
@@ -92,7 +92,7 @@ En esta tarea, creará un área de trabajo de Log Analytics.
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear un área de trabajo de Log Analytics**, especifique las siguientes opciones (deje las demás con los valores predeterminados):
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB131415**|
@@ -103,94 +103,112 @@ En esta tarea, creará un área de trabajo de Log Analytics.
 
 5. En la pestaña **Revisar y crear** del panel **Crear área de trabajo de Log Analytics**, seleccione **Crear**.
 
-#### Tarea 3: Habilitar la extensión de máquina virtual de Log Analytics
+### Ejercicio 3: Creación de una cuenta de almacenamiento de Azure
 
-En esta tarea, habilitará la extensión de máquina virtual de Log Analytics. Esta extensión instala el agente de Log Analytics en máquinas virtuales Windows y Linux. Este agente recopila datos de la máquina virtual y los transfiere al área de trabajo de Log Analytics que designe. Una vez instalado el agente, se actualizará automáticamente para garantizar que siempre tenga las características y correcciones más recientes. 
+### Tiempo estimado: 10 minutos
 
-1. En Azure Portal, vuelva a la hoja **Áreas de trabajo de Log Analytics** y, en la lista de áreas de trabajo, haga clic en la entrada que representa el área de trabajo que creó en la tarea anterior.
+En este ejercicio completará las tareas siguientes:
 
-2. En el panel Área de trabajo de Log Analytics, en la página **Información general** y la sección **Conectar un origen de datos**, haga clic en la entrada **Máquinas virtuales de Azure**.
+- Tarea 1: Creación de una cuenta de almacenamiento de Azure.
 
-    >**Nota**: Para que el agente se instale correctamente, la máquina virtual debe estar en ejecución.
+#### Tarea 1: Creación de una cuenta de almacenamiento de Azure
 
-3. En la lista de máquinas virtuales, busque la entrada que representa la VM de Azure **myVM** que implementó en la primera tarea de este ejercicio y observe que aparece como **No conectada**.
+En esta tarea, creará una cuenta de almacenamiento.
 
-4. Haga clic en la entrada **myVM** y, a continuación, en la hoja **myVM**, haga clic en **Conectar**. 
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Cuentas de almacenamiento** y presione la tecla **Entrar**.
 
-5. Espere a que la máquina virtual se conecte al área de trabajo de Log Analytics.
+2. En la hoja **Cuentas de almacenamiento** de Azure Portal, haga clic en el botón **+ Crear** para crear una nueva cuenta de almacenamiento.
 
-    >**Nota**: Esta operación puede tardar unos minutos. El **Estado** que se muestra en la hoja **myVM** cambiará de **Conectando** a **Esta área de trabajo**. 
+    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/73eb9241-d642-455a-a1ff-b504670395c0)
 
-#### Tarea 4: Recopilar datos de rendimiento y eventos de máquina virtual
+3. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-En esta tarea, configurará la recopilación del registro del sistema Windows y varios contadores de rendimiento comunes. También revisará otros orígenes que están disponibles.
+    |Configuración|Value|
+    |---|---|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
+    |Resource group|**AZ500LAB131415**|
+    |Nombre de la cuenta de almacenamiento|Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos|
+    |Location|**(EE. UU.) EastUS**|
+    |Rendimiento|**Estándar (cuenta general-purpose v2)**|
+    |Redundancia|**Almacenamiento con redundancia local (LRS)**|
 
-1. En Azure Portal, vuelva al área de trabajo de Log Analytics que creó anteriormente en este ejercicio.
+4. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, haga clic en **Revisar**, espere a que se complete el proceso de validación y, luego, haga clic en **Crear**.
 
-2. En la hoja Área de trabajo de Log Analytics, en la sección **Configuración**, haga clic en **Administración de agentes heredados**.
+     ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d443821c-2ddf-4794-87fa-bfc092980eba)
 
-3. En la hoja **Configuración de agentes**, revise las opciones configurables, incluidas Registros de eventos de Windows, Contadores de rendimiento de Windows, Contadores de rendimiento de Linux, Registros de IIS y Syslog. 
+    >**Nota**: Espere a que se cree la cuenta de almacenamiento. Este proceso tardará alrededor de 2 minutos.
 
-4. Asegúrese de que la opción **Registros de eventos de Windows** está seleccionada, haga clic en **+ Add windows event log** (+ Agregar registro de eventos de Windows). En la lista de tipos de registro de eventos, seleccione **Sistema**.
+### Ejercicio 3: Creación de una regla de recopilación de datos
 
-    >**Nota**: Esta es la forma de agregar registros de eventos al área de trabajo. Otras opciones son, por ejemplo, **Eventos de hardware** o **Servicio de administración de claves**.  
+### Tiempo estimado: 15 minutos
 
-5. Desactive la casilla **Información** y deje activadas las casillas **Error** y **Advertencia**.
+En este ejercicio completará las tareas siguientes:
 
-6. Haga clic en **Contadores de rendimiento de Windows**, haga clic en **+ Add performance counter** (+ Agregar contador de rendimiento), revise la lista de contadores de rendimiento disponibles y agregue los siguientes:
+- Tarea 1: Creación de una regla de recopilación de datos.
 
-    - Memoria (\*)\Mbytes de memoria disponibles
-    - Proceso(\*)\\% de tiempo de procesador
-    - Seguimiento de eventos para Windows\Uso de memoria total --- Bloque no paginado
-    - Seguimiento de eventos para Windows\Uso de memoria total --- Bloque paginado
+#### Tarea 1: Creación de una regla de recopilación de datos.
 
-    >**Nota**: Los contadores se agregan y configuran con un intervalo de ejemplo de colección de 60 segundos.
+En esta tarea, creará una regla de recopilación de datos.
+
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Supervisión** y presione la tecla **Entrar**.
+
+2. En la hoja **Supervisar configuración**, haga clic en **Reglas de recopilación de datos.**
+
+  ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d43e8f94-efb2-4255-9320-210c976fd45e)
+
+
+3. En la pestaña **Aspectos básicos** de la hoja **Crear una regla de recopilación de datos**, especifique la configuración siguiente:
   
-7. En la hoja **Agents configuration** (Configuración de agentes), haga clic en **Aplicar**.
+    |Configuración|Value|
+    |---|---|
+    |**Detalles de la regla**|
+    |Nombre de la regla|**DCR1**|
+    |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
+    |Grupo de recursos|**AZ500LAB131415**|
+    |Region|**Este de EE. UU.**|
+    |Tipo de plataforma|**Windows**|
+    |Punto de conexión de recopilación de datos|*Déjelo en blanco*|
 
-#### Tarea 5: Ver y consultar los datos recopilados
+    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/9b58c4ce-b7a8-4acf-8289-d95b270a6083)
 
-En esta tarea, ejecutará una búsqueda de registros en la recopilación de datos. 
 
-1. En Azure Portal, vuelva al área de trabajo de Log Analytics que creó anteriormente en este ejercicio.
+4. Haga clic en el botón denominado **Siguiente: Recursos >** para continuar.
 
-2. En la hoja Área de trabajo de Log Analytics, en la sección **General**, haga clic en **Registros**.
+5. En la pestaña **Recursos**, seleccione **+ Agregar recursos** y, a continuación, active **Habilitar puntos de conexión de recopilación de datos.**
 
-3. Si es necesario, cierre la ventana **Bienvenido a Log Analytics**. 
+    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/c8388619-c254-4c80-a1ff-dde2f35ed350)
 
-4. En el panel **Consultas**, en la columna **Todas las consultas**, desplácese hacia abajo hasta la parte inferior de la lista de tipos de recursos y haga clic en **Máquinas virtuales**.
+6. Haga clic en el botón denominado **Siguiente: Recopilar y entregar >** para continuar.
+
+7. Haga clic en **+ Agregar origen de datos** y, a continuación, en la página **Agregar origen de datos**, cambie el menú desplegable **Tipo de origen de datos** para mostrar **Contadores de rendimiento.** Deje la siguiente configuración predeterminada:
+
+    |Configuración|Value|
+    |---|---|
+    |**Contador de rendimiento**|**Frecuencia de muestreo (segundos)**|
+    |CPU|60|
+    |Memoria|60|
+    |Disco|60|
+    |Red|60|
+
+   ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/a24e44ad-1d10-4533-80e2-bae1b3f6564d)
+
+8. Haga clic en el botón denominado **Siguiente: Destino >** para continuar.
+  
+9. Cambie el menú desplegable **Tipo de destino** para mostrar los **Registros de Azure Monitor.** En la ventana **Suscripción**, asegúrese de que se muestra la *Suscripción* y, a continuación, cambie el menú desplegable **Cuenta o espacio de nombres** para reflejar el área de trabajo de Log Analytics creada anteriormente.
+
+   ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/481843f5-94c4-4a8f-bf51-a10d49130bf8)
+
+10. En la parte inferior de la página, seleccione **Agregar origen de datos**.
     
-5. Revise la lista de consultas predefinidas, seleccione **Memory and CPU usage** (Uso de memoria y CPU) y haga clic en el botón **Ejecutar** correspondiente.
+    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/964091e7-bbbc-4ca8-8383-bb2871a1e7f0)
 
-    >**Nota**: Puede empezar con la consulta **Memoria disponible de la máquina virtual**. Si no obtiene ningún resultado, compruebe que el ámbito está establecido en máquina virtual.
+13. Haga clic en **Revisar y crear.**
 
-6. La consulta se abrirá automáticamente en una nueva pestaña de consulta. 
+    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/50dd8407-a106-4540-9e14-ae40a3c04830)
 
-    >**Nota**: Log Analytics usa el lenguaje de consulta Kusto. Puede personalizar las consultas existentes o crear las suyas propias. 
+14. Haga clic en **Crear**.
 
-    >**Nota**: Los resultados de la consulta seleccionada se muestran automáticamente debajo del panel de consulta. Para volver a ejecutar la consulta, haga clic en **Ejecutar**.
-
-    >**Nota**: Dado que esta máquina virtual se acaba de crear, es posible que aún no haya ningún dato. 
-
-    >**Nota**: Tiene la opción de mostrar datos en formatos diferentes. También tiene la opción de crear una regla de alertas basada en los resultados de la consulta.
-
-    >**Nota**: Puede generar alguna carga adicional en la VM de Azure que implementó anteriormente en este laboratorio mediante los pasos siguientes:
-
-    1. Vaya a la hoja VM de Azure.
-    2. En el panel VM de Azure, en la sección **Operaciones**, seleccione **Ejecutar comando**; en el panel **RunPowerShellScript**, escriba el siguiente script y haga clic en **Ejecutar**:
-    3. 
-       ```cmd
-       cmd
-       :loop
-       dir c:\ /s > SWAP
-       goto loop
-       ```
-       
-    4. Vuelva a la hoja Log Analytics y ejecute de nuevo la consulta. Es posible que tenga que esperar unos minutos a que se recopilen los datos y volver a ejecutar la consulta.
-
-> Resultados: ha usado un área de trabajo de Log Analytics para configurar orígenes de datos y registros de consultas. 
-
-**Limpieza de recursos**
+> Resultados: ha implementado una máquina virtual de Azure, un área de trabajo de Log Analytics, una cuenta de almacenamiento de Azure y una regla de recopilación de datos para recopilar eventos y contadores de rendimiento de máquinas virtuales con el agente de Azure Monitor.
 
 >**Nota**: No quite los recursos de este laboratorio, ya que son necesarios para los laboratorios de Microsoft Defender for Cloud y Microsoft Sentinel.
  

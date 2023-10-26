@@ -166,12 +166,11 @@ En esta tarea, primero configurará la auditoría de nivel de servidor y, a cont
     >**Nota**: Las auditorías se pueden escribir en una cuenta de almacenamiento de Azure, en un área de trabajo de Log Analytics o en el centro de eventos. Puede configurar cualquier combinación de estas opciones.
 
     >**Nota**: Si se habilita la auditoría basada en almacenamiento en el servidor, siempre se aplicará a la base de datos, independientemente de la configuración de la base de datos.
+13. En la página Información general de la base de datos SQL de Azure Portal, seleccione **Editor de consultas (versión preliminar)** en el menú de la izquierda. Intente iniciar sesión, es posible que se produzca un error en la contraseña, la regla de firewall de la dirección IP, todo se audita. Pruebe también el inicio de sesión correcto, ejecute la consulta y podría encontrar más detalles en los registros de auditoría
 
-13. Haga clic en **Ver registros de auditoría**.
+14. Vuelva a DB, Auditoría y Haga clic en **Ver registros de auditoría**.
 
-14. En el panel **Registros de auditoría**, tenga en cuenta que puede cambiar entre auditoría de servidor y auditoría de base de datos. 
-
-    >**Nota**: Puesto que el servidor y la base de datos SQL se crearon recientemente, es poco probable que haya eventos disponibles en este momento. 
+15. En el panel **Registros de auditoría**, tenga en cuenta que puede cambiar entre auditoría de servidor y auditoría de base de datos. 
 
 > Resultados: ha creado un servidor y una base de datos SQL, ha configurado la clasificación de datos y la auditoría. 
 

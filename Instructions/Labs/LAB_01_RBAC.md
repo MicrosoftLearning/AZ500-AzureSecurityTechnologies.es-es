@@ -50,9 +50,9 @@ En esta tarea, creará una cuenta de usuario para Joseph Price.
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio y el rol Administrador global en el inquilino de Azure AD asociado a esa suscripción.
 
-2. En el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Azure Active Directory** y presione la tecla **Entrar**.
+2. En el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de Azure Portal, escriba **Microsoft Entra ID** y presione la tecla **Entrar**.
 
-3. En el panel **Introducción** del inquilino de Azure Active Directory, en la sección **Administrar**, seleccione **Usuarios** y, a continuación, seleccione **+ Nuevo usuario**.
+3. En el panel **Introducción** del inquilino de Microsoft Entra ID, en la sección **Administrar**, seleccione **Usuarios** y, a continuación, seleccione **+ Nuevo usuario**.
 
 4. En el panel **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada y especifique la siguiente configuración:
 
@@ -73,7 +73,7 @@ En esta tarea, creará una cuenta de usuario para Joseph Price.
 
 En esta tarea, creará el grupo *Administradores sénior*, agregará la cuenta de usuario de Joseph Price al grupo y lo configurará como propietario del grupo.
 
-1. En Azure Portal, vuelva al panel que muestra el inquilino de Azure Active Directory. 
+1. En Azure Portal, vuelva al panel que muestra el inquilino de Microsoft Entra ID. 
 
 2. En la sección **Administrar**, haga clic en **Grupos** y, a continuación, seleccione **+ Nuevo grupo**.
  
@@ -123,7 +123,7 @@ En esta tarea, creará una cuenta de usuario para Isabel García mediante PowerS
     $passwordProfile.Password = "Pa55w.rd1234"
     ```
 
-5. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para conectarse a Azure Active Directory:
+5. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para conectarse a Microsoft Entra ID:
 
     ```powershell
     Connect-AzureAD
