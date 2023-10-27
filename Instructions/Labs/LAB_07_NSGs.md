@@ -218,7 +218,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
 
 6. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
 
-7. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión > en la pestaña **Supervisión** del panel **Crear una máquina virtual**, compruebe la siguiente configuración:
+7. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión >** . En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la configuración siguiente:
 
    |Configuración|Value|
    |---|---|
@@ -255,7 +255,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
 
 5. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
 
-6. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión > en la pestaña **Supervisión** del panel **Crear una máquina virtual**, compruebe la siguiente configuración:
+6. Haga clic en **Siguiente: Administración >** y, a continuación, haga clic en **Siguiente: Supervisión >** . En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la configuración siguiente:
 
    |Configuración|Value|
    |---|---|

@@ -27,7 +27,7 @@ En este laboratorio completará el ejercicio siguiente:
 
 ## Diagrama de Microsoft Sentinel
 
-![imagen](https://user-images.githubusercontent.com/91347931/157538440-4953be73-90be-4edd-bd23-b678326ba637.png)
+![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/509aa70d-de11-4470-a289-877fbfecbc00)
 
 ## Instrucciones
 
@@ -70,29 +70,35 @@ En esta tarea, incorporará Microsoft Sentinel y conectará el área de trabajo
 
 En esta tarea, configurará Sentinel para usar el conector de datos de actividad de Azure.  
 
-1. En Azure Portal, en el panel **Microsoft Sentinel \| Información general**, vaya a la sección **Configuración** y haga clic en **Conectores de datos**. 
+1. En Azure Portal, en la hoja **Microsoft Sentinel \| Información general**, en la sección **Administración de contenido**, haga clic en **Centro de contenido**.
 
-2. En el panel **Microsoft Sentinel \| Conectores de datos**, revise la lista de conectores disponibles, escriba **Azure** en la barra de búsqueda y seleccione la entrada que representa el conector de **actividad de Azure** (oculte la barra de menús de la izquierda mediante \<< si fuera necesario), revise su descripción y estado y, a continuación, haga clic en **Abrir página del conector**.
+2. En la hoja **Microsoft Sentinel \| Centro de contenido**, revise la lista de contenido disponible.
 
-3. En el panel **Actividad de Azure**, debe seleccionar la pestaña **Instrucciones**, fíjese en los **Requisitos previos** y desplácese hacia abajo hasta la **Configuración**. Tome nota de la información que describe la actualización del conector. La suscripción Pase para Azure nunca usó el método de conexión heredado, por lo que puede omitir el paso 1 (el botón **Desconectar todo** estará atenuado) y continuar con el paso 2.
+3. Escriba **Azure** en la barra de búsqueda y seleccione la entrada que representa la **Actividad de Azure**. Revise su descripción en el extremo derecho y, después, haga clic en **Instalar**.
 
-4. En el paso 2 **Conexión de las suscripciones a través de la nueva canalización de configuración de diagnóstico**, revise las instrucciones de "Inicie el asistente para asignaciones de Azure Policy y siga estos pasos" y, a continuación, haga clic en **Inicie el asistente para asignaciones de Azure Policy\>** .
+4. Espere a que aparezca la notificación **Instalación correcta**. En el panel de navegación izquierdo, en la sección **Configuración**, haga clic en **Conectores de datos**.
 
-5. En la pestaña **Configurar registros de actividad de Azure para transmitirlos al área de trabajo especificada de Log Analytics** (Asignar página de Policy) **Aspectos básicos**, haga clic en el botón de puntos suspensivos (...) **Ámbito**. En la página **Ámbito**, elija la suscripción Pase para Azure en la lista desplegable de suscripciones y haga clic en el botón **Seleccionar** situado en la parte inferior de la página.
+5. En la hoja **Microsoft Sentinel \| Conectores de datos**, haga clic en **Actualizar** y revise la lista de conectores disponibles. Seleccione la entrada que representa el conector **Actividad de Azure** (oculte la barra de menú de la izquierda con \<< si es necesario), revise su descripción y estado en el extremo derecho. Después, haga clic en **Abrir página de conector**.
+
+6. En el panel **Actividad de Azure**, debe seleccionar la pestaña **Instrucciones**, fíjese en los **Requisitos previos** y desplácese hacia abajo hasta la **Configuración**. Tome nota de la información que describe la actualización del conector. La suscripción Pase para Azure nunca usó el método de conexión heredado, por lo que puede omitir el paso 1 (el botón **Desconectar todo** estará atenuado) y continuar con el paso 2.
+
+7. En el paso 2 **Conexión de las suscripciones a través de la nueva canalización de configuración de diagnóstico**, revise las instrucciones de "Inicie el asistente para asignaciones de Azure Policy y siga estos pasos" y, a continuación, haga clic en **Inicie el asistente para asignaciones de Azure Policy\>** .
+
+8. En la pestaña **Configurar registros de actividad de Azure para transmitirlos al área de trabajo especificada de Log Analytics** (Asignar página de Policy) **Aspectos básicos**, haga clic en el botón de puntos suspensivos (...) **Ámbito**. En la página **Ámbito**, elija la suscripción Pase para Azure en la lista desplegable de suscripciones y haga clic en el botón **Seleccionar** situado en la parte inferior de la página.
 
     >**Nota**: *No* elija ningún grupo de recursos
 
-6. Haga clic en el botón **Siguiente** situado en la parte inferior de la pestaña **Aspectos básicos** para continuar con la pestaña **Parámetros**. En la pestaña **Parámetros**, haga clic en el botón de puntos suspensivos (...) **Área de trabajo principal de Log Analytics**. En la página **Área de trabajo principal de Log Analytics**, asegúrese de que la suscripción Paso para Azure está seleccionada y use la lista desplegable **Áreas de trabajo** para seleccionar el área de trabajo de Log Analytics que usa para Sentinel. Cuando haya terminado, haga clic en el botón **Seleccionar** situado en la parte inferior de la página.
+9. Haga clic dos veces en el botón **Siguiente** situado en la parte inferior de la pestaña **Aspectos básicos** para continuar con la pestaña **Parámetros**. En la pestaña **Parámetros**, haga clic en el botón de puntos suspensivos (...) **Área de trabajo principal de Log Analytics**. En la página **Área de trabajo principal de Log Analytics**, asegúrese de que la suscripción Paso para Azure está seleccionada y use la lista desplegable **Áreas de trabajo** para seleccionar el área de trabajo de Log Analytics que usa para Sentinel. Cuando haya terminado, haga clic en el botón **Seleccionar** situado en la parte inferior de la página.
 
-7. Haga clic en el botón **Siguiente** situado en la parte inferior de la pestaña **Parámetros** para continuar con la pestaña **Corrección**. En la pestaña **Corrección**, active la casilla **Creación de una tarea de corrección**. Esto habilitará la opción "Configurar registros de actividad de Azure para transmitir a un área de trabajo de Log Analytics especificada" en la lista desplegable **Directiva para corregir**. En la lista desplegable **Ubicación de identidad asignada por el sistema**, seleccione la región (Este de EE. UU., por ejemplo) que seleccionó anteriormente para el área de trabajo de Log Analytics.
+10. Haga clic en el botón **Siguiente** situado en la parte inferior de la pestaña **Parámetros** para continuar con la pestaña **Corrección**. En la pestaña **Corrección**, active la casilla **Creación de una tarea de corrección**. Esto habilitará la opción "Configurar registros de actividad de Azure para transmitir a un área de trabajo de Log Analytics especificada" en la lista desplegable **Directiva para corregir**. En la lista desplegable **Ubicación de identidad asignada por el sistema**, seleccione la región (Este de EE. UU., por ejemplo) que seleccionó anteriormente para el área de trabajo de Log Analytics.
 
-8. Haga clic en el botón **Siguiente** situado en la parte inferior de la pestaña **Corrección** para continuar con la pestaña **Mensaje de no cumplimiento**. Escriba un mensaje de no cumplimiento si lo desea (es opcional) y haga clic en el botón **Revisar y crear** situado en la parte inferior de la pestaña **Mensaje de no cumplimiento**.
+11. Haga clic en el botón **Siguiente** situado en la parte inferior de la pestaña **Corrección** para continuar con la pestaña **Mensaje de no cumplimiento**. Escriba un mensaje de no cumplimiento si lo desea (es opcional) y haga clic en el botón **Revisar y crear** situado en la parte inferior de la pestaña **Mensaje de no cumplimiento**.
 
-9. Haga clic en el botón **Crear**. Debe observar tres mensajes de estado correctos: **Creación correcta de la asignación de directiva, Creación correcta de las asignaciones de roles y Creación correcta de la tarea de corrección**.
+12. Haga clic en el botón **Crear**. Debe observar tres mensajes de estado correctos: **Creación correcta de la asignación de directiva, Creación correcta de las asignaciones de roles y Creación correcta de la tarea de corrección**.
 
     >**Nota**: Puede comprobar el icono de la campana de notificaciones para comprobar que las tres tareas son correctas.
 
-10. Compruebe que el panel **Actividad de Azure** muestra el gráfico **Datos recibidos** (es posible que tenga que actualizar la página del explorador).  
+13. Compruebe que el panel **Actividad de Azure** muestra el gráfico **Datos recibidos** (es posible que tenga que actualizar la página del explorador).  
 
     >**Nota**: El estado puede tardar más de 15 minutos en mostrarse como "Conectado" y el gráfico también en mostrar Datos recibidos.
 
@@ -110,17 +116,17 @@ En esta tarea, revisará y creará una regla que usa el conector de datos de act
 
     >**Nota**: Esta regla es de gravedad media. 
 
-4. En la pestaña **General** del panel **Analytic rule wizard - Create new rule from template (Asistente para reglas de análisis - Crear nueva regla a partir de la plantilla)** , acepte la configuración predeterminada y haga clic en **Siguiente: Establecer lógica de regla >** .
+4. En la pestaña **General** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, acepte la configuración predeterminada y haga clic en **Siguiente: Establecer lógica de regla >** .
 
-5. En la pestaña **Establecer lógica de regla** del panel **Asistente para reglas de análisis - Crear nueva regla a partir de la plantilla**, acepte la configuración predeterminada y haga clic en **Siguiente: Configuración del incidente (Versión preliminar) >** .
+5. En la pestaña **Establecer lógica de regla** de la hoja **Asistente para reglas de análisis - Crear una nueva programada**, acepte la configuración predeterminada y haga clic en **Siguiente: Configuración del incidente (Versión preliminar) >** .
 
-6. En la pestaña **Configuración del incidente** del panel **Analytic rule wizard - Create new rule from template (Asistente para reglas de análisis - Crear nueva regla a partir de la plantilla)** , acepte la configuración predeterminada y haga clic en **Siguiente: Respuesta automatizada >** . 
+6. En la pestaña **Configuración del incidente** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, acepte la configuración predeterminada y haga clic en **Siguiente: Respuesta automatizada >** . 
 
     >**Nota**: Aquí es donde puede agregar un cuaderno de estrategias, implementado como una aplicación lógica, a una regla para automatizar la corrección de un problema.
 
-7. En la pestaña **Respuesta automatizada** del panel **Analytic rule wizard - Create new rule from template (Asistente para reglas de análisis - Crear nueva regla a partir de la plantilla)** , acepte la configuración predeterminada y haga clic en **Siguiente: Revisar >** . 
+7. En la pestaña **Respuesta automatizada** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, acepte la configuración predeterminada y haga clic en **Siguiente: Revisar y crear >** . 
 
-8. En la pestaña **Revisar y crear** del panel **Analytic rule wizard - Create new rule from template (Asistente para reglas de análisis - Crear nueva regla a partir de la plantilla)** , haga clic en **Crear**.
+8. En la pestaña **Revisar y crear** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, haga clic en **Guardar**.
 
     >**Nota**: Ahora tiene una regla activa.
 
@@ -140,7 +146,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 5. En el panel **Implementación personalizada**, asegúrese de que las siguientes opciones están configuradas (deje las demás con los valores predeterminados):
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Resource group|**AZ500LAB131415**|
@@ -160,17 +166,17 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 10. En el panel **Change-Incident-Severity**, haga clic en **Editar**.
 
-    >**Nota**: En el panel **Diseñador de Logic Apps**, cada una de las cuatro conexiones muestra una advertencia. Esto significa que cada una debe revisarse y configurarse.
+    >**Nota**: En la hoja **Diseñador de Logic Apps**, cada una de las cuatro conexiones muestra una advertencia. Esto significa que cada una debe revisarse y configurarse.
 
-11. En el panel **Diseñador de Logic Apps**, haga clic en el primer paso de **Conexiones**.
+11. En la hoja **Diseñador de Logic Apps**, haga clic en el primer paso de **s**.
 
 12. Haga clic en **Agregar nuevo**, asegúrese de que la entrada de la lista desplegable **Inquilino** contiene el nombre de inquilino de Azure AD y haga clic en **Iniciar sesión**.
 
 13. Cuando se le solicite, inicie sesión con una cuenta de usuario que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-14. Haga clic en el segundo paso de **Conexión** y, en la lista de conexiones, seleccione la segunda entrada, que representa la conexión que creó en el paso anterior.
+14. Haga clic en el segundo paso de **s** y, en la lista de s, seleccione la segunda entrada, que representa la conexión que ha creado en el paso anterior.
 
-15. Repita los pasos anteriores para los dos pasos de **Conexión** restantes.
+15. Repita el paso anterior para los dos pasos de **s** restantes.
 
     >**Nota**: Asegúrese de que no se muestran advertencias en ninguno de los pasos.
 
@@ -184,16 +190,16 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 3. En el panel **Microsoft Sentinel \| Análisis**, haga clic en **+ Crear** y, en el menú desplegable, haga clic en **Regla de consulta programada**. 
 
-4. En la pestaña **General** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , configure las siguientes opciones (deje las demás con los valores predeterminados):
+4. En la pestaña **General** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Nombre|**Demostración del cuaderno de estrategias**|
     |Tácticas|**Acceso inicial**|
 
 5. Haga clic en **Siguiente: Establecer la lógica de la regla >** .
 
-6. En la pestaña **Establecer la lógica de la regla** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , en el cuadro de texto **Consulta de regla**, pegue la siguiente consulta de regla. 
+6. En la pestaña **Establecer la lógica de la regla** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, en el cuadro de texto **Consulta de regla**, pegue la siguiente consulta de regla. 
 
     ```
     AzureActivity
@@ -206,15 +212,21 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
     >**Nota**: Tenga en cuenta que si recibe un error de análisis, IntelliSense podría haber agregado valores a la consulta. Asegúrese de que la consulta coincide; de lo contrario, pegue la consulta en el Bloc de notas y, a continuación, del Bloc de notas a la consulta de regla. 
 
 
-7. En la pestaña **Establecer la lógica de la regla** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , en la sección **Programación de consultas**, establezca **Ejecutar consulta cada** en **5 minutos**.
+7. En la pestaña **Establecer la lógica de la regla** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, en la sección **Programación de consultas**, establezca **Ejecutar consulta cada** en **5 minutos**.
 
-8. En la pestaña **Establecer lógica de regla** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , acepte los valores predeterminados de la configuración restante y haga clic en **Siguiente: Configuración del incidente >** .
+8. En la pestaña **Establecer lógica de regla** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, acepte los valores predeterminados de la configuración restante y haga clic en **Siguiente: Configuración del incidente >** .
 
-9. En la pestaña **Configuración del incidente** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , acepte la configuración predeterminada y haga clic en **Siguiente: Respuesta automatizada >** . 
+9. En la pestaña **Configuración del incidente** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, acepte la configuración predeterminada y haga clic en **Siguiente: Respuesta automatizada >** . 
 
-10. En la pestaña **Respuesta automatizada** del panel **Asistente para reglas de análisis - Crear nueva regla**, en la lista desplegable **Automatización de alertas (clásica)** , active la casilla situada junto a la entrada **Cambiar-Incidente-Gravedad** y haga clic en **Siguiente: Revisar >** . 
+10. En la pestaña **Respuesta automatizada** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada** en **Reglas de automatización**, haga clic en **+ Agregar nueva**.
 
-11. En la pestaña **Revisar y crear** del panel **Analytic rule wizard - Create new rule (Asistente para reglas de análisis - Crear nueva regla)** , haga clic en **Crear**.
+11. En la ventana **Crear nueva regla de automatización**, escriba **Run Change-Severity Playbook** para el **Nombre de regla de automatización**; en el campo **Desencadenador**, haga clic en el menú desplegable y seleccione **Cuando se crea la alerta**.
+
+12. En la ventana **Crear nueva regla de automatización**, en **Acciones**, lea la nota y, después, haga clic en **Administrar permisos del cuaderno de estrategias**. En la ventana **Administrar permisos**, active la casilla situada junto al **Grupo de recursos creado anteriormente AZ500LAB1314151** y, después, haga clic en **Aplicar**.
+
+13.  En la ventana **Crear nueva regla de automatización**, en **Acciones**, haga clic en el segundo menú desplegable y seleccione la aplicación lógica **Change-Incident-Severity**. En la ventana **Crear nueva regla de automatización**, haga clic en **Aplicar**.
+
+14. En la pestaña **Respuesta automatizada** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, haga clic en **Siguiente: Revisar y crear >** y haga clic en **Guardar**
 
     >**Nota**: Ahora tiene una nueva regla activa denominada **Demostración del cuaderno de estrategias**. Si se produce un evento identificado por la lógica de la regla, se producirá una alerta de gravedad media, lo que generará un incidente correspondiente.
 
@@ -224,27 +236,29 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
     >**Nota**: Compruebe la puntuación de seguridad. Por ahora debería haberse actualizado. 
 
-2. En el panel **Microsoft Defender for Cloud \| Protecciones de cargas de trabajo**, haga clic en la sección **Acceso a máquinas virtuales Just-In-Time** en **Protección avanzada**.
+2. En la hoja **Microsoft Defender for Cloud \| Información general**, haga clic en **Protección de cargas de trabajo** en **Seguridad en la nube** en el panel de navegación izquierdo.
 
-3. En el panel **Microsoft Defender for Cloud \| Acceso de máquina virtual Just-In-Time**, en el lado derecho de la fila que hace referencia a la máquina virtual **myVM**, haga clic en el botón de **puntos suspensivos**, en **Quitar** y en **Sí**.
+3. En la hoja **Microsoft Defender for Cloud \| Protecciones de cargas de trabajo**, haga clic en la sección **Acceso a máquinas virtuales Just-In-Time** en **Protección avanzada**.
+
+4. En la hoja **Acceso de máquina virtual Just-in-time**, en el lado derecho de la fila que hace referencia a la máquina virtual **myVM**, haga clic en el botón de **puntos suspensivos (...)** , haga clic en **Quitar** y luego haga clic en **Sí**.
 
     >**Nota**: Si la máquina virtual no aparece en la lista **Máquinas virtuales Just-In-Time**, vaya al panel **Máquina virtual** y haga clic en **Configuración**. Haga clic en la opción **Habilitar las máquinas virtuales Just-In-Time** de **Acceso de máquina virtual Just-In-Time**. Repita el paso anterior para volver a **Microsoft Defender for Cloud** y actualice la página. Se mostrará la máquina virtual.
 
-4. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Registro de actividad** y presione la tecla **Entrar**.
+5. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Registro de actividad** y presione la tecla **Entrar**.
 
-5. Vaya al panel **Registro de actividad** y anote una entrada **Eliminar directivas de acceso a la red JIT**. 
+6. Vaya al panel **Registro de actividad** y anote una entrada **Eliminar directivas de acceso a la red JIT**. 
 
-    >**Nota**: Puede tardar un minuto en aparecer. 
+    >**Nota**: Los datos pueden tardar unos minutos en aparecer. **Actualice** la página si no aparece.
 
-6. En Azure Portal, vuelva al panel **Microsoft Sentinel \| Información general**.
+7. En Azure Portal, vuelva al panel **Microsoft Sentinel \| Información general**.
 
-7. En el panel **Microsoft Sentinel \| Información general**, revise el panel y compruebe que se muestra una alerta correspondiente a la eliminación de la directiva de acceso a las máquinas virtuales Just-In-Time.
+8. En la hoja **Microsoft Sentinel \| Información general**, revise el panel y compruebe que se muestra un incidente correspondiente a la eliminación de la directiva de acceso a las máquinas virtuales Just-In-Time.
 
-    >**Nota**: Las alertas pueden tardar hasta 5 minutos en aparecer en el panel **Microsoft Sentinel\| Información general**. Si no ve una alerta en ese momento, ejecute la regla de consulta a la que se hace referencia en la tarea anterior para comprobar que la actividad de eliminación de la directiva de acceso Just-In-Time se ha propagado al área de trabajo de Log Analytics asociada a la instancia de Microsoft Sentinel. Si no fuera el caso, vuelva a crear la directiva de acceso a las máquinas virtuales Just-In-Time y elimínela de nuevo.
+    >**Nota**: Las alertas pueden tardar hasta 5 minutos en aparecer en el panel **Microsoft Sentinel\| Información general**. Si no ve una alerta en ese momento, ejecute la regla de consulta a la que se hace referencia en la tarea anterior para comprobar que la actividad de eliminación de la directiva de acceso Just-In-Time se ha propagado al área de trabajo de Log Analytics asociada a la instancia de Microsoft Sentinel. Si no fuera el caso, vuelva a crear la directiva de acceso a las máquinas virtuales Just-In-Time y elimínela de nuevo.
 
-8. En la página **Microsoft Sentinel \| Información general**, vaya a la sección **Administración de amenazas** y haga clic en **Incidentes**.
+9. En la página **Microsoft Sentinel \| Información general**, vaya a la sección **Administración de amenazas** y haga clic en **Incidentes**.
 
-9. Compruebe que el panel muestra un incidente con un nivel de gravedad medio o alto.
+10. Compruebe que el panel muestra un incidente con un nivel de gravedad medio o alto.
 
     >**Nota**: El incidente puede tardar hasta 5 minutos en aparecer en el panel **Microsoft Sentinel \| Incidentes**. 
 
