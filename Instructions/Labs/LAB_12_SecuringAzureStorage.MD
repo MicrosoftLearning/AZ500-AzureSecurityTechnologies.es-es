@@ -273,29 +273,31 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
 
 8. En el panel **Información general** de la cuenta de almacenamiento, haga clic en **Recursos compartidos de archivos** en la pestaña **Almacenamiento de datos** y, a continuación, haga clic en **+ Recurso compartido de archivos**.
 
-9. En el panel **Nuevo recurso compartido de archivos**, configure las opciones siguientes:
+9. En la hoja **Nuevo recurso compartido de archivos**, desactive la opción **Habilitar copia de seguridad** en la pestaña copia de seguridad. 
+
+10. En el panel **Nuevo recurso compartido de archivos**, configure las opciones siguientes:
 
     |Configuración|Value|
     |---|---|
     |Nombre|**my-file-share**|
 
-10. En el panel **Nuevo recurso compartido de archivos**, haga clic en **Crear**.
+11. En el panel **Nuevo recurso compartido de archivos**, haga clic en **Crear**.
 
     >**Nota**: Ahora, recupere y registre el script de PowerShell que crea una asignación de unidad al recurso compartido de archivos de Azure. 
 
-11. En el panel de la cuenta de almacenamiento, en la lista de recursos compartidos de archivos, haga clic en **my-file-share**.
+12. En el panel de la cuenta de almacenamiento, en la lista de recursos compartidos de archivos, haga clic en **my-file-share**.
 
-12. En el panel **my-file-share**, haga clic en **Conectar**.
+13. En el panel **my-file-share**, haga clic en **Conectar**.
 
-13. En el panel **Conectar** en la pestaña **Windows**, copie el script de PowerShell que crea una asignación de unidad Z al recurso compartido de archivos. 
+14. En el panel **Conectar** en la pestaña **Windows**, copie el script de PowerShell que crea una asignación de unidad Z al recurso compartido de archivos. 
 
     >**Nota**: Registre este script. Lo necesitará más adelante en este laboratorio para asignar el recurso compartido de archivos de la máquina virtual de Azure en la subred **Privada**.
 
-14. Vuelva al panel de la cuenta de almacenamiento y, a continuación, en la sección **Seguridad y redes**, haga clic en **Redes**.
+15. Vuelva al panel de la cuenta de almacenamiento y, a continuación, en la sección **Seguridad y redes**, haga clic en **Redes**.
 
-15. En la hoja **Firewalls y redes virtuales**, seleccione la opción **Habilitado desde redes virtuales y direcciones IP seleccionadas** y haga clic en el vínculo **+ Agregar red virtual existente**. 
+16. En la hoja **Firewalls y redes virtuales**, seleccione la opción **Habilitado desde redes virtuales y direcciones IP seleccionadas** y haga clic en el vínculo **+ Agregar red virtual existente**. 
 
-16. En el panel **Agregar redes**, configure las opciones siguientes:
+17. En el panel **Agregar redes**, configure las opciones siguientes:
 
     |Configuración|Value|
     |---|---|
@@ -303,9 +305,9 @@ En esta tarea, creará una cuenta de almacenamiento con un recurso compartido de
     |Redes virtuales|**myVirtualNetwork**|
     |Subredes|**Privado**|
 
-17. En el panel **Agregar redes**, haga clic en **Agregar**. 
+18. En el panel **Agregar redes**, haga clic en **Agregar**. 
 
-18. De nuevo en el panel de la cuenta de almacenamiento, haga clic en **Guardar**.
+19. De nuevo en el panel de la cuenta de almacenamiento, haga clic en **Guardar**.
 
     >**Nota**: En este punto del laboratorio ha configurado una red virtual, un grupo de seguridad de red y una cuenta de almacenamiento con un recurso compartido de archivos. 
 

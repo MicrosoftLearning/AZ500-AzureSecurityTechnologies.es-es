@@ -16,7 +16,7 @@ Se le ha pedido que cree una aplicación de prueba de concepto que use la compat
 
 >**Nota**: Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-Para mantener el centro de atención en los aspectos de seguridad de Azure relacionados con la creación de esta prueba de concepto, comenzará desde una implementación automatizada de plantillas de ARM, configurará una máquina virtual con Visual Studio 2019 y SQL Server Management Studio 2018.
+Para mantener el centro de atención en los aspectos de seguridad de Azure relacionados con la creación de esta prueba de concepto, comenzará desde una implementación automatizada de plantillas de ARM, configurará una máquina virtual con Visual Studio 2019 y SQL Server Management Studio 19.
 
 ## Objetivos del laboratorio
 
@@ -49,7 +49,7 @@ En este ejercicio completará las tareas siguientes:
 
 #### Tarea 1: Implementación de una máquina virtual de Azure y una base de datos de Azure SQL
 
-En esta tarea, implementará una máquina virtual de Azure, que instalará automáticamente Visual Studio 2019 y SQL Server Management Studio 2018 como parte de la implementación. 
+En esta tarea, implementará una máquina virtual de Azure, que instalará automáticamente Visual Studio 2019 y SQL Server Management Studio 19 como parte de la implementación. 
 
 1. Inicie sesión en Azure Portal **`https://portal.azure.com/`** .
 
@@ -221,7 +221,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 1: Habilitación de una aplicación cliente para obtener acceso al servicio de Azure SQL Database.
 - Tarea 2: Creación de una directiva que permita a la aplicación acceder al Key Vault.
 - Tarea 3: Recuperación de la cadena de conexión ADO.NET de Azure SQL Database 
-- Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 2018
+- Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
 - Tarea 5: Creación de una tabla en SQL Database y selección de columnas de datos para el cifrado
 
 
@@ -315,9 +315,9 @@ La implementación de la plantilla de ARM del ejercicio 1 aprovisionó una inst
 
     >**Nota**: Al usar la cadena de conexión, asegúrese de reemplazar el marcador de posición `{your_password}` por la contraseña que configuró con la implementación en el ejercicio 1.
 
-#### Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 2018
+#### Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
 
-En esta tarea, iniciará sesión en la máquina virtual de Azure cuya implementación inició en el ejercicio 1. Esta máquina virtual de Azure hospeda Visual Studio 2019 y SQL Server Management Studio 2018.
+En esta tarea, iniciará sesión en la máquina virtual de Azure cuya implementación inició en el ejercicio 1. Esta máquina virtual de Azure hospeda Visual Studio 2019 y SQL Server Management Studio 19.
 
     >**Note**: Before you proceed with this task, ensure that the deployment you initiated in the first exercise has completed successfully. You can validate this by navigating to the blade of the Azure resource group "Az500Lab10" (or other name you chose) and selecting **Deployments** from the Settings pane.  
 
@@ -358,7 +358,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
 
     >**Nota**: Los pasos restantes de este laboratorio se realizan dentro de la sesión de Escritorio remoto a la máquina virtual de Azure **az500-10-vm1**. 
 
-6. Haga clic en **Inicio**, en el menú **Inicio**, expanda la carpeta **Microsoft SQL Server Tools 18** y haga clic en el elemento de menú **Microsoft SQL Server Management Studio**.
+6. Haga clic en **Inicio**, en el menú **Inicio**, expanda la carpeta **Microsoft SQL Server Tools 19** y haga clic en el elemento de menú **Microsoft SQL Server Management Studio**.
 
 7. En el cuadro de diálogo **Conectar con el servidor**, aplique la configuración siguiente: 
 
@@ -366,7 +366,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     |---|---|
     |Tipo de servidor|**Motor de base de datos**|
     |Nombre del servidor|nombre de servidor que identificó anteriormente en esta tarea|
-    |Autenticación|**SQL Server Authentication**|
+    |Autenticación|**Autenticación de SQL Server**|
     |Iniciar sesión|**Estudiante**|
     |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
