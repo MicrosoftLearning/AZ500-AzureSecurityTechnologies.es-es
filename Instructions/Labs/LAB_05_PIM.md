@@ -48,7 +48,7 @@ En este ejercicio completará las tareas siguientes:
 
 En esta tarea, hará que un usuario sea apto para un rol de directorio de Azure AD.
 
-1. Inicie sesión en Azure Portal **`https://portal.azure.com/`** .
+1. Inicie sesión en Azure Portal en **`https://portal.azure.com/`** .
 
     >**Nota:** Asegúrese de que ha iniciado sesión en el inquilino **AdatumLab500-04** de Azure AD. Puede usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Azure AD. Asegúrese de que ha iniciado sesión como usuario con el rol Administrador global.
     
@@ -86,7 +86,7 @@ En esta tarea, hará que un usuario sea apto para un rol de directorio de Azure 
 
 3. En la hoja **AdatumLab500-04 \| Roles**, haga clic en la entrada del rol **Lector global**. 
 
-4. En la hoja **Lector global \| Asignaciones**, haga clic en el icono **Configuración** en la barra de herramientas de la hoja y revise los valores de configuración del rol, incluidos los requisitos de Azure Multi-Factor Authentication.
+4. En la hoja **Lector global \| Asignaciones**, haga clic en el icono **Configuración de rol** en la barra de herramientas de la hoja y revise los valores de configuración del rol, incluidos los requisitos de Azure Multi-Factor Authentication.
 
 5. Haga clic en **Editar**.
 
@@ -132,7 +132,7 @@ En esta tarea, hará que un usuario sea apto para un rol de directorio de Azure 
 
 7. Revise la configuración de **Tipo de asignación** y haga clic en **Asignar**.
 
-8. En la página **Asignaciones** de la pestaña **Asignaciones aptas**, seleccione **Actualizar** para la asignación **aaduser2**. Seleccione **Apta permanentemente** y **Guardar**.
+8. En el panel de navegación izquierdo, haga clic en **Asignaciones**. En la página **Asignaciones aptas**, en **Administrador de seguridad**, seleccione **Actualizar** para la asignación **aaduser2**. Seleccione **Apta permanentemente** y **Guardar**.
 
     >**Nota**: El usuario aaduser2 ahora es apto de forma permanente para el rol Administrador de seguridad.
     
@@ -151,7 +151,7 @@ En esta tarea, activará un rol que no requiere aprobación.
 
 1. Abra una ventana del explorador de InPrivate.
 
-2. En la ventana del explorador InPrivate, vaya a Azure Portal e inicie sesión con la cuenta de usuario **aaduser2**.
+2. En la ventana del explorador InPrivate, vaya a Azure Portal en **`https://portal.azure.com/`** e inicie sesión con la cuenta de usuario **aaduser2**.
 
     >**Nota**: Para iniciar sesión, deberá proporcionar un nombre completo de la cuenta de usuario **aaduser2**, incluido el nombre de dominio DNS del inquilino de Azure AD que registró anteriormente en este laboratorio. Este nombre de usuario tiene el formato aaduser2@`<your_tenant_name>`.onmicrosoft.com, donde `<your_tenant_name>` es el marcador de posición que representa el nombre único del inquilino de Azure AD. 
 
@@ -202,49 +202,47 @@ En esta tarea, activará un rol que requiere aprobación.
 
 6. En la hoja **Mis roles \| Azure AD**, busque el rol **Administrador de seguridad** y haga clic en **Activar**. 
 
-7. Haga clic en la advertencia **Se requiere una verificación adicional. Haga clic para continuar.** 
-
-8. Siga las instrucciones para comprobar su identidad.
+7. Si es necesario, haga clic en la advertencia **Comprobación adicional necesaria. Haga clic para continuar** y siga las instrucciones para comprobar su identidad.
 
     >**Nota**: Solo tiene que autenticarse una vez por sesión. 
 
-9. Cuando vuelva a la interfaz de Azure Portal, en la hoja **Activar - Administrador de seguridad**, en el cuadro de texto **Motivo**, escriba un texto que proporcione una justificación para la activación y, a continuación, haga clic en **Activar**.
+8. Cuando vuelva a la interfaz de Azure Portal, en la hoja **Activar - Administrador de seguridad**, en el cuadro de texto **Motivo**, escriba un texto que proporcione una justificación para la activación y, a continuación, haga clic en **Activar**.
 
     >**Nota**: El proceso de aprobación automática debería completarse.
 
-10. De nuevo en la hoja **Mis roles Azure AD \| Roles de Azure AD**, haga clic en la pestaña **Asignaciones activas** y observe que la lista de **asignaciones activas** incluye el rol **Administrador de seguridad**, pero no el de **Lector global**.
+9. De nuevo en la hoja **Mis roles Azure AD \| Roles de Azure AD**, haga clic en la pestaña **Asignaciones activas** y observe que la lista de **asignaciones activas** incluye el rol **Administrador de seguridad**, pero no el de **Lector global**.
 
     >**Nota**: Ahora aprobará el rol Lector global.
 
-11. Cierre la sesión de **aaduser2** de Azure Portal.
+10. Cierre la sesión de **aaduser2** de Azure Portal.
 
-12. Inicie sesión en Azure Portal como **aaduser3**.
+11. En el navegador InPrivate, inicie sesión en Azure Portal en **`https://portal.azure.com/`** como **aaduser3**.
 
     >**Nota**: Si tiene problemas con la autenticación mediante cualquiera de las cuentas de usuario, puede iniciar sesión en el inquilino de Azure AD con su cuenta de usuario para restablecer sus contraseñas o volver a configurar sus opciones de inicio de sesión.
 
-13. En Azure Portal, vaya a **Azure AD Privileged Identity Management**. En el cuadro de texto Buscar recursos, servicios y documentos de la parte superior de la página de Azure Portal, escriba Azure AD Privileged Identity Management y presione la tecla Entrar.
+12. En Azure Portal, vaya a **Azure AD Privileged Identity Management**. En el cuadro de texto Buscar recursos, servicios y documentos de la parte superior de la página de Azure Portal, escriba Azure AD Privileged Identity Management y presione la tecla Entrar.
 
-14. En la hoja **Privileged Identity Management \| Inicio rápido**, en la sección **Tareas**, haga clic en **Aprobar solicitudes**.
+13. En la hoja **Privileged Identity Management \| Inicio rápido**, en la sección **Tareas**, haga clic en **Aprobar solicitudes**.
 
-15. En la hoja **Aprobar solicitudes \| Roles de Azure AD**, en la sección **Solicitudes de activación de roles**, active la casilla de la entrada que representa la solicitud de activación de rol para el rol **Lector global** con **aaduser2**.
+14. En la hoja **Aprobar solicitudes \| Roles de Azure AD**, en la sección **Solicitudes de activación de roles**, active la casilla de la entrada que representa la solicitud de activación de rol para el rol **Lector global** con **aaduser2**.
 
-16. Haga clic en **Approve** (Aprobar). En la hoja **Aprobar solicitud**. en el cuadro de texto **Justificación**, escriba un motivo para la activación, anote las horas de inicio y finalización y, a continuación, haga clic en **Confirmar**. 
+15. Haga clic en **Approve** (Aprobar). En la hoja **Aprobar solicitud**. en el cuadro de texto **Justificación**, escriba un motivo para la activación, anote las horas de inicio y finalización y, a continuación, haga clic en **Confirmar**. 
 
     >**Nota**: También tiene la opción de denegar solicitudes.
 
-17. Cierre la sesión de **aaduser3** de Azure Portal.
+16. Cierre la sesión de **aaduser3** de Azure Portal.
 
-18. Inicie sesión en Azure Portal como **aaduser2**.
+17. En el navegador InPrivate, inicie sesión en Azure Portal en **`https://portal.azure.com/`** como **aaduser2**
 
-19. En Azure Portal, vaya a **Azure AD Privileged Identity Management**. En el cuadro de texto Buscar recursos, servicios y documentos de la parte superior de la página de Azure Portal, escriba Azure AD Privileged Identity Management y presione la tecla Entrar.
+18. En Azure Portal, vaya a **Azure AD Privileged Identity Management**. En el cuadro de texto Buscar recursos, servicios y documentos de la parte superior de la página de Azure Portal, escriba Azure AD Privileged Identity Management y presione la tecla Entrar.
 
-20. En la hoja **Privileged Identity Management \| Inicio rápido**, en la sección **Tareas**, haga clic en **Mis roles**.
+19. En la hoja **Privileged Identity Management \| Inicio rápido**, en la sección **Tareas**, haga clic en **Mis roles**.
 
-21. En la hoja **Mis roles \| Roles de Azure AD**, haga clic en la pestaña **Asignaciones activas** y compruebe que el rol Lector global ahora está activo.
+20. En la hoja **Mis roles \| Roles de Azure AD**, haga clic en la pestaña **Asignaciones activas** y compruebe que el rol Lector global ahora está activo.
 
     >**Nota**: Es posible que tenga que actualizar la página para ver la lista actualizada de asignaciones activas.
 
-22. Cierre la sesión y cierre la ventana del explorador InPrivate.
+21. Cierre la sesión y cierre la ventana del explorador InPrivate.
 
 > Resultado: ha practicado la activación de roles de PIM con y sin aprobación. 
 
