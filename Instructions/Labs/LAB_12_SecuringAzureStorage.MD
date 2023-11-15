@@ -129,7 +129,7 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
 
 8. En el panel **Agregar regla de seguridad de salida**, especifique la siguiente configuración para permitir explícitamente el tráfico saliente a Azure Storage (deje todos los demás valores con su configuración predeterminada): 
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Source|**Etiqueta de servicio**|
     |Etiqueta de servicio de origen|**VirtualNetwork**|
@@ -148,7 +148,7 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
 
 11. En el panel **Agregar regla de seguridad de salida**, especifique la siguiente configuración para denegar explícitamente el tráfico saliente a Internet (deje todos los demás valores con su configuración predeterminada): 
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Source|**Etiqueta de servicio**|
     |Etiqueta de servicio de origen|**VirtualNetwork**|
@@ -169,7 +169,7 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
 
 13. En el panel **Agregar regla de seguridad de entrada**, configure las opciones siguientes (deje todas las demás con los valores predeterminados): 
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Source|**Cualquiera**|
     |Source port ranges|**\***|
@@ -219,7 +219,7 @@ En esta tarea, creará un grupo de seguridad de red con una regla de seguridad d
 
 7. En el panel **Agregar regla de seguridad de entrada**, configure las opciones siguientes (deje todas las demás con los valores predeterminados): 
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Source|**Cualquiera**|
     |Source port ranges|**\***|

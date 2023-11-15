@@ -48,7 +48,7 @@ En este ejercicio completará las tareas siguientes:
 
 En esta tarea, hará que un usuario sea apto para un rol de directorio de Azure AD.
 
-1. Inicie sesión en Azure Portal en **`https://portal.azure.com/`** .
+1. Inicie sesión en Azure Portal en **`https://portal.azure.com/`**.
 
     >**Nota:** Asegúrese de que ha iniciado sesión en el inquilino **AdatumLab500-04** de Azure AD. Puede usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Azure AD. Asegúrese de que ha iniciado sesión como usuario con el rol Administrador global.
     

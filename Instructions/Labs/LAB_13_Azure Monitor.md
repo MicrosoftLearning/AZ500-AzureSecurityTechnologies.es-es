@@ -119,7 +119,7 @@ En esta tarea, creará una cuenta de almacenamiento.
 
 2. En la hoja **Cuentas de almacenamiento** de Azure Portal, haga clic en el botón **+ Crear** para crear una nueva cuenta de almacenamiento.
 
-    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/73eb9241-d642-455a-a1ff-b504670395c0)
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/73eb9241-d642-455a-a1ff-b504670395c0)
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
@@ -134,7 +134,7 @@ En esta tarea, creará una cuenta de almacenamiento.
 
 4. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, haga clic en **Revisar**, espere a que se complete el proceso de validación y, luego, haga clic en **Crear**.
 
-     ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d443821c-2ddf-4794-87fa-bfc092980eba)
+     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d443821c-2ddf-4794-87fa-bfc092980eba)
 
     >**Nota**: Espere a que se cree la cuenta de almacenamiento. Este proceso tardará alrededor de 2 minutos.
 
@@ -154,35 +154,35 @@ En esta tarea, creará una regla de recopilación de datos.
 
 2. En la hoja **Supervisar configuración**, haga clic en **Reglas de recopilación de datos.**
 
-  ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d43e8f94-efb2-4255-9320-210c976fd45e)
+  ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d43e8f94-efb2-4255-9320-210c976fd45e)
 
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear una regla de recopilación de datos**, especifique la configuración siguiente:
   
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |**Detalles de la regla**|
-    |Nombre de la regla|**DCR1**|
+    |Nombre de regla|**DCR1**|
     |Subscription|nombre de la suscripción de Azure que usa en este laboratorio|
     |Grupo de recursos|**AZ500LAB131415**|
     |Region|**Este de EE. UU.**|
     |Tipo de plataforma|**Windows**|
     |Punto de conexión de recopilación de datos|*Déjelo en blanco*|
 
-    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/9b58c4ce-b7a8-4acf-8289-d95b270a6083)
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/9b58c4ce-b7a8-4acf-8289-d95b270a6083)
 
 
 4. Haga clic en el botón denominado **Siguiente: Recursos >** para continuar.
 
 5. En la pestaña **Recursos**, seleccione **+ Agregar recursos** y, a continuación, active **Habilitar puntos de conexión de recopilación de datos.**
 
-    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/c8388619-c254-4c80-a1ff-dde2f35ed350)
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/c8388619-c254-4c80-a1ff-dde2f35ed350)
 
 6. Haga clic en el botón denominado **Siguiente: Recopilar y entregar >** para continuar.
 
 7. Haga clic en **+ Agregar origen de datos** y, a continuación, en la página **Agregar origen de datos**, cambie el menú desplegable **Tipo de origen de datos** para mostrar **Contadores de rendimiento.** Deje la siguiente configuración predeterminada:
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |**Contador de rendimiento**|**Frecuencia de muestreo (segundos)**|
     |CPU|60|
@@ -190,21 +190,21 @@ En esta tarea, creará una regla de recopilación de datos.
     |Disco|60|
     |Red|60|
 
-   ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/a24e44ad-1d10-4533-80e2-bae1b3f6564d)
+   ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/a24e44ad-1d10-4533-80e2-bae1b3f6564d)
 
 8. Haga clic en el botón denominado **Siguiente: Destino >** para continuar.
   
 9. Cambie el menú desplegable **Tipo de destino** para mostrar los **Registros de Azure Monitor.** En la ventana **Suscripción**, asegúrese de que se muestra la *Suscripción* y, a continuación, cambie el menú desplegable **Cuenta o espacio de nombres** para reflejar el área de trabajo de Log Analytics creada anteriormente.
 
-   ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/481843f5-94c4-4a8f-bf51-a10d49130bf8)
+   ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/481843f5-94c4-4a8f-bf51-a10d49130bf8)
 
 10. En la parte inferior de la página, seleccione **Agregar origen de datos**.
     
-    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/964091e7-bbbc-4ca8-8383-bb2871a1e7f0)
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/964091e7-bbbc-4ca8-8383-bb2871a1e7f0)
 
 13. Haga clic en **Revisar y crear.**
 
-    ![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/50dd8407-a106-4540-9e14-ae40a3c04830)
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/50dd8407-a106-4540-9e14-ae40a3c04830)
 
 14. Haga clic en **Crear**.
 
