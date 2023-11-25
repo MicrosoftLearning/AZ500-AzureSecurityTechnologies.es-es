@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 13 - Azure Monitor
+  title: 14- Azure Monitor
   module: Module 04 - Manage security operations
 ---
 
-# Laboratorio 13: Azure Monitor
+# Laboratorio 14: Azure Monitor
 
 # Manual de laboratorio para alumnos
 
@@ -154,8 +154,7 @@ En esta tarea, creará una regla de recopilación de datos.
 
 2. En la hoja **Supervisar configuración**, haga clic en **Reglas de recopilación de datos.**
 
-  ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d43e8f94-efb2-4255-9320-210c976fd45e)
-
+    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/2184da69-12c2-476b-b2b2-b80620e822a6)
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear una regla de recopilación de datos**, especifique la configuración siguiente:
   

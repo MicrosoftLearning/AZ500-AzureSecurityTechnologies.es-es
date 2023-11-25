@@ -221,7 +221,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 1: Habilitación de una aplicación cliente para obtener acceso al servicio de Azure SQL Database.
 - Tarea 2: Creación de una directiva que permita a la aplicación acceder al Key Vault.
 - Tarea 3: Recuperación de la cadena de conexión ADO.NET de Azure SQL Database 
-- Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
+- Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
 - Tarea 5: Creación de una tabla en SQL Database y selección de columnas de datos para el cifrado
 
 
@@ -254,7 +254,7 @@ En esta tarea, habilitará una aplicación cliente para obtener acceso al servic
 
 8. En el panel **Agregar un secreto de cliente**, especifique la siguiente configuración:
 
-    |Configuración|Value|
+    |Configuración|valor|
     |----|----|
     |Descripción|**Key1**|
     |Expira|**12 meses**|
@@ -315,7 +315,7 @@ La implementación de la plantilla de ARM del ejercicio 1 aprovisionó una inst
 
     >**Nota**: Al usar la cadena de conexión, asegúrese de reemplazar el marcador de posición `{your_password}` por la contraseña que configuró con la implementación en el ejercicio 1.
 
-#### Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
+#### Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
 
 En esta tarea, iniciará sesión en la máquina virtual de Azure cuya implementación inició en el ejercicio 1. Esta máquina virtual de Azure hospeda Visual Studio 2019 y SQL Server Management Studio 19.
 
@@ -366,7 +366,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     |---|---|
     |Tipo de servidor|**Motor de base de datos**|
     |Nombre del servidor|nombre de servidor que identificó anteriormente en esta tarea|
-    |Autenticación|**Autenticación de SQL Server**|
+    |Autenticación|**SQL Server Authentication**|
     |Iniciar sesión|**Estudiante**|
     |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 

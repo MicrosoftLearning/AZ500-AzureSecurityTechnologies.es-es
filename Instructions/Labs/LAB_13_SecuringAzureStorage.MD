@@ -1,10 +1,10 @@
 ---
 lab:
-  title: ' 12: Puntos de conexión de servicio y protección del almacenamiento'
+  title: ' 13 - Puntos de conexión de servicio y protección del almacenamiento'
   module: Module 03 - Secure data and applications
 ---
 
-# Laboratorio 12: Puntos de conexión de servicio y protección del almacenamiento
+# Laboratorio 13: Puntos de conexión de servicio y protección del almacenamiento
 # Manual de laboratorio para alumnos
 
 ## Escenario del laboratorio

@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 05 - Azure AD Privileged Identity Management
+  title: 11 - Azure AD Privileged Identity Management
   module: Module 01 - Manage Identity and Access
 ---
 
-# Laboratorio 05: Azure AD Privileged Identity Management
+# Laboratorio 11: Azure AD Privileged Identity Management
 # Manual de laboratorio para alumnos
 
 ## Escenario del laboratorio
