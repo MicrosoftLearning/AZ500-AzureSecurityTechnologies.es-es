@@ -9,7 +9,7 @@ lab:
 
 ## Escenario del laboratorio
 
-Se le ha pedido que cree una aplicación de prueba de concepto que use la compatibilidad de Azure SQL Database con la funcionalidad Always Encrypted. Todos los secretos y claves usados en este escenario deben almacenarse en Key Vault. La aplicación debe estar registrada en Azure Active Directory (Azure AD) para mejorar su posición de seguridad. Para lograr estos objetivos, la prueba de concepto debe incluir:
+Se le ha pedido que cree una aplicación de prueba de concepto que use la compatibilidad de Azure SQL Database con la funcionalidad Always Encrypted. Todos los secretos y claves usados en este escenario deben almacenarse en Key Vault. La aplicación debe registrarse en Microsoft Entra ID para mejorar su posición de seguridad. Para lograr estos objetivos, la prueba de concepto debe incluir:
 
 - Creación de un almacén Azure Key Vault y almacenamiento de claves y secretos en el almacén.
 - Creación de una base de datos SQL Database y cifrado del contenido de las columnas de las tablas de la base de datos mediante Always Encrypted.
@@ -29,7 +29,7 @@ En este laboratorio completará los ejercicios siguientes:
 
 ## Diagrama de Key Vault
 
-![imagen](https://user-images.githubusercontent.com/91347931/157532938-c724cc40-f64f-4d69-9e91-d75344c5e0a2.png)
+![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/38c4ba6d-2fc7-45e5-b9a2-d5dbb4fbbcbc)
 
 ## Instrucciones
 
@@ -71,7 +71,7 @@ En esta tarea, implementará una máquina virtual de Azure, que instalará autom
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB10**|
    |Location|**Este de EE. UU.**|
    |Nombre de usuario administrador|**Estudiante**|
-   |Contraseña de administrador|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
+   |Contraseña de administrador|**Usa tu contraseña personal creada en: Laboratorio 02 > Ejercicio 1 > Tarea 1 > Paso 9.**|
    
     >**Nota**: Aunque puede cambiar las credenciales administrativas usadas para iniciar sesión en la máquina virtual, no es obligatorio.
 
@@ -352,7 +352,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     |Configuración|Valor|
     |---|---|
     |Nombre de usuario|**Estudiante**|
-    |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
+    |Contraseña|**Usa tu contraseña personal creada en: Laboratorio 02 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
     >**Nota**: Espere a que se carguen la sesión de Escritorio remoto y **Administrador del servidor**. Cierre el Administrador del servidor. 
 
@@ -368,7 +368,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     |Nombre del servidor|nombre de servidor que identificó anteriormente en esta tarea|
     |Autenticación|**SQL Server Authentication**|
     |Iniciar sesión|**Estudiante**|
-    |Contraseña|**Use su contraseña personal creada en Laboratorio 04 > Ejercicio 1 > Tarea 1 > Paso 9.**|
+    |Contraseña|**Usa tu contraseña personal creada en: Laboratorio 02 > Ejercicio 1 > Tarea 1 > Paso 9.**|
 
 8. En el cuadro de diálogo **Conectar con el servidor**, haga clic en **Conectar**.
 
