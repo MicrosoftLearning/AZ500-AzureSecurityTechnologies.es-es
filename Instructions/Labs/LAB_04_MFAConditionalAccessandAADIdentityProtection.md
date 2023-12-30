@@ -9,11 +9,11 @@ lab:
 
 ## Escenario del laboratorio
 
-Se le ha pedido que cree una prueba de concepto de características que mejoren la autenticación Azure Active Directory (Azure AD). En concreto, quiere evaluar lo siguiente:
+Se te ha pedido que crees una prueba de concepto de características que mejoren la autenticación de Microsoft Entra ID. En concreto, quiere evaluar lo siguiente:
 
-- Azure AD Multi-Factor Authentication
-- Acceso condicional de Azure AD
-- Directivas basadas en riesgos de acceso condicional de Azure AD
+- Autenticación multifactor de Microsoft Entra ID
+- Acceso condicional de Microsoft Entra ID
+- Directivas de acceso condicional basadas en riesgos de Microsoft Entra ID
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
@@ -23,12 +23,12 @@ En este laboratorio completará los ejercicios siguientes:
 
 - Ejercicio 1: Implementar VM de Azure mediante una plantilla de Azure Resource Manager
 - Ejercicio 2: Implementar Azure MFA
-- Ejercicio 3: Implementar directivas de acceso condicional de Azure AD 
-- Ejercicio 4: Implementar Azure AD Identity Protection
+- Ejercicio 3: Implementar directivas de acceso condicional de Microsoft Entra ID 
+- Ejercicio 4: Implementación de la protección de identidades de Microsoft Entra ID
 
 ## MFA - Acceso condicional - Identity Protection
 
-![imagen](https://user-images.githubusercontent.com/91347931/157518628-8b4a9efe-0086-4ec0-825e-3d062748fa63.png)
+![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/246a3798-6f50-4a41-99c2-71e9ab6a4c8f)
 
 ## Instrucciones
 
@@ -51,7 +51,7 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
 
 1. Inicie sesión en Azure Portal **`https://portal.azure.com/`** .
 
-    >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio y el rol Administrador global en el inquilino de Azure AD asociado a esa suscripción.
+    >**Nota**: Inicia sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usas para este laboratorio y el rol Administrador global en el inquilino de  Microsoft Entra ID asociado a esa suscripción.
 
 2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** y, en la parte superior de la página, escriba **Implementar una plantilla personalizada**.
 
@@ -103,22 +103,22 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Crear un nuevo inquilino de Azure AD.
-- Tarea 2: Activar la prueba de Azure AD Premium P2.
-- Tarea 3: Crear usuarios y grupos de Azure AD.
-- Tarea 4: Asignar licencias de Azure AD Premium P2 a usuarios de Azure AD.
+- Tarea 1: Crea un nuevo inquilino de Microsoft Entra ID.
+- Tarea 2: Activa la prueba de Microsoft Entra ID P2.
+- Tarea 3: Crea usuarios y grupos en Microsoft Entra ID.
+- Tarea 4: Asigna licencias P2 de Microsoft Entra ID a los usuarios de Microsoft Entra ID.
 - Tarea 5: Configurar Azure MFA.
 - Tarea 6: Validar la configuración de MFA.
 
-#### Tarea 1: Crear un nuevo inquilino de Azure AD
+#### Tarea 1: Crea un nuevo inquilino en Microsoft Entra ID.
 
-En esta tarea, creará un nuevo inquilino de Azure AD. 
+En esta tarea, crearás un nuevo inquilino en Microsoft Entra ID. 
 
-1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Azure Active Directory** y presione la tecla **Entrar**.
+1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos**, que encontrará en la parte superior de la página, escribe **Microsoft Entra ID** y presiona la tecla **ENTRAR**.
 
-2. En el panel **Información general** del inquilino de Azure AD actual, haga clic en **Administrar inquilinos** y, a continuación, en la siguiente pantalla, haga clic en **+ Crear**.
+2. En el hoja **Información general** de tu inquilino actual de Microsoft Entra ID, haz clic en **Administrar inquilinos** y después en la siguiente pantalla, haz clic en **+ Crear**.
 
-3. En la pestaña **Aspectos básicos** de la hoja **Creación de un inquilino**, asegúrese de que la opción **Azure Active Directory** está seleccionada y haga clic en **Siguiente: Configuración >** .
+3. En la pestaña **Aspectos básicos** de la hoja **Creación de un inquilino**, asegúrate de que la opción **Microsoft Entra ID** está seleccionada y haz clic en **Siguiente: Configuración >**.
 
 4. En la pestaña **Configuración** de la hoja **Creación de un inquilino**, especifique las siguientes opciones:
 
@@ -136,9 +136,9 @@ En esta tarea, creará un nuevo inquilino de Azure AD.
     >**Nota**: Espere a que se cree el inquilino. Utilice el icono **Notificación** para supervisar el estado de la implementación. 
 
 
-#### Tarea 2: Activar la prueba de Azure AD Premium P2
+#### Tarea 2: Activar la prueba de Microsoft Entra ID P2
 
-En esta tarea, se registrará para la prueba gratuita de Azure AD Premium P2. 
+En esta tarea, te registrarás para obtener la evaluación gratuita de Microsoft Entra ID P2. 
 
 1. En Azure Portal, en la barra de herramientas, haga clic en el icono **Directorio + suscripción**, situado a la derecha del icono de Cloud Shell. 
 
@@ -146,18 +146,18 @@ En esta tarea, se registrará para la prueba gratuita de Azure AD Premium P2.
 
     >**Nota**: Es posible que tenga que actualizar la ventana del explorador si la entrada **AdatumLab500-04** no aparece en la lista de filtros **Directorio + suscripción**.
 
-3. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Azure Active Directory** y presione la tecla **Entrar**. En la hoja **AdatumLab500-04**, en la sección **Administrar**, haga clic en **Licencias**.
+3. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos**, que encontrará en la parte superior de la página, escribe **Microsoft Entra ID** y presiona la tecla **ENTRAR**. En la hoja **AdatumLab500-04**, en la sección **Administrar**, haga clic en **Licencias**.
 
-4. En la hoja **Licencias \| Información general**, en la sección **Administrar**, haga clic en **Todos los productos** y, a continuación, en **+ Probar o comprar**.
+4. En la hoja **Licencias \|Información general**, en **Tareas rápidas**, haz clic en **Obtener una evaluación gratuita**.
 
-5. En la hoja **Activar**, en la sección Azure AD Premium P2, haga clic en **Evaluación gratuita** y, a continuación, en **Activar**.
+5. Expande MICROSFT ENTRA ID P2 y haz clic en **Activar.**
 
 
-#### Tarea 3: Crear usuarios y grupos de Azure AD.
+#### Tarea 3: Crea usuarios y grupos en Microsoft Entra ID.
 
 En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 (usuario) y aaduser3 (usuario). Necesitará el nombre principal y la contraseña de usuario de cada uno para tareas posteriores. 
 
-1. Vuelva a la hoja **AdatumLab500-04**  Azure Active Directory y, en la sección **Administrar**, haga clic en **Usuarios**.
+1. Vuelve a la hoja **AdatumLab500-04** Microsoft Entra ID y, en la sección **Administrar**, haz clic en **Usuarios**.
 
 2. En la hoja **Usuarios \| Todos los usuarios**, haga clic en **+ Nuevo usuario** y, a continuación, en **Crear nuevo usuario**. 
 
@@ -207,17 +207,17 @@ En esta tarea, creará tres usuarios: aaduser1 (administrador global), aaduser2 
 
     >**Nota**: En este momento, debería tener tres nuevos usuarios en la página **Usuarios**. 
     
-#### Tarea 4: Asignar licencias de Azure AD Premium P2 a usuarios de Azure AD
+#### Tarea 4: Asignar licencias de Microsoft Entra ID Premium P2 a los usuarios de Microsoft Entra ID
 
-En esta tarea, asignará cada usuario a la licencia de Azure Active Directory Premium P2.
+En esta tarea, asignarás cada usuario a la licencia de Microsoft Entra ID Premium P2.
 
 1. En la hoja **Usuarios \| Todos los usuarios**, haga clic en la entrada que representa su cuenta de usuario. 
 
 2. En la hoja que muestra las propiedades de la cuenta de usuario, haga clic en **Editar propiedades**.  Confirme que la ubicación de uso está establecida en **Estados Unidos**. Si no es así, establezca la ubicación de uso y haga clic en **Guardar**.
 
-3. Vuelva a la hoja **AdatumLab500-04**  Azure Active Directory y, en la sección **Administrar**, haga clic en **Licencias**.
+3. Vuelva a la hoja **AdatumLab500-04** Microsoft Entra ID y, en la sección **Administrar**, haz clic en **Licencias**.
 
-4. En la hoja **Licencias \| Información general**, haga clic en **Todos los productos**, active la casilla **Azure Active Directory Premium P2** y haga clic en **+ Asignar**.
+4. En la hoja **Licencias \| Información general**, haz clic en **Todos los productos**, activa la casilla **Microsoft Entra ID Premium P2** y haz clic en **+ Asignar**.
 
 5. En la hoja **Asignar licencias** haga clic en **+ Agregar usuarios y grupos**.
 
@@ -227,17 +227,17 @@ En esta tarea, asignará cada usuario a la licencia de Azure Active Directory Pr
 
 8. Cierre la sesión de Azure Portal y vuelva a iniciarla con la misma cuenta. (Este paso es necesario para que la asignación de licencias surta efecto).
 
-    >**Nota**: En este momento, ha asignado licencias de Azure Active Directory Premium P2 a todas las cuentas de usuario que va a usar en este laboratorio. Asegúrese de cerrar la sesión y, a continuación, de volver a iniciarla. 
+    >**Nota**: En este momento, ha asignado licencias de Microsoft Entra ID Premium P2 a todas las cuentas de usuario que vas a usar en este laboratorio. Asegúrese de cerrar la sesión y, a continuación, de volver a iniciarla. 
 
 #### Tarea 5: Configurar Azure MFA.
 
 En esta tarea, configurará MFA y habilitará MFA para aaduser1. 
 
-1. En Azure Portal, vuelva a la hoja **AdatumLab500-04** del inquilino de Azure Active Directory.
+1. En Azure Portal, vuelve a la hoja del inquilino de **AdatumLab500-04** Microsoft Entra ID.
 
-    >**Nota**: Asegúrese de que usa el inquilino AdatumLab500-04 de Azure AD.
+    >**Nota**: Asegúrate de que usa el inquilino de AdatumLab500-04 Microsoft Entra ID.
 
-2. En la hoja **AdatumLab500-04** del inquilino de Azure Active Directory, en la sección **Administrar**, haga clic en **Seguridad**.
+2. En la hoja del inquilino **AdatumLab500-04**Microsoft Entra ID tenant, en la sección **Administrar**, haz clic en **Seguridad**.
 
 3. En la hoja **Seguridad \| Introducción**, en la sección **Administrar**, haga clic en **Autenticación multifactor**.
 
@@ -253,7 +253,7 @@ En esta tarea, configurará MFA y habilitará MFA para aaduser1.
 
 8. Haga clic en **aaduser1** y observe que, en este momento, también tiene la opción **Aplicar**. 
 
-    >**Nota**: El cambio del estado de usuario de Habilitado a Aplicado solo afecta a las aplicaciones integradas de Azure AD heredadas que no admiten Azure MFA y, una vez que el estado cambia a Aplicado, requieren el uso de contraseñas de aplicación.
+    >**Nota**: El cambio del estado de usuario de Habilitado a Aplicado solo afecta a las aplicaciones integradas de Microsoft Entra ID heredadas que no admiten Azure MFA y, una vez que el estado cambia a Aplicado, requieren el uso de contraseñas de la aplicación.
 
 9. Con la entrada **aaduser1** seleccionada, haga clic en **Administrar configuración de usuario** y revise las opciones disponibles: 
 
@@ -279,9 +279,9 @@ En esta tarea, configurará MFA y habilitará MFA para aaduser1.
 
     >**Nota**: En este momento, ha habilitado MFA para aaduser1 y ha configurado las alertas de fraude. 
 
-14. Vuelva a la hoja **AdatumLab500-04** del inquilino de Azure Active Directory y, en la sección **Administrar**, haga clic en **Propiedades**; a continuación, haga clic en el vínculo **Administrar valores predeterminados de seguridad** en la parte inferior de la hoja y, en la hoja **Habilitar los valores predeterminados de seguridad**, haga clic en **Deshabilitado**. Seleccione **Mi organización que usa el acceso condicional** como *Motivo para deshabilitarlo*, haga clic en **Guardar**, lea la advertencia y, después, haga clic en **Deshabilitar**.
+14. Vuelve a la hoja del inquilino de Azure  Microsoft Entra ID **AdatumLab500-04** y, en la sección **Administrar**, haz clic en **Propiedades** y luego haz clic en el vínculo **Administrar valores predeterminados de seguridad** en la parte inferior de la hoja y, en la hoja **Habilitar los valores predeterminados de seguridad**, haz clic en **Deshabilitado**. Seleccione **Mi organización que usa el acceso condicional** como *Motivo para deshabilitarlo*, haga clic en **Guardar**, lea la advertencia y, después, haga clic en **Deshabilitar**.
 
-    >**Nota:** Asegúrese de que ha iniciado sesión en el inquilino **AdatumLab500-04** de Azure AD. Puede usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Azure AD. Asegúrese de que ha iniciado sesión como usuario con el rol Administrador global en el inquilino de Azure AD.
+    >**Nota:** Asegúrate de que has iniciado sesión en el inquilino **AdatumLab500-04** de Microsoft Entra ID. Puedes usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Microsoft Entra ID. Asegúrate de que has iniciado sesión como usuario con el rol Administrador global en el inquilino de Microsoft Entra ID.
 
 #### Tarea 6: Validar la configuración de MFA.
 
@@ -291,7 +291,7 @@ En esta tarea, validará la configuración de MFA. Para ello, probará el inicio
 
 2. Vaya a Azure Portal, **`https://portal.azure.com/`** , e inicie sesión con la cuenta de usuario **aaduser1**. 
 
-    >**Nota**: Para iniciar sesión, deberá proporcionar el nombre completo de la cuenta de usuario **aaduser1**, incluido el nombre de dominio DNS del inquilino de Azure AD que registró anteriormente en este laboratorio. Este nombre de usuario tiene el formato aaduser1@`<your_tenant_name>`.onmicrosoft.com, donde `<your_tenant_name>` es el marcador de posición que representa el nombre único del inquilino de Azure AD. 
+    >**Nota**: Para iniciar sesión, deberás proporcionar el nombre completo de la cuenta de usuario **aaduser1**, incluido el nombre de dominio DNS del inquilino de Microsoft Entra ID que registraste anteriormente en este laboratorio. Este nombre de usuario tiene el formato aaduser1@`<your_tenant_name>`.onmicrosoft.com, donde `<your_tenant_name>` es el marcador de posición el que representa el nombre único del inquilino de Microsoft Entra ID. 
 
 3. Cuando se le solicite, en el cuadro de diálogo **Se necesita más información**, haga clic en **Siguiente**.
 
@@ -316,7 +316,7 @@ En esta tarea, validará la configuración de MFA. Para ello, probará el inicio
 > Resultado: ha creado un nuevo inquilino de AD, configurado usuarios de AD, configurado MFA y probado la experiencia de MFA para un usuario. 
 
 
-### Ejercicio 3: Implementar directivas de acceso condicional de Azure AD 
+### Ejercicio 3: Implementar directivas de acceso condicional de Microsoft Entra ID 
 
 ### Tiempo estimado: 15 minutos
 
@@ -329,7 +329,7 @@ En este ejercicio completará las tareas siguientes:
 
 En esta tarea, revisará la configuración de la directiva de acceso condicional y creará una directiva que requiera MFA al iniciar sesión en el portal. 
 
-1. En Azure Portal, vuelva a la hoja **AdatumLab500-04** del inquilino de Azure Active Directory.
+1. En Azure Portal, vuelve a la hoja del inquilino de **AdatumLab500-04** Microsoft Entra ID.
 
 2. En la hoja **AdatumLab500-04**, en la sección **Administrar**, haga clic en **Seguridad**.
 
@@ -391,7 +391,7 @@ En esta tarea, iniciará sesión en Azure Portal como **aaduser2** y comprobará
 
     >**Nota**: Ahora ha comprobado que la directiva de acceso condicional recién creada aplica MFA cuando aaduser2 inicia sesión en Azure Portal.
 
-12. De nuevo en la ventana del explorador que muestra Azure Portal, vuelva a la hoja **AdatumLab500-04** del inquilino de Azure Active Directory.
+12. De nuevo en la ventana del explorador que muestra Azure Portal, vuelve a la hoja **AdatumLab500-04** del inquilino de Microsoft Entra ID.
 
 13. En la hoja **AdatumLab500-04**, en la sección **Administrar**, haga clic en **Seguridad**.
 
@@ -401,7 +401,7 @@ En esta tarea, iniciará sesión en Azure Portal como **aaduser2** y comprobará
 
     >**Nota**. Resultado: En este ejercicio ha implementado una directiva de acceso condicional para requerir MFA cuando un usuario inicia sesión en Azure Portal. 
 
->Resultado: ha configurado y probado el acceso condicional de Azure AD.
+>Resultado: Has configurado y probado el acceso condicional de Microsoft Entra ID.
 
 ### Ejercicio 4: Implementación de directivas basadas en riesgos en el acceso condicional
 
@@ -409,25 +409,25 @@ En esta tarea, iniciará sesión en Azure Portal como **aaduser2** y comprobará
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Ver las opciones de Azure AD Identity Protection en Azure Portal
+- Tarea 1: Ver las opciones de la protección de identidades de Microsoft Entra ID en Azure Portal
 - Tarea 2: Configurar una directiva de riesgo de usuario
 - Tarea 3: Configurar una directiva de riesgo de inicio de sesión
-- Tarea 4: Simular eventos de riesgo en las directivas de Azure AD Identity Protection 
-- Tarea 5: Revisar informes de Azure AD Identity Protection
+- Tarea 4: Simular eventos de riesgo en las directivas de protección de identidades de Microsoft Entra ID 
+- Tarea 5: Revisar los informes de protección de identidades de Microsoft Entra ID
 
-#### Tarea 1: Habilitar Azure AD Identity Protection
+#### Tarea 1: Habilitar protección de identidades de Microsoft Entra ID
 
-En esta tarea, verá las opciones de Azure AD Identity Protection en Azure Portal. 
+En esta tarea, verás las opciones para la protección de identidades de Microsoft Entra ID en Azure Portal. 
 
 1. Si es necesario, inicie sesión en Azure Portal **`https://portal.azure.com/`** .
 
-    >**Nota:** Asegúrese de que ha iniciado sesión en el inquilino **AdatumLab500-04** de Azure AD. Puede usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Azure AD. Asegúrese de que ha iniciado sesión como usuario con el rol Administrador global en el inquilino de Azure AD.
+    >**Nota:** Asegúrate de que has iniciado sesión en el inquilino **AdatumLab500-04** de Microsoft Entra ID. Puedes usar el filtro **Directorio + suscripción** para cambiar entre inquilinos de Microsoft Entra ID. Asegúrate de que has iniciado sesión como usuario con el rol Administrador global en el inquilino de Microsoft Entra ID.
 
 #### Tarea 2: Configurar una directiva de riesgo de usuario
 
 En esta tarea, creará una directiva de riesgo de usuario. 
 
-1. Vaya al inquilino **AdatumLab500-04** de Azure AD >**Seguridad** > **Acceso condicional** > **Directivas**.
+1. Ve al inquilino **AdatumLab500-04** de Microsoft Entra ID > **Seguridad** > **Acceso condicional** > **Directivas**.
 
 2. Haga clic en **+ Nueva directiva**.
 
@@ -463,7 +463,7 @@ En esta tarea, creará una directiva de riesgo de usuario.
 
 #### Tarea 3: Configurar una directiva de riesgo de inicio de sesión
 
-1. Vaya al inquilino **AdatumLab500-04** de Azure AD > **Seguridad** > **Acceso condicional**> **Directivas**.
+1. Ve al inquilino **AdatumLab500-04** de Microsoft Entra ID > **Seguridad** > **Acceso condicional**> **Directivas**.
 
 2. Seleccione **+ Nueva directiva**.
 
@@ -497,11 +497,11 @@ En esta tarea, creará una directiva de riesgo de usuario.
 
 17. Haga clic en **Crear** para habilitar la directiva.
 
-#### Tarea 4: Simular eventos de riesgo en las directivas de Azure AD Identity Protection 
+#### Tarea 4: Simular eventos de riesgo en las directivas de protección de identidades de Microsoft Entra ID 
 
 > Antes de iniciar esta tarea, asegúrese de que se ha completado la implementación de plantillas que inició en el ejercicio 1. La implementación incluye una VM de Azure denominada **az500-04-vm1**. 
 
-1. En Azure Portal, establezca el filtro **Directorio + suscripción** en el inquilino de Azure AD asociado a la suscripción de Azure en la que implementó la VM de Azure **az500-04-vm1**.
+1. En Azure Portal, establece el filtro **Directorio + suscripción** en el inquilino de Microsoft Entra ID asociado a la suscripción de Azure en la que implementaste la VM de Azure **az500-04-vm1**.
 
 2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Máquinas virtuales** y presione la tecla **Entrar**.
 
@@ -548,11 +548,11 @@ En esta tarea, creará una directiva de riesgo de usuario.
 
     >**Nota**: En este momento, ha probado dos inicios de sesión diferentes. A continuación, revisará los informes de Azure Identity Protection.
 
-#### Tarea 5: Revisar informes de Azure AD Identity Protection
+#### Tarea 5: Revisar los informes de protección de identidades de Microsoft Entra ID
 
-En esta tarea, revisará los informes Azure AD Identity Protection generados a partir de los inicios de sesión del Navegador Tor.
+En esta tarea, revisarás los informes Microsoft Entra ID Identity Protection generados a partir de los inicios de sesión del navegador ToR.
 
-1. De nuevo en Azure Portal, use el filtro **Directorio + suscripción** para cambiar al inquilino **AdatumLab500-04** de Azure Active Directory.
+1. De nuevo en Azure Portal, usa el filtro **Directorio + suscripción** para cambiar al inquilino **AdatumLab500-04** de Microsoft Entra ID.
 
 2. En la hoja **AdatumLab500-04**, en la sección **Administrar**, haga clic en **Seguridad**.
 
@@ -570,15 +570,15 @@ En esta tarea, revisará los informes Azure AD Identity Protection generados a p
 
     >**Nota**: Los riesgos pueden tardar entre 10 y 15 minutos en aparecer en los informes.
 
-> **Resultado**: ha habilitado Azure AD Identity Protection, ha configurado la directiva de riesgo de usuario y la directiva de riesgo de inicio de sesión, y ha validado la configuración de Azure AD Identity Protection mediante la simulación de eventos de riesgo.
+> **Resultado**: Has habilitado Microsoft Entra ID Identity Protection, configurado la directiva de riesgo de usuario y la directiva de riesgo de inicio de sesión, y has validado la configuración de Microsoft Entra ID Identity Protection mediante la simulación de eventos de riesgo.
 
 **Limpieza de recursos**
 
 > Es necesario quitar los recursos de protección de identidades que ya no usa. 
 
-Siga estos pasos para deshabilitar las directivas de protección de identidades en el inquilino de Azure AD **AdatumLab500-04**.
+Sigue estos pasos para deshabilitar las directivas de protección de identidades en el inquilino de Microsoft Entra ID **AdatumLab500-04**.
 
-1. En Azure Portal, vuelva a la hoja **AdatumLab500-04** del inquilino de Azure Active Directory.
+1. En Azure Portal, vuelve a la hoja del inquilino de **AdatumLab500-04** Microsoft Entra ID.
 
 2. En la hoja **AdatumLab500-04**, en la sección **Administrar**, haga clic en **Seguridad**.
 
@@ -594,7 +594,7 @@ Siga estos pasos para deshabilitar las directivas de protección de identidades 
 
 Siga estos pasos para detener la VM de Azure que aprovisionó anteriormente en el laboratorio.
 
-1. En Azure Portal, establezca el filtro **Directorio + suscripción** en el inquilino de Azure AD asociado a la suscripción de Azure en la que implementó la VM de Azure **az500-04-vm1**.
+1. En Azure Portal, establece el filtro **Directorio + suscripción** en el inquilino de Microsoft Entra ID asociado a la suscripción de Azure en la que implementaste la VM de Azure **az500-04-vm1**.
 
 2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Máquinas virtuales** y presione la tecla **Entrar**.
 

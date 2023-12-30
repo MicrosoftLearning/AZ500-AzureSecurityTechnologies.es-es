@@ -484,16 +484,3 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 **Limpieza de recursos**
 
 > No olvide quitar los recursos de Azure recién creados que ya no use. La eliminación de los recursos sin usar garantiza que no se generarán costes inesperados. 
-
-1. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
-
-2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
-
-3. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para quitar el grupo de recursos que creó en este laboratorio:
-  
-    ```powershell
-    Remove-AzResourceGroup -Name "AZ500LAB12" -Force -AsJob
-    ```
-
-4.  Cierre el panel de **Cloud Shell**. 
-

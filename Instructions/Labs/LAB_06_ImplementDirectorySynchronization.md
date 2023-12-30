@@ -9,11 +9,11 @@ lab:
 
 ## Escenario del laboratorio
 
-Se le ha pedido que cree una prueba de concepto que demuestre cómo integrar un entorno local de Active Directory Domain Services (AD DS) con un inquilino de Azure Active Directory (Azure AD). En concreto, quiere:
+Se te ha pedido que crees una prueba de concepto que muestre cómo integrar el entorno local de Microsoft Entra Domain Services con un inquilino de Microsoft Entra. En concreto, quiere:
 
-- Implementar un bosque de AD DS de dominio único mediante la implementación de una VM de Azure que hospeda un controlador de dominio de AD DS.
-- Crear y configurar un inquilino de Azure AD.
-- Sincronizar el bosque de AD DS con el inquilino de Azure AD.
+- Implementar un bosque de dominio único de Microsoft Entra Domain Services mediante la implementación de una de máquina virtual de Azure que hospeda un controlador de dominio de Microsoft Entra Domain Services.
+- Crear y configurar un inquilino de Microsoft Entra
+- Sincronizar el bosque de Microsoft Entra Domain Services con el inquilino de Microsoft Entra.
 
 > Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
@@ -21,24 +21,24 @@ Se le ha pedido que cree una prueba de concepto que demuestre cómo integrar un 
 
 En este laboratorio completará los ejercicios siguientes:
 
-- Ejercicio 1: Implementar una VM de Azure que hospeda un controlador de dominio de Active Directory
-- Ejercicio 2: Crear y configurar un inquilino de Azure Active Directory
-- Ejercicio 3: Sincronizar un bosque de Active Directory con un inquilino de Azure Active Directory
+- Ejercicio 1: Implementación de una máquina virtual de Azure que hospede un controlador de dominio de Microsoft Entra ID
+- Ejercicio 2: Creación y configuración de un inquilino de Microsoft Entra ID
+- Ejercicio 3: Sincronización del bosque de Microsoft Entra ID con un inquilino de Microsoft Entra ID
 
 ## Implementación de la sincronización de directorios
 
-![imagen](https://user-images.githubusercontent.com/91347931/157525374-8f740f14-c2db-47b3-98f8-7feb9bc122b5.png)
+![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/5d9cc4c7-7dcd-4d88-920d-9c97d5a482a2)
 
-## Instrucciones
+## Instructions
 
-### Ejercicio 1: Implementar una VM de Azure que hospeda un controlador de dominio de Active Directory
+### Ejercicio 1: Implementación de una máquina virtual de Azure que hospede un controlador de dominio de Microsoft Entra ID
 
 ### Tiempo estimado: 10 minutos
 
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Identificar un nombre DNS disponible para una implementación de VM de Azure
-- Tarea 2: Usar una plantilla de ARM para implementar una VM de Azure que hospeda un controlador de dominio de Active Directory
+- Tarea 2: Usar una plantilla de ARM para implementar una máquina virtual de Azure que hospede un controlador de dominio de Microsoft Entra ID
 
 #### Tarea 1: Identificar un nombre DNS disponible para una implementación de VM de Azure
 
@@ -68,9 +68,9 @@ En esta tarea, identificará un nombre DNS para la implementación de la VM de A
 
 7. Cierre Cloud Shell.
 
-#### Tarea 2: Usar una plantilla de ARM para implementar una VM de Azure que hospeda un controlador de dominio de Active Directory
+#### Tarea 2: Usar una plantilla de ARM para implementar una máquina virtual de Azure que hospede un controlador de dominio de Microsoft Entra ID
 
-En esta tarea, implementará una VM de Azure que hospedará un controlador de dominio de Active Directory.
+En esta tarea, implementarás una máquin virtual de Azure que hospedará un controlador de dominio de Microsoft Entra ID
 
 1. Abra otra pestaña del explorador en la misma ventana del explorador y vaya a **https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain**.
 
@@ -97,28 +97,28 @@ En esta tarea, implementará una VM de Azure que hospedará un controlador de do
 
     >**Nota**: No espere a que se complete la implementación y avance al siguiente ejercicio. La implementación puede tardar unos 15 minutos. Usará la máquina virtual implementada en esta tarea en el tercer ejercicio de este laboratorio.
 
-> Resultado: después de completar este ejercicio, ha iniciado la implementación de una VM de Azure que hospedará un controlador de dominio de Active Directory mediante una plantilla de Azure Resource Manager.
+> Resultado: después de completar este ejercicio, habrás iniciado la implementación de una máquina virtual de Azure que hospedará un controlador de dominio de Microsoft Entra ID mediante una plantilla de Resource Manager de Azure.
 
 
-### Ejercicio 2: Crear y configurar un inquilino de Azure Active Directory 
+### Ejercicio 2: Creación y configuración de un inquilino de Microsoft Entra ID 
 
 ### Tiempo estimado: 20 minutos
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Crear un inquilino de Azure Active Directory (AD)
-- Tarea 2: Agregar un nombre DNS personalizado al nuevo inquilino de Azure AD
-- Tarea 3: Crear un usuario de Azure AD con el rol Administrador global
+- Tarea 1: Crea un inquilino de Microsoft Entra.
+- Tarea 2: Agrega un nombre DNS personalizado al nuevo inquilino de Microsoft Entra
+- Tarea 3: Crea un usuario de Microsoft Entra ID con el rol de administrador global
 
-#### Tarea 1: Crear un inquilino de Azure Active Directory (AD)
+#### Tarea 1: Crea un inquilino de Microsoft Entra.
 
-En esta tarea, creará un nuevo inquilino de Azure AD para usarlo en este laboratorio. 
+En esta tarea, crearás un nuevo inquilino de Microsoft Entra para usarlo en este laboratorio. 
 
-1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Azure Active Directory** y presione la tecla **Entrar**.
+1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos**, que encontrará en la parte superior de la página, escribe **Microsoft Entra ID** y presiona la tecla **ENTRAR**.
 
-2. En el panel **Información general** del inquilino de Azure AD actual, haga clic en **Administrar inquilinos** y, a continuación, en la siguiente pantalla, haga clic en **+ Crear**.
+2. En la hoja que muestra **Información general** de tu inquilino de Microsoft Entra actual, haz clic en **Administrar inquilinos** y después, en la siguiente pantalla, haz clic en **+ Crear**.
 
-3. En la pestaña **Aspectos básicos** de la hoja **Creación de un inquilino**, asegúrese de que la opción **Azure Active Directory** está seleccionada y haga clic en **Siguiente: Configuración >** .
+3. En la pestaña **Aspectos básicos** de la hoja **Creación de un inquilino**, asegúrate de que la opción **Microsoft Entra ID** está seleccionada y haz clic en **Siguiente: Configuración >**.
 
 4. En la pestaña **Configuración** de la hoja **Creación de un directorio**, especifique la siguiente configuración:
 
@@ -146,21 +146,21 @@ En esta tarea, agregará el nombre DNS personalizado al nuevo inquilino de Azure
 
     >**Nota**: Es posible que tenga que actualizar la ventana del explorador si la entrada **AdatumSync** no aparece en la lista de filtros **Directorio + suscripción**.
 
-3. En la hoja **AdatumSync \| Azure Active Directory**, en la sección **Administrar**, haga clic en **Nombres de dominio personalizados**.
+3. En la hoja **AdatumSync \| Microsoft Entra ID**, en la sección **Administrar**, haz clic en **Nombres de dominio personalizados**.
 
 4. En la hoja **AdatumSync \| Nombres de dominio personalizados**, haga clic en **+ Agregar dominio personalizado**.
 
 5. En la hoja **Nombre de dominio personalizado**, en el cuadro de texto **Nombre de dominio personalizado**, escriba **adatum.com** y haga clic en **Agregar dominio**.
 
-6. En el panel **adatum.com**, revise la información necesaria para comprobar el nombre de dominio de Azure AD y seleccione **Eliminar** dos veces. 
+6. En la hoja **adatum.com**, revisa la información necesaria para realizar la verficación del nombre de dominio de Microsoft Entra y selecciona **Eliminar** dos veces. 
 
-    >**Nota**: No podrá completar el proceso de validación porque no posee el nombre de dominio DNS **adatum.com**. Esto no le impedirá sincronizar el dominio de AD DS **adatum.com** con el inquilino de Azure AD. Para ello, usará el nombre DNS inicial del inquilino de Azure AD (el nombre que termina con el sufijo **onmicrosoft.com),** que identificó en la tarea anterior. Sin embargo, tenga en cuenta que, como resultado, el nombre de dominio DNS del dominio de AD DS y el nombre DNS del inquilino de Azure AD serán diferentes. Esto significa que los usuarios de Adatum tendrán que usar nombres diferentes al iniciar sesión en el dominio de AD DS y al iniciar sesión en el inquilino de Azure AD.
+    >**Nota**: No podrá completar el proceso de validación porque no posee el nombre de dominio DNS **adatum.com**. Esto no te impedirá sincronizar el dominio **adatum.com** de Microsoft Entra Domain Services con el inquilino de Microsoft Entra. Para ello, usarás el nombre DNS inicial del inquilino de Microsoft Entra (el nombre que termina con el sufijo **onmicrosoft.com**), que identificaste en la tarea anterior. Pero, ten en cuenta que, como resultado, el nombre de dominio DNS del dominio de Microsoft Entra Domain Services y el nombre DNS del inquilino de Microsoft Entra serán diferentes. Esto significa que los usuarios de Adatum tendrán que usar nombres diferentes al iniciar sesión en el dominio de Microsoft Entra Domain Services y al iniciar sesión en el inquilino de Microsoft Entra.
 
-#### Tarea 3: Crear un usuario de Azure AD con el rol Administrador global
+#### Tarea 3: Crea un usuario de Microsoft Entra ID con el rol de administrador global
 
-En esta tarea, agregará un nuevo usuario de Azure AD y lo asignará al rol Administrador global. 
+En esta tarea, agregarás un nuevo usuario de Microsoft Entra ID y lo asignarás al rol de administrador global. 
 
-1. En la hoja **AdatumSync** del inquilino de Azure AD, en la sección **Administrar**, haga clic en **Usuarios**.
+1. En la hoja **AdatumSync** del inquilino de Microsoft Entra, en la sección **Administrar**, haz clic en **Usuarios**.
 
 2. En el panel **Usuarios | Todos los usuarios**, haga clic en **+ Nuevo usuario** y, a continuación, en **Crear nuevo usuario**.
 
@@ -180,36 +180,36 @@ En esta tarea, agregará un nuevo usuario de Azure AD y lo asignará al rol Admi
 
 5. En la pestaña **Asignaciones**, haga clic en **+ Agregar rol**, busque y seleccione **Administrador global** y, a continuación, haga clic en **Seleccionar**. Haga clic en **Revisar y crear** y, a continuación, en **Crear**.
    
-    >**Nota**: Se requiere un usuario de Azure AD con el rol Administrador global para implementar Azure AD Connect.
+    >**Nota**: se requiere un usuario de Azure AD con el rol de administrador global para implementar Microsoft Entra Connect.
 
 6. Abra una ventana del explorador de InPrivate.
 
 7. Vaya a Azure Portal en **`https://portal.azure.com/`** e inicie sesión con la cuenta de usuario **syncadmin**. Cuando se le solicite, cambie la contraseña que registró anteriormente en esta tarea a su propia contraseña que cumpla los requisitos de complejidad y regístrela para futuras referencias. Se le pedirá esta contraseña en tareas posteriores.
 
-    >**Nota**: Para iniciar sesión, deberá proporcionar el nombre completo de la cuenta de usuario **syncadmin**, incluido el nombre de dominio DNS del inquilino de Azure AD que registró anteriormente en esta tarea. Este nombre de usuario tiene el formato syncadmin@`<your_tenant_name>`.onmicrosoft.com, donde `<your_tenant_name>` es el marcador de posición que representa el nombre único del inquilino de Azure AD. 
+    >**Nota**: Para iniciar sesión, deberás proporcionar el nombre completo de la cuenta de usuario **syncadmin**, incluido el nombre de dominio DNS del inquilino de Microsoft Entra que registraste anteriormente en esta tarea. Este nombre de usuario tiene el formato syncadmin@`<your_tenant_name>`.onmicrosoft.com, donde `<your_tenant_name>` es el marcador de posición que representa el nombre único del inquilino de Microsoft Entra. 
 
 8. Cierre la sesión de **syncadmin** y cierre la ventana del explorador InPrivate.
 
-> **Resultado**: después de completar este ejercicio, ha creado un inquilino de Azure AD, ha visto cómo agregar un nombre DNS personalizado al nuevo inquilino de Azure AD y ha creado un usuario de Azure AD con el rol Administrador global.
+> **Resultado**: después de completar este ejercicio, habrás creado un inquilino de Microsoft Entra, habrás visto cómo agregar un nombre DNS personalizado al nuevo inquilino de  Microsoft Entra y habrás creado un usuario de  Microsoft Entra con el rol de administrador global.
 
 
-### Ejercicio 3: Sincronizar un bosque de Active Directory con un inquilino de Azure Active Directory
+### Ejercicio 3: Sincronización del bosque de Microsoft Entra ID con un inquilino de Microsoft Entra ID
 
 ### Tiempo estimado: 20 minutos
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Preparar AD DS para la sincronización de directorios
-- Parte 2: Instalar Azure AD Connect
+- Tarea 1: Preparación de Microsoft Entra Domain Services para la sincronización de directorios
+- Tarea 2: instalación de Microsoft Entra Connect
 - Tarea 3: Comprobar la sincronización de directorios
 
-#### Tarea 1: Preparar AD DS para la sincronización de directorios
+#### Tarea 1: Preparación de Microsoft Entra Domain Services para la sincronización de directorios
 
-En esta tarea, se conectará a la VM de Azure que ejecuta el controlador de dominio de AD DS y creará una cuenta de sincronización de directorios. 
+En esta tarea, te conectarás a la máquina virtual de Azure que ejecuta el controlador de dominio de Microsoft Entra Domain Services y crearás una cuenta de sincronización de directorios. 
 
    > Antes de iniciar esta tarea, asegúrese de que se ha completado la implementación de plantillas que inició en el primer ejercicio de este laboratorio.
 
-1. En Azure Portal, establezca el filtro **Directorio + suscripción** en el inquilino de Azure AD asociado a la suscripción de Azure en la que implementó la VM de Azure en el primer ejercicio de este laboratorio.
+1. En Azure Portal, establezce el filtro **Directorio + suscripción** en el inquilino deMicrosoft Entra asociado a la suscripción de Azure en la que implementaste la máquina virtual de Azure en el primer ejercicio de este laboratorio.
 
 2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Máquinas virtuales** y presione la tecla **Entrar**.
 
@@ -230,13 +230,13 @@ En esta tarea, se conectará a la VM de Azure que ejecuta el controlador de domi
 
     >**Nota**: Si la **dirección IP pública del equilibrador de carga** no está disponible en la lista desplegable **Dirección IP** de la hoja RDP, en Azure Portal, busque **Direcciones IP públicas**, seleccione **adPublicIP** y anote su dirección IP. Haga clic en el botón Inicio, escriba **MSTSC** y presione **Entrar** para iniciar el cliente de Escritorio remoto. Escriba la dirección IP pública del equilibrador de carga en el cuadro de texto **Equipo:** y haga clic en **Conectar**.
 
-6. En **Administrador del servidor**, haga clic en **Herramientas** y, en el menú desplegable, haga clic en **Centro de administración de Active Directory**.
+6. En **Administrador del servidor**, haz clic en **Herramientas** y, en el menú desplegable, haz clic en **Centro de administración de Microsoft Entra ID **.
 
-7. En **Centro de administración de Active Directory**, haga clic en **adatum (local)** ; en el panel **Tareas**, bajo el nombre de dominio **adatum (local)** , haga clic en **Nuevo** y, en el menú en cascada, haga clic en **Unidad organizativa**.
+7. En el **Centro de administración de Microsoft Entra ID**, haz clic en **adatum (local)**; en el panel **Tareas**, bajo el nombre de dominio **adatum (local)** , haz clic en **Nuevo** y, en el menú en cascada, haz clic en **Unidad organizativa**.
 
 8. En la ventana **Crear unidad organizativa**, en el cuadro de texto **Nombre**, escriba **ToSync** y haga clic en **Aceptar**.
 
-9. Haga doble clic en la unidad organizativa **ToSync** recién creada para que su contenido aparezca en el panel de detalles de la consola del Centro de administración de Active Directory. 
+9. Haz doble clic en la unidad organizativa **ToSync** recién creada para que su contenido aparezca en el panel de detalles de la consola del Centro de administración de Microsoft Entra ID. 
 
 10. En el panel **Tareas**, en la sección **ToSync**, haga clic en **Nuevo** y, en el menú en cascada, haga clic en **Usuario**.
 
@@ -251,35 +251,35 @@ En esta tarea, se conectará a la VM de Azure que ejecuta el controlador de domi
     |Otras opciones de contraseña|**La contraseña nunca expira**|
 
 
-#### Parte 2: Instalar Azure AD Connect
+#### Tarea 2: instalación de Microsoft Entra Connect
 
-En esta tarea, instalará AD Conectar en la máquina virtual. 
+En esta tarea, instalarás Microsoft Entra en la máquina virtual. 
 
 1. En la sesión de Escritorio remoto para **adVM**, use Microsoft Edge para ir a Azure Portal ( **https://portal.azure.com** ) e iniciar sesión con la cuenta de usuario **syncadmin** que creó en el ejercicio anterior. Cuando se le solicite, especifique el nombre principal de usuario completo y la contraseña que registró en el ejercicio anterior.
 
-2. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Azure Active Directory** y presione la tecla **Entrar**.
+2. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos**, que encontrará en la parte superior de la página, escribe **Microsoft Entra ID** y presiona la tecla **ENTRAR**.
 
-3. En Azure Portal, en la hoja **AdatumSync \| Información general**, en el panel de navegación izquierdo, en **Administrar**, haga clic en **Azure AD Connect**.
+3. En Azure Portal, en la hoja **AdatumSync\| Información general**, en el panel de navegación izquierdo, en **Administrar**, haz clic en **Microsoft Entra Connect**.
 
-4. En la hoja **AAD Connect \| Introducción**, haga clic en **Conectar sincronización** en el panel de navegación izquierdo y, a continuación, haga clic en el vínculo **Descargar Azure AD Connect**. Se le redirigirá a la página de descarga de **Azure AD Connect**.
+4. En la hoja **Microsoft Entra Connect \| Introducción**, haz clic en **Conectar sincronización** en el panel de navegación izquierdo y, a continuación, haz clic en el vínculo **Descargar Microsoft Entra Connect**. Se le redirigirá a la página de descarga de **Microsoft Entra Connect**.
 
-5. En la página de descarga de **Azure AD Connect**, haga clic en **Descargar**.
+5. En la página de descarga de **Microsoft Entra Connect**, haz clic en **Descargar**.
 
-6. Cuando se le solicite, haga clic en **Ejecutar** para iniciar el asistente de **Microsoft Azure Active Directory Connect**.
+6. Cuando se te solicite, haz clic en **Ejecutar** para iniciar el asistente de **Microsoft Entra Connect**.
 
-7. En la página **Bienvenido a Azure AD Connect** del asistente de **Microsoft Azure Active Directory Connect**, haga clic en la casilla **I agree to the license terms and privacy notice** (Acepto los términos de licencia y el aviso de privacidad) y luego en **Continuar**.
+7. En la página **Bienvenido a Microsoft Entra Connect** del asistente de **Microsoft Entra Connect**, haz clic en la casilla **I agree to the license terms and privacy notice** (Acepto los términos de licencia y el aviso de privacidad) y luego en **Continuar**.
 
-8. En la página **Configuración rápida** del asistente de **Microsoft Azure Active Directory Connect**, haga clic en la opción **Personalizar**.
+8. En la página **Configuración rápida** del asistente de **Microsoft Entra Connect**, haz clic en la opción **Personalizar**.
 
 9. En la página **Instalar componentes necesarios**, deje desactivadas todas las opciones de configuración opcionales y haga clic en **Instalar**.
 
 10. En la página **Inicio de sesión de usuario**, asegúrese de que solo esté habilitada la opción **Sincronización de hash de contraseñas** y haga clic en **Siguiente**.
 
-11. En la página **Conectar con Azure AD**, autentíquese con las credenciales de la cuenta de usuario **syncadmin** que creó en el ejercicio anterior y haga clic en **Siguiente**. 
+11. En la página **Conectar con Microsoft Entra ID**, autentícate con las credenciales de la cuenta de usuario **syncadmin** que creaste en el ejercicio anterior y haz clic en **Siguiente**. 
 
 12. En la página **Conectar su directorios**, haga clic en el botón **Agregar directorio** situado a la derecha de la entrada del bosque **adatum.com**.
 
-13. En la ventana **Cuenta del bosque de AD**, asegúrese de que está seleccionada la opción **Crear una cuenta de AD**, especifique las credenciales siguientes y haga clic en **Aceptar**:
+13. En la ventana **Cuenta del bosque de AD**, asegúrate de que está seleccionada la opción **Crear una cuenta de Microsoft Entra ID**, especifica las credenciales siguientes y haz clic en **Aceptar**:
 
     |Configuración|Valor|
     |---|---|
@@ -288,9 +288,9 @@ En esta tarea, instalará AD Conectar en la máquina virtual.
 
 14. De nuevo en la página **Conectar sus directorios**, asegúrese de que la entrada **adatum.com** aparece como un directorio configurado y haga clic en **Siguiente**.
 
-15. En la página **Configuración de inicio de sesión de Azure AD**, observe la advertencia que indica **que los usuarios no podrán iniciar sesión en Azure AD con credenciales locales si el sufijo UPN no coincide con un nombre de dominio comprobado**, active la casilla **Continue without matching all UPN suffixes to verified domain** (Continuar sin hacer coincidir todos los sufijos UPN con el dominio comprobado) y haga clic en **Siguiente**.
+15. En la página **Configuración de inicio de sesión de Microsoft Entra ID**, observa la advertencia que indica **Los usuarios no podrán iniciar sesión en Microsoft Entra ID con credenciales del entorno local si el sufijo de UPN no coincide con ningún dominio verificado**, activa la casilla **Continuar sin relacionar todos los sufijos UPN con los dominios verificados** y haz clic en **Siguiente**.
 
-    >**Nota**: Como se explicó anteriormente, esto es lo esperado, ya que no se pudo comprobar el dominio DNS de Azure AD personalizado **adatum.com**.
+    >**Nota**: Tal como se explicó anteriormente, esto es lo esperado, ya que no se pudo comprobar el dominio DNS de Microsoft Entra ID personalizado **adatum.com**.
 
 16. En la página **Filtrado de dominios y unidades organizativas**, haga clic en la opción **Sincronizar los dominios y las unidades organizativas seleccionados** y desactive la casilla situada junto al nombre de dominio **adatum.com**. Haga clic para expandir **adatum.com**, seleccione solo la casilla situada junto a la unidad organizativa **ToSync** y, a continuación, haga clic en **Siguiente**.
 
@@ -304,14 +304,14 @@ En esta tarea, instalará AD Conectar en la máquina virtual.
 
     >**Nota**: La instalación debería tardar aproximadamente 2 minutos.
 
-21. Revise la información de la página **Configuración completada** y haga clic en **Salir** para cerrar la ventana **Microsoft Azure Active Directory Connect**.
+21. Revisa la información de la página **Configuración completada** y haz clic en **Salir** para cerrar la ventana **Microsoft Entra Connect**.
 
 
 #### Tarea 3: Comprobar la sincronización de directorios
 
 En esta tarea, comprobará que la sincronización de directorios funciona. 
 
-1. En la sesión de Escritorio remoto para **adVM**, en la ventana de Microsoft Edge que muestra Azure Portal, vaya al panel **Usuarios - Todos los usuarios (versión preliminar)** del inquilino de Azure AD del laboratorio de Adatum.
+1. En la sesión de Escritorio remoto para **adVM**, en la ventana de Microsoft Edge que muestra Azure Portal, ve a la hoja **Usuarios - Todos los usuarios (versión preliminar)** del inquilino de Microsoft Entra ID del laboratorio de Adatum.
 
 2. En la hoja **Usuarios \| Todos los usuarios**, observe que la lista de objetos de usuario incluye la cuenta **aduser1**. 
 
@@ -321,13 +321,13 @@ En esta tarea, comprobará que la sincronización de directorios funciona.
 
 4. En la hoja **aduser1**, en la sección **Información del trabajo**, observe que el atributo **Departamento** no está establecido.
 
-5. En la sesión de Escritorio remoto para **adVM**, cambie a **Centro de administración de Active Directory**, seleccione la entrada **aduser1** en la lista de objetos de la unidad organizativa **ToSync** y, en el panel **Tareas**, en la sección **aduser1**, seleccione **Propiedades**.
+5. En la sesión de Escritorio remoto para **adVM**, cambia a **Centro de administración de Microsoft Entra ID**, selecciona la entrada **aduser1** en la lista de objetos de la unidad organizativa **ToSync** y, en el panel **Tareas**, en la sección **aduser1**, selecciona **Propiedades**.
 
 6. En la ventana **aduser1**, en la sección **Organización**, en el cuadro de texto **Departamento**, escriba **Ventas** y seleccione **Aceptar**.
 
 7. En la sesión de Escritorio remoto para **adVM**, inicie **Windows PowerShell**.
 
-8. Desde la consola **Administrador: Windows PowerShell**, ejecute lo siguiente para iniciar la sincronización diferencial de Azure AD Connect:
+8. Desde la consola **Administrador: Windows PowerShell**, ejecuta lo siguiente para iniciar la sincronización diferencial de Microsoft Entra Connect:
 
     ```powershell
     Import-Module -Name 'C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1'
@@ -339,12 +339,12 @@ En esta tarea, comprobará que la sincronización de directorios funciona.
 
     >**Nota**: Es posible que tenga que esperar hasta tres minutos y volver a actualizar la página si el atributo **Departamento** sigue sin establecerse.
 
-> **Resultado**: después de completar este ejercicio, ha preparado AD DS para la sincronización de directorios, instado Azure AD Connect y comprobado la sincronización de directorios.
+> **Resultado**: después de completar este ejercicio, habrás preparado Microsoft Entra Domain Services para la sincronización de directorios, instalado Microsoft Entra Connect y verificado la sincronización de directorios.
 
 
 **Limpieza de recursos**
 
->**Nota**: Para empezar, deshabilite la sincronización de Azure AD.
+>**Nota**: Para empezar, deshabilita la sincronización de Microsoft Entra ID.
 
 1. En la sesión de Escritorio remoto para **adVM**, inicie Windows PowerShell como administrador.
 
@@ -356,13 +356,13 @@ En esta tarea, comprobará que la sincronización de directorios funciona.
     Install-Module MsOnline -Force
     ```
 
-3. Desde la consola de Windows PowerShell, conéctese al inquilino AdatumSync de Azure AD ejecutando el comando siguiente (cuando se le solicite, inicie sesión con las credenciales de **syncadmin**):
+3. Desde la consola de Windows PowerShell, conéctate al inquilino AdatumSync de Microsoft Entra ejecutando el comando siguiente (cuando se te solicite, inicia sesión con las credenciales de **syncadmin**):
 
     ```powershell
     Connect-MsolService
     ```
 
-4. Desde la consola de Windows PowerShell, deshabilite la sincronización de Azure AD Connect ejecutando el siguiente comando:
+4. Desde la consola de Windows PowerShell, deshabilita la sincronización de Microsoft Entra Connect ejecutando el siguiente comando:
 
     ```powershell
     Set-MsolDirSyncEnabled -EnableDirSync $false -Force
@@ -378,7 +378,7 @@ En esta tarea, comprobará que la sincronización de directorios funciona.
     >**Nota**: A continuación, quite los recursos de Azure.
 6. Cierre la sesión de Escritorio remoto.
 
-7. En Azure Portal, establezca el filtro **Directorio + suscripción** en el inquilino de Azure AD asociado a la suscripción de Azure en la que implementó la máquina virtual de Azure **adVM**.
+7. En Azure Portal, establece el filtro **Directorio + suscripción** en el inquilino de Microsoft Entra asociado a la suscripción de Azure en la que implementaste la máquina virtual de Azure **adVM**.
 
 8. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. 
 
@@ -391,17 +391,17 @@ En esta tarea, comprobará que la sincronización de directorios funciona.
     ```
 11. Cierre el panel de **Cloud Shell**.
 
-    >**Nota**: Por último, quite el inquilino de Azure AD.
+    >**Nota**: Por último, quita el inquilino de Microsoft Entra.
     
     >**Nota 2**: La eliminación de un inquilino está pensada para ser un proceso muy difícil para que nunca se pueda realizar de forma accidental o malintencionada.  Esto significa que quitar el inquilino como parte de este laboratorio a menudo no funciona.  Aunque aquí se indican los pasos necesarios para eliminar el inquilino, no es necesario que lo haga en este laboratorio. Si alguna vez tiene la necesidad de quitar un inquilino realmente, encontrará artículos en DOCS.Microsoft.com que le ayudarán a hacerlo.
 
-12. De nuevo en Azure Portal, use el filtro **Directorio + suscripción** para cambiar el inquilino **AdatumSync** de Azure Active Directory.
+12. De nuevo en Azure Portal, usa el filtro **Directorio + suscripción** para cambiar el inquilino **AdatumSync** de Microsoft Entra.
 
 13. En Azure Portal, vaya al panel **Usuarios - Todos los usuarios** y haga clic en la entrada que representa la cuenta de usuario **syncadmin**. A continuación, en el panel **syncadmin - Perfil**, haga clic en **Eliminar** y, cuando se le pida confirmación, haga clic en **Sí**.
 
 14. Repita la misma secuencia de pasos para eliminar la cuenta de usuario **aduser1** y la **cuenta de servicio de sincronización de directorios local**.
 
-15. Vaya al panel **AdatumSync - Información general** del inquilino de Azure AD, haga clic en **Administrar inquilinos** y seleccione la casilla del directorio **AdatumSync**; haga clic en **Eliminar** en el panel **Eliminar inquilino "AdatumSync"** y en el vínculo **Obtener permiso para eliminar todos los recursos de Azure**. En el panel **Propiedades** de Azure Active Directory, establezca **Administración de acceso para recursos de Azure** en **Sí** y haga clic en **Guardar**.
+15. Ve a la hoja **AdatumSync - Información general** del inquilino de Microsoft Entra, haz clic en **Administrar inquilinos** y selecciona la casilla del directorio **AdatumSync**. Haz clic en **Eliminar** en la hoja **Eliminar inquilino "AdatumSync"** y en el vínculo **Obtener permiso para eliminar los recursos de Azure**, en la hoja **Propiedades** de Microsoft Entra, establece **Administración de acceso para recursos de Azure** en **Sí** y haz clic en **Guardar**.
 
     >**Nota**: Durante la eliminación, si recibe alguna señal de advertencia como **Eliminar todos los usuarios**, continúe con la eliminación de los usuarios que ha creado. Si la señal de advertencia indica **Eliminar aplicaciones de LinkedIn**, haga clic en el mensaje de advertencia y confirme la eliminación de la aplicación de LinkedIn. Para pasar la eliminación del inquilino, todas las advertencias deben quedar solucionadas.
 
