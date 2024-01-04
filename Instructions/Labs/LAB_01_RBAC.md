@@ -29,7 +29,7 @@ En este laboratorio completará los ejercicios siguientes:
 
 ## Diagrama de arquitectura de control de acceso basado en rol
 
-![imagen](https://user-images.githubusercontent.com/91347931/157751243-5aa6e521-9bc1-40af-839b-4fd9927479d7.png)
+![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/506cde9c-5242-4438-a793-f88a5434a2b2)
 
 ## Instrucciones
 
@@ -48,7 +48,7 @@ En esta tarea, creará una cuenta de usuario para Joseph Price.
 
 1. Inicie una sesión del explorador e inicie sesión en Azure Portal **`https://portal.azure.com/`** .
 
-    >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio y el rol Administrador global en el inquilino de Azure AD asociado a esa suscripción.
+    >**Nota**: Inicia sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usas para este laboratorio y el rol Administrador global en el inquilino de Microsoft Entra asociado a esa suscripción.
 
 2. En el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de Azure Portal, escriba **Microsoft Entra ID** y presione la tecla **Entrar**.
 
@@ -67,7 +67,7 @@ En esta tarea, creará una cuenta de usuario para Joseph Price.
 
 7. Haga clic en **Crear**.
 
-8. Actualice el panel **Usuarios \| Todos los usuarios** para comprobar que el nuevo usuario se creó en el inquilino de Azure AD.
+8. Actualiza la hoja **Usuarios \| Todos los usuarios** para verificar que el nuevo usuario se crease en el inquilino de Microsoft Entra.
 
 #### Tarea 2: Uso de Azure Portal para crear un grupo de administradores sénior y agregar la cuenta de usuario de Joseph Price al grupo.
 
@@ -129,7 +129,7 @@ En esta tarea, creará una cuenta de usuario para Isabel García mediante PowerS
     Connect-AzureAD
     ```
       
-6. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para identificar el nombre del inquilino de Azure AD: 
+6. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para identificar el nombre de tu inquilino de Microsoft Entra: 
 
     ```powershell
     $domainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
@@ -141,7 +141,7 @@ En esta tarea, creará una cuenta de usuario para Isabel García mediante PowerS
     New-AzureADUser -DisplayName 'Isabel Garcia' -PasswordProfile $passwordProfile -UserPrincipalName "Isabel@$domainName" -AccountEnabled $true -MailNickName 'Isabel'
     ```
 
-8. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para enumerar los usuarios de Azure AD (las cuentas de Joseph e Isabel deberían aparecer en la lista): 
+8. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para enumerar los usuarios de Microsoft Entra ID (las cuentas de Joseph e Isabel deberían aparecer en la lista): 
 
     ```powershell
     Get-AzureADUser 
@@ -157,7 +157,7 @@ En esta tarea, creará el grupo Administradores junior y agregar la cuenta de us
     New-AzureADGroup -DisplayName 'Junior Admins' -MailEnabled $false -SecurityEnabled $true -MailNickName JuniorAdmins
     ```
 
-2. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para enumerar los grupos del inquilino de Azure AD (la lista debe incluir los grupos Administradores sénior y Administradores junior):
+2. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para enumerar los grupos del inquilino de Microsoft Entra (la lista debe incluir los grupos Administradores sénior y Administradores júnior):
 
     ```powershell
     Get-AzureADGroup
@@ -199,7 +199,7 @@ En esta tarea, creará una cuenta de usuario para Dylan Williams.
 
 1. En el menú desplegable de la esquina superior izquierda del panel de Cloud Shell, seleccione **Bash** y, cuando se le solicite, haga clic en **Confirmar**. 
 
-2. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para identificar el nombre del inquilino de Azure AD:
+2. En la sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para identificar el nombre de tu inquilino de Microsoft Entra:
 
     ```cli
     DOMAINNAME=$(az ad signed-in-user show --query 'userPrincipalName' | cut -d '@' -f 2 | sed 's/\"//')
@@ -211,7 +211,7 @@ En esta tarea, creará una cuenta de usuario para Dylan Williams.
     az ad user create --display-name "Dylan Williams" --password "Pa55w.rd1234" --user-principal-name Dylan@$DOMAINNAME
     ```
       
-4. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para enumerar las cuentas de usuario de Azure AD (la lista debe incluir las cuentas de usuario de Joseph, Isabel y Dylan)
+4. En la sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para enumerar las cuentas de usuario de Microsoft Entra ID (la lista debe incluir las cuentas de usuario de Joseph, Isabel y Dylan)
     
     ```cli
     az ad user list --output table
@@ -227,7 +227,7 @@ En esta tarea, creará el grupo Consola de servicio y asignará a Dylan al grupo
     az ad group create --display-name "Service Desk" --mail-nickname "ServiceDesk"
     ```
  
-2. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para enumerar los grupos de Azure AD (la lista debe incluir los grupos Consola de servicio, Administradores sénior y Administradores junior):
+2. En la sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para enumerar los grupos de Microsoft EntraID (la lista debe incluir los grupos Consola de servicio, Administradores sénior y Administradores júnior):
 
     ```cli
     az ad group list -o table
