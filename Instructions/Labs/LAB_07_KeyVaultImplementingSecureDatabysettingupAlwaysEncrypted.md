@@ -355,12 +355,13 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     |Nombre de usuario|**Estudiante**|
     |Contraseña|**Usa tu contraseña personal creada en el laboratorio 02 > Ejercicio 1 > Tarea 1 > Paso 9.**|
     
-
     >**Nota**: Espere a que se carguen la sesión de Escritorio remoto y **Administrador del servidor**. Cierre el Administrador del servidor. 
 
-    >**Nota**: Los pasos restantes de este laboratorio se realizan dentro de la sesión de Escritorio remoto a la máquina virtual de Azure **az500-10-vm1**. 
+    >**Nota**: Los pasos restantes de este laboratorio se realizan dentro de la sesión de Escritorio remoto a la máquina virtual de Azure **az500-10-vm1**.
 
-7. Haga clic en **Inicio**, en el menú **Inicio**, expanda la carpeta **Microsoft SQL Server Tools 19** y haga clic en el elemento de menú **Microsoft SQL Server Management Studio**.
+6. Instale [SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?preserve-view=true&view=sql-server-2017) en **az500-10-vm1.** Máquina virtual de Azure.
+ 
+7. Abra **SQL Server Management Studio**.
 
 8. En el cuadro de diálogo **Conectar con el servidor**, aplique la configuración siguiente: 
 
@@ -372,14 +373,13 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     |Nombre de usuario|**Estudiante**|
     |Contraseña|**Use su contraseña personal creada en Laboratorio 02 > Ejercicio 2 > Tarea 1 > Paso 3.**|
 
+9. En el cuadro de diálogo **Conectar con el servidor**, haga clic en **Conectar**.
 
-10. En el cuadro de diálogo **Conectar con el servidor**, haga clic en **Conectar**.
+10. En la consola de **SQL Server Management Studio**, en el panel **Explorador de objetos**, expanda la carpeta **Bases de datos**.
 
-11. En la consola de **SQL Server Management Studio**, en el panel **Explorador de objetos**, expanda la carpeta **Bases de datos**.
+11. En el panel **Explorador de objetos**, haga clic con el botón derecho en la base de datos **medicina** y haga clic en **Nueva consulta**.
 
-12. En el panel **Explorador de objetos**, haga clic con el botón derecho en la base de datos **medicina** y haga clic en **Nueva consulta**.
-
-13. Pegue el código siguiente en la ventana de consulta y haga clic en **Ejecutar**. Esto creará una tabla de **Pacientes**.
+12. Pegue el código siguiente en la ventana de consulta y haga clic en **Ejecutar**. Esto creará una tabla de **Pacientes**.
 
      ```sql
      CREATE TABLE [dbo].[Patients](
@@ -395,25 +395,25 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
         [BirthDate] [date] NOT NULL 
      PRIMARY KEY CLUSTERED ([PatientId] ASC) ON [PRIMARY] );
      ```
-14. Una vez creada correctamente la tabla, en el panel **Explorador de objetos**, expanda el nodo de la base de datos **medicina**, el nodo de **tablas** y haga clic con el botón derecho en el nodo **dbo.Patients** y haga clic en **Cifrar columnas**. 
+13. Una vez creada correctamente la tabla, en el panel **Explorador de objetos**, expanda el nodo de la base de datos **medicina**, el nodo de **tablas** y haga clic con el botón derecho en el nodo **dbo.Patients** y haga clic en **Cifrar columnas**. 
 
     >**Nota**: Esto iniciará el asistente para **Always Encrypted**.
 
-15. En la página **Introducción**, haga clic en **Siguiente**.
+14. En la página **Introducción**, haga clic en **Siguiente**.
 
-16. En la página **Selección de columna**, seleccione las columnas **SSN** y **Fecha de nacimiento**, establezca el **Tipo de cifrado** de la columna **SSN** en **Determinista** y el de la columna **Fecha de nacimiento** en **Aleatorio** y haga clic en **Siguiente**.
+15. En la página **Selección de columna**, seleccione las columnas **SSN** y **Fecha de nacimiento**, establezca el **Tipo de cifrado** de la columna **SSN** en **Determinista** y el de la columna **Fecha de nacimiento** en **Aleatorio** y haga clic en **Siguiente**.
 
     >**Nota**: Al realizar el cifrado, si se genera cualquier error como **Excepción generada por el destino de la invocación** relacionado con **Rotary(Microsoft.SQLServer.Management.ServiceManagement)** , compruebe que los valores de **Permisos clave** de **Operaciones de directiva de rotación** estén **desmarcados**. Si no está en Azure Portal, vaya a **Key Vault** >> **Directivas de acceso** >> **Permisos clave** y desmarque todos los valores que figuren en **Operaciones de directiva de rotación** >> En **Operaciones de clave con privilegios** >> Desmarque **Publicar**.
 
-17. En la página **Configuración de clave maestra**, seleccione **Azure Key Vault**, haga clic en **Iniciar sesión**, cuando se le solicite, autentíquese con la misma cuenta de usuario que usó para aprovisionar la instancia de Azure Key Vault anteriormente en este laboratorio, asegúrese de que Key Vault aparezca en la lista desplegable **Seleccionar un Azure Key Vault** y haga clic en **Siguiente**.
+16. En la página **Configuración de clave maestra**, seleccione **Azure Key Vault**, haga clic en **Iniciar sesión**, cuando se le solicite, autentíquese con la misma cuenta de usuario que usó para aprovisionar la instancia de Azure Key Vault anteriormente en este laboratorio, asegúrese de que Key Vault aparezca en la lista desplegable **Seleccionar un Azure Key Vault** y haga clic en **Siguiente**.
 
-18. En la página **Ejecutar configuración**, haga clic en **Siguiente**.
+17. En la página **Ejecutar configuración**, haga clic en **Siguiente**.
     
-19. En la página **Resumen**, haga clic en **Finalizar** para continuar con el cifrado. Cuando se le solicite, vuelva a iniciar sesión con la misma cuenta de usuario que usó para aprovisionar la instancia de Azure Key Vault anteriormente en este laboratorio.
+18. En la página **Resumen**, haga clic en **Finalizar** para continuar con el cifrado. Cuando se le solicite, vuelva a iniciar sesión con la misma cuenta de usuario que usó para aprovisionar la instancia de Azure Key Vault anteriormente en este laboratorio.
 
-20. Una vez completado el proceso de cifrado, en la página **Resultados**, haga clic en **Cerrar**.
+19. Una vez completado el proceso de cifrado, en la página **Resultados**, haga clic en **Cerrar**.
 
-21. En la consola de **SQL Server Management Studio**, en el panel **Explorador de objetos**, en el nodo **medicina**, expanda los subnodos **Seguridad** y **Claves de Always Encrypted**. 
+20. En la consola de **SQL Server Management Studio**, en el panel **Explorador de objetos**, en el nodo **medicina**, expanda los subnodos **Seguridad** y **Claves de Always Encrypted**. 
 
     >**Nota**: El subnodo **Claves de Always Encrypted** contiene las subcarpetas **Claves maestras de columna** y **Claves de cifrado de columna**.
 
