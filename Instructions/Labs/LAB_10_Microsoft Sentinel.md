@@ -240,7 +240,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 3. En la hoja **Microsoft Defender for Cloud \| Protecciones de cargas de trabajo**, haga clic en la sección **Acceso a máquinas virtuales Just-In-Time** en **Protección avanzada**.
 
-4. En la hoja **Acceso de máquina virtual Just-in-time**, en el lado derecho de la fila que hace referencia a la máquina virtual **myVM**, haga clic en el botón de **puntos suspensivos (...)** , haga clic en **Quitar** y luego haga clic en **Sí**.
+4. En la hoja **Acceso de máquina virtual Just-in-time**, en el lado derecho de la fila que hace referencia a la máquina virtual **myVM**, haga clic en el botón de **puntos suspensivos (...)**, haga clic en **Quitar** y luego haga clic en **Sí**.
 
     >**Nota**: Si la máquina virtual no aparece en la lista **Máquinas virtuales Just-In-Time**, vaya al panel **Máquina virtual** y haga clic en **Configuración**. Haga clic en la opción **Habilitar las máquinas virtuales Just-In-Time** de **Acceso de máquina virtual Just-In-Time**. Repita el paso anterior para volver a **Microsoft Defender for Cloud** y actualice la página. Se mostrará la máquina virtual.
 
