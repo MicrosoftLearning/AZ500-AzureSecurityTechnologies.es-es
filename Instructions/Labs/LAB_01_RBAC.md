@@ -130,7 +130,7 @@ En esta tarea, creará una cuenta de usuario para Isabel García mediante PowerS
 5. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para conectarse a Microsoft Entra ID:
 
     ```powershell
-    Connect-MgGraph -Scopes "User.ReadWrite.All", "AuditLog.Read.All", "RoleManagement.Read.Directory"
+    Connect-MgGraph -Scopes "User.ReadWrite.All", "Group.ReadWrite.All", "AuditLog.Read.All", "RoleManagement.Read.Directory"
     ```
       
 6. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para identificar el nombre de tu inquilino de Microsoft Entra: 
@@ -155,46 +155,42 @@ En esta tarea, creará una cuenta de usuario para Isabel García mediante PowerS
 
 En esta tarea, creará el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo mediante PowerShell.
 
-1. En la misma sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para crear un nuevo grupo de seguridad denominado Administradores junior:
-   ```powershell
-   $group = Get-MgGroup -Filter "DisplayName eq 'Junior Admins'"
-   ```
+1. En la misma sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para **crear un nuevo grupo de seguridad** denominado Administradores junior:
    
    ```powershell
-   $group = Get-MgGroup -Filter "DisplayName eq 'Junior Admins'"
-    New-MgGroupMemeber -GroupId $group.Id -DirectoryObjectId $user.Id  
+   New-MgGroup -DisplayName "Junior Admins" -MailEnabled:$false -SecurityEnabled:$true -MailNickName JuniorAdmins
+   ```
+   
+2. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para **enumerar los grupos** del inquilino de Microsoft Entra (la lista debe incluir los grupos Administradores sénior y Administradores junior)
+   
+   ```powershell
+   Get-MgGroup
    ```
 
+3. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para **obtener una referencia** a la cuenta de usuario de Isabel García:
+
    ```powershell
-    New-MgGroup -DisplayName 'Junior Admins' -MailEnabled $false -SecurityEnabled $true -MailNickName JuniorAdmins
+   $user =Get-MgUser -Filter "MailNickName eq 'Isabel'"
+   ```
+
+4. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para **obtener una referencia** al grupo Administradores junior:
+   ```powershell
+   $targetGroup = Get-MgGroup -ConsistencyLevel eventual -Search '"DisplayName:Junior Admins"'
+   ```
+
+5. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para **agregar la cuenta de usuario de Isabel** al grupo Administradores junior:
+   
+   ```powershell
+    New-MgGroupMember -DirectoryObjectId $user.id -GroupId $targetGroup.id
     ```
-
-3. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para enumerar los grupos del inquilino de Microsoft Entra (la lista debe incluir los grupos Administradores sénior y Administradores júnior):
-
+   
+5. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para **comprobar** que el grupo Administradores junior contiene la cuenta de usuario de Isabel:
+   
     ```powershell
-    Get-MgGroup
+    Get-MgGroupMember -GroupId $targetGroup.id
     ```
-
-4. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para obtener una referencia a la cuenta de usuario de Isabel García:
-
-    ```powershell
-    $user = Get-MgUser -Filter "MailNickName eq 'Isabel'"
-    ```
-
-5. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para agregar la cuenta de usuario de Isabel García al grupo Administradores junior:
-    
-    ```powershell
-    New-MgGroupMember -MemberUserPrincipalName $user.userPrincipalName -TargetGroupDisplayName "Junior Admins" 
-    ```
-
-6. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para comprobar que el grupo Administradores junior contiene la cuenta de usuario de Isabel:
-
-    ```powershell
-    Get-MgGroupMember -GroupDisplayName "Junior Admins"
-    ```
-
+ 
 > Resultado: ha usado PowerShell para crear un usuario y una cuenta de grupo, y ha agregado la cuenta de usuario a la cuenta de grupo. 
-
 
 ### Ejercicio 3: Creación de un grupo de consola de servicio que contenga la cuenta de usuario de Dylan Williams como miembro.
 
