@@ -78,6 +78,7 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB08**.|
    |Location|**(EE. UU.) Este de EE. UU.**|
+   |adminPassword|Una contraseña segura de su elección para las máquinas virtuales. Recuerde la contraseña. La necesitará más adelante para conectarse a las máquinas virtuales.|
 
     >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar VM de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
 
@@ -271,7 +272,7 @@ En esta tarea, probará el firewall para confirmar que funciona según lo previs
    |Configuración|Valor|
    |---|---|
    |Nombre de usuario|**localadmin**|
-   |Contraseña|**Pa55w.rd1234**|
+   |Contraseña|La contraseña segura que eligió durante la implementación de la plantilla personalizada en la tarea 1 paso 6.|
 
     >**Nota**: Los pasos siguientes se realizan en la sesión de Escritorio remoto para la VM de Azure **Srv-Jump**. 
 
@@ -288,7 +289,7 @@ En esta tarea, probará el firewall para confirmar que funciona según lo previs
    |Configuración|Valor|
    |---|---|
    |Nombre de usuario|**localadmin**|
-   |Contraseña|**Pa55w.rd1234**|
+   |Contraseña|La contraseña segura que eligió durante la implementación de la plantilla personalizada en la tarea 1 paso 6.|
 
     >**Nota**: Espere a que se establezca la sesión de Escritorio remoto y se cargue la interfaz del Administrador del servidor.
 
