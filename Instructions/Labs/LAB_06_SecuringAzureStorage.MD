@@ -94,7 +94,7 @@ En esta tarea, creará otra subred y habilitará un punto de conexión de servic
     |---|---|
     |Nombre de subred|**Privado**|
     |Intervalo de direcciones de subred|**10.0.1.0/24**|
-    |Puntos de conexión del servicio|**Microsoft.Storage**|
+    |Puntos de conexión del servicio|**Deje el valor predeterminado de Ninguno**|
 
 6. En el panel **Agregar subred**, haga clic en **Guardar** para agregar la nueva subred.
 
