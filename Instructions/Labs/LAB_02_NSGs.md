@@ -243,7 +243,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
    |Imagen|**Windows Server 2022 Datacenter: Azure Edition, x64 Gen2**|
    |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
-   |Contraseña|**Use su contraseña personal creada en Laboratorio 02 > Ejercicio 2 > Tarea 1 > Paso 3.**|
+   |Contraseña|**Use su contraseña personal creada en Laboratorio 02 > Ejercicio 2 > Tarea 1 > Paso 3.**|
    |Puertos de entrada públicos|**None**|
    |Ya tiene una licencia de Windows Server.|**No**|
 
@@ -302,7 +302,7 @@ En esta tarea, probará los filtros de tráfico de red. Debería poder usar RDP 
 
 4. En Azure Portal, vaya a la hoja de la máquina virtual **myVMWeb**.
 
-5. En la hoja **myVMWeb**, en la sección **Carga**, haz clic en **Ejecutar comando** y después en **RunPowerShellScript**.
+5. En la hoja **myVMWeb**, en la sección **Operaciones**, haga clic en **Ejecutar comando** y, a continuación, en **RunPowerShellScript**.
 
 6. En el panel **Ejecutar script de comando**, ejecute lo siguiente para instalar el rol de servidor web en **myVmWeb**:
 
