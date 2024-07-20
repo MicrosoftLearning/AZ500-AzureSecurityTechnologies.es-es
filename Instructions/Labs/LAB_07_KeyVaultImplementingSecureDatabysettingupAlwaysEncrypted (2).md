@@ -109,7 +109,7 @@ En esta tarea, creará un recurso de Azure Key Vault. También configurará los 
 
     $location = (Get-AzResourceGroup -ResourceGroupName 'AZ500LAB10').Location
 
-    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500LAB10' -Location $location
+    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500LAB10' -Location $location -DisableRbacAuthorization
     ```
 
     >**Nota**: La salida del último comando mostrará el nombre del almacén y el URI del almacén. El URI del almacén tiene el formato `https://<vault_name>.vault.azure.net/`
