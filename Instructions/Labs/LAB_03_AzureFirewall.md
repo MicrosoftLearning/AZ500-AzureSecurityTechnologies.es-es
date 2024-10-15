@@ -245,7 +245,7 @@ En esta tarea, configurará las direcciones DNS principal y secundaria para la m
 
 2. En la hoja **AZ500LAB08**, en la lista de recursos, haga clic en la máquina virtual **Srv-Work**.
 
-3. En la hoja **Srv-Work**, en la sección **Configuración**, haga clic en **Redes**.
+3. En la hoja **Srv-Work**, haz clic en **Redes**.
 
 4. En la hoja **Srv-Work \| Redes** haga clic en el vínculo situado junto a la entrada **Interfaz de red**.
 
