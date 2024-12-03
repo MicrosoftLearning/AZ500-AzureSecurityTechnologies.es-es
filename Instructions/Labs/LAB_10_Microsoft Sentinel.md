@@ -9,7 +9,7 @@ lab:
 
 ## Escenario del laboratorio
 
-**Nota:** **Azure Sentinel** ahora se llama **Microsoft Sentinel**. 
+**Nota:****Microsoft Sentinel** ahora se llama **Microsoft Sentinel**. 
 
 Se le ha pedido que cree una prueba de concepto de detección y respuesta de amenazas basadas en Microsoft Sentinel. En concreto, quiere:
 
@@ -48,7 +48,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 5: Creación de una alerta personalizada y configuración del cuaderno de estrategias como una respuesta automatizada.
 - Tarea 6: Invocación de un incidente y revisión de las acciones asociadas.
 
-#### Tarea 1: Incorporación de Azure Sentinel
+#### Tarea 1: Incorporación de Microsoft Sentinel
 
 En esta tarea, incorporará Microsoft Sentinel y conectará el área de trabajo de Log Analytics. 
 
@@ -64,7 +64,7 @@ En esta tarea, incorporará Microsoft Sentinel y conectará el área de trabajo
 
 4. En el panel **Agregar Microsoft Sentinel a un área de trabajo**, seleccione el área de trabajo de Log Analytics que creó en el laboratorio de Azure Monitor y haga clic en **Agregar**.
 
-    >**Nota**: Microsoft Sentinel tiene unos requisitos muy específicos para las áreas de trabajo. Por ejemplo, no se pueden usar áreas de trabajo creadas por Microsoft Defender for Cloud. Obtenga más información en [Inicio rápido: Incorporación de Azure Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/quickstart-onboard)
+    >**Nota**: Microsoft Sentinel tiene unos requisitos muy específicos para las áreas de trabajo. Por ejemplo, no se pueden usar áreas de trabajo creadas por Microsoft Defender for Cloud. Obtén más información en [Inicio rápido: Incorporación de Microsoft Sentinel](https://docs.microsoft.com/en-us/microsoft/sentinel/quickstart-onboard)
     
 #### Tarea 2: Configuración de Microsoft Sentinel para usar el conector de datos de actividad de Azure. 
 
