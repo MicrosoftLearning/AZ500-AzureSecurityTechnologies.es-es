@@ -172,7 +172,7 @@ En esta tarea, creará un grupo de seguridad de red con dos reglas de seguridad 
     |Configuración|Valor|
     |---|---|
     |Origen|**Cualquiera**|
-    |Rangos del puerto origen|**\***|
+    |Intervalos de puertos de origen|**\***|
     |Destination|**Etiqueta de servicio**|
     |Etiqueta de servicio de destino|**VirtualNetwork**|
     |Intervalos de puertos de destino|**3389**|
@@ -222,7 +222,7 @@ En esta tarea, creará un grupo de seguridad de red con una regla de seguridad d
     |Configuración|Valor|
     |---|---|
     |Origen|**Cualquiera**|
-    |Rangos del puerto origen|**\***|
+    |Intervalos de puertos de origen|**\***|
     |Destination|**Etiqueta de servicio**|
     |Etiqueta de servicio de destino|**VirtualNetwork**|
     |Intervalos de puertos de destino|**3389**|

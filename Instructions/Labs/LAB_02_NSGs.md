@@ -202,6 +202,8 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
    |Resource group|**AZ500LAB07**|
    |Nombre de la máquina virtual|**myVmWeb**|
    |Region|**(EE. UU.) Este de EE. UU.**|
+   |Opciones de disponibilidad|**No se requiere redundancia de la infraestructura**
+   |Tipo de seguridad|**Estándar**
    |Imagen|**Windows Server 2022 Datacenter: Azure Edition, x64 Gen2**|
    |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
@@ -212,19 +214,19 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
 
     >**Nota**: Para los puertos de entrada públicos, nos basaremos en el grupo de seguridad de red creado previamente. 
 
-4. Haga clic en **Siguiente: Discos >** y, en la pestaña **Discos** del panel **Crear una máquina virtual**, establezca el **tipo de disco del sistema operativo** en **HDD estándar** y haga clic en **Siguiente: Redes >** .
+5. Haga clic en **Siguiente: Discos >** y, en la pestaña **Discos** del panel **Crear una máquina virtual**, establezca el **tipo de disco del sistema operativo** en **HDD estándar** y haga clic en **Siguiente: Redes >** .
 
-5. En la pestaña **Redes** de la hoja **Crear una máquina virtual**, seleccione la red creada anteriormente, **myVirtualNetwork**.
+6. En la pestaña **Redes** de la hoja **Crear una máquina virtual**, seleccione la red creada anteriormente, **myVirtualNetwork**.
 
-6. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
+7. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
 
-7. Haga clic en **Siguiente: Administración >** y haga clic en **Siguiente: Supervisión >**. En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la configuración siguiente:
+8. Haga clic en **Siguiente: Administración >** y haga clic en **Siguiente: Supervisión >**. En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la configuración siguiente:
 
    |Configuración|Value|
    |---|---|
    |Diagnósticos de arranque|**Enabled with managed storage account (recommended)** (Habilitado con la cuenta de almacenamiento administrada [recomendado])|
 
-8. Haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, compruebe que la validación se ha realizado correctamente y haga clic en **Crear**.
+9. Haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, compruebe que la validación se ha realizado correctamente y haga clic en **Crear**.
 
 #### Tarea 2: Crear una máquina virtual para usarla como servidor de administración. 
 

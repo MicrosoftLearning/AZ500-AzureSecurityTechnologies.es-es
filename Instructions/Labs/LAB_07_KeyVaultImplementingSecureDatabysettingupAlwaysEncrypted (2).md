@@ -365,7 +365,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
 
 8. En el cuadro de diálogo **Conectar con el servidor**, aplique la configuración siguiente: 
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Tipo de servidor|**Motor de base de datos**|
     |Nombre del servidor|nombre de servidor que identificó anteriormente en esta tarea|
