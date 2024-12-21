@@ -11,7 +11,7 @@ lab:
 
 Se le ha pedido que cree una prueba de concepto de un entorno basado en Microsoft Defender for Cloud. En concreto, quiere:
 
-- Configure Microsoft Defender for Cloud para supervisar una máquina virtual.
+- Configurar características de seguridad mejorada de Microsoft Defender for Cloud para supervisar una máquina virtual.
 - Revise las recomendaciones de Microsoft Defender for Cloud para la máquina virtual.
 - Implementar recomendaciones para la configuración de invitado y el acceso a máquinas virtuales Just-In-Time. 
 - Revisar cómo se puede usar la puntuación de seguridad para determinar el progreso hacia la creación de una infraestructura más segura.
@@ -38,35 +38,23 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 2: Revisión de las recomendaciones de Microsoft Defender for Cloud
 - Tarea 3: Implementación de las recomendaciones de Microsoft Defender for Cloud para habilitar el acceso a máquinas virtuales Just-In-Time
 
-#### Tarea 1: Configuración de Microsoft Defender for Cloud
+#### Tarea 1: Configuración de características de seguridad mejoradas de Microsoft Defender for Cloud para servidores
 
-En esta tarea, incorporará y configurará Microsoft Defender for Cloud.
+En esta tarea, incorporarás y configurarás características de seguridad mejorada de Microsoft Defender for Cloud para servidores.
 
-1. Inicie sesión en Azure Portal **`https://portal.azure.com/`** .
+1. Inicia una sesión del navegador e inicia sesión en la [suscripción a Azure.](https://azure.microsoft.com/en-us/free/?azure-portal=true) al que tienes acceso administrativo.
 
-    >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
+2. En Azure Portal, en el cuadro de texto Buscar recursos, servicios y documentos de la parte superior de la página, escribe Microsoft Defender for Cloud y pulsa la tecla Entrar 
 
-2. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Microsoft Defender for Cloud** y presione la tecla **Entrar**.
+3. En Microsoft Defender for Cloud, hoja de Administración, ve a Configuración del entorno. Expande las carpetas de configuración del entorno hasta que se muestre la sección suscripción y, después, haz clic en la suscripción para ver los detalles.
 
-3. En el panel de navegación izquierdo, seleccione **Introducción**. En el panel **Microsoft Defender for Cloud \| Introducción**, clic en **Actualizar**.
-     
-4. En la hoja **Microsoft Defender for Cloud \| Introducción**, dentro de la pestaña Instalar agentes, desplácese hacia abajo y haga clic en **Instalar agentes**. 
+4. En la hoja Configuración, en Planes de Defender, expande Protección de cargas de trabajo en la nube (CWP).
+  
+5. En la lista Plan de protección de cargas de trabajo en la nube (CWP), selecciona Servidores. En la parte derecha de la página, cambia el Estado de Desactivado a Activado y, después, haz clic en Guardar.
+  
+6. Para revisar los detalles del Plan 2 de Microsoft Defender para servidores, selecciona Cambiar plan >.
 
-5. En el panel **Microsoft Defender for Cloud \| Introducción**, dentro de la pestaña **Actualizar**, desplácese hacia abajo hasta que la sección **Seleccionar áreas de trabajo con características de seguridad mejoradas** esté visible, active el **plan de Microsoft Defender** seleccionando el área de trabajo de Log Analytics y, a continuación, haga clic en el botón azul grande Actualizar.  
-
-    >**Nota**: Revise todas las características que están disponibles como parte de los planes de Microsoft Defender. 
-
-6. Vaya a **Microsoft Defender for Cloud** y, en el panel de navegación izquierdo de la sección Administración, haga clic en **Configuración del entorno**.
-
-7. En la hoja **Microsoft Defender for Cloud\| Configuración del entorno**, desplácese hacia abajo, expanda hasta que aparezca la suscripción y haga clic en la suscripción correspondiente. 
-
-8. En la hoja **Configuración \| Planes de Defender**, seleccione **Habilitar todos los planes** y haga clic en **Guardar**.
-
-9. Vuelva a la hoja **Microsoft Defender for Cloud \| Configuración de entorno**, expanda hasta que aparezca la suscripción y haga clic en la entrada que representa el área de trabajo de Log Analytics que ha creado en el laboratorio anterior.
-
-10. En la hoja **Configuración \| Planes de Defender**, asegúrese de que todas las opciones estén activadas. Si es necesario, haga clic en **Habilitar todos los planes** y, después, haga clic en **Guardar**.
-
-11. Seleccione **Recopilación de datos** en la hoja **Configuración\| Planes de Defender**. Haga clic en **Todos los eventos** y **Guardar**.
+>**Nota**: al habilitar el plan de servidores protección de cargas de trabajo en la nube (CWP) de Desactivado a Activado, se habilita el Plan 2 de Microsoft Defender para servidores.
 
 #### Tarea 2: Revisión de las recomendaciones de Microsoft Defender for Cloud
 
