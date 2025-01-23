@@ -138,7 +138,7 @@ En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos 
 
     |Configuración|Valor|
     |----|----|
-    |Suscripción|nombre de la suscripción de Azure que usa en este laboratorio|
+    |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
     |Resource group|**AZ500LAB09**|
     |Nombre del clúster de Kubernetes|**MyKubernetesCluster**|
     |Region|**(EE. UU.) Este de EE. UU.**|
@@ -158,7 +158,7 @@ En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos 
 
     |Configuración|Value|
     |----|----|
-    |Configuración de red|**Azure CNI**|
+    |Configuración de red|**Superposición de Azure CNI**|
     |Prefijo del nombre DNS|**Deje el valor predeterminado**|
 
     >**Nota**: AKS se puede configurar como un clúster privado. Se asigna una IP privada al servidor de API para garantizar que el tráfico de red entre el servidor de API y los grupos de nodos permanece solo en la red privada. Para obtener más información, visite la página [Creación de un clúster privado de Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/private-clusters).
