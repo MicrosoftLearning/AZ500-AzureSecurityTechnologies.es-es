@@ -23,7 +23,7 @@ En este laboratorio completará los ejercicios siguientes:
 - Ejercicio 1: Implementación de una máquina virtual de Azure
 - Ejercicio 2: Creación de un área de trabajo de Log Analytics
 - Ejercicio 3: Creación de una cuenta de almacenamiento de Azure
-- Ejercicio 4: Creación de una regla de recopilación de datos.
+- Ejercicio 4: Creación de una regla de recopilación de datos
   
 ## Instrucciones
 

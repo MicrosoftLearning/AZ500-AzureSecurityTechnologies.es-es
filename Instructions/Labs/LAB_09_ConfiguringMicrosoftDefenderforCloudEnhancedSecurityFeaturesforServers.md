@@ -14,13 +14,13 @@ Como ingeniero de seguridad de Azure para una empresa global de comercio electr�
 
 ## Objetivos del laboratorio
 
-- Configuración de características de seguridad mejoradas de Microsoft Defender for Cloud para servidores
+- Configuración de características de seguridad mejorada de Microsoft Defender for Cloud para servidores
   
 - Revisión de las características de seguridad mejoradas para el Plan 2 de Microsoft Defender para servidores
 
 ## Instrucciones del ejercicio
 
-### Configuración de características de seguridad mejoradas de Microsoft Defender for Cloud para servidores
+### Configuración de características de seguridad mejorada de Microsoft Defender for Cloud para servidores
 
 1. En Azure Portal, en el cuadro de texto Buscar recursos, servicios y documentos de la parte superior de la página, escribe **Microsoft Defender for Cloud** y pulsa la tecla **Entrar** 
 
