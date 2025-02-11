@@ -94,9 +94,9 @@ En esta tarea, implementará Azure Firewall en la red virtual.
 
 2. En la hoja **Firewalls**, haga clic en **+ Crear**.
 
-3. En la pestaña **Aspectos básicos** del panel **Crear un firewall**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
+3. En la pestaña **Datos básicos** de la hoja **Crear un firewall**, especifica la configuración siguiente: 
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Resource group|**AZ500LAB08**|
    |Nombre|**Test-FW01**|
@@ -104,21 +104,22 @@ En esta tarea, implementará Azure Firewall en la red virtual.
    |SKU del firewall|**Estándar**|
    |Administración del firewall|**Use reglas de firewall (clásicas) para administrar este firewall**.|
    |Elegir una red virtual|Haga clic en la opción **Usar existente** y, en la lista desplegable, seleccione **Test-FW-VN**.|
+   |NIC de administración de Firewall|Para deshabilitar esta característica, **anula la selección** de la opción **Habilitar NIC de administración de firewall**.|
    |Dirección IP pública|Haga clic en **Agregar nuevo**, escriba el nombre **TEST-FW-PIP** y haga clic en **Aceptar**.|
 
-4. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. 
+5. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. 
 
     >**Nota**: Espere a que la implementación se complete. Este proceso tardará alrededor de 5 minutos. 
 
-5. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
+6. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
 
-6. En el panel **Grupos de recursos**, en la lista de grupos de recursos, haga clic en la entrada **AZ500LAB08**.
+7. En el panel **Grupos de recursos**, en la lista de grupos de recursos, haga clic en la entrada **AZ500LAB08**.
 
     >**Nota**: En la hoja del grupo de recursos **AZ500LAB08**, revise la lista de recursos. Se pueden ordenar por **Tipo**.
 
-7. En la lista de recursos, haga clic en la entrada que representa el firewall **Test-FW01**.
+8. En la lista de recursos, haga clic en la entrada que representa el firewall **Test-FW01**.
 
-8. En la hoja **Test-FW01**, identifique la dirección **IP privada** que se asignó al firewall. 
+9. En la hoja **Test-FW01**, identifique la dirección **IP privada** que se asignó al firewall. 
 
     >**Nota**: Necesitará esta información en la siguiente tarea.
 
@@ -133,7 +134,7 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
 
 3. En la hoja **Crear tabla de rutas**,especifique la siguiente configuración:
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Resource group|**AZ500LAB08**|
    |Region| **Este de EE. UU.**|
@@ -147,7 +148,7 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
 
 7. En la hoja **Asociar subred**, especifique la siguiente configuración:
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Virtual network|**Test-FW-VN**|
    |Subnet|**Workload-SN**|
@@ -185,7 +186,7 @@ En esta tarea, creará una regla de aplicación que permita el acceso saliente a
 
 4. En el panel **Agregar una colección de reglas de aplicación**, especifique la siguiente configuración (deje todas las demás opciones con los valores predeterminados):
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Nombre|**App-Coll01**|
    |Prioridad|**200**|
@@ -193,7 +194,7 @@ En esta tarea, creará una regla de aplicación que permita el acceso saliente a
 
 5. En la hoja **Agregar una colección de reglas de aplicación**, cree una nueva entrada en la sección **FQDN de destino** con la siguiente configuración (deje todas las demás opciones con los valores predeterminados):
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |name|**AllowGH**|
    |Tipo de origen|**Dirección IP**|
@@ -215,7 +216,7 @@ En esta tarea, agregará una regla de red que permita el acceso saliente a dos d
 
 3. En el panel **Agregar una colección de reglas de red**, especifique la siguiente configuración (deje las demás con los valores predeterminados):
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Nombre|**Net-Coll01**|
    |Prioridad|**200**|
@@ -223,7 +224,7 @@ En esta tarea, agregará una regla de red que permita el acceso saliente a dos d
 
 4. En la hoja **Agregar una colección de reglas de red**, cree una nueva entrada en la sección **Direcciones IP** con la siguiente configuración (deje las demás opciones con sus valores predeterminados):
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Nombre|**AllowDNS**|
    |Protocolo|**UDP**|
