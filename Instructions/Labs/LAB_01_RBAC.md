@@ -85,63 +85,65 @@ En esta tarea, creará el grupo *Administradores sénior*, agregará la cuenta d
    |Nombre del grupo|**Administradores sénior**|
    |Tipo de pertenencia|**Asignado**|
     
-4. Haga clic en el vínculo **No se ha seleccionado ningún propietario**, en el panel **Agregar propietarios** seleccione **Joseph Price** y haga clic en **Seleccionar**.
+4. Haz clic en el vínculo **No se ha seleccionado ningún propietario**, en la hoja **Agregar propietarios** selecciona **Joseph Price** y haz clic en **Seleccionar**.
 
-5. Haga clic en el vínculo **No se ha seleccionado ningún miembro**, en el panel **Agregar miembros** seleccione **Joseph Price** y haga clic en **Seleccionar**.
+5. Haz clic en el vínculo **No se ha seleccionado ningún miembro**, en la hoja **Agregar miembros** selecciona **Joseph Price** y haz clic en **Seleccionar**.
 
-6. De nuevo en el panel **Nuevo grupo**, haga clic en **Crear**.
+6. De nuevo en la hoja **Nuevo grupo**, haz clic en **Crear**.
 
-> Resultado: ha usado Azure Portal para crear un usuario y un grupo, y ha asignado el usuario al grupo. 
+> Resultado: has usado Azure Portal para crear un usuario y un grupo, y has asignado el usuario al grupo. 
 
 ### Ejercicio 2: Creación de un grupo de administradores junior que contenga la cuenta de usuario de Isabel García como miembro.
 
 #### Tiempo estimado: 10 minutos
 
-En este ejercicio completará las tareas siguientes:
+En este ejercicio completarás las tareas siguientes:
 
 - Tarea 1: Uso de PowerShell para crear una cuenta de usuario para Isabel García.
 - Tarea 2: Uso de PowerShell para crear el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo. 
 
 #### Tarea 1: Uso de PowerShell para crear una cuenta de usuario para Isabel García.
 
-En esta tarea, creará una cuenta de usuario para Isabel García mediante PowerShell.
+En esta tarea, crearás una cuenta de usuario para Isabel García mediante PowerShell.
 
-1. Haga clic en el primer icono de la esquina superior derecha para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+1. **Abre Cloud Shell** haciendo clic en el **icono Cloud Shell** de la esquina superior derecha de Azure Portal.
 
-2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
+2. **Si se te solicita, configura Cloud Shell mediante la creación de una cuenta de almacenamiento**. Esto solo es necesario **la primera vez** que inicias Cloud Shell.
 
-   >**Nota**: Para pegar el texto copiado en Cloud Shell, haga clic con el botón derecho en la ventana del panel y seleccione **Pegar**. Como alternativa, puede usar la combinación de teclas **Mayús + Insertar**.
+3. **Asegúrate de que PowerShell esté seleccionado** en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
-3. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para crear un objeto de perfil de contraseña:
+   >**Nota**: para pegar el texto copiado en Cloud Shell, haz clic con el botón derecho en la ventana del panel y selecciona **Pegar**. Como alternativa, puedes usar la combinación de teclas **Mayús + Insertar**.
+
+4. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para crear un objeto de perfil de contraseña:
 
     ```powershell
     $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
     ```
 
-4. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para establecer el valor de la contraseña en el objeto de perfil:
+5. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para establecer el valor de la contraseña en el objeto de perfil:
     ```powershell
     $passwordProfile.Password = "Pa55w.rd1234"
     ```
 
-5. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para conectarse a Microsoft Entra ID:
+6. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para conectarte a Microsoft Entra ID:
 
     ```powershell
     Connect-AzureAD
     ```
       
-6. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para identificar el nombre de tu inquilino de Microsoft Entra: 
+7. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para identificar el nombre de tu inquilino de Microsoft Entra: 
 
     ```powershell
     $domainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
     ```
 
-7. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para crear una cuenta de usuario para Isabel García: 
+8. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para crear una cuenta de usuario para Isabel García: 
 
     ```powershell
     New-AzureADUser -DisplayName 'Isabel Garcia' -PasswordProfile $passwordProfile -UserPrincipalName "Isabel@$domainName" -AccountEnabled $true -MailNickName 'Isabel'
     ```
 
-8. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para enumerar los usuarios de Microsoft Entra ID (las cuentas de Joseph e Isabel deberían aparecer en la lista): 
+9. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para enumerar los usuarios de Microsoft Entra ID (las cuentas de Joseph e Isabel deberían aparecer en la lista): 
 
     ```powershell
     Get-AzureADUser -All $true | Where-Object {$_.UserPrincipalName -like "*43846135@LOD*"} 
@@ -149,21 +151,21 @@ En esta tarea, creará una cuenta de usuario para Isabel García mediante PowerS
 
 #### Tarea 2: Uso de PowerShell para crear el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo.
 
-En esta tarea, creará el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo mediante PowerShell.
+En esta tarea, crearás el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo mediante PowerShell.
 
-1. En la misma sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para **crear un nuevo grupo de seguridad** denominado Administradores junior:
+1. En la misma sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para **crear un nuevo grupo de seguridad** denominado Administradores junior:
    
    ```powershell
    New-AzureADGroup -DisplayName 'Junior Admins43846135' -MailEnabled $false -SecurityEnabled $true -MailNickName JuniorAdmins
    ```
    
-2. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para **enumerar los grupos** del inquilino de Microsoft Entra (la lista debe incluir los grupos Administradores sénior y Administradores junior)
+2. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para **enumerar los grupos** del inquilino de Microsoft Entra (la lista debe incluir los grupos Administradores sénior y Administradores junior)
    
    ```powershell
    Get-AzureADGroup
    ```
 
-3. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para **obtener una referencia** a la cuenta de usuario de Isabel García:
+3. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para **obtener una referencia** a la cuenta de usuario de Isabel García:
 
    ```powershell
    $user = Get-AzureADUser -Filter "UserPrincipalName eq 'Isabel-43846135@LODSPRODMCA.onmicrosoft.com'"
@@ -180,22 +182,22 @@ En esta tarea, creará el grupo Administradores junior y agregar la cuenta de us
     Get-AzADGroupMember -GroupDisplayName "Junior Admins43846135"
     ```
    
-> Resultado: ha usado PowerShell para crear un usuario y una cuenta de grupo, y ha agregado la cuenta de usuario a la cuenta de grupo. 
+> Resultado: has usado PowerShell para crear un usuario y una cuenta de grupo, y has agregado la cuenta de usuario a la cuenta de grupo. 
 
 ### Ejercicio 3: Creación de un grupo de consola de servicio que contenga la cuenta de usuario de Dylan Williams como miembro.
 
 #### Tiempo estimado: 10 minutos
 
-En este ejercicio completará las tareas siguientes:
+En este ejercicio completarás las tareas siguientes:
 
 - Tarea 1: Uso del CLI de Azure para crear una cuenta de usuario para Dylan Williams.
 - Tarea 2: Uso del CLI de Azure para crear el grupo Consola de servicio y agregar la cuenta de usuario de Dylan al grupo. 
 
 #### Tarea 1: Uso del CLI de Azure para crear una cuenta de usuario para Dylan Williams.
 
-En esta tarea, creará una cuenta de usuario para Dylan Williams.
+En esta tarea, crearás una cuenta de usuario para Dylan Williams.
 
-1. En el menú desplegable de la esquina superior izquierda del panel de Cloud Shell, seleccione **Bash** y, cuando se le solicite, haga clic en **Confirmar**. 
+1. En el menú desplegable de la esquina superior izquierda del panel de Cloud Shell, selecciona **Bash** y, cuando se te solicite, haz clic en **Confirmar**. 
 
 2. En la sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para identificar el nombre de tu inquilino de Microsoft Entra:
 
@@ -203,7 +205,7 @@ En esta tarea, creará una cuenta de usuario para Dylan Williams.
     DOMAINNAME=$(az ad signed-in-user show --query 'userPrincipalName' | cut -d '@' -f 2 | sed 's/\"//')
     ```
 
-3. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para crear un usuario, Dylan Williams. Use *yourdomain*.
+3. En la sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para crear un usuario, Dylan Williams. Usa *yourdomain*.
  
     ```cli
     az ad user create --display-name "Dylan Williams" --password "Pa55w.rd1234" --user-principal-name Dylan@$DOMAINNAME
@@ -217,9 +219,9 @@ En esta tarea, creará una cuenta de usuario para Dylan Williams.
 
 #### Tarea 2: Uso del CLI de Azure para crear el grupo Consola de servicio y agregar la cuenta de usuario de Dylan al grupo. 
 
-En esta tarea, creará el grupo Consola de servicio y asignará a Dylan al grupo. 
+En esta tarea, crearás el grupo Consola de servicio y asignarás a Dylan al grupo. 
 
-1. En la misma sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para crear un nuevo grupo de seguridad denominado Consola de servicio.
+1. En la misma sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para crear un nuevo grupo de seguridad denominado Consola de servicio.
 
     ```cli
     az ad group create --display-name "Service Desk" --mail-nickname "ServiceDesk"
@@ -231,72 +233,74 @@ En esta tarea, creará el grupo Consola de servicio y asignará a Dylan al grupo
     az ad group list -o table
     ```
 
-3. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para obtener una referencia a la cuenta de usuario de Dylan Williams: 
+3. En la sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para obtener una referencia a la cuenta de usuario de Dylan Williams: 
 
     ```cli
     USER=$(az ad user list --filter "displayname eq 'Dylan Williams'")
     ```
 
-4. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para obtener la propiedad objectId de la cuenta de usuario de Dylan Williams: 
+4. En la sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para obtener la propiedad objectId de la cuenta de usuario de Dylan Williams: 
 
     ```cli
     OBJECTID=$(echo $USER | jq '.[].id' | tr -d '"')
     ```
 
-5. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para agregar la cuenta de usuario de Dylan al grupo Consola de servicio: 
+5. En la sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para agregar la cuenta de usuario de Dylan al grupo Consola de servicio: 
 
     ```cli
     az ad group member add --group "Service Desk" --member-id $OBJECTID
     ```
 
-6. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para enumerar los miembros del grupo Consola de servicio y compruebe que incluye la cuenta de usuario de Dylan:
+6. En la sesión de Bash del panel de Cloud Shell, ejecuta lo siguiente para enumerar los miembros del grupo Consola de servicio y comprueba que incluye la cuenta de usuario de Dylan:
 
     ```cli
     az ad group member list --group "Service Desk"
     ```
 
-7. Cierre el panel de Cloud Shell.
+7. Cierra el panel de Cloud Shell.
 
-> Resultado: con el CLI de Azure, ha creado un usuario y una cuenta de grupo, y ha agregado la cuenta de usuario al grupo. 
+> Resultado: con el CLI de Azure, has creado un usuario y una cuenta de grupo, y has agregado la cuenta de usuario al grupo. 
 
 
 ### Ejercicio 4: Asignación del rol de colaborador de la máquina virtual al grupo Consola de servicio.
 
 #### Tiempo estimado: 10 minutos
 
-En este ejercicio completará las tareas siguientes:
+En este ejercicio completarás las tareas siguientes:
 
 - Tarea 1: Creación de un grupo de recursos. 
 - Tarea 2: Asignación de permisos de colaborador de la máquina virtual de la consola de servicio al grupo de recursos.  
 
 #### Tarea 1: Creación de un grupo de recursos
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
+1. En Azure Portal, usa el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escribe **Grupos de recursos** y presiona la tecla **Entrar**.
 
-2. En el panel **Grupos de recursos**, haga clic en **+ Crear** y especifique la siguiente configuración:
+2. En la hoja **Grupos de recursos**, haz clic en **+ Crear** y especifica la siguiente configuración:
 
    |Configuración|Value|
    |---|---|
    |Nombre de suscripción|el nombre de su suscripción de Azure|
-   |Definición de un nombre de grupo de recursos|**AZ500Lab01**|
-   |Location|**Este de EE. UU.**|
+   |Nombre de grupo de recursos|**AZ500Lab01**|
+   |Ubicación|**Este de EE. UU.**|
 
-3. Seleccione **Revisar y crear** y, a continuación, **Crear**.
+3. Selecciona **Revisar y crear** y, a continuación, **Crear**.
 
-   >**Nota**: Espere a que se implemente el grupo de recursos. Use el icono **notificación** (parte superior derecha) para realizar un seguimiento del progreso del estado de la implementación.
+   >**Nota**: espera a que se implemente el grupo de recursos. Usa el icono **notificación** (parte superior derecha) para realizar un seguimiento del progreso del estado de la implementación.
 
-4. De nuevo en el panel **Grupos de recursos**, actualice la página y compruebe que el nuevo grupo de recursos aparece en la lista de grupos de recursos.
+4. De nuevo, en la hoja **Grupos de recursos**, actualiza la página y comprueba que el nuevo grupo de recursos aparece en la lista de grupos de recursos.
 
 
 #### Tarea 2: Asignación a la Consola de servicio de los permisos de colaborador de máquina virtual. 
 
-1. En el panel **Grupos de recursos**, haga clic en la entrada del grupo de recursos **AZ500LAB01**.
+1. En la hoja **Grupos de recursos**, haz clic en la entrada del grupo de recursos **AZ500LAB01**.
 
-2. En el panel **AZ500Lab01**, haga clic en **Control de acceso (IAM)** en la parte central.
+2. En la hoja **AZ500Lab01**, haz clic en **Control de acceso (IAM)** en la parte central.
 
-3. En el panel **AZ500Lab01 \| Control de acceso (IAM)** , **+ Agregar** y, en el menú desplegable, haga clic en **Agregar asignación de roles**.
+3. En la hoja **AZ500Lab01 \| Control de acceso (IAM)** , **+ Agregar** y, en el menú desplegable, haz clic en **Agregar asignación de roles**.
 
-4. En el panel **Agregar asignación de roles**, especifique la siguiente configuración y haga clic en **Siguiente** después de cada paso:
+4. En la hoja **Agregar asignación de roles**, completa cada una de las siguientes opciones de configuración antes de hacer clic en Siguiente:
+
+   **Nota:** después de completar todos los pasos, haz clic en **Siguiente**.
 
    |Configuración|Value|
    |---|---|
@@ -304,17 +308,17 @@ En este ejercicio completará las tareas siguientes:
    |Asignar acceso a (en el panel Miembros)|**Usuario, grupo o entidad de servicio**|
    |Seleccionar (+ Seleccionar miembros)|**Departamento de servicios**|
 
-5. Haga clic en **Revisar y asignar** dos veces para crear la asignación de roles.
+6. Haz clic en **Revisar y asignar** dos veces para crear la asignación de roles.
 
-6. En el panel **Control de acceso (IAM)** , seleccione **Asignaciones de roles**.
+7. En la hoja **Control de acceso (IAM)**, selecciona **Asignaciones de roles**.
 
-7. En el panel **AZ500Lab01 \| Control de acceso (IAM)** , en la pestaña **Comprobar acceso**, en el cuadro de texto **Buscar por nombre o dirección de correo electrónico**, escriba **Dylan Williams**.
+8. En la hoja **AZ500Lab01 \| Control de acceso (IAM)**, en la pestaña **Comprobar acceso**, en el cuadro de texto **Buscar por nombre o dirección de correo electrónico**, escribe **Dylan Williams**.
 
-8. En la lista de resultados de la búsqueda, seleccione la cuenta de usuario de Dylan Williams y, en el panel **Asignaciones de Dylan Williams: AZ500Lab01**, vea la asignación recién creada.
+9. En la lista de resultados de la búsqueda, selecciona la cuenta de usuario de Dylan Williams y, en la hoja **Asignaciones de Dylan Williams: AZ500Lab01**, mira la asignación recién creada.
 
-9. Cierre el panel **Asignaciones de Dylan Williams: AZ500Lab01**.
+10. Cierra la hoja **Asignaciones de Dylan Williams: AZ500Lab01**.
 
-10. Repita los dos últimos pasos para comprobar el acceso de **Joseph Price**. 
+11. Repita los dos últimos pasos para comprobar el acceso de **Joseph Price**. 
 
 > Resultado: ha asignado y comprobado los permisos de RBAC. 
 
