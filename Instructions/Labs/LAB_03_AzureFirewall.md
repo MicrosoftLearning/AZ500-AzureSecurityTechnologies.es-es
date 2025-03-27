@@ -1,10 +1,10 @@
 ---
 lab:
-  title: "03 - Azure\_Firewall"
+  title: 03 - Azure Firewall
   module: Module 02 - Plan and implement security for public access to Azure resources
 ---
 
-# Laboratorio 03: Azure Firewall
+# Laboratorio 03: Azure Firewall
 # Manual de laboratorio para alumnos
 
 ## Escenario del laboratorio
@@ -17,7 +17,7 @@ Se le ha pedido que instale Azure Firewall. Esto ayudará a su organización a c
 - Reglas de aplicación de firewall que solo permiten el tráfico saliente a www.bing.com. 
 - Reglas de red de firewall que permiten búsquedas de servidores DNS externos.
 
-> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 ## Objetivos del laboratorio
 
@@ -37,9 +37,9 @@ En este laboratorio completará el ejercicio siguiente:
 
 ### Ejercicio 1: Implementar y probar una instancia de Azure Firewall
 
-### Tiempo estimado: 40 minutos
+### Tiempo estimado: 40 minutos
 
-> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 En este ejercicio completará las tareas siguientes:
 
@@ -61,13 +61,13 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Implementar una plantilla personalizada** y presione la tecla **Entrar**.
+2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Implementar una plantilla personalizada** y presione la tecla **Entrar**.
 
 3. En la hoja **Implementación personalizada**, haga clic en la opción **Cree su propia plantilla en el editor**.
 
 4. En la hoja **Editar plantilla**, haga clic en **Cargar archivo**, busque el archivo **\\Allfiles\\Labs\\08\\template.json** y haga clic en **Abrir**.
 
-    >**Nota**: Revise el contenido de la plantilla y observe que implementa una VM de Azure que hospeda Windows Server 2016 Datacenter.
+    >**Nota**: Revise el contenido de la plantilla y observe que implementa una VM de Azure que hospeda Windows Server 2016 Datacenter.
 
 5. En el panel **Editar plantilla**, haga clic en **Guardar**.
 
@@ -77,20 +77,20 @@ En esta tarea, creará una máquina virtual mediante una plantilla de ARM. Esta 
    |---|---|
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB08**.|
-   |Location|**(EE. UU.) Este de EE. UU.**|
+   |Location|**(EE. UU.) Este de EE. UU.**|
    |adminPassword|Una contraseña segura de su elección para las máquinas virtuales. Recuerde la contraseña. La necesitará más adelante para conectarse a las máquinas virtuales.|
 
     >**Nota**: Para identificar las regiones de Azure donde puede aprovisionar VM de Azure, consulte [ **https://azure.microsoft.com/en-us/regions/offers/** ](https://azure.microsoft.com/en-us/regions/offers/)
 
 7. Haga clic en **Revisar y crear** y después en **Crear**.
 
-    >**Nota**: Espere a que la implementación se complete. Este proceso tardará alrededor de 2 minutos. 
+    >**Nota**: Espere a que la implementación se complete. Este proceso tardará alrededor de 2 minutos. 
 
 #### Tarea 2: Implementar Azure Firewall
 
 En esta tarea, implementará Azure Firewall en la red virtual. 
 
-1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Firewalls** y presione la tecla **Entrar**.
+1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Firewalls** y presione la tecla **Entrar**.
 
 2. En la hoja **Firewalls**, haga clic en **+ Crear**.
 
@@ -100,7 +100,7 @@ En esta tarea, implementará Azure Firewall en la red virtual.
    |---|---|
    |Resource group|**AZ500LAB08**|
    |Nombre|**Test-FW01**|
-   |Region|**(EE. UU.) Este de EE. UU.**|
+   |Region|**(EE. UU.) Este de EE. UU.**|
    |SKU del firewall|**Estándar**|
    |Administración del firewall|**Use reglas de firewall (clásicas) para administrar este firewall**.|
    |Elegir una red virtual|Haga clic en la opción **Usar existente** y, en la lista desplegable, seleccione **Test-FW-VN**.|
@@ -109,9 +109,9 @@ En esta tarea, implementará Azure Firewall en la red virtual.
 
 5. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. 
 
-    >**Nota**: Espere a que la implementación se complete. Este proceso tardará alrededor de 5 minutos. 
+    >**Nota**: Espere a que la implementación se complete. Este proceso tardará alrededor de 5 minutos. 
 
-6. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
+6. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
 
 7. En el panel **Grupos de recursos**, en la lista de grupos de recursos, haga clic en la entrada **AZ500LAB08**.
 
@@ -128,7 +128,7 @@ En esta tarea, implementará Azure Firewall en la red virtual.
 
 En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. Esta ruta configurará el tráfico saliente a través del firewall.
 
-1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Tablas de rutas** y presione la tecla **Entrar**.
+1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Tablas de rutas** y presione la tecla **Entrar**.
 
 2. En la hoja **Tablas de rutas**, haga clic en **+ Crear**.
 
@@ -157,14 +157,14 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
 
 8. Haga clic en **Aceptar** para asociar el firewall a la subred de la red virtual. 
 
-9. De nuevo en la hoja **Firewall-route**, en la sección **Configuración**, haga clic en **Rutas** y luego en **+ Agregar**. 
+9. De nuevo en la hoja **Firewall-route**, en la sección **Configuración**, haga clic en **Rutas** y luego en **+ Agregar**. 
 
 10. En la hoja **Agregar ruta**, especifique la siguiente configuración:  
 
    |Configuración|Value|
    |---|---|
    |Nombre de ruta|**FW-DG**|
-   |Destino del prefijo de dirección|**Dirección IP**|
+   |Tipo de destino|**Dirección IP**|
    |Intervalos de direcciones IP de destino y CIDR|**0.0.0.0/0**
    |Tipo de próximo salto|**Aplicación virtual**|
    |Siguiente dirección de salto|Dirección IP privada del firewall que identificó en la tarea anterior|
@@ -174,7 +174,7 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
 11.  Haga clic en **Agregar** para agregar la ruta. 
 
 
-#### Tarea 4: Configurar una regla de aplicación
+#### Tarea 4: Configurar una regla de aplicación
 
 En esta tarea, creará una regla de aplicación que permita el acceso saliente a `www.bing.com`.
 
@@ -206,9 +206,9 @@ En esta tarea, creará una regla de aplicación que permita el acceso saliente a
 
     >**Nota**: Azure Firewall incluye una colección de reglas integradas para los FQDN de infraestructura que están permitidos de forma predeterminada. Estos FQDN son específicos para la plataforma y no se pueden usar para otros fines. 
 
-#### Tarea 5: Configurar una regla de red
+#### Tarea 5: Configurar una regla de red
 
-En esta tarea, agregará una regla de red que permita el acceso saliente a dos direcciones IP en el puerto 53 (DNS).
+En esta tarea, agregará una regla de red que permita el acceso saliente a dos direcciones IP en el puerto 53 (DNS).
 
 1. En Azure Portal, vuelva a la hoja **Test-FW01 \| Reglas (clásicas)** .
 
@@ -248,7 +248,7 @@ En esta tarea, configurará las direcciones DNS principal y secundaria para la m
 
 3. En la hoja **Srv-Work**, haz clic en **Redes**.
 
-4. En la hoja **Srv-Work \| Redes** haga clic en el vínculo situado junto a la entrada **Interfaz de red**.
+4. En la hoja **Srv-Work \| Configuración de redes**, haz clic en el vínculo situado junto a la entrada **Interfaz de red**.
 
 5. En la hoja Interfaz de red, en la sección **Configuración**, haga clic en **Servidores DNS**, seleccione la opción **Personalizado**, agregue los dos servidores DNS a los que se hace referencia en la regla de red: **209.244.0.3** y **209.244.0.4**, y haga clic en **Guardar** para guardar el cambio.
 
@@ -258,7 +258,7 @@ En esta tarea, configurará las direcciones DNS principal y secundaria para la m
 
     >**Nota**: La actualización de los servidores DNS para una interfaz de red reiniciará automáticamente la máquina virtual a la que está conectada y, si procede, el resto de máquinas virtuales del mismo conjunto de disponibilidad.
 
-#### Tarea 7: Probar el firewall
+#### Tarea 7: Probar el firewall
 
 En esta tarea, probará el firewall para confirmar que funciona según lo previsto.
 

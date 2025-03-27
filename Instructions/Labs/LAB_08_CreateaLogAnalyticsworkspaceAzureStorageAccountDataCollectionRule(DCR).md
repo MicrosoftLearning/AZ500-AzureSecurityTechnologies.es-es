@@ -14,14 +14,14 @@ Como ingeniero de seguridad de Azure para una empresa de tecnología financiera,
 
 
 
-> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 ## Objetivos del laboratorio
 
 En este laboratorio completará los ejercicios siguientes:
 
 - Ejercicio 1: Implementación de una máquina virtual de Azure
-- Ejercicio 2: Creación de un área de trabajo de Log Analytics
+- Ejercicio 2: Creación de un área de trabajo de Log Analytics
 - Ejercicio 3: Creación de una cuenta de almacenamiento de Azure
 - Ejercicio 4: Creación de una regla de recopilación de datos
   
@@ -88,13 +88,13 @@ En este ejercicio completará las tareas siguientes:
 
 En este ejercicio completará las tareas siguientes: 
 
-- Tarea 1: Creación de un área de trabajo de Log Analytics.
+- Tarea 1: Creación de un área de trabajo de Log Analytics.
 
-#### Tarea 1: Creación de un área de trabajo de Log Analytics
+#### Tarea 1: Creación de un área de trabajo de Log Analytics
 
 En esta tarea, creará un área de trabajo de Log Analytics. 
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Áreas de trabajo de Log Analytics** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Áreas de trabajo de Log Analytics** y presione la tecla **Entrar**.
 
 2. En la página **Áreas de trabajo de Log Analytics**, haga clic en  **+ Crear**.
 
@@ -113,17 +113,17 @@ En esta tarea, creará un área de trabajo de Log Analytics.
 
 ### Ejercicio 3: Creación de una cuenta de almacenamiento de Azure
 
-### Tiempo estimado: 10 minutos
+### Tiempo estimado: 10 minutos
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Creación de una cuenta de almacenamiento de Azure.
+- Tarea 1: Creación de una cuenta de almacenamiento de Azure.
 
-#### Tarea 1: Creación de una cuenta de almacenamiento de Azure
+#### Tarea 1: Creación de una cuenta de almacenamiento de Azure
 
 En esta tarea, creará una cuenta de almacenamiento.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Cuentas de almacenamiento** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Cuentas de almacenamiento** y presione la tecla **Entrar**.
 
 2. En la hoja **Cuentas de almacenamiento** de Azure Portal, haga clic en el botón **+ Crear** para crear una nueva cuenta de almacenamiento.
 
@@ -135,8 +135,8 @@ En esta tarea, creará una cuenta de almacenamiento.
     |---|---|
     |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
     |Resource group|**AZ500LAB131415**|
-    |Nombre de la cuenta de almacenamiento|Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos|
-    |Location|**(EE. UU.) EastUS**|
+    |Nombre de la cuenta de almacenamiento|Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos|
+    |Location|**(EE. UU.) EastUS**|
     |Rendimiento|**Estándar (cuenta general-purpose v2)**|
     |Redundancia|**Almacenamiento con redundancia local (LRS)**|
 
@@ -144,11 +144,11 @@ En esta tarea, creará una cuenta de almacenamiento.
 
      ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d443821c-2ddf-4794-87fa-bfc092980eba)
 
-    >**Nota**: Espere a que se cree la cuenta de almacenamiento. Este proceso tardará alrededor de 2 minutos.
+    >**Nota**: Espere a que se cree la cuenta de almacenamiento. Este proceso tardará alrededor de 2 minutos.
 
-### Ejercicio 3: Creación de una regla de recopilación de datos
+### Ejercicio 4: Creación de una regla de recopilación de datos
 
-### Tiempo estimado: 15 minutos
+### Tiempo estimado: 15 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -158,7 +158,7 @@ En este ejercicio completará las tareas siguientes:
 
 En esta tarea, creará una regla de recopilación de datos.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Supervisión** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Supervisión** y presione la tecla **Entrar**.
 
 2. En la hoja **Supervisar configuración**, haga clic en **Reglas de recopilación de datos.**
 
@@ -184,7 +184,7 @@ En esta tarea, creará una regla de recopilación de datos.
 
 4. Haga clic en el botón denominado **Siguiente: Recursos >** para continuar.
    
-6. En la pestaña Recursos, selecciona **+ Agregar recursos,**  y marca **Habilitar puntos de conexión de recopilación de datos.** En la plantilla Seleccionar un ámbito, selecciona **AZ500LAB131415** y haz clic en **Aplicar.**
+6. En la pestaña Recursos, selecciona **+ Agregar recursos,** y marca **Habilitar puntos de conexión de recopilación de datos.** En la plantilla Seleccionar un ámbito, selecciona **AZ500LAB131415** y haz clic en **Aplicar.**
 
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d4191115-11bc-43ec-9bee-e84b9b95a821)
 
