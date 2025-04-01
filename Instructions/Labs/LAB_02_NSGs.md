@@ -17,7 +17,7 @@ Se le ha pedido que implemente la infraestructura de red virtual de su organizac
 - Los servidores web deben mostrar la página web de IIS cuando se accede a esta desde Internet. 
 - Las reglas de grupos de seguridad de red deben usarse para controlar el acceso a la red. 
 
-> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 ## Objetivos del laboratorio
 
@@ -34,9 +34,9 @@ En este laboratorio completará los ejercicios siguientes:
 
 ### Ejercicio 1: Crear la infraestructura de red virtual
 
-### Tiempo estimado: 20 minutos
+### Tiempo estimado: 20 minutos
 
-> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 En este ejercicio completará las tareas siguientes:
 
@@ -53,15 +53,15 @@ En esta tarea, creará una red virtual para usarla con los grupos de seguridad d
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Redes virtuales** y presione la tecla **Entrar**.
+2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Redes virtuales** y presione la tecla **Entrar**.
 
-3. En el panel **Redes virtuales**, haga clic en **+ Crear**.
+3. En el panel **Redes virtuales**, haga clic en **+ Crear**.
 
 4. En la pestaña **Aspectos básicos** del panel **Crear red virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados) y haga clic en **Siguiente: Direcciones IP**:
 
     |Configuración|Valor|
     |---|---|
-    |Suscripción|nombre de la suscripción de Azure que usa en este laboratorio|
+    |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
     |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB07**.|
     |Name|**myVirtualNetwork**|
     |Region|**Este de EE. UU.**|
@@ -81,13 +81,13 @@ En esta tarea, creará una red virtual para usarla con los grupos de seguridad d
 
 En esta tarea, creará un grupo de seguridad de aplicaciones.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Grupos de seguridad de aplicaciones** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Grupos de seguridad de aplicaciones** y presione la tecla **Entrar**.
 
 2. En la hoja **Grupos de seguridad de aplicaciones**, haga clic en **+ Crear**.
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear un grupo de seguridad de aplicación**, especifique la siguiente configuración: 
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Resource group|**AZ500LAB07**|
     |Name|**myAsgWebServers**|
@@ -101,7 +101,7 @@ En esta tarea, creará un grupo de seguridad de aplicaciones.
 
 6. En la pestaña **Aspectos básicos** de la hoja **Crear un grupo de seguridad de aplicación**, especifique la siguiente configuración: 
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Resource group|**AZ500LAB07**|
     |Name|**myAsgMgmtServers**|
@@ -115,15 +115,15 @@ En esta tarea, creará un grupo de seguridad de aplicaciones.
 
 En esta tarea, creará un grupo de seguridad de red. 
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de seguridad de red** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de seguridad de red** y presione la tecla **Entrar**.
 
-2. En el panel **Grupos de seguridad de red**, haga clic en **+ Crear**.
+2. En el panel **Grupos de seguridad de red**, haga clic en **+ Crear**.
 
 3. En la pestaña **Aspectos básicos** del panel **Crear grupo de seguridad de red**, especifique la siguiente configuración: 
 
     |Configuración|Valor|
     |---|---|
-    |Suscripción|nombre de la suscripción de Azure que usa en este laboratorio|
+    |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
     |Resource group|**AZ500LAB07**|
     |Name|**myNsg**|
     |Region|**Este de EE. UU.**|
@@ -136,7 +136,7 @@ En esta tarea, creará un grupo de seguridad de red.
 
 7. En la hoja **Asociar subred**, especifique la siguiente configuración y haga clic en **Aceptar**:
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
     |Virtual network|**myVirtualNetwork**|
     |Subnet|**default**|
@@ -159,7 +159,7 @@ En esta tarea, creará un grupo de seguridad de red.
 
 4. En la hoja **Agregar regla de seguridad de entrada**, haga clic en **Agregar** para crear la nueva regla de entrada. 
 
-5. En la hoja **myNsg**, en la sección **Configuración**, haga clic en **Reglas de seguridad de entrada** y, a continuación, haga clic en **+ Agregar**.
+5. En la hoja **myNsg**, en la sección **Configuración**, haga clic en **Reglas de seguridad de entrada** y, a continuación, haga clic en **+ Agregar**.
 
 6. En la hoja **Agregar regla de seguridad de entrada**, especifique la siguiente configuración para permitir el puerto RDP (TCP 3389) al grupo de seguridad de aplicaciones **myAsgMgmtServers** (deje todas las demás opciones con sus valores predeterminados): 
 
@@ -177,7 +177,7 @@ En esta tarea, creará un grupo de seguridad de red.
 
 ### Ejercicio 2: Implementar máquinas virtuales y probar filtros de red
 
-### Tiempo estimado: 25 minutos
+### Tiempo estimado: 25 minutos
 
 En este ejercicio completará las tareas siguientes:
 
@@ -190,9 +190,9 @@ En este ejercicio completará las tareas siguientes:
 
 En esta tarea, creará una máquina virtual para usarla como servidor web.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Máquinas virtuales** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Máquinas virtuales** y presione la tecla **Entrar**.
 
-2. En el panel **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**.
+2. En el panel **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**.
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
@@ -201,11 +201,11 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|**AZ500LAB07**|
    |Nombre de la máquina virtual|**myVmWeb**|
-   |Region|**(EE. UU.) Este de EE. UU.**|
+   |Region|**(EE. UU.) Este de EE. UU.**|
    |Opciones de disponibilidad|**No se requiere redundancia de la infraestructura**
    |Tipo de seguridad|**Estándar**
-   |Imagen|**Windows Server 2022 Datacenter: Azure Edition, x64 Gen2**|
-   |Size|**Estándar D2s v3**|
+   |Imagen|**Windows Server 2022 Datacenter: Azure Edition, x64 Gen2**|
+   |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
    |Contraseña|**Cree una contraseña y guárdela para poder consultarla más adelante en laboratorios posteriores.**|
    |Confirmar contraseña|**Vuelva a escribir la contraseña**.|
@@ -222,7 +222,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
 
 8. Haga clic en **Siguiente: Administración >** y haga clic en **Siguiente: Supervisión >**. En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la configuración siguiente:
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Diagnósticos de arranque|**Enabled with managed storage account (recommended)** (Habilitado con la cuenta de almacenamiento administrada [recomendado])|
 
@@ -232,7 +232,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor web.
 
 En esta tarea, creará una máquina virtual para usarla como servidor de administración.
 
-1. En Azure Portal, vuelva a la hoja **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**.
+1. En Azure Portal, vuelva a la hoja **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**.
 
 2. En la pestaña **Aspectos básicos** de la hoja **Crear una máquina virtual**, especifique las siguientes opciones de configuración (deje las demás con los valores predeterminados):
 
@@ -241,13 +241,13 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|**AZ500LAB07**|
    |Nombre de la máquina virtual|**myVMMgmt**|
-   |Region|(EE. UU.) Este de EE. UU.|
-   |Imagen|**Windows Server 2022 Datacenter: Azure Edition, x64 Gen2**|
-   |Size|**Estándar D2s v3**|
+   |Region|(EE. UU.) Este de EE. UU.|
+   |Imagen|**Windows Server 2022 Datacenter: Azure Edition, x64 Gen2**|
+   |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
-   |Contraseña|**Use su contraseña personal creada en Laboratorio 02 > Ejercicio 2 > Tarea 1 > Paso 3.**|
+   |Contraseña|**Use su contraseña personal creada en Laboratorio 02 > Ejercicio 2 > Tarea 1 > Paso 3.**|
    |Puertos de entrada públicos|**None**|
-   |Ya tiene una licencia de Windows Server.|**No**|
+   |Ya tiene una licencia de Windows Server.|**No**|
 
     >**Nota**: Para los puertos de entrada públicos, nos basaremos en el grupo de seguridad de red creado previamente. 
 
@@ -259,7 +259,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
 
 6. Haga clic en **Siguiente: Administración >** y haga clic en **Siguiente: Supervisión >**. En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la configuración siguiente:
 
-   |Configuración|Value|
+   |Configuración|Valor|
    |---|---|
    |Diagnósticos de arranque|**Enabled with managed storage account (recommended)** (Habilitado con la cuenta de almacenamiento administrada [recomendado])|
 
