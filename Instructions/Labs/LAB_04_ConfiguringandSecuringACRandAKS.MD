@@ -4,7 +4,7 @@ lab:
   module: 'Module 01 - Secure compute, storage, and databases'
 ---
 
-# Laboratorio 04: Configuración y protección de ACR y AKS
+# Laboratorio 04: Configuración y protección de ACR y AKS
 # Manual de laboratorio para alumnos
 
 ## Escenario del laboratorio
@@ -16,7 +16,7 @@ Se le ha pedido que implemente una prueba de concepto con Azure Container Regist
 - Configuración de una instancia de Azure Kubernetes Service.
 - Protección de aplicaciones de contenedor y acceso a estas tanto de forma interna como externa. 
 
-> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 ## Objetivos del laboratorio
 
@@ -37,13 +37,13 @@ En este laboratorio completará el ejercicio siguiente:
 
 ### Ejercicio 1: Configuración y protección de ACR y AKS
 
-### Tiempo estimado: 45 minutos
+### Tiempo estimado: 45 minutos
 
-> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Crear una instancia de Azure Container Registry
+- Tarea 1: Crear una instancia de Azure Container Registry
 - Tarea 2: Crear un Dockerfile, compilar un contenedor e insertarlo en Azure Container Registry
 - Tarea 3: Crear un clúster de Azure Kubernetes Service
 - Tarea 4: Conceder permisos de clúster de AKS para acceder a ACR
@@ -52,7 +52,7 @@ En este ejercicio completará las tareas siguientes:
 - Tarea 7: Implementar un servicio interno en AKS
 - Tarea 8: Comprobar que puede acceder a un servicio hospedado en AKS interno
 
-#### Tarea 1: Crear una instancia de Azure Container Registry
+#### Tarea 1: Crear una instancia de Azure Container Registry
 
 En esta tarea, creará un grupo de recursos para el laboratorio en Azure Container Registry.
 
@@ -110,7 +110,7 @@ En esta tarea, creará un Dockerfile, compilará una imagen a partir del Dockerf
     az acr build --resource-group AZ500LAB09 --image sample/nginx:v1 --registry $ACRNAME --file Dockerfile .
     ```
 
-    >**Nota**: Espere a que el comando se complete correctamente. Esto puede tardar unos 2 minutos.
+    >**Nota**: Espere a que el comando se complete correctamente. Esto puede tardar unos 2 minutos.
 
 3. Cierre el panel de Cloud Shell.
 
@@ -130,7 +130,7 @@ En esta tarea, creará un Dockerfile, compilará una imagen a partir del Dockerf
 
 En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos implementados. 
 
-1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Servicios de Kubernetes** y presione la tecla **Entrar**.
+1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Servicios de Kubernetes** y presione la tecla **Entrar**.
 
 2. En el panel **Servicios de Kubernetes**, haga clic en **+ Crear** y, en el menú desplegable, haga clic en **+ Crear clúster de Kubernetes**.
 
@@ -141,7 +141,7 @@ En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos 
     |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
     |Resource group|**AZ500LAB09**|
     |Nombre del clúster de Kubernetes|**MyKubernetesCluster**|
-    |Region|**(EE. UU.) Este de EE. UU.**|
+    |Region|**(EE. UU.) Este de EE. UU.**|
     |Zonas de disponibilidad |**None**|
     |Método de escala|**Manual**|
     |Recuento de nodos|**1**|
@@ -171,7 +171,7 @@ En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos 
 
     >**Nota**: Espere a que la implementación se complete. Esto puede tardar unos 10 minutos.
 
-9. Cuando se complete la implementación, en Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Grupos de recursos** y presione la tecla **Entrar**.
+9. Cuando se complete la implementación, en Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Grupos de recursos** y presione la tecla **Entrar**.
 
 10. En la hoja **Grupos de recursos**, en la lista de grupos de recursos, observe el nuevo grupo de recursos denominado **MC_AZ500LAB09_MyKubernetesCluster_eastus**, que contiene los componentes de los nodos de AKS. Revise los recursos de este grupo de recursos. 
     

@@ -4,29 +4,29 @@ lab:
   module: Module 01 - Implement and manage enforcement of cloud governance policies
 ---
 
-# Laboratorio 07: Key Vault (implementación de datos seguros mediante la configuración de Always Encrypted)
+# Laboratorio 07: Key Vault (implementación de datos seguros mediante la configuración de Always Encrypted)
 
 # Manual de laboratorio para alumnos
 
 ## Escenario del laboratorio
 
-Se le ha pedido que cree una aplicación de prueba de concepto que use la compatibilidad de Azure SQL Database con la funcionalidad Always Encrypted. Todos los secretos y claves usados en este escenario deben almacenarse en Key Vault. La aplicación debe registrarse en Microsoft Entra ID para mejorar su posición de seguridad. Para lograr estos objetivos, la prueba de concepto debe incluir:
+Se le ha pedido que cree una aplicación de prueba de concepto que use la compatibilidad de Azure SQL Database con la funcionalidad Always Encrypted. Todos los secretos y claves usados en este escenario deben almacenarse en Key Vault. La aplicación debe registrarse en Microsoft Entra ID para mejorar su posición de seguridad. Para lograr estos objetivos, la prueba de concepto debe incluir:
 
 - Creación de un almacén Azure Key Vault y almacenamiento de claves y secretos en el almacén.
-- Creación de una base de datos SQL Database y cifrado del contenido de las columnas de las tablas de la base de datos mediante Always Encrypted.
+- Creación de una base de datos SQL Database y cifrado del contenido de las columnas de las tablas de la base de datos mediante Always Encrypted.
 
->**Nota**: Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+>**Nota**: Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
-Para mantener el centro de atención en los aspectos de seguridad de Azure relacionados con la creación de esta prueba de concepto, comenzará desde una implementación automatizada de plantillas de ARM, configurará una máquina virtual con Visual Studio 2019 y SQL Server Management Studio 19.
+Para mantener el centro de atención en los aspectos de seguridad de Azure relacionados con la creación de esta prueba de concepto, comenzará desde una implementación automatizada de plantillas de ARM, configurará una máquina virtual con Visual Studio 2019 y SQL Server Management Studio 19.
 
 ## Objetivos del laboratorio
 
 En este laboratorio completará los ejercicios siguientes:
 
-- Ejercicio 1: Implementación de la infraestructura base desde una plantilla de ARM
-- Ejercicio 2: Configuración del recurso de Key Vault con una clave y un secreto
-- Ejercicio 3: Configuración de una base de datos de Azure SQL y una aplicación controlada por datos
-- Ejercicio 4: Demostración del uso de Azure Key Vault para cifrar la base de datos de Azure SQL
+- Ejercicio 1: Implementación de la infraestructura base desde una plantilla de ARM
+- Ejercicio 2: Configuración del recurso de Key Vault con una clave y un secreto
+- Ejercicio 3: Configuración de una base de datos de Azure SQL y una aplicación controlada por datos
+- Ejercicio 4: Demostración del uso de Azure Key Vault para cifrar la base de datos de Azure SQL
 
 ## Diagrama de Key Vault
 
@@ -40,23 +40,23 @@ En este laboratorio completará los ejercicios siguientes:
 
 - **\\Allfiles\\Labs\\10\\program.cs**
 
-### Estimación del tiempo total de laboratorio: 60 minutos
+### Estimación del tiempo total de laboratorio: 60 minutos
 
-### Ejercicio 1: Implementación de la infraestructura base desde una plantilla de ARM
+### Ejercicio 1: Implementación de la infraestructura base desde una plantilla de ARM
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Implementación de una máquina virtual de Azure y una base de datos de Azure SQL
+- Tarea 1: Implementación de una máquina virtual de Azure y una base de datos de Azure SQL
 
-#### Tarea 1: Implementación de una máquina virtual de Azure y una base de datos de Azure SQL
+#### Tarea 1: Implementación de una máquina virtual de Azure y una base de datos de Azure SQL
 
-En esta tarea, implementará una máquina virtual de Azure, que instalará automáticamente Visual Studio 2019 y SQL Server Management Studio 19 como parte de la implementación. 
+En esta tarea, implementará una máquina virtual de Azure, que instalará automáticamente Visual Studio 2019 y SQL Server Management Studio 19 como parte de la implementación. 
 
 1. Inicie sesión en Azure Portal **`https://portal.azure.com/`** .
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Implementar una plantilla personalizada** y presione la tecla **Entrar**.
+2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Implementar una plantilla personalizada** y presione la tecla **Entrar**.
 
 3. En el panel **Implementación personalizada**, haga clic en la opción **Cree su propia plantilla en el editor**.
 
@@ -83,19 +83,19 @@ En esta tarea, implementará una máquina virtual de Azure, que instalará autom
 
     >**Nota**: Esto inicia la implementación de la máquina virtual de Azure y Azure SQL Database necesarias para este laboratorio. 
 
-    >**Nota**: No espere a que se complete la implementación de la plantilla de ARM; continúe con el ejercicio siguiente. La implementación puede tardar entre **20 y 25 minutos**. 
+    >**Nota**: No espere a que se complete la implementación de la plantilla de ARM; continúe con el ejercicio siguiente. La implementación puede tardar entre **20 y 25 minutos**. 
 
-### Ejercicio 2: Configuración del recurso de Key Vault con una clave y un secreto
+### Ejercicio 2: Configuración del recurso de Key Vault con una clave y un secreto
 
->**Nota**: Para todos los recursos de este laboratorio, se usa la región **Este (EE. UU.)** . Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+>**Nota**: Para todos los recursos de este laboratorio, se usa la región **Este (EE. UU.)** . Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Crear y configurar un almacén de claves
-- Tarea 2: Agregar una clave al almacén de claves
-- Tarea 3: Agregar un secreto al almacén de claves
+- Tarea 1: Crear y configurar un almacén de claves
+- Tarea 2: Agregar una clave al almacén de claves
+- Tarea 3: Agregar un secreto al almacén de claves
 
-#### Tarea 1: Crear y configurar un almacén de claves
+#### Tarea 1: Crear y configurar un almacén de claves
 
 En esta tarea, creará un recurso de Azure Key Vault. También configurará los permisos para Azure Key Vault.
 
@@ -103,7 +103,7 @@ En esta tarea, creará un recurso de Azure Key Vault. También configurará los 
 
 2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
-3. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para crear un Azure Key Vault en el grupo de recursos **AZ500LAB10**. (Si eligió otro nombre para el grupo de recursos de este laboratorio en la tarea 1, use ese nombre también para esta tarea). Los nombres del Key Vault deben ser únicos. Recuerde el nombre que ha elegido. Lo necesitará a lo largo de este laboratorio.  
+3. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para crear un Azure Key Vault en el grupo de recursos **AZ500LAB10**. (Si eligió otro nombre para el grupo de recursos de este laboratorio en la tarea 1, use ese nombre también para esta tarea). Los nombres del Key Vault deben ser únicos. Recuerde el nombre que ha elegido. Lo necesitará a lo largo de este laboratorio.  
 
     ```powershell
     $kvName = 'az500kv' + $(Get-Random)
@@ -117,7 +117,7 @@ En esta tarea, creará un recurso de Azure Key Vault. También configurará los 
 
 4. Cierre el panel de Cloud Shell. 
 
-5. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
+5. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
 
 6. En el panel **Grupos de recursos**, en la lista del grupos de recursos, haga clic en la entrada **AZ500LAB10** (o el otro nombre que eligió anteriormente para el grupo de recursos).
 
@@ -130,17 +130,17 @@ En esta tarea, creará un recurso de Azure Key Vault. También configurará los 
     |Configuración|Value|
     |----|----|
     |Configurar a partir de una plantilla (opcional)|**Administración de claves, secretos y certificados**|
-    |Permisos de claves|haga clic en **Seleccionar todo**, lo que da como resultado un total de **9 permisos seleccionados**|
-    |Permisos de clave y operaciones criptográficas|haga clic en **Firmar**, lo que da como resultado un total de **1 permiso seleccionado**|
-    |Permisos de secretos|haga clic en **Seleccionar todo**, lo que da como resultado un total de **7 permisos seleccionados**|
-    |Permisos de certificación|haga clic en **Seleccionar todo**, lo que da como resultado un total de **15 permisos seleccionados**|
+    |Permisos de claves|haga clic en **Seleccionar todo**, lo que da como resultado un total de **9 permisos seleccionados**|
+    |Permisos de clave y operaciones criptográficas|haga clic en **Firmar**, lo que da como resultado un total de **1 permiso seleccionado**|
+    |Permisos de secretos|haga clic en **Seleccionar todo**, lo que da como resultado un total de **7 permisos seleccionados**|
+    |Permisos de certificación|haga clic en **Seleccionar todo**, lo que da como resultado un total de **15 permisos seleccionados**|
     |Selección de la entidad de seguridad|haga clic en **Ninguno seleccionado** en la hoja **Entidad de seguridad**, seleccione la cuenta de usuario y haga clic en **Siguiente**.|
     |Aplicación (opcional)|Haga clic en **Siguiente**|
     |Revisar y crear|haga clic en **Crear**.|
     
     >**Nota**: La operación anterior Revisar y crear vuelve a la página Directivas de acceso que enumera Aplicación, Correo electrónico, Permisos de clave, Permisos de secreto y Permisos de certificado.
       
-#### Tarea 2: Adición de una clave a Key Vault
+#### Tarea 2: Adición de una clave a Key Vault
 
 En esta tarea, agregará una clave al Key Vault y verá información sobre la clave. 
 
@@ -181,7 +181,7 @@ En esta tarea, agregará una clave al Key Vault y verá información sobre la cl
     >**Nota**: Puede hacer referencia a cualquier clave mediante el identificador de la clave. Para obtener la versión más reciente, haga referencia a `https://<key_vault_name>.vault.azure.net/keys/MyLabKey` u obtenga la versión específica con `https://<key_vault_name>.vault.azure.net/keys/MyLabKey/<key_version>`
 
 
-#### Tarea 3: Adición de un secreto a Key Vault
+#### Tarea 3: Adición de un secreto a Key Vault
 
 1. Vuelva al panel de Cloud Shell.
 
@@ -216,24 +216,24 @@ En esta tarea, agregará una clave al Key Vault y verá información sobre la cl
     >**Nota**: Para obtener la versión más reciente de un secreto, haga referencia a `https://<key_vault_name>.vault.azure.net/secrets/<secret_name>` u obtenga una versión específica haciendo referencia a `https://<key_vault_name>.vault.azure.net/secrets/<secret_name>/<secret_version>`
 
 
-### Ejercicio 3: Configuración de una base de datos de Azure SQL y una aplicación controlada por datos
+### Ejercicio 3: Configuración de una base de datos de Azure SQL y una aplicación controlada por datos
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Habilitación de una aplicación cliente para obtener acceso al servicio de Azure SQL Database.
-- Tarea 2: Creación de una directiva que permita a la aplicación acceder al Key Vault.
-- Tarea 3: Recuperación de la cadena de conexión ADO.NET de Azure SQL Database 
-- Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
-- Tarea 5: Creación de una tabla en SQL Database y selección de columnas de datos para el cifrado
+- Tarea 1: Habilitación de una aplicación cliente para obtener acceso al servicio de Azure SQL Database.
+- Tarea 2: Creación de una directiva que permita a la aplicación acceder al Key Vault.
+- Tarea 3: Recuperación de la cadena de conexión ADO.NET de Azure SQL Database 
+- Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
+- Tarea 5: Creación de una tabla en SQL Database y selección de columnas de datos para el cifrado
 
 
-#### Tarea 1: Habilitación de una aplicación cliente para obtener acceso al servicio de Azure SQL Database. 
+#### Tarea 1: Habilitación de una aplicación cliente para obtener acceso al servicio de Azure SQL Database. 
 
 En esta tarea, habilitará una aplicación cliente para obtener acceso al servicio de Azure SQL Database. Para ello, debe configurar la autenticación necesaria y adquirir el identificador y el secreto de aplicación necesarios para autenticar la aplicación.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Registros de la aplicación** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Registros de la aplicación** y presione la tecla **Entrar**.
 
-2. Abra el panel **Registros de la aplicación** y haga clic en **+ Nuevo registro**. 
+2. Abra el panel **Registros de la aplicación** y haga clic en **+ Nuevo registro**. 
 
 3. En el panel **Registrar una aplicación**, configure las opciones siguientes (deje todas las demás con los valores predeterminados):
 
@@ -246,13 +246,13 @@ En esta tarea, habilitará una aplicación cliente para obtener acceso al servic
 
     >**Nota**: Una vez completado el registro, el explorador le redirigirá automáticamente al panel **sqlApp**. 
 
-5. En el panel **sqlApp**, identifique el valor de **Id. de aplicación (cliente)** . 
+5. En el panel **sqlApp**, identifique el valor de **Id. de aplicación (cliente)** . 
 
     >**Nota**: Registre este valor. Lo necesitará en la próxima tarea.
 
 6. En el panel **sqlApp**, en la sección **Administrar**, haga clic en **Certificados y secretos**.
 
-7. En el panel **sqlApp | Certificados y secretos**, en la sección **Secretos de cliente**, haga clic en **+ Nuevo secreto de cliente**
+7. En el panel **sqlApp | Certificados y secretos**, en la sección **Secretos de cliente**, haga clic en **+ Nuevo secreto de cliente**
 
 8. En el panel **Agregar un secreto de cliente**, especifique la siguiente configuración:
 
@@ -270,7 +270,7 @@ En esta tarea, habilitará una aplicación cliente para obtener acceso al servic
     >**Nota**: Copie el valor *antes* de salir del panel. Una vez hecho esto, ya no es posible recuperar su valor de texto sin formato.
 
 
-#### Tarea 2: Creación de una directiva que permita a la aplicación acceder al Key Vault.
+#### Tarea 2: Creación de una directiva que permita a la aplicación acceder al Key Vault.
 
 En esta tarea, concederá a la aplicación recién registrada permisos para acceder a los secretos almacenados en Key Vault.
 
@@ -278,7 +278,7 @@ En esta tarea, concederá a la aplicación recién registrada permisos para acce
 
 2. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
-3. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para crear una variable que almacene el **id. de aplicación (cliente)** que registró en la tarea anterior (reemplace el marcador de posición `<Azure_AD_Application_ID>` por el valor del **id. de aplicación (cliente)** ):
+3. En la sesión de PowerShell del panel de Cloud Shell, ejecute lo siguiente para crear una variable que almacene el **id. de aplicación (cliente)** que registró en la tarea anterior (reemplace el marcador de posición `<Azure_AD_Application_ID>` por el valor del **id. de aplicación (cliente)** ):
    
     ```powershell
     $applicationId = '<Azure_AD_Application_ID>'
@@ -299,15 +299,15 @@ En esta tarea, concederá a la aplicación recién registrada permisos para acce
 6. Cierre el panel de Cloud Shell. 
 
 
-#### Tarea 3: Recuperación de la cadena de conexión ADO.NET de Azure SQL Database 
+#### Tarea 3: Recuperación de la cadena de conexión ADO.NET de Azure SQL Database 
 
-La implementación de la plantilla de ARM del ejercicio 1 aprovisionó una instancia de Azure SQL Server y una base de datos de Azure SQL llamada **medicina**. Actualizará el recurso de base de datos vacío con una nueva estructura de tabla y seleccionará columnas de datos para el cifrado
+La implementación de la plantilla de ARM del ejercicio 1 aprovisionó una instancia de Azure SQL Server y una base de datos de Azure SQL llamada **medicina**. Actualizará el recurso de base de datos vacío con una nueva estructura de tabla y seleccionará columnas de datos para el cifrado
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Bases de datos SQL** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Bases de datos SQL** y presione la tecla **Entrar**.
 
 2. En la lista de bases de datos SQL, haga clic en la entrada **medicina(<randomsqlservername>)** .
 
-    >**Nota**: Si no se encuentra la base de datos, probablemente significa que la implementación que inició en el ejercicio 1 aún no se ha completado. Para validarlo, puede ir al grupo de recursos de Azure "AZ500LAB10" (o el nombre que eligió) y seleccionar **Implementaciones** en el panel Configuración.  
+    >**Nota**: Si no se encuentra la base de datos, probablemente significa que la implementación que inició en el ejercicio 1 aún no se ha completado. Para validarlo, puede ir al grupo de recursos de Azure "AZ500LAB10" (o el nombre que eligió) y seleccionar **Implementaciones** en el panel Configuración.  
 
 3. En el panel base de datos SQL, en la sección **Configuración**, haga clic en **Cadenas de conexión**. 
 
@@ -315,19 +315,19 @@ La implementación de la plantilla de ARM del ejercicio 1 aprovisionó una inst
    
 4. Registre la cadena de conexión **ADO.NET (autenticación de SQL**). Lo necesitará más adelante.
 
-    >**Nota**: Al usar la cadena de conexión, asegúrese de reemplazar el marcador de posición `{your_password}` por la contraseña que configuró con la implementación en el ejercicio 1.
+    >**Nota**: Al usar la cadena de conexión, asegúrese de reemplazar el marcador de posición `{your_password}` por la contraseña que configuró con la implementación en el ejercicio 1.
 
-#### Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
+#### Tarea 4: Inicio de sesión en la máquina virtual de Azure Visual Studio 2019 y SQL Management Studio 19
 
-En esta tarea, iniciará sesión en la máquina virtual de Azure cuya implementación inició en el ejercicio 1. Esta máquina virtual de Azure hospeda Visual Studio 2019 y SQL Server Management Studio 19.
+En esta tarea, iniciará sesión en la máquina virtual de Azure cuya implementación inició en el ejercicio 1. Esta máquina virtual de Azure hospeda Visual Studio 2019 y SQL Server Management Studio 19.
 
     >**Note**: Before you proceed with this task, ensure that the deployment you initiated in the first exercise has completed successfully. You can validate this by navigating to the blade of the Azure resource group "Az500Lab10" (or other name you chose) and selecting **Deployments** from the Settings pane.  
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **máquinas virtuales** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **máquinas virtuales** y presione la tecla **Entrar**.
 
 2. En la lista de máquinas virtuales que se muestra, seleccione la entrada **az500-10-vm1**. En el panel **az500-10-vm1**, en el panel **Essentials**, tome nota de la **dirección IP pública**. Utilizará esta dirección más adelante. 
 
-#### Tarea 5: Creación de una tabla en SQL Database y selección de columnas de datos para el cifrado
+#### Tarea 5: Creación de una tabla en SQL Database y selección de columnas de datos para el cifrado
 
 En esta tarea, se conectará a la base de datos SQL con SQL Server Management Studio y creará una tabla. A continuación, cifrará dos columnas de datos mediante una clave autogenerada de Azure Key Vault. 
 
@@ -360,7 +360,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
 
     >**Nota**: Los pasos restantes de este laboratorio se realizan dentro de la sesión de Escritorio remoto a la máquina virtual de Azure **az500-10-vm1**.
 
-6. Instale [SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?preserve-view=true&view=sql-server-2017) en **az500-10-vm1.** Máquina virtual de Azure.
+6. Instale [SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?preserve-view=true&view=sql-server-2017) en **az500-10-vm1.** Máquina virtual de Azure.
  
 7. Abra **SQL Server Management Studio**.
 
@@ -419,19 +419,19 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
     >**Nota**: El subnodo **Claves de Always Encrypted** contiene las subcarpetas **Claves maestras de columna** y **Claves de cifrado de columna**.
 
 
-### Ejercicio 4: Demostración del uso de Azure Key Vault para cifrar la base de datos de Azure SQL
+### Ejercicio 4: Demostración del uso de Azure Key Vault para cifrar la base de datos de Azure SQL
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Ejecución de una aplicación controlada por datos para demostrar el uso de Azure Key Vault para cifrar la base de datos de Azure SQL
+- Tarea 1: Ejecución de una aplicación controlada por datos para demostrar el uso de Azure Key Vault para cifrar la base de datos de Azure SQL
 
-#### Tarea 1: Ejecución de una aplicación controlada por datos para demostrar el uso de Azure Key Vault para cifrar la base de datos de Azure SQL
+#### Tarea 1: Ejecución de una aplicación controlada por datos para demostrar el uso de Azure Key Vault para cifrar la base de datos de Azure SQL
 
 Creará una aplicación de consola mediante Visual Studio para cargar datos en las columnas cifradas y, a continuación, acceder a los datos de forma segura mediante una cadena de conexión que accede a la clave en el Key Vault.
 
 1. Desde la sesión RDP a **az500-10-vm1**, inicie **Visual Studio 2019** desde el **menú Inicio**.
 
-2. Cambie a la ventana que muestra el mensaje de bienvenida de Visual Studio 2019, haga clic en el botón **Iniciar sesión** y, cuando se le solicite, proporcione las credenciales que usó para autenticarse en la suscripción de Azure que usa en este laboratorio.
+2. Cambie a la ventana que muestra el mensaje de bienvenida de Visual Studio 2019, haga clic en el botón **Iniciar sesión** y, cuando se le solicite, proporcione las credenciales que usó para autenticarse en la suscripción de Azure que usa en este laboratorio.
 
 3. En la página **Comenzar**, haga clic en **Crear un proyecto nuevo**. 
 
@@ -463,15 +463,15 @@ Creará una aplicación de consola mediante Visual Studio para cargar datos en l
 
 10. Vuelva a la sesión de RDP y, en la consola de Visual Studio, en la ventana **Explorador de soluciones**, haga clic en **Program.cs** y reemplace su contenido por el código que copió en el Portapapeles.
 
-11. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 15, reemplace el marcador de posición `<connection string noted earlier>` por la cadena de conexión **ADO.NET** de la base de datos de Azure SQL que registró anteriormente en el laboratorio. En la cadena de conexión, reemplace el marcador de posición `{your_password}` por la contraseña que especificó en la implementación en el ejercicio 1. Si guardó la cadena en el equipo del laboratorio, es posible que tenga que salir de la sesión de RDP para copiar la cadena de ADO y, a continuación, volver a la máquina virtual de Azure para pegarla.
+11. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 15, reemplace el marcador de posición `<connection string noted earlier>` por la cadena de conexión **ADO.NET** de la base de datos de Azure SQL que registró anteriormente en el laboratorio. En la cadena de conexión, reemplace el marcador de posición `{your_password}` por la contraseña que especificó en la implementación en el ejercicio 1. Si guardó la cadena en el equipo del laboratorio, es posible que tenga que salir de la sesión de RDP para copiar la cadena de ADO y, a continuación, volver a la máquina virtual de Azure para pegarla.
 
-12. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 16, reemplace el marcador de posición `<client id noted earlier>` por el valor del **id. de aplicación (cliente)** de la aplicación registrada que registró anteriormente en el laboratorio. 
+12. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 16, reemplace el marcador de posición `<client id noted earlier>` por el valor del **id. de aplicación (cliente)** de la aplicación registrada que registró anteriormente en el laboratorio. 
 
-13. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 17, reemplace el marcador de posición `<key value noted earlier>` por el valor de **Key1** de la aplicación registrada que registró anteriormente en el laboratorio. 
+13. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 17, reemplace el marcador de posición `<key value noted earlier>` por el valor de **Key1** de la aplicación registrada que registró anteriormente en el laboratorio. 
 
 14. En la consola de Visual Studio, haga clic en el botón **Iniciar** para iniciar la compilación de la aplicación de consola e iniciarla.
 
-15. La aplicación iniciará una ventana del símbolo del sistema. Cuando se le solicite una contraseña, escriba la contraseña que especificó en la implementación del ejercicio 1 para conectarse a Azure SQL Database. 
+15. La aplicación iniciará una ventana del símbolo del sistema. Cuando se le solicite una contraseña, escriba la contraseña que especificó en la implementación del ejercicio 1 para conectarse a Azure SQL Database. 
 
 16. Deje la aplicación de consola en ejecución y cambie a la consola de **SQL Management Studio**. 
 

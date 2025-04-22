@@ -96,7 +96,7 @@ En esta tarea, implementará Azure Firewall en la red virtual.
 
 3. En la pestaña **Datos básicos** de la hoja **Crear un firewall**, especifica la configuración siguiente: 
 
-   |Configuración|Valor|
+   |Configuración|Value|
    |---|---|
    |Resource group|**AZ500LAB08**|
    |Nombre|**Test-FW01**|
@@ -134,7 +134,7 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
 
 3. En la hoja **Crear tabla de rutas**,especifique la siguiente configuración:
 
-   |Configuración|Valor|
+   |Configuración|Value|
    |---|---|
    |Resource group|**AZ500LAB08**|
    |Region| **Este de EE. UU.**|
