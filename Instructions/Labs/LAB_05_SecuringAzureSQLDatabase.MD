@@ -4,7 +4,7 @@ lab:
   module: Module 02 - Plan and implement security for Azure SQL Database and Azure SQL Managed Instance
 ---
 
-# Laboratorio 05: Protección de Azure SQL Database
+# Laboratorio 05: Protección de Azure SQL Database
 # Manual de laboratorio para alumnos
 
 ## Escenario del laboratorio
@@ -15,15 +15,15 @@ Se le ha pedido que revise las características de seguridad de una base de dato
 - Capacidad de detectar y clasificar la información de la base de datos en categorías como Confidencial. 
 - Capacidad de auditar el servidor de la base de datos y las consultas de la base de datos y registrar eventos. 
 
-> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 ## Objetivos del laboratorio
 
 En este laboratorio completará el ejercicio siguiente:
 
-- Ejercicio 1: Implementación de características de seguridad en SQL Database
+- Ejercicio 1: Implementación de características de seguridad en SQL Database
 
-## Diagrama de protección de Azure SQL Database
+## Diagrama de protección de Azure SQL Database
 
 ![imagen](https://user-images.githubusercontent.com/91347931/157533836-7250fa58-a109-4882-a55b-d3fa3baf34ab.png)
 
@@ -33,18 +33,18 @@ En este laboratorio completará el ejercicio siguiente:
 
 - **\\Allfiles\\Labs\\11\\azuredeploy.json**
 
-### Ejercicio 1: Implementación de características de seguridad en SQL Database
+### Ejercicio 1: Implementación de características de seguridad en SQL Database
 
-### Tiempo estimado: 30 minutos
+### Tiempo estimado: 30 minutos
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Implementación de Azure SQL Database
-- Tarea 2: Configuración de la protección de datos avanzada
-- Tarea 3: Configuración de la clasificación de datos
-- Tarea 4: Configuración de la auditoría
+- Tarea 1: Implementación de Azure SQL Database
+- Tarea 2: Configuración de la protección de datos avanzada
+- Tarea 3: Configuración de la clasificación de datos
+- Tarea 4: Configuración de la auditoría
 
-#### Tarea 1: Implementación de Azure SQL Database
+#### Tarea 1: Implementación de Azure SQL Database
 
 En esta tarea, usará una plantilla para implementar la infraestructura de laboratorio. 
 
@@ -52,7 +52,7 @@ En esta tarea, usará una plantilla para implementar la infraestructura de labor
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Implementar una plantilla personalizada** y presione la tecla **Entrar**.
+2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Implementar una plantilla personalizada** y presione la tecla **Entrar**.
 
 3. En el panel **Implementación personalizada**, haga clic en la opción **Cree su propia plantilla en el editor**.
 
@@ -68,36 +68,36 @@ En esta tarea, usará una plantilla para implementar la infraestructura de labor
    |---|---|
    |Subscription|nombre de la suscripción de Azure que usará en este laboratorio|
    |Resource group|haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB11**|
-   |Location|**(EE. UU.) Este de EE. UU.**|
+   |Location|**(EE. UU.) Este de EE. UU.**|
 
 7. Haga clic en **Revisar + crear** y, después, en **Crear**.
 
     >**Nota**: Espere a que la implementación se complete. 
 
-#### Tarea 2: Configuración de la protección de datos avanzada
+#### Tarea 2: Configuración de la protección de datos avanzada
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
+1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de recursos** y presione la tecla **Entrar**.
 
 2. En el panel **Grupos de recursos**, en la lista de grupos de recursos, haga clic en la entrada **AZ500LAB11**.
 
 3. En el panel **AZ500LAB11**, haga clic en la entrada que representa el SQL Server recién creado.
 
-4. En el panel Servidor SQL, en la sección **Seguridad**, haga clic en **Microsoft Defender for Cloud** y seleccione **Habilitar Microsoft Defender for SQL**.
+4. En el panel Servidor SQL, en la sección **Seguridad**, haga clic en **Microsoft Defender for Cloud** y seleccione **Habilitar Microsoft Defender for SQL**.
 
-      >**Nota**: Espere a que la notificación indique que Microsoft Defender for SQL se ha habilitado correctamente.
+      >**Nota**: Espere a que la notificación indique que Microsoft Defender for SQL se ha habilitado correctamente.
 
-5. En el panel SQL Server, en la sección **Seguridad** de la página **Microsoft Defender for Cloud**, en el parámetro **Microsoft Defender for SQL: habilitado en el nivel de suscripción (configurar)** , haga clic en **(configurar)** .  
+5. En el panel SQL Server, en la sección **Seguridad** de la página **Microsoft Defender for Cloud**, en el parámetro **Microsoft Defender for SQL: habilitado en el nivel de suscripción (configurar)** , haga clic en **(configurar)** .  
 
       >**Nota**: Actualice el explorador si no se muestra **Configurar**.
     
 6. En el panel **Configuración del servidor**, revise la información sobre los precios y el período de prueba, **CONFIGURACIÓN DE LA EVALUACIÓN DE VULNERABILIDADES** y **CONFIGURACIÓN DE ADVANCED THREAT PROTECTION**.
 
-7. Vuelva al panel **Microsoft Defender for Cloud** y revise **Recomendaciones** y **Alertas de seguridad**.
+7. Vuelva al panel **Microsoft Defender for Cloud** y revise **Recomendaciones** y **Alertas de seguridad**.
 
-      >**Nota**: Las recomendaciones pueden tardar entre 10 y 15 minutos en aparecer en el panel **Microsoft Defender for Cloud**. En lugar de esperar, continúe con la siguiente tarea, pero considere la posibilidad de volver a este panel una vez completadas todas las tareas restantes.
+      >**Nota**: Las recomendaciones pueden tardar entre 10 y 15 minutos en aparecer en el panel **Microsoft Defender for Cloud**. En lugar de esperar, continúe con la siguiente tarea, pero considere la posibilidad de volver a este panel una vez completadas todas las tareas restantes.
 
 
-#### Tarea 3: Configuración de la clasificación de datos
+#### Tarea 3: Configuración de la clasificación de datos
 
 En esta tarea, detectará y clasificará información en la base de datos SQL para el cumplimiento de la protección de datos y el RGPD.
 
@@ -111,7 +111,7 @@ En esta tarea, detectará y clasificará información en la base de datos SQL pa
 
     >**Nota**: El motor de clasificación examina la base de datos en busca de columnas que contengan datos potencialmente confidenciales y proporciona una lista de clasificaciones de columna recomendadas.
 
-5. Haga clic en el mensaje de texto **Hemos encontrado 15 columnas con recomendaciones de clasificación** que se muestra en la barra azul en la parte superior del panel.
+5. Haga clic en el mensaje de texto **Hemos encontrado 15 columnas con recomendaciones de clasificación** que se muestra en la barra azul en la parte superior del panel.
 
 6. Revise las columnas enumeradas y la etiqueta de confidencialidad recomendada. 
 
@@ -127,7 +127,7 @@ En esta tarea, detectará y clasificará información en la base de datos SQL pa
 
 9. De nuevo en el panel **Clasificación y detección de datos**, en la pestaña **Información general**, fíjese en que se ha actualizado con la información de clasificación más reciente. 
 
-#### Tarea 4: Configuración de la auditoría 
+#### Tarea 4: Configuración de la auditoría 
 
 En esta tarea, primero configurará la auditoría de nivel de servidor y, a continuación, configurará la auditoría de nivel de base de datos. 
 
@@ -145,7 +145,7 @@ En esta tarea, primero configurará la auditoría de nivel de servidor y, a cont
 
 6. Haga clic en **Cuenta de almacenamiento** y elija **Crear nueva**.
 
-7. En el panel **Crear cuenta de almacenamiento**, en el cuadro **Nombre**, escriba un nombre único global que conste de entre 3 y 24 letras minúsculas y dígitos y haga clic en **Aceptar**. 
+7. En el panel **Crear cuenta de almacenamiento**, en el cuadro **Nombre**, escriba un nombre único global que conste de entre 3 y 24 letras minúsculas y dígitos y haga clic en **Aceptar**. 
 
     >**Nota**: Es posible que tenga que actualizar el explorador para que la cuenta de almacenamiento esté disponible.
 

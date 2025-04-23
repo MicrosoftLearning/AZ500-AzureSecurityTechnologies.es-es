@@ -40,12 +40,12 @@ En este laboratorio completará los ejercicios siguientes:
 
    - Máquinas de Windows
    
-     - Puerto RDP: 3389
+     - Puerto RDP: 3389
      - Acceso máximo permitido: tres horas
      - Direcciones IP de origen permitidas: cualquiera
 
    - Equipos con Linux
-     - Puerto SSH: 22
+     - Puerto SSH: 22
      - Acceso máximo permitido: tres horas
      - Direcciones IP de origen permitidas: cualquiera
    

@@ -4,7 +4,7 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
-# Laboratorio 01: Control de acceso basado en roles
+# Laboratorio 01: Control de acceso basado en roles
 # Manual de laboratorio para alumnos
 
 ## Escenario del laboratorio
@@ -16,16 +16,16 @@ Se le ha pedido que cree una prueba de concepto que muestre cómo se crean los u
 - Cree un grupo de consola de servicio que contenga la cuenta de usuario de Dylan Williams como miembro.
 - Asigne el rol de colaborador de la máquina virtual al grupo Consola de servicio. 
 
-> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
+> Para todos los recursos de este laboratorio, se usa la región **Este de EE. UU.** Compruebe con el instructor que esta es la región que se va a usar para la clase. 
 
 ## Objetivos del laboratorio
 
 En este laboratorio completará los ejercicios siguientes:
 
-- Ejercicio 1: Creación del grupo Administradores sénior con la cuenta de usuario de Joseph Price como miembro (Azure Portal). 
-- Ejercicio 2: Creación del grupo Administradores junior con la cuenta de usuario de Isabel García como miembro (PowerShell).
-- Ejercicio 3: Creación del grupo Consola de servicio con el usuario Dylan Williams como miembro (CLI de Azure). 
-- Ejercicio 4: Asignación del rol de colaborador de la máquina virtual al grupo Consola de servicio.
+- Ejercicio 1: Creación del grupo Administradores sénior con la cuenta de usuario de Joseph Price como miembro (Azure Portal). 
+- Ejercicio 2: Creación del grupo Administradores junior con la cuenta de usuario de Isabel García como miembro (PowerShell).
+- Ejercicio 3: Creación del grupo Consola de servicio con el usuario Dylan Williams como miembro (CLI de Azure). 
+- Ejercicio 4: Asignación del rol de colaborador de la máquina virtual al grupo Consola de servicio.
 
 ## Diagrama de arquitectura de control de acceso basado en rol
 
@@ -33,16 +33,16 @@ En este laboratorio completará los ejercicios siguientes:
 
 ## Instrucciones
 
-### Ejercicio 1: Creación del grupo Administradores sénior con la cuenta de usuario de Joseph Price como miembro. 
+### Ejercicio 1: Creación del grupo Administradores sénior con la cuenta de usuario de Joseph Price como miembro. 
 
-#### Tiempo estimado: 10 minutos
+#### Tiempo estimado: 10 minutos
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Uso de Azure Portal para crear una cuenta de usuario para Joseph Price.
-- Tarea 2: Uso de Azure Portal para crear un grupo de administradores sénior y agregar la cuenta de usuario de Joseph Price al grupo.
+- Tarea 1: Uso de Azure Portal para crear una cuenta de usuario para Joseph Price.
+- Tarea 2: Uso de Azure Portal para crear un grupo de administradores sénior y agregar la cuenta de usuario de Joseph Price al grupo.
 
-#### Tarea 1: Uso de Azure Portal para crear una cuenta de usuario para Joseph Price 
+#### Tarea 1: Uso de Azure Portal para crear una cuenta de usuario para Joseph Price 
 
 En esta tarea, creará una cuenta de usuario para Joseph Price. 
 
@@ -50,9 +50,9 @@ En esta tarea, creará una cuenta de usuario para Joseph Price.
 
     >**Nota**: Inicia sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usas para este laboratorio y el rol Administrador global en el inquilino de Microsoft Entra asociado a esa suscripción.
 
-2. En el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de Azure Portal, escriba **Microsoft Entra ID** y presione la tecla **Entrar**.
+2. En el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de Azure Portal, escriba **Microsoft Entra ID** y presione la tecla **Entrar**.
 
-3. En el panel **Introducción** del inquilino de Microsoft Entra ID, en la sección **Administrar**, seleccione **Usuarios** y, a continuación, seleccione **+ Nuevo usuario**.
+3. En el panel **Introducción** del inquilino de Microsoft Entra ID, en la sección **Administrar**, seleccione **Usuarios** y, a continuación, seleccione **+ Nuevo usuario**.
 
 4. En el panel **Nuevo usuario**, asegúrese de que la opción **Crear usuario** está seleccionada y especifique la siguiente configuración:
 
@@ -69,13 +69,13 @@ En esta tarea, creará una cuenta de usuario para Joseph Price.
 
 8. Actualiza la hoja **Usuarios \| Todos los usuarios** para verificar que el nuevo usuario se crease en el inquilino de Microsoft Entra.
 
-#### Tarea 2: Uso de Azure Portal para crear un grupo de administradores sénior y agregar la cuenta de usuario de Joseph Price al grupo.
+#### Tarea 2: Uso de Azure Portal para crear un grupo de administradores sénior y agregar la cuenta de usuario de Joseph Price al grupo.
 
 En esta tarea, creará el grupo *Administradores sénior*, agregará la cuenta de usuario de Joseph Price al grupo y lo configurará como propietario del grupo.
 
-1. En Azure Portal, vuelva al panel que muestra el inquilino de Microsoft Entra ID. 
+1. En Azure Portal, vuelva al panel que muestra el inquilino de Microsoft Entra ID. 
 
-2. En la sección **Administrar**, haga clic en **Grupos** y, a continuación, seleccione **+ Nuevo grupo**.
+2. En la sección **Administrar**, haga clic en **Grupos** y, a continuación, seleccione **+ Nuevo grupo**.
  
 3. En el panel **Nuevo grupo**, configure las opciones siguientes (deje las demás con los valores predeterminados):
 
@@ -93,16 +93,16 @@ En esta tarea, creará el grupo *Administradores sénior*, agregará la cuenta d
 
 > Resultado: has usado Azure Portal para crear un usuario y un grupo, y has asignado el usuario al grupo. 
 
-### Ejercicio 2: Creación de un grupo de administradores junior que contenga la cuenta de usuario de Isabel García como miembro.
+### Ejercicio 2: Creación de un grupo de administradores junior que contenga la cuenta de usuario de Isabel García como miembro.
 
-#### Tiempo estimado: 10 minutos
+#### Tiempo estimado: 10 minutos
 
 En este ejercicio completarás las tareas siguientes:
 
-- Tarea 1: Uso de PowerShell para crear una cuenta de usuario para Isabel García.
-- Tarea 2: Uso de PowerShell para crear el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo. 
+- Tarea 1: Uso de PowerShell para crear una cuenta de usuario para Isabel García.
+- Tarea 2: Uso de PowerShell para crear el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo. 
 
-#### Tarea 1: Uso de PowerShell para crear una cuenta de usuario para Isabel García.
+#### Tarea 1: Uso de PowerShell para crear una cuenta de usuario para Isabel García.
 
 En esta tarea, crearás una cuenta de usuario para Isabel García mediante PowerShell.
 
@@ -125,7 +125,7 @@ En esta tarea, crearás una cuenta de usuario para Isabel García mediante Power
     $passwordProfile.Password = "Pa55w.rd1234"
     ```
 
-6. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para conectarte a Microsoft Entra ID:
+6. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para conectarte a Microsoft Entra ID:
 
     ```powershell
     Connect-AzureAD
@@ -149,7 +149,7 @@ En esta tarea, crearás una cuenta de usuario para Isabel García mediante Power
     Get-AzureADUser -All $true | Where-Object {$_.UserPrincipalName -like "*43846135@LOD*"} 
     ```
 
-#### Tarea 2: Uso de PowerShell para crear el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo.
+#### Tarea 2: Uso de PowerShell para crear el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo.
 
 En esta tarea, crearás el grupo Administradores junior y agregar la cuenta de usuario de Isabel García al grupo mediante PowerShell.
 
@@ -184,16 +184,16 @@ En esta tarea, crearás el grupo Administradores junior y agregar la cuenta de u
    
 > Resultado: has usado PowerShell para crear un usuario y una cuenta de grupo, y has agregado la cuenta de usuario a la cuenta de grupo. 
 
-### Ejercicio 3: Creación de un grupo de consola de servicio que contenga la cuenta de usuario de Dylan Williams como miembro.
+### Ejercicio 3: Creación de un grupo de consola de servicio que contenga la cuenta de usuario de Dylan Williams como miembro.
 
-#### Tiempo estimado: 10 minutos
+#### Tiempo estimado: 10 minutos
 
 En este ejercicio completarás las tareas siguientes:
 
-- Tarea 1: Uso del CLI de Azure para crear una cuenta de usuario para Dylan Williams.
-- Tarea 2: Uso del CLI de Azure para crear el grupo Consola de servicio y agregar la cuenta de usuario de Dylan al grupo. 
+- Tarea 1: Uso del CLI de Azure para crear una cuenta de usuario para Dylan Williams.
+- Tarea 2: Uso del CLI de Azure para crear el grupo Consola de servicio y agregar la cuenta de usuario de Dylan al grupo. 
 
-#### Tarea 1: Uso del CLI de Azure para crear una cuenta de usuario para Dylan Williams.
+#### Tarea 1: Uso del CLI de Azure para crear una cuenta de usuario para Dylan Williams.
 
 En esta tarea, crearás una cuenta de usuario para Dylan Williams.
 
@@ -217,7 +217,7 @@ En esta tarea, crearás una cuenta de usuario para Dylan Williams.
     az ad user list --output table
     ```
 
-#### Tarea 2: Uso del CLI de Azure para crear el grupo Consola de servicio y agregar la cuenta de usuario de Dylan al grupo. 
+#### Tarea 2: Uso del CLI de Azure para crear el grupo Consola de servicio y agregar la cuenta de usuario de Dylan al grupo. 
 
 En esta tarea, crearás el grupo Consola de servicio y asignarás a Dylan al grupo. 
 
@@ -262,20 +262,20 @@ En esta tarea, crearás el grupo Consola de servicio y asignarás a Dylan al gru
 > Resultado: con el CLI de Azure, has creado un usuario y una cuenta de grupo, y has agregado la cuenta de usuario al grupo. 
 
 
-### Ejercicio 4: Asignación del rol de colaborador de la máquina virtual al grupo Consola de servicio.
+### Ejercicio 4: Asignación del rol de colaborador de la máquina virtual al grupo Consola de servicio.
 
-#### Tiempo estimado: 10 minutos
+#### Tiempo estimado: 10 minutos
 
 En este ejercicio completarás las tareas siguientes:
 
-- Tarea 1: Creación de un grupo de recursos. 
-- Tarea 2: Asignación de permisos de colaborador de la máquina virtual de la consola de servicio al grupo de recursos.  
+- Tarea 1: Creación de un grupo de recursos. 
+- Tarea 2: Asignación de permisos de colaborador de la máquina virtual de la consola de servicio al grupo de recursos.  
 
 #### Tarea 1: Creación de un grupo de recursos
 
-1. En Azure Portal, usa el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escribe **Grupos de recursos** y presiona la tecla **Entrar**.
+1. En Azure Portal, usa el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escribe **Grupos de recursos** y presiona la tecla **Entrar**.
 
-2. En la hoja **Grupos de recursos**, haz clic en **+ Crear** y especifica la siguiente configuración:
+2. En la hoja **Grupos de recursos**, haz clic en **+ Crear** y especifica la siguiente configuración:
 
    |Configuración|Value|
    |---|---|
@@ -290,13 +290,13 @@ En este ejercicio completarás las tareas siguientes:
 4. De nuevo, en la hoja **Grupos de recursos**, actualiza la página y comprueba que el nuevo grupo de recursos aparece en la lista de grupos de recursos.
 
 
-#### Tarea 2: Asignación a la Consola de servicio de los permisos de colaborador de máquina virtual. 
+#### Tarea 2: Asignación a la Consola de servicio de los permisos de colaborador de máquina virtual. 
 
 1. En la hoja **Grupos de recursos**, haz clic en la entrada del grupo de recursos **AZ500LAB01**.
 
 2. En la hoja **AZ500Lab01**, haz clic en **Control de acceso (IAM)** en la parte central.
 
-3. En la hoja **AZ500Lab01 \| Control de acceso (IAM)** , **+ Agregar** y, en el menú desplegable, haz clic en **Agregar asignación de roles**.
+3. En la hoja **AZ500Lab01 \| Control de acceso (IAM)** , **+ Agregar** y, en el menú desplegable, haz clic en **Agregar asignación de roles**.
 
 4. En la hoja **Agregar asignación de roles**, completa cada una de las siguientes opciones de configuración antes de hacer clic en Siguiente:
 

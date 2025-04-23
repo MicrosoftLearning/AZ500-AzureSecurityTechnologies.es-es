@@ -87,7 +87,7 @@ En esta tarea, creará un grupo de seguridad de aplicaciones.
 
 3. En la pestaña **Aspectos básicos** de la hoja **Crear un grupo de seguridad de aplicación**, especifique la siguiente configuración: 
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Resource group|**AZ500LAB07**|
     |Name|**myAsgWebServers**|
@@ -101,7 +101,7 @@ En esta tarea, creará un grupo de seguridad de aplicaciones.
 
 6. En la pestaña **Aspectos básicos** de la hoja **Crear un grupo de seguridad de aplicación**, especifique la siguiente configuración: 
 
-    |Configuración|Valor|
+    |Configuración|Value|
     |---|---|
     |Resource group|**AZ500LAB07**|
     |Name|**myAsgMgmtServers**|
