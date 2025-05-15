@@ -33,19 +33,23 @@ En este laboratorio completará los ejercicios siguientes:
 
 En este ejercicio completará las tareas siguientes: 
 
-- Tarea 1: Implementación de una máquina virtual de Azure. 
-
 #### Tarea 1: Implementar una máquina virtual de Azure
 
 1. Inicie sesión en Azure Portal **`https://portal.azure.com/`** .
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-2. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell** y **Crear almacenamiento**.
+2. Haga clic en el primer icono de la esquina superior derecha de Azure Portal para abrir Cloud Shell. Si se le solicita, seleccione **PowerShell**.
 
 3. Asegúrese de que **PowerShell** esté seleccionado en el menú desplegable superior izquierdo del panel de Cloud Shell.
 
-4. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que se usará en este laboratorio:
+4. En la ventana **Introducción**, deje el valor predeterminado tal como está: **Seleccione una suscripción para comenzar. Opcionalmente, puede montar una cuenta de almacenamiento para conservar archivos entre sesiones. No se requiere ninguna cuenta de almacenamiento.**
+
+5. En el menú desplegable  **Suscripción**, seleccione su **lodsubscription.**
+
+6. Deje desactivada la opción **Usar una red virtual privada existente** y haga clic en **Aplicar.**
+
+7. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para crear el grupo de recursos que se usará en este laboratorio:
   
     ```powershell
     New-AzResourceGroup -Name AZ500LAB131415 -Location 'EastUS'
@@ -53,7 +57,7 @@ En este ejercicio completará las tareas siguientes:
 
     >**Nota**: este grupo de recursos se usará para los laboratorios 8, 9 y 10.
 
-5. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para habilitar el cifrado en el host (EAH)
+8. En la sesión de PowerShell del panel de Cloud Shell, ejecuta lo siguiente para habilitar el cifrado en el host (EAH)
    
    ```powershell
     Register-AzProviderFeature -FeatureName "EncryptionAtHost" -ProviderNamespace Microsoft.Compute 
@@ -88,8 +92,6 @@ En este ejercicio completará las tareas siguientes:
 
 En este ejercicio completará las tareas siguientes: 
 
-- Tarea 1: Creación de un área de trabajo de Log Analytics.
-
 #### Tarea 1: Creación de un área de trabajo de Log Analytics
 
 En esta tarea, creará un área de trabajo de Log Analytics. 
@@ -115,9 +117,7 @@ En esta tarea, creará un área de trabajo de Log Analytics.
 
 ### Tiempo estimado: 10 minutos
 
-En este ejercicio completará las tareas siguientes:
-
-- Tarea 1: Creación de una cuenta de almacenamiento de Azure.
+En este ejercicio completarás las tareas siguientes:
 
 #### Tarea 1: Creación de una cuenta de almacenamiento de Azure
 
@@ -127,22 +127,18 @@ En esta tarea, creará una cuenta de almacenamiento.
 
 2. En la hoja **Cuentas de almacenamiento** de Azure Portal, haga clic en el botón **+ Crear** para crear una nueva cuenta de almacenamiento.
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/73eb9241-d642-455a-a1ff-b504670395c0)
-
 3. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, configure las siguientes opciones (deje las demás con los valores predeterminados):
 
     |Configuración|Valor|
     |---|---|
     |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
     |Resource group|**AZ500LAB131415**|
-    |Nombre de la cuenta de almacenamiento|Cualquier nombre globalmente único con una longitud de 3 a 24 caracteres, que consta de letras y dígitos|
-    |Location|**(EE. UU.) EastUS**|
-    |Rendimiento|**Estándar (cuenta general-purpose v2)**|
-    |Redundancia|**Almacenamiento con redundancia local (LRS)**|
+    ** Detalles de la instancia** |Nombre de la cuenta de almacenamiento|cualquier nombre único global entre 3 y 24 caracteres de longitud que conste de letras y dígitos|  |Región |**(EE. UU.) EastUS**|
+    |Servicio principal |**Azure Blob Storage o Azure Data Lake Storage Gen 2**|
+    |Rendimiento |**Estándar (cuenta de uso general v2)**|
+    |Redundancia |**Almacenamiento con redundancia local (LRS)**|
 
-4. En la pestaña **Aspectos básicos** del panel **Crear cuenta de almacenamiento**, haga clic en **Revisar**, espere a que se complete el proceso de validación y, luego, haga clic en **Crear**.
-
-     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d443821c-2ddf-4794-87fa-bfc092980eba)
+5. En la pestaña **Aspectos básicos** de la hoja **Crear cuenta de almacenamiento**, haga clic en **Revisar y crear**. Después de que se complete el proceso de validación, haga clic en **Crear**.
 
     >**Nota**: Espere a que se cree la cuenta de almacenamiento. Este proceso tardará alrededor de 2 minutos.
 
@@ -152,8 +148,6 @@ En esta tarea, creará una cuenta de almacenamiento.
 
 En este ejercicio completará las tareas siguientes:
 
-- Tarea 1: Creación de una regla de recopilación de datos.
-
 #### Tarea 1: Creación de una regla de recopilación de datos.
 
 En esta tarea, creará una regla de recopilación de datos.
@@ -162,37 +156,32 @@ En esta tarea, creará una regla de recopilación de datos.
 
 2. En la hoja **Supervisar configuración**, haga clic en **Reglas de recopilación de datos.**
 
-  ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d43e8f94-efb2-4255-9320-210c976fd45e)
-
-
 3. Haz clic en el botón **+ Crear** para crear la nueva regla de recopilación de datos
 
 4. En la pestaña **Aspectos básicos** de la hoja **Crear una regla de recopilación de datos**, especifique la configuración siguiente:
   
     |Configuración|Valor|
     |---|---|
-    |**Detalles de la regla**|
-    |Nombre de regla|**DCR1**|
-    |Subscription|Nombre de la suscripción a Azure que usas en este laboratorio|
-    |Grupo de recursos|**AZ500LAB131415**|
-    |Region|**Este de EE. UU.**|
-    |Tipo de plataforma|**Windows**|
-    |Punto de conexión de recopilación de datos|*Déjelo en blanco*|
+    **Detalles de la regla** |Nombre de la regla| **DCR1**|
+    |Suscripción|el nombre de la suscripción de Azure que usas en este laboratorio|  |Grupo de recursos| **AZ500LAB131415**|
+    |Región| **Este de EE. UU**|
+    |Tipo de plataforma| **Windows**|
+    |Punto de conexión de recopilación de datos| *Dejar en blanco*|
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/9b58c4ce-b7a8-4acf-8289-d95b270a6083)
+    ![Imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/9b58c4ce-b7a8-4acf-8289-d95b270a6083)
 
 
-4. Haga clic en el botón denominado **Siguiente: Recursos >** para continuar.
+5. Haz clic en el botón denominado **Siguiente: Recursos >** para continuar.
    
-6. En la pestaña Recursos, selecciona **+ Agregar recursos,** y marca **Habilitar puntos de conexión de recopilación de datos.** En la plantilla Seleccionar un ámbito, selecciona **AZ500LAB131415** y haz clic en **Aplicar.**
+6. En la página **Recursos**, selecciona **+Agregar recursos**.
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/d4191115-11bc-43ec-9bee-e84b9b95a821)
+7. En la plantilla **Seleccionar un ámbito**, activa la casilla **Suscripción** en la selección **Ámbito.**
 
-10. Haga clic en el botón denominado **Siguiente: Recopilar y entregar >** para continuar.
+8. En la parte inferior de la plantilla **Seleccionar un ámbito**, haz clic en **Aplicar.**
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/8294d300-f910-4757-ad52-43c7594ac822)
+9. En la parte inferior de la página **Recursos**, selecciona **Siguiente: Recopilar y entregar >.**
 
-11. Haga clic en **+ Agregar origen de datos** y, a continuación, en la página **Agregar origen de datos**, cambie el menú desplegable **Tipo de origen de datos** para mostrar **Contadores de rendimiento.** Deje la siguiente configuración predeterminada:
+10. Haga clic en **+ Agregar origen de datos** y, a continuación, en la página **Agregar origen de datos**, cambie el menú desplegable **Tipo de origen de datos** para mostrar **Contadores de rendimiento.** Deje la siguiente configuración predeterminada:
 
     |Configuración|Valor|
     |---|---|
@@ -208,17 +197,15 @@ En esta tarea, creará una regla de recopilación de datos.
   
 12. Haz clic en **+ Agregar destino**, cambia el menú desplegable **Tipo de destino** para mostrar los **Registros de Azure Monitor.** En la ventana **Suscripción**, asegúrese de que se muestra la *Suscripción* y, a continuación, cambie el menú desplegable **Cuenta o espacio de nombres** para reflejar el área de trabajo de Log Analytics creada anteriormente.
 
-   ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/481843f5-94c4-4a8f-bf51-a10d49130bf8)
-
-11. En la parte inferior de la página, seleccione **Agregar origen de datos**.
+13. En la parte inferior de la página, seleccione **Agregar origen de datos**.
     
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/964091e7-bbbc-4ca8-8383-bb2871a1e7f0)
 
-13. Haga clic en **Revisar y crear.**
+14. Haga clic en **Revisar y crear.**
 
     ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/50dd8407-a106-4540-9e14-ae40a3c04830)
 
-14. Haga clic en **Crear**.
+15. Haga clic en **Crear**.
 
 > Resultados: ha implementado una máquina virtual de Azure, un área de trabajo de Log Analytics, una cuenta de almacenamiento de Azure y una regla de recopilación de datos para recopilar eventos y contadores de rendimiento de máquinas virtuales con el agente de Azure Monitor.
 
