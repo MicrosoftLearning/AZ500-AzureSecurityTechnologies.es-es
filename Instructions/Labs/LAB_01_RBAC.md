@@ -4,6 +4,7 @@ lab:
   module: Module 01 - Manage Identity and Access
 ---
 
+
 # Laboratorio 01: Control de acceso basado en roles
 # Manual de laboratorio para alumnos
 
