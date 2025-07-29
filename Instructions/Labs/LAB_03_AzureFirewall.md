@@ -161,13 +161,14 @@ En esta tarea, creará una ruta predeterminada para la subred **Workload-SN**. E
 
 10. En la hoja **Agregar ruta**, especifique la siguiente configuración:  
 
-   |Configuración|Value|
-   |---|---|
-   |Nombre de ruta|**FW-DG**|
-   |Tipo de destino|**Dirección IP**|
-   |Intervalos de direcciones IP de destino y CIDR|**0.0.0.0/0**
-   |Tipo de próximo salto|**Aplicación virtual**|
-   |Siguiente dirección de salto|Dirección IP privada del firewall que identificó en la tarea anterior|
+    |Configuración|Value|
+    |---|---|
+    |Nombre de ruta|**FW-DG**|
+    |Tipo de destino|**Dirección IP**|
+    |Intervalos de direcciones IP de destino y CIDR|**0.0.0.0/0**
+    |Tipo de próximo salto|**Aplicación virtual**|
+    |Siguiente dirección de salto|Dirección IP privada del firewall que identificó en la tarea anterior|
+
 
     >**Nota**: Azure Firewall es en realidad un servicio administrado, pero la aplicación virtual funciona en esta situación.
     
@@ -266,9 +267,9 @@ En esta tarea, probará el firewall para confirmar que funciona según lo previs
 
 2. En la hoja **AZ500LAB08**, en la lista de recursos, haga clic en la máquina virtual **Srv-Jump**.
 
-3. En la hoja **Srv-Jump**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
+3. En la hoja **Srv-Jump**, haz clic en **Conectar** y, en el menú desplegable, haz clic en **Conectar**. 
 
-4. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la VM de Azure **Srv-Jump** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
+4. Descarga el archivo RDP y úsalo para conectarte a la máquina virtual de Azure **Srv-Jump** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
 
    |Configuración|Valor|
    |---|---|

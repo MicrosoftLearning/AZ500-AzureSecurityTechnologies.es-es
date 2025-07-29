@@ -399,9 +399,9 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
 2. En el panel **Máquinas virtuales**, haga clic en la entrada **myVMPrivate**.
 
-3. En el panel **myVMPrivate**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
+3. En la hoja **myVMPrivate**, haz clic en **Conectar** y, en el menú desplegable, haz clic en **Conectar**. 
 
-4. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la máquina virtual de Azure **myVMPrivate** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
+4. Descarga el archivo RDP y úsalo para conectarte a la máquina virtual de Azure **myVMPrivate** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
 
     |Configuración|Valor|
     |---|---|
@@ -450,9 +450,9 @@ En esta tarea, se conectará a la máquina virtual myVMPrivate a través de Escr
 
 2. En el panel **Máquinas virtuales**, haga clic en la entrada **myVMPublic**.
 
-3. En el panel **myVMPublic**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
+3. En la hoja **myVMPublic**, haz clic en **Conectar** y, en el menú desplegable, haz clic en **Conectar**. 
 
-4. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la máquina virtual de Azure **myVMPublic** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
+4. Haz clic en **Conectar a través de RDP** y úsalo para conectarte a la máquina virtual de Azure **myVMPublic** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
 
     |Configuración|Valor|
     |---|---|

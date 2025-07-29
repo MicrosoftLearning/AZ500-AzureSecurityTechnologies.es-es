@@ -242,6 +242,8 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
    |Resource group|**AZ500LAB07**|
    |Nombre de la máquina virtual|**myVMMgmt**|
    |Region|(EE. UU.) Este de EE. UU.|
+   |Opciones de disponibilidad|**No se requiere redundancia de la infraestructura**
+   |Tipo de seguridad|**Estándar**
    |Imagen|**Windows Server 2022 Datacenter: Azure Edition, x64 Gen2**|
    |Size|**Estándar D2s v3**|
    |Nombre de usuario|**Estudiante**|
@@ -251,19 +253,19 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
 
     >**Nota**: Para los puertos de entrada públicos, nos basaremos en el grupo de seguridad de red creado previamente. 
 
-3. Haga clic en **Siguiente: Discos >** y, en la pestaña **Discos** del panel **Crear una máquina virtual**, establezca el **tipo de disco del sistema operativo** en **HDD estándar** y haga clic en **Siguiente: Redes >** .
+4. Haga clic en **Siguiente: Discos >** y, en la pestaña **Discos** del panel **Crear una máquina virtual**, establezca el **tipo de disco del sistema operativo** en **HDD estándar** y haga clic en **Siguiente: Redes >** .
 
-4. En la pestaña **Redes** de la hoja **Crear una máquina virtual**, seleccione la red creada anteriormente, **myVirtualNetwork**.
+5. En la pestaña **Redes** de la hoja **Crear una máquina virtual**, seleccione la red creada anteriormente, **myVirtualNetwork**.
 
-5. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
+6. En **Grupo de seguridad de red de NIC**, seleccione **Ninguno**.
 
-6. Haga clic en **Siguiente: Administración >** y haga clic en **Siguiente: Supervisión >**. En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la configuración siguiente:
+7. Haga clic en **Siguiente: Administración >** y haga clic en **Siguiente: Supervisión >**. En la pestaña **Supervisión** de la hoja **Crear una máquina virtual**, compruebe la configuración siguiente:
 
    |Configuración|Valor|
    |---|---|
    |Diagnósticos de arranque|**Enabled with managed storage account (recommended)** (Habilitado con la cuenta de almacenamiento administrada [recomendado])|
 
-7. Haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, compruebe que la validación se ha realizado correctamente y haga clic en **Crear**.
+8. Haga clic en **Revisar y crear** y, en la hoja **Revisar y crear**, compruebe que la validación se ha realizado correctamente y haga clic en **Crear**.
 
     >**Nota**: Espere a que se aprovisionen ambas máquinas virtuales antes de continuar. 
 
@@ -291,9 +293,9 @@ En esta tarea, probará los filtros de tráfico de red. Debería poder usar RDP 
 
 1. Vuelva a la hoja de la máquina virtual **myVMMgmt**.
 
-2. En la hoja **myVMMgmt**, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
+2. En la hoja de información general de **myVMMgmt**, haz clic en **Conectar** y, en el menú desplegable, haz clic en **Conectar**. 
 
-3. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la VM de Azure **myVMMgmt** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
+3. Descarga el archivo RDP y úsalo para conectarte a la máquina virtual de Azure **myVMMgmt** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
 
    |Configuración|Valor|
    |---|---|
