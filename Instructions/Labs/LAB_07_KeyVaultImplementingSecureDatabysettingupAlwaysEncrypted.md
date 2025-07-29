@@ -256,7 +256,7 @@ En esta tarea, habilitará una aplicación cliente para obtener acceso al servic
 
 8. En el panel **Agregar un secreto de cliente**, especifique la siguiente configuración:
 
-    |Configuración|valor|
+    |Configuración|Valor|
     |----|----|
     |Descripción|**Key1**|
     |Expira|**12 meses**|
@@ -347,9 +347,9 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
 
     >**Nota**: Esto modifica la configuración del firewall del servidor, lo que permite conexiones a la base de datos de medicina desde la dirección IP pública de la máquina virtual de Azure que implementó en este laboratorio.
 
-4. Vuelva al panel **az500-10-vm1**, haga clic en **Introducción** y,a continuación, haga clic en **Conectar** y, en el menú desplegable, haga clic en **RDP**. 
+4. Vuelve a la hoja **az500-10-vm1**, haz clic en **Información general**, haz clic luego en **Conectar** y, en el menú desplegable, haz clic en **Conectar**. 
 
-5. Haga clic en **Descargar archivo RDP** y úselo para conectarse a la máquina virtual de Azure **az500-10-vm1** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
+5. Descarga el archivo RDP y úsalo para conectarte a la máquina virtual de Azure **az500-10-vm1** a través de Escritorio remoto. Cuando se le pida que se autentique, proporcione las credenciales siguientes:
 
     |Configuración|Valor|
     |---|---|
