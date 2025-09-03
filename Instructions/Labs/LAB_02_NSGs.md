@@ -28,7 +28,7 @@ En este laboratorio completará los ejercicios siguientes:
 
 ## Diagrama de grupos de seguridad de red y de aplicación
 
-![imagen](https://user-images.githubusercontent.com/91347931/157526438-6da4f68b-db88-4931-a041-8474e66d3fe5.png)
+![Diagrama en el que se muestra el flujo de proceso de las tareas del laboratorio.](../media/network-and-application-security-groups-diagram.png)
 
 ## Instrucciones
 
@@ -53,7 +53,7 @@ En esta tarea, creará una red virtual para usarla con los grupos de seguridad d
 
     >**Nota**: Inicie sesión en Azure Portal con una cuenta que tenga el rol Propietario o Colaborador en la suscripción de Azure que usa para este laboratorio.
 
-2. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Redes virtuales** y presione la tecla **Entrar**.
+2. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba +++Redes virtuales+++ y presione la tecla **Entrar**.
 
 3. En el panel **Redes virtuales**, haga clic en **+ Crear**.
 
@@ -61,10 +61,10 @@ En esta tarea, creará una red virtual para usarla con los grupos de seguridad d
 
     |Configuración|Valor|
     |---|---|
-    |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
-    |Resource group|Haga clic en **Crear nuevo** y escriba el nombre **AZ500LAB07**.|
-    |Name|**myVirtualNetwork**|
-    |Region|**Este de EE. UU.**|
+    |Subscription | Nombre de la suscripción de Azure que usa en este laboratorio |
+    |Resource group | Uso del grupo de recursos proporcionado denominado **AZ500LAB07** |
+    |Nombre| +++myVirtualNetwork+++ |
+    |Region| **Este de EE. UU.** |
 
 5. En la pestaña **Direcciones IP** de la hoja **Crear red virtual**, establezca el **espacio de direcciones IPv4** en **10.0.0.0/16** y, si es necesario, en la columna **Nombre de subred**, haga clic en **predeterminado** y, en la hoja **Editar subred**, especifique la siguiente configuración y haga clic en **Guardar**:
 
@@ -73,15 +73,15 @@ En esta tarea, creará una red virtual para usarla con los grupos de seguridad d
     |Nombre de subred|**default**|
     |Intervalo de direcciones de subred|**10.0.0.0/24**|
 
-6. De vuelta en la pestaña **Direcciones IP** del panel **Crear red virtual**, haga clic en **Revisar y crear**.
+6. De vuelta en la pestaña **Direcciones IP** de la pantalla **Crear red virtual**, haga clic en **Revisar y crear**.
 
-7. En la pestaña **Revisar y crear** del panel **Crear red virtual**, haga clic en **Crear**.
+7. En la pestaña **Revisar y crear** de la pantalla **Crear red virtual**, haga clic en **Crear**.
 
 #### Tarea 2: Crear grupos de seguridad de aplicaciones
 
 En esta tarea, creará un grupo de seguridad de aplicaciones.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba **Grupos de seguridad de aplicaciones** y presione la tecla **Entrar**.
+1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** de la parte superior de la página, escriba +++Grupos de seguridad de aplicaciones+++ y presione la tecla **Entrar**.
 
 2. En la hoja **Grupos de seguridad de aplicaciones**, haga clic en **+ Crear**.
 
@@ -89,9 +89,9 @@ En esta tarea, creará un grupo de seguridad de aplicaciones.
 
     |Configuración|Value|
     |---|---|
-    |Resource group|**AZ500LAB07**|
-    |Name|**myAsgWebServers**|
-    |Region|**Este de EE. UU.**|
+    | Resource group | **AZ500LAB07** |
+    | Nombre | +++myAsgWebServers+++ |
+    | Region | **Este de EE. UU.** |
 
     >**Nota**: Este grupo será para los servidores web.
 
@@ -104,7 +104,7 @@ En esta tarea, creará un grupo de seguridad de aplicaciones.
     |Configuración|Value|
     |---|---|
     |Resource group|**AZ500LAB07**|
-    |Name|**myAsgMgmtServers**|
+    |Nombre| +++myAsgMgmtServers+++ |
     |Region|**Este de EE. UU.**|
 
     >**Nota**: Este grupo será para los servidores de administración.
@@ -115,7 +115,7 @@ En esta tarea, creará un grupo de seguridad de aplicaciones.
 
 En esta tarea, creará un grupo de seguridad de red. 
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página de Azure Portal, escriba **Grupos de seguridad de red** y presione la tecla **Entrar**.
+1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba +++Grupos de seguridad de red+++ y presione la tecla **Entrar**.
 
 2. En el panel **Grupos de seguridad de red**, haga clic en **+ Crear**.
 
@@ -123,18 +123,18 @@ En esta tarea, creará un grupo de seguridad de red.
 
     |Configuración|Valor|
     |---|---|
-    |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
-    |Resource group|**AZ500LAB07**|
-    |Name|**myNsg**|
-    |Region|**Este de EE. UU.**|
+    | Subscription | Nombre de la suscripción de Azure que usa en este laboratorio |
+    | Resource group | **AZ500LAB07** |
+    | Nombre | +++myNsg+++ |
+    | Region | **Este de EE. UU.** |
 
 4. Haga clic en **Revisar y crear** y, a continuación, en **Crear**.
 
-5. En Azure Portal, vuelva a la hoja **Grupos de seguridad de red** y haga clic en la entrada **myNsg**.
+5. En Azure Portal, vuelva al panel **Grupos de seguridad de red** y seleccione la entrada **myNsg**. O bien, seleccione **Ir al recurso** si está disponible.
 
-6. En la hoja **myNsg**, en la sección **Configuración**, haga clic en **Subredes** y, a continuación, haga clic en **+ Asociar**. 
+6. En el panel **myNsg**, en la sección **Configuración**, haga clic en **Subredes** y, después, seleccione **+ Asociar**. 
 
-7. En la hoja **Asociar subred**, especifique la siguiente configuración y haga clic en **Aceptar**:
+7. En el panel **Asociar subred**, especifique la siguiente configuración y seleccione **Aceptar**:
 
     |Configuración|Valor|
     |---|---|
@@ -149,29 +149,37 @@ En esta tarea, creará un grupo de seguridad de red.
 
 3. En la hoja **Agregar regla de seguridad de entrada**, especifique la siguiente configuración para permitir los puertos TCP 80 y 443 al grupo de seguridad de aplicaciones **myAsgWebServers** (deje todas las demás opciones con sus valores predeterminados): 
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
-    |Destination|En la lista desplegable, seleccione **Grupo de seguridad de aplicaciones** y, a continuación, haga clic **en myAsgWebServers**.|
+    | Origen | **Cualquiera** |
+    | Intervalos de puertos de origen | * |
+    |Destino|En la lista desplegable, seleccione **Grupo de seguridad de aplicaciones** y, a continuación, haga clic **en myAsgWebServers**.|
+    | Servicio | **Personalizada** |
     |Intervalos de puertos de destino|**80, 443**|
     |Protocolo|**TCP**|
-    |Priority|**100**|                                                    
+    | Acción | **Permitir** |
+    |Prioridad|**100**|
     |Name|**Allow-Web-All**|
 
-4. En la hoja **Agregar regla de seguridad de entrada**, haga clic en **Agregar** para crear la nueva regla de entrada. 
+4. Seleccione el botón **Agregar** en la página **Agregar regla de seguridad de entrada** para crear la regla de entrada.
 
 5. En la hoja **myNsg**, en la sección **Configuración**, haga clic en **Reglas de seguridad de entrada** y, a continuación, haga clic en **+ Agregar**.
 
 6. En la hoja **Agregar regla de seguridad de entrada**, especifique la siguiente configuración para permitir el puerto RDP (TCP 3389) al grupo de seguridad de aplicaciones **myAsgMgmtServers** (deje todas las demás opciones con sus valores predeterminados): 
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |---|---|
-    |Destination|En la lista desplegable, seleccione **Grupo de seguridad de aplicaciones** y, a continuación, haga clic en **myAsgMgmtServers**.|
+    | Origen | **Cualquiera** |
+    | Intervalos de puertos de origen | * |
+    |Destino|En la lista desplegable, seleccione **Grupo de seguridad de aplicaciones** y, a continuación, haga clic en **myAsgMgmtServers**.|
+    | Servicio | **Personalizada** |
     |Intervalos de puertos de destino|**3389**|
     |Protocolo|**TCP**|
-    |Priority|**110**|                                                    
+    | Acción | **Permitir** |
+    |Prioridad|**110**|
     |Name|**Allow-RDP-All (Permitir-RDP-Todo)**|
 
-7. En la hoja **Agregar regla de seguridad de entrada**, haga clic en **Agregar** para crear la nueva regla de entrada. 
+7. Seleccione **Agregar** en la página **Agregar regla de seguridad de entrada** para crear la regla de entrada. 
 
 > Resultado: ha implementado una red virtual, seguridad de red con reglas de seguridad de entrada y dos grupos de seguridad de aplicaciones. 
 
@@ -182,15 +190,15 @@ En esta tarea, creará un grupo de seguridad de red.
 En este ejercicio completará las tareas siguientes:
 
 - Tarea 1: Crear una máquina virtual para usarla como servidor web.
-- Tarea 2: Crear una máquina virtual para usarla como servidor de administración. 
+- Tarea 2: Crear una máquina virtual para usarla como servidor de administración.
 - Tarea 3: Asociar cada interfaz de red de máquinas virtuales a su grupo de seguridad de aplicaciones.
 - Tarea 4: Probar el filtrado del tráfico de red.
 
-#### Tarea 1: Crear una máquina virtual para usarla como servidor web.
+#### Tarea 1: Creación de una máquina virtual para usarla como servidor web
 
 En esta tarea, creará una máquina virtual para usarla como servidor web.
 
-1. En Azure Portal, use el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Máquinas virtuales** y presione la tecla **Entrar**.
+1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba +++Máquinas virtuales+++ y presione la tecla **Entrar**.
 
 2. En el panel **Máquinas virtuales**, haga clic en **+ Crear** y, en la lista desplegable, haga clic en **+ Máquina virtual de Azure**.
 
