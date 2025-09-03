@@ -26,7 +26,7 @@ En este laboratorio completará el ejercicio siguiente:
 
 ## Configuración y protección de ACR y AKS
 
-![imagen](https://user-images.githubusercontent.com/91347931/157532250-1104a829-792a-4b6d-beff-fe976e2d5d4b.png)
+![Diagrama que muestra el flujo de proceso de las tareas de este laboratorio.](../media/configuring-and-securing-acr-and-aks-diagram.png)
 
 ## Instrucciones
 
@@ -81,6 +81,11 @@ En esta tarea, creará un grupo de recursos para el laboratorio en Azure Contain
     ```sh
     az acr create --resource-group AZ500LAB09 --name az500$RANDOM$RANDOM --sku Basic
     ```
+    > **Nota:** Registre el proveedor de recursos de Azure Container Registry. Si se produce un error al ejecutar `az acr create`, es probable que se deba a que el servicio **Azure Container Registry** aún no se ha registrado en su suscripción. Para solucionar este problema, puede registrar el servicio y crear el registro con un solo comando:
+    
+    > ```sh
+    > az provider register --namespace Microsoft.ContainerRegistry
+    > ```
 
 7. En la sesión de Bash en el panel de Cloud Shell, ejecute lo siguiente para confirmar que se ha creado la nueva instancia de ACR:
 
