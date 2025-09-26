@@ -293,7 +293,7 @@ En esta tarea, asociará cada interfaz de red de máquinas virtuales con el grup
 
 6. En la hoja **myVMMgmt**, en la sección **Configuración**, haz clic en **Configuración de red** y luego en la hoja **myVMMgmt \|Configuración de red**, haz clic en la pestaña **Grupos de seguridad de aplicaciones**.
 
-7. Haz clic en + **Agregar grupos de seguridad de aplicaciones**, en la lista **Grupo de seguridad de aplicaciones**, selecciona **myAsgMgmtServers**y haz clic en **Guardar**.
+7. Haga clic en **+Agregar grupos de seguridad de aplicaciones**, en la lista **Grupo de seguridad de aplicaciones**, seleccione **myAsgMgmtServers** y, a continuación, haga clic en **Agregar**.
 
 #### Tarea 4: Probar el filtrado del tráfico de red
 
