@@ -25,7 +25,7 @@ En este laboratorio completará el ejercicio siguiente:
 
 ## Diagrama de protección de Azure SQL Database
 
-![imagen](https://user-images.githubusercontent.com/91347931/157533836-7250fa58-a109-4882-a55b-d3fa3baf34ab.png)
+![Diagrama que muestra el flujo de proceso de las tareas de este laboratorio.](../media/securing-azure-sql-database-diagram.png)
 
 ## Instrucciones
 

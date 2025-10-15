@@ -53,7 +53,7 @@ En este laboratorio completará los ejercicios siguientes:
 
    - En la pestaña **Configurado**, haz clic con el botón derecho en la máquina virtual a la que deseas agregar un puerto y selecciona Editar.
 
-   ![imagen](https://github.com/user-attachments/assets/aa4ded55-c5b1-4d40-b5a0-a4c33b9eb81b)
+   ![Recorte de pantalla del acceso Just-In-Time para la pantalla de configuración de la máquina virtual.](../media/just-in-time-vm-access.png)
    
    - En **Configuración de acceso de máquina virtual JIT** , puedes modificar la configuración existente de un puerto protegido, o bien agregar un puerto personalizado.
    - Cuando hayas terminado de editar los puertos, selecciona **Guardar**.   
@@ -72,6 +72,6 @@ En este laboratorio completará los ejercicios siguientes:
     
         - Si JIT está habilitado, selecciona **Solicitar acceso** para pasar una solicitud de acceso con la dirección IP de solicitud, el intervalo de tiempo y los puertos que se configuraron para esa máquina virtual.
     
-   ![imagen](https://github.com/user-attachments/assets/f5d0b67c-7731-4261-b0eb-a56c505dadd4)
+   ![Recorte de pantalla de la conexión a una máquina virtual mediante JIT.](../media/vm-connection-for-vm1.png)
 
 > **Resultados**: has explorado varios métodos sobre cómo habilitar JIT en las máquinas virtuales y cómo solicitar acceso a las máquinas virtuales que tienen JIT habilitado en Microsoft Defender for Cloud.
