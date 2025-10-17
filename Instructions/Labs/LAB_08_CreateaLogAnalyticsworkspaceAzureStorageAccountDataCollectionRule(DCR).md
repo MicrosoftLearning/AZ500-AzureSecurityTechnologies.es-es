@@ -168,7 +168,7 @@ En esta tarea, creará una regla de recopilación de datos.
     |Tipo de plataforma| **Windows**|
     |Punto de conexión de recopilación de datos| *Dejar en blanco*|
 
-    ![Imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/9b58c4ce-b7a8-4acf-8289-d95b270a6083)
+    ![Recorte de pantalla de la pestaña Aspectos básicos de Crear regla de recopilación de datos.](../media/crete-a-data-collection-rule-basics-tab.png)
 
 
 5. Haz clic en el botón denominado **Siguiente: Recursos >** para continuar.
@@ -191,7 +191,7 @@ En esta tarea, creará una regla de recopilación de datos.
     |Disco|60|
     |Red|60|
 
-   ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/a24e44ad-1d10-4533-80e2-bae1b3f6564d)
+   ![Recorte de pantalla de la pestaña Recopilar y entregar de la regla de recopilación de datos.](../media/crete-a-data-collection-rule-collectanddeliver-tab.png)
 
 11. Haga clic en el botón denominado **Siguiente: Destino >** para continuar.
   
@@ -199,11 +199,11 @@ En esta tarea, creará una regla de recopilación de datos.
 
 13. En la parte inferior de la página, seleccione **Agregar origen de datos**.
     
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/964091e7-bbbc-4ca8-8383-bb2871a1e7f0)
+    ![Recorte de pantalla de la página Agregar un origen de datos en la página Regla de recopilación de datos.](../media/crete-a-data-collection-rule-add-datasource.png)
 
-14. Haga clic en **Revisar y crear.**
+14. Haga clic en **Revisar y crear**.
 
-    ![image](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/50dd8407-a106-4540-9e14-ae40a3c04830)
+    ![Recorte de pantalla de la pestaña Revisar y crear del Asistente para reglas de recopilación de datos.](../media/crete-a-data-collection-rule-reviewcreate-tab.png)
 
 15. Haga clic en **Crear**.
 

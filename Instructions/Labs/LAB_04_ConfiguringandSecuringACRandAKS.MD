@@ -76,18 +76,24 @@ En esta tarea, creará un grupo de recursos para el laboratorio en Azure Contain
     az group list --query "[?name=='AZ500LAB09']" -o table
     ```
 
-6. En la sesión de Bash en el panel Cloud Shell, ejecute lo siguiente para crear una instancia de Azure Container Registry (ACR) (el nombre de la instancia de ACR debe ser único globalmente): 
+6. En la sesión de Bash, ejecute los comandos siguientes para registrar el **registro de contenedor** en el entorno de laboratorio.
+
+   ```sh
+   az provider register --namespace Microsoft.Kubernetes
+   az provider register --namespace Microsoft.KubernetesConfiguration
+   az provider register --namespace Microsoft.OperationsManagement
+   az provider register --namespace Microsoft.OperationalInsights
+   az provider register --namespace Microsoft.ContainerService
+   az provider register --namespace Microsoft.ContainerRegistry
+   ```
+
+7. En la sesión de Bash en el panel Cloud Shell, ejecute lo siguiente para crear una instancia de Azure Container Registry (ACR) (el nombre de la instancia de ACR debe ser único globalmente): 
 
     ```sh
     az acr create --resource-group AZ500LAB09 --name az500$RANDOM$RANDOM --sku Basic
     ```
-    > **Nota:** Registre el proveedor de recursos de Azure Container Registry. Si se produce un error al ejecutar `az acr create`, es probable que se deba a que el servicio **Azure Container Registry** aún no se ha registrado en su suscripción. Para solucionar este problema, puede registrar el servicio y crear el registro con un solo comando:
-    
-    > ```sh
-    > az provider register --namespace Microsoft.ContainerRegistry
-    > ```
 
-7. En la sesión de Bash en el panel de Cloud Shell, ejecute lo siguiente para confirmar que se ha creado la nueva instancia de ACR:
+8. En la sesión de Bash en el panel de Cloud Shell, ejecute lo siguiente para confirmar que se ha creado la nueva instancia de ACR:
 
     ```sh
     az acr list --resource-group AZ500LAB09
@@ -135,7 +141,7 @@ En esta tarea, creará un Dockerfile, compilará una imagen a partir del Dockerf
 
 En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos implementados. 
 
-1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba **Servicios de Kubernetes** y presione la tecla **Entrar**.
+1. En Azure Portal, en el cuadro de texto **Buscar recursos, servicios y documentos** en la parte superior de la página, escriba +++Servicios de Kubernetes+++ y presione la tecla **Entrar**.
 
 2. En el panel **Servicios de Kubernetes**, haga clic en **+ Crear** y, en el menú desplegable, haga clic en **+ Crear clúster de Kubernetes**.
 
@@ -143,32 +149,45 @@ En esta tarea, creará un servicio de Azure Kubernetes y revisará los recursos 
 
     |Configuración|Valor|
     |----|----|
-    |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
-    |Resource group|**AZ500LAB09**|
-    |Nombre del clúster de Kubernetes|**MyKubernetesCluster**|
-    |Region|**(EE. UU.) Este de EE. UU.**|
-    |Zonas de disponibilidad |**None**|
-    |Método de escala|**Manual**|
-    |Recuento de nodos|**1**|
+    | Subscription | *Utilice el nombre de la suscripción de Azure que usa en este laboratorio* |
+    | Resource group | **AZ500LAB09** |
+    | Configuración preestablecida de clúster | **Desarrollo/pruebas** |
+    | Nombre del clúster de Kubernetes | +++MyKubernetesCluster+++ |
+    | Región | **(EE. UU.) Este de EE. UU.** |
+    | Administrador de flota | **None** |
+    | Zonas de disponibilidad | **Ninguno** |
+    | Plan de tarifa de AKS | **Gratis** |
+    | Habilitar compatibilidad a largo plazo | **Desactivado** |
+    | Versión de Kubernetes | *Usar valor predeterminado* |
+    | Actualización automática | *Mantener el valor predeterminado * |
+    | Tipo de canal de seguridad del nodo | *Mantener el valor predeterminado* |
+    | Autenticación y autorización | **Cuentas locales con RBAC de Kubernetes** |
 
-4. Haga clic en **Siguiente: Grupos de nodos >** y, en la pestaña **Grupos de nodos** de la hoja **Crear un clúster de Kubernetes**, configure las siguientes opciones (deje las demás con los valores predeterminados):
+4. Haga clic en **Siguiente** y, en la pestaña **Grupos de nodos** del panel **Crear un clúster de Kubernetes**, especifique los valores siguientes (deje los demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |----|----|
-    |Habilitar nodos virtuales|Casilla desactivada|
-    
-5. Haga clic en **Siguiente: Acceso >** , en la pestaña **Acceso** de la hoja **Crear un clúster de Kubernetes**, acepte los valores predeterminados y haga clic en **Siguiente: Redes >** . 
+    | Habilitar aprovisionamiento automático de nodos | **Desactivar la casilla** |
+    | Habilitar nodos virtuales | **Desactivar la casilla** |
+    | Otros valores | *Mantener los valores predeterminados* |
+
+5. Haga clic en **Siguiente** para ir a **Redes**. 
+
+  >NOTA: Aparecerá un elemento emergente que indica que hay una **Recomendación** disponible para el tamaño de la máquina virtual.  **Acepte la recomendación** para avanzar.
 
 6. En la pestaña **Redes** de la hoja **Crear un clúster de Kubernetes**, especifique las siguientes opciones (deje las demás con los valores predeterminados):
 
-    |Configuración|Value|
+    |Configuración|Valor|
     |----|----|
-    |Configuración de red|**Superposición de Azure CNI**|
-    |Prefijo del nombre DNS|**Deje el valor predeterminado**|
+    | Habilitar clúster privado | **Desactivado** |
+    | Establecer intervalos IP autorizados | **Desactivado** |
+    | Configuración de red | **Superposición de Azure CNI** |
+    | Prefijo del nombre DNS | **Deje el valor predeterminado** |
+    | Directiva de red | **None** |
 
     >**Nota**: AKS se puede configurar como un clúster privado. Se asigna una IP privada al servidor de API para garantizar que el tráfico de red entre el servidor de API y los grupos de nodos permanece solo en la red privada. Para obtener más información, visite la página [Creación de un clúster privado de Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/private-clusters).
 
-7. Haga clic en **Siguiente: Integraciones >** y, en la pestaña **Integraciones** de la hoja **Crear un clúster de Kubernetes**, establezca **Container monitoring** (Supervisión de contenedores) en **Deshabilitado**. 
+7. Haga clic en **Siguiente** y, en la pestaña **Integraciones** de la página **Crear clúster de Kubernetes**, deje **Todos los valores predeterminados**. 
 
     >**Nota**: En escenarios de producción, le gustaría habilitar la supervisión. La supervisión está deshabilitada en este caso, ya que no se trata en el laboratorio. 
 

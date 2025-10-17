@@ -25,7 +25,7 @@ En este laboratorio completará el ejercicio siguiente:
 
 ## Diagrama de puntos de conexión de servicio y protección del almacenamiento
 
-![imagen](https://user-images.githubusercontent.com/91347931/157534883-29664a05-85d1-4c70-99a7-f16d2360755d.png)
+![Diagrama en el que se muestra el flujo de proceso de las tareas del laboratorio.](../media/service-endpoints-and-securing-storage-diagram.png)
 
 ## Instrucciones
 

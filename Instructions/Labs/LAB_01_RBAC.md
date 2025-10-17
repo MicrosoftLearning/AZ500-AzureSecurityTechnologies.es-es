@@ -30,7 +30,7 @@ En este laboratorio completará los ejercicios siguientes:
 
 ## Diagrama de arquitectura de control de acceso basado en rol
 
-![imagen](https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/assets/91347931/506cde9c-5242-4438-a793-f88a5434a2b2)
+![Diagrama en el que se muestra el diseño del sistema para este laboratorio y el flujo de procesos de los laboratorios](../media/role-based-access-control-architecture-diagram.png)
 
 ## Instrucciones
 
@@ -68,7 +68,7 @@ En esta tarea, creará una cuenta de usuario para Joseph Price.
 
 7. Haga clic en **Crear**.
 
-8. Actualiza la hoja **Usuarios \| Todos los usuarios** para verificar que el nuevo usuario se crease en el inquilino de Microsoft Entra.
+8. Actualiza el panel **Usuarios | Todos los usuarios** para verificar que el usuario se ha creado en el inquilino de Microsoft Entra.
 
 #### Tarea 2: Uso de Azure Portal para crear un grupo de administradores sénior y agregar la cuenta de usuario de Joseph Price al grupo.
 

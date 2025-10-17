@@ -27,7 +27,7 @@ En este laboratorio completará el ejercicio siguiente:
 
 ## Diagrama de Azure Firewall
 
-![imagen](https://user-images.githubusercontent.com/91347931/157529954-a1bc434b-2eca-41c1-b875-1f0c977d5e20.png)
+![Diagrama que muestra el flujo de proceso de las tareas de este laboratorio.](../media/azure-firewall-diagram.png)
 
 ## Instrucciones
 
@@ -102,7 +102,7 @@ En esta tarea, implementará Azure Firewall en la red virtual.
    |Nombre|**Test-FW01**|
    |Region|**(EE. UU.) Este de EE. UU.**|
    |SKU del firewall|**Estándar**|
-   |Administración del firewall|**Use reglas de firewall (clásicas) para administrar este firewall**.|
+   |Administración de firewall.|**Use reglas de firewall (clásicas) para administrar este firewall**.|
    |Elegir una red virtual|Haga clic en la opción **Usar existente** y, en la lista desplegable, seleccione **Test-FW-VN**.|
    |NIC de administración de Firewall|Para deshabilitar esta característica, **anula la selección** de la opción **Habilitar NIC de administración de firewall**.|
    |Dirección IP pública|Haga clic en **Agregar nuevo**, escriba el nombre **TEST-FW-PIP** y haga clic en **Aceptar**.|
