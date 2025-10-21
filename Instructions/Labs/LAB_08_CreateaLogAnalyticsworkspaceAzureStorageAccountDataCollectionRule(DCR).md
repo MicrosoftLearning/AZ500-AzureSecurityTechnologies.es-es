@@ -66,7 +66,7 @@ En este ejercicio completará las tareas siguientes:
 5. En la sesión de PowerShell en el panel de Cloud Shell, ejecute lo siguiente para crear una máquina virtual de Azure. 
 
     ```powershell
-    New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -PublicIpSku Standard -OpenPorts 80,3389 -Size Standard_D2s_v3 
+    New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -PublicIpSku Standard -OpenPorts 80,3389 -Size Standard_D2_v4 
     ```
     
 6.  Cuando se le pidan las credenciales:
@@ -106,7 +106,7 @@ En esta tarea, creará un área de trabajo de Log Analytics.
     |---|---|
     |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
     |Resource group|**AZ500LAB131415**|
-    |Name|Cualquier nombre válido y único globalmente|
+    |Nombre|**lgawIgnite**|
     |Region|**Este de EE. UU.**|
 
 4. Seleccione **Revisar + crear**.
@@ -133,7 +133,8 @@ En esta tarea, creará una cuenta de almacenamiento.
     |---|---|
     |Suscripción|Nombre de la suscripción a Azure que usas en este laboratorio|
     |Resource group|**AZ500LAB131415**|
-    ** Detalles de la instancia** |Nombre de la cuenta de almacenamiento|cualquier nombre único global entre 3 y 24 caracteres de longitud que conste de letras y dígitos|  |Región |**(EE. UU.) EastUS**|
+    **Detalles de la instancia** |Nombre de la cuenta de almacenamiento |**strgactignite**|
+    |Región |**(EE. UU.) EastUS**|
     |Servicio principal |**Azure Blob Storage o Azure Data Lake Storage Gen 2**|
     |Rendimiento |**Estándar (cuenta de uso general v2)**|
     |Redundancia |**Almacenamiento con redundancia local (LRS)**|
