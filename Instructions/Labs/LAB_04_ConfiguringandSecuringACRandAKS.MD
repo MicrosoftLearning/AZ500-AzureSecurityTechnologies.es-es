@@ -54,7 +54,7 @@ En este ejercicio completará las tareas siguientes:
 
 #### Tarea 1: Crear una instancia de Azure Container Registry
 
-En esta tarea, creará un grupo de recursos para el laboratorio en Azure Container Registry.
+En esta tarea, creará un grupo de recursos para el laboratorio y una instancia de Azure Container Registry.
 
 1. Inicie sesión en Azure Portal **`https://portal.azure.com/`** .
 
@@ -259,7 +259,7 @@ En esta tarea, concederá al clúster de AKS permiso para acceder a ACR y admini
 
 En esta tarea, descargará los archivos de manifiesto, editará el archivo YAML y aplicará los cambios al clúster. 
 
-1. En la sesión de Bash en el panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, en el menú desplegable, haga clic en **Cargar**; en el cuadro de diálogo **Abrir**, navegue hasta la ubicación donde descargó los archivos de laboratorio, seleccione **\\Allfiles\\Labs\\09\\nginxexternal.yaml** y haga clic en **Abrir**. A continuación, seleccione **\\Allfiles\\Labs\\09\\nginxinternal.yaml** y haga clic en **Abrir**.
+1. En la sesión de Bash dentro del panel de Cloud Shell, haga clic en el icono **Cargar/Descargar archivos**, en el menú desplegable, haga clic en **Cargar**; en el cuadro de diálogo **Abrir**, navegue hasta la ubicación donde ha descargado los archivos de laboratorio, seleccione **\\Allfiles\\Labs\\09\\nginxexternal.yaml** y haga clic en **Abrir**. A continuación, seleccione **\\Allfiles\\Labs\\09\\nginxinternal.yaml** y haga clic en **Abrir**.
 
 2. En la sesión de Bash del panel de Cloud Shell, ejecute lo siguiente para identificar el nombre de la instancia de Azure Container Registry:
 

@@ -84,11 +84,11 @@ En esta tarea, configurará Sentinel para usar el conector de datos de actividad
 
 7. En el paso 2 **Conexión de las suscripciones a través de la nueva canalización de configuración de diagnóstico**, revise las instrucciones de "Inicie el asistente para asignaciones de Azure Policy y siga estos pasos" y, a continuación, haga clic en **Inicie el asistente para asignaciones de Azure Policy\>** .
 
-8. En la pestaña **Configurar registros de actividad de Azure para transmitirlos al área de trabajo especificada de Log Analytics** (Asignar página de Policy) **Aspectos básicos**, haga clic en el botón de puntos suspensivos (...) **Ámbito**. En la página **Ámbito**, elige tu suscripción en la lista desplegable de suscripciones y haz clic en el botón **Seleccionar** situado en la parte inferior de la página.
+8. En la pestaña **Configurar registros de actividad de Azure para transmitirlos al área de trabajo especificada de Log Analytics** (Asignar página de Policy) **Aspectos básicos**, haga clic en el botón **Ámbito (...)**. En la página **Ámbito**, elige tu suscripción en la lista desplegable de suscripciones y haz clic en el botón **Seleccionar** situado en la parte inferior de la página.
 
     >**Nota**: *No* elija ningún grupo de recursos
 
-9. Haga clic dos veces en el botón **Siguiente** situado en la parte inferior de la pestaña **Aspectos básicos** para continuar con la pestaña **Parámetros**. En la pestaña **Parámetros**, haga clic en el botón de puntos suspensivos (...) **Área de trabajo principal de Log Analytics**. En la página **Área de trabajo principal de Log Analytics**, asegúrate de que tu suscripción está seleccionada y usa la lista desplegable **Áreas de trabajo** para seleccionar el área de trabajo de Log Analytics que usas para Sentinel. Cuando haya terminado, haga clic en el botón **Seleccionar** situado en la parte inferior de la página.
+9. Haga clic en el botón **Siguiente** de la parte inferior de la pestaña **Aspectos básicos** dos veces para continuar a la pestaña **Parámetros**. En la pestaña **Parámetros** haga clic en el botón de **puntos suspensivos (...) del área de trabajo de Log Analytics principal**. En la página **Área de trabajo principal de Log Analytics**, asegúrate de que tu suscripción está seleccionada y usa la lista desplegable **Áreas de trabajo** para seleccionar el área de trabajo de Log Analytics que usas para Sentinel. Cuando haya terminado, haga clic en el botón **Seleccionar** situado en la parte inferior de la página.
 
 10. Haga clic en el botón **Siguiente** situado en la parte inferior de la pestaña **Parámetros** para continuar con la pestaña **Corrección**. En la pestaña **Corrección**, active la casilla **Creación de una tarea de corrección**. Esto habilitará la opción "Configurar registros de actividad de Azure para transmitir a un área de trabajo de Log Analytics especificada" en la lista desplegable **Directiva para corregir**. En la lista desplegable **Ubicación de identidad asignada por el sistema**, seleccione la región (Este de EE. UU., por ejemplo) que seleccionó anteriormente para el área de trabajo de Log Analytics.
 
@@ -228,7 +228,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 14. En la pestaña **Respuesta automatizada** de la hoja **Asistente para reglas de análisis - Crear una nueva regla programada**, haga clic en **Siguiente: Revisar y crear >** y haga clic en **Guardar**
 
-    >**Nota**: Ahora tiene una nueva regla activa denominada **Demostración del cuaderno de estrategias**. Si se produce un evento identificado por la lógica de la regla, se producirá una alerta de gravedad media, lo que generará un incidente correspondiente.
+    >**Nota**: Ahora tiene una nueva regla activa denominada **Demostración del cuaderno de estrategias**. Si se produce un evento identificado por la lógica de la regla, se creará una alerta de gravedad media, lo que generará un incidente correspondiente.
 
 #### Tarea 6: Invocación de un incidente y revisión de las acciones asociadas.
 
@@ -248,7 +248,7 @@ En esta tarea, creará un cuaderno de estrategias. Un cuaderno de estrategias de
 
 6. Vaya al panel **Registro de actividad** y anote una entrada **Eliminar directivas de acceso a la red JIT**. 
 
-    >**Nota**: Los datos pueden tardar unos minutos en aparecer. **Actualice** la página si no aparece.
+    >**Nota**: Los datos pueden tardar unos minutos en aparecer. Actualice la página si no aparece.
 
 7. En Azure Portal, vuelva al panel **Microsoft Sentinel \| Información general**.
 
