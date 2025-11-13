@@ -277,7 +277,7 @@ En esta tarea, creará una máquina virtual para usarla como servidor de adminis
 
     >**Nota**: Espere a que se aprovisionen ambas máquinas virtuales antes de continuar. 
 
-#### Tarea 3: Asocie cada interfaz de red de máquinas virtuales a su grupo de seguridad de aplicaciones.
+#### Tarea 3: Asociación de la interfaz de red de cada máquina virtual a su grupo de seguridad de aplicaciones.
 
 En esta tarea, asociará cada interfaz de red de máquinas virtuales con el grupo de seguridad de aplicaciones correspondiente. La interfaz de máquina virtual myVMWeb se asociará al grupo ASG myAsgWebServers. La interfaz de máquina virtual myVMMgmt se asociará al grupo ASG myAsgMgmtServers. 
 

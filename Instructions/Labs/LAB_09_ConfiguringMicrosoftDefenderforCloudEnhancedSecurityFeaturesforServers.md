@@ -16,7 +16,7 @@ Como ingeniero de seguridad de Azure para una empresa global de comercio electr�
 
 - Configuración de características de seguridad mejorada de Microsoft Defender for Cloud para servidores
   
-- Revisión de las características de seguridad mejoradas para el Plan 2 de Microsoft Defender para servidores
+- Revisión de las características de seguridad mejoradas para el Plan 2 de Microsoft Defender para servidores
 
 ## Instrucciones del ejercicio
 

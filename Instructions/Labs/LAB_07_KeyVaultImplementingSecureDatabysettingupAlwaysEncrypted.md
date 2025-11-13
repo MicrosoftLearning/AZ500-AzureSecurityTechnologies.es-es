@@ -415,7 +415,7 @@ En esta tarea, se conectará a la base de datos SQL con SQL Server Management St
 
 15. En la página **Selección de columna**, seleccione las columnas **SSN** y **Fecha de nacimiento**, establezca el **Tipo de cifrado** de la columna **SSN** en **Determinista** y el de la columna **Fecha de nacimiento** en **Aleatorio** y haga clic en **Siguiente**.
 
-    >**Nota**: Al realizar el cifrado, si se genera cualquier error como **Excepción generada por el destino de la invocación** relacionado con **Rotary(Microsoft.SQLServer.Management.ServiceManagement)** , compruebe que los valores de **Permisos clave** de **Operaciones de directiva de rotación** estén **desmarcados**. Si no está en Azure Portal, vaya a **Key Vault** >> **Directivas de acceso** >> **Permisos clave** y desmarque todos los valores que figuren en **Operaciones de directiva de rotación** >> En **Operaciones de clave con privilegios** >> Desmarque **Publicar**.
+    >**Nota**: Al realizar el cifrado, si se produce cualquier error como **Excepción generada por el destino de la invocación** relacionado con **Rotary(Microsoft.SQLServer.Management.ServiceManagement)**, compruebe que los valores de **Permisos clave** de **Operaciones de directiva de rotación** no estén **activados**. Si no está en Azure Portal, vaya a **Key Vault** >> **Directivas de acceso** >> **Permisos clave** y desmarque todos los valores de **Operaciones de directiva de rotación** >> En **Operaciones de clave con privilegios** >> Desactive **Publicar**.
 
 16. En la página **Configuración de clave maestra**, seleccione **Azure Key Vault**, haga clic en **Iniciar sesión**, cuando se le solicite, autentíquese con la misma cuenta de usuario que usó para aprovisionar la instancia de Azure Key Vault anteriormente en este laboratorio, asegúrese de que Key Vault aparezca en la lista desplegable **Seleccionar un Azure Key Vault** y haga clic en **Siguiente**.
 
@@ -463,7 +463,7 @@ Creará una aplicación de consola mediante Visual Studio para cargar datos en l
 
 1. Desde la sesión RDP a **az500-10-vm1**, inicie **Visual Studio 2019** desde el **menú Inicio**.
 
-2. Cambie a la ventana que muestra el mensaje de bienvenida de Visual Studio 2019, haga clic en el botón **Iniciar sesión** y, cuando se le solicite, proporcione las credenciales que usó para autenticarse en la suscripción de Azure que usa en este laboratorio.
+2. Cambie a la ventana en la que se muestra el mensaje de bienvenida de Visual Studio 2019, haga clic en el botón **Iniciar sesión** y, cuando se le solicite, proporcione las credenciales que ha usado para autenticarse en la suscripción de Azure que usa en este laboratorio.
 
 3. En la página **Comenzar**, haga clic en **Crear un proyecto nuevo**. 
 
@@ -495,7 +495,7 @@ Creará una aplicación de consola mediante Visual Studio para cargar datos en l
 
 10. Vuelva a la sesión de RDP y, en la consola de Visual Studio, en la ventana **Explorador de soluciones**, haga clic en **Program.cs** y reemplace su contenido por el código que copió en el Portapapeles.
 
-11. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 15, reemplace el marcador de posición `<connection string noted earlier>` por la cadena de conexión **ADO.NET** de la base de datos de Azure SQL que registró anteriormente en el laboratorio. En la cadena de conexión, reemplace el marcador de posición `{your_password}` por la contraseña que especificó en la implementación en el ejercicio 1. Si guardó la cadena en el equipo del laboratorio, es posible que tenga que salir de la sesión de RDP para copiar la cadena de ADO y, a continuación, volver a la máquina virtual de Azure para pegarla.
+11. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 15, reemplace el marcador de posición `<connection string noted earlier>` por la cadena de conexión **ADO.NET** de la base de datos de Azure SQL que registró anteriormente en el laboratorio. En la cadena de conexión, reemplace el marcador de posición `{your_password}` por la contraseña que ha especificado en la implementación en el ejercicio 1. Si guardó la cadena en el equipo del laboratorio, es posible que tenga que salir de la sesión de RDP para copiar la cadena de ADO y, a continuación, volver a la máquina virtual de Azure para pegarla.
 
 12. En la ventana de Visual Studio, en el panel **Program.cs** en la línea 16, reemplace el marcador de posición `<client id noted earlier>` por el valor del **id. de aplicación (cliente)** de la aplicación registrada que registró anteriormente en el laboratorio. 
 

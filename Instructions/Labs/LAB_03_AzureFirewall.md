@@ -12,7 +12,7 @@ lab:
 Se le ha pedido que instale Azure Firewall. Esto ayudará a su organización a controlar el acceso de red entrante y saliente, que es una parte importante de un plan de seguridad de red general. En concreto, le gustaría crear y probar los siguientes componentes de infraestructura:
 
 - Una red virtual con una subred de carga de trabajo y una subred de host de salto.
-- Cada máquina virtual es una subred. 
+- Una máquina virtual en cada subred. 
 - Una ruta personalizada que garantiza que todo el tráfico de carga de trabajo saliente de la subred de la carga de trabajo debe usar el firewall.
 - Reglas de aplicación de firewall que solo permiten el tráfico saliente a www.bing.com. 
 - Reglas de red de firewall que permiten búsquedas de servidores DNS externos.
@@ -105,7 +105,7 @@ En esta tarea, implementará Azure Firewall en la red virtual.
    |Administración de firewall.|**Use reglas de firewall (clásicas) para administrar este firewall**.|
    |Elegir una red virtual|Haga clic en la opción **Usar existente** y, en la lista desplegable, seleccione **Test-FW-VN**.|
    |NIC de administración de Firewall|Para deshabilitar esta característica, **anula la selección** de la opción **Habilitar NIC de administración de firewall**.|
-   |Dirección IP pública|Haga clic en **Agregar nuevo**, escriba el nombre **TEST-FW-PIP** y haga clic en **Aceptar**.|
+   |Dirección IP pública|Haga clic en **Agregar nuevo**, escriba el nombre **TEST-FW-PIP** y haga clic en **Aceptar**|
 
 5. Haga clic en **Revisar y crear** y, a continuación, en **Crear**. 
 
